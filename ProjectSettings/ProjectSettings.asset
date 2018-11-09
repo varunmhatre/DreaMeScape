@@ -647,7 +647,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 60beb4a5-725a-49cb-8e7b-ac6c17bc5438
   projectName: DreaMeScape
   organizationId: bxb5733
