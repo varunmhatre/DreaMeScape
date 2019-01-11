@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Entities;
 
 //position
-public class Grid : Component {
+public class GridSystem : ComponentSystem {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private struct gridObjects{
+        public GridPiece pieceData;
+        public GridCoordinates gridCoordinate;
+    }
+
+    protected override void OnUpdate()
+    {
+        //This checks all the tiles
+        //Example for using other stuff with systems
+        foreach (var item in GetEntities<gridObjects>())
+        {
+        }
+    }
 }
