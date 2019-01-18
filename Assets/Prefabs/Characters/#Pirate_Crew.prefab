@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33760194020110922}
   - component: {fileID: 23841827095298382}
   - component: {fileID: 65235228475624612}
+  - component: {fileID: 8477210806297863370}
   m_Layer: 9
   m_Name: '#Pirate_Crew'
   m_TagString: Enemy
@@ -94,6 +95,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8477210806297863370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005522361513020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b0e8e7def7f1e44a99aec138f89ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1149869578562094
 GameObject:
   m_ObjectHideFlags: 0
