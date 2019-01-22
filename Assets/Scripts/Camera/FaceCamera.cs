@@ -5,23 +5,17 @@ using Unity.Entities;
 
 public class FaceCamera : ComponentSystem
 {
-    Transform camera;
     private struct units
     {
         public UnitRotation unitRotation;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        camera = GameObject.Find("Main Camera").transform; ;
-    }
-
     protected override void OnUpdate()
     {
+        Quaternion cameraRotation = Camera.main.transform.rotation;
         foreach (var item in GetEntities<units>())
         {
-            item.unitRotation.SetRotation(camera.rotation);
+            item.unitRotation.SetRotation(cameraRotation);
         }
     }
 }

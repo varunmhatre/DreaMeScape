@@ -26,6 +26,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 if ((piece.x == array[arrayIndex * 2]) && (piece.y == ((array[(arrayIndex * 2) + 1]) )))
                 {
                     transform.GetChild(i).GetComponent<GridPiece>().unit = Instantiate(characters[arrayIndex], transform.GetChild(i).position, Quaternion.identity);
+                    transform.GetChild(i).GetComponent<GridPiece>().unit.AddComponent<GameObjectEntity>();
                     break;
                 }
             }
