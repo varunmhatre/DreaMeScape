@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UnitCoordinates : MonoBehaviour {
 
-    
+    public int x;
+    public int y;
 
 	// Use this for initialization
 	void Start () {
