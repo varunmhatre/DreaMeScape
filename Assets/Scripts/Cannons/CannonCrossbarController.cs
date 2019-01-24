@@ -4,50 +4,15 @@ using UnityEngine;
 
 public class CannonCrossbarController : MonoBehaviour
 {
+    [SerializeField] public Texture2D mouseTarget;
 
-    [SerializeField]
-    public Texture2D mouseTarget;
-
-    public static bool isCannonSelected;
-
-    // Update is called once per frame
-    void Update()
+    void EnableCrossBar()
     {
-        if (PlayerControls.isPlayerTurn)
-        {
-            bool cannonSelected = false;
-            for (int i = 0; i < Board.allCannons.Length; i++)
-            {
-                if (Board.allCannons[i].GetComponent<Cannon>().isCanonSelected)
-                {
-                    cannonSelected = true;
-                    break;
-                }
-            }
+        Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.Auto);
+    }
 
-            if (cannonSelected)
-            {
-                if (!isCannonSelected)
-                {
-                    isCannonSelected = true;
-                    Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.Auto);
-                }
-            }
-            else
-            {
-                if (isCannonSelected)
-                {
-                    isCannonSelected = false;
-                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                }
-            }
-        }
-        else if (isCannonSelected)
-        {
-            isCannonSelected = false;
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        }
-
-
+    void DisableCrossBar()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }
