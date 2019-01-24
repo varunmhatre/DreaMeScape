@@ -611,19 +611,19 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
-  orthographic size: 6.33
+  orthographic: 0
+  orthographic size: 9.24
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -636,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 53.7, y: 7.36, z: 17.96}
+  m_LocalPosition: {x: 53.61, y: 15.21, z: 12.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1649,6 +1649,21 @@ PrefabInstance:
       propertyPath: x
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
+      propertyPath: cannon
+      value: 
+      objectReference: {fileID: 1506762912760088, guid: c7847393dc6f3974fbbdefdc37891389,
+        type: 3}
+    - target: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
+      propertyPath: pirateCaptain
+      value: 
+      objectReference: {fileID: 1177191238569498, guid: 5c994aba6d8ede040bea61e6326cdb72,
+        type: 3}
+    - target: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
+      propertyPath: pirate
+      value: 
+      objectReference: {fileID: 1005522361513020, guid: 374bbb8663e6df446b2e8d249a9e4a3a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
 --- !u!1 &1609209286 stripped
@@ -1738,11 +1753,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1687701773275198, guid: 1b308a7c0f7332945beae97242c6227d, type: 3}
+    - target: {fileID: 1472559426085528, guid: 1b308a7c0f7332945beae97242c6227d, type: 3}
       propertyPath: m_Layer
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1472559426085528, guid: 1b308a7c0f7332945beae97242c6227d, type: 3}
+    - target: {fileID: 1687701773275198, guid: 1b308a7c0f7332945beae97242c6227d, type: 3}
       propertyPath: m_Layer
       value: 1
       objectReference: {fileID: 0}
