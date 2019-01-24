@@ -17,7 +17,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
     void Start()
     {
         PlaceCharacters();
-        //PlaceCannons();
+        PlaceCannons();
     }
 
     void PlaceCharacters()
@@ -31,7 +31,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 if ((piece.x == array[arrayIndex * 2]) && (piece.y == ((array[(arrayIndex * 2) + 1]) )))
                 {
                     transform.GetChild(i).GetComponent<GridPiece>().unit = Instantiate(characters[arrayIndex], transform.GetChild(i).position, Quaternion.identity);
-                    transform.GetChild(i).GetComponent<GridPiece>().unit.AddComponent<GameObjectEntity>();
+                   // transform.GetChild(i).GetComponent<GridPiece>().unit.AddComponent<GameObjectEntity>();
                     break;
                 }
             }
@@ -49,8 +49,16 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
                 if ((piece.x == array[arrayIndex * 2]) && (piece.y == ((array[(arrayIndex * 2) + 1]))))
                 {
-                    transform.GetChild(i).GetComponent<GridPiece>().unit = Instantiate(cannon, transform.GetChild(i).position, Quaternion.identity);
-                    transform.GetChild(i).GetComponent<GridPiece>().unit.AddComponent<GameObjectEntity>();
+                    Vector3 pos = transform.GetChild(i).position;
+                    pos.y += 0.53f;
+                    Quaternion rotation = Quaternion.identity;
+                    if (piece.y < 4)
+                    {
+                        rotation.y += 180.0f;
+                    }
+
+                    transform.GetChild(i).GetComponent<GridPiece>().unit = Instantiate(cannon, pos, rotation);
+                    //transform.GetChild(i).GetComponent<GridPiece>().unit.AddComponent<GameObjectEntity>();
                     break;
                 }
             }
