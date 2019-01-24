@@ -269,7 +269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &188407747 stripped
 GameObject:
@@ -1622,7 +1622,7 @@ PrefabInstance:
     - target: {fileID: 4161285562291951670, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4161285562291951670, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
@@ -1652,7 +1652,7 @@ PrefabInstance:
     - target: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
       propertyPath: cannon
       value: 
-      objectReference: {fileID: 1506762912760088, guid: c7847393dc6f3974fbbdefdc37891389,
+      objectReference: {fileID: 654685926998424055, guid: ed8d9fd8d5631884cbb407df5caf5b1b,
         type: 3}
     - target: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
       propertyPath: pirateCaptain
@@ -1753,11 +1753,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1472559426085528, guid: 1b308a7c0f7332945beae97242c6227d, type: 3}
+    - target: {fileID: 1687701773275198, guid: 1b308a7c0f7332945beae97242c6227d, type: 3}
       propertyPath: m_Layer
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1687701773275198, guid: 1b308a7c0f7332945beae97242c6227d, type: 3}
+    - target: {fileID: 1472559426085528, guid: 1b308a7c0f7332945beae97242c6227d, type: 3}
       propertyPath: m_Layer
       value: 1
       objectReference: {fileID: 0}
