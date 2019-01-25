@@ -8,10 +8,13 @@ public class SetupCharactersOnBoard : MonoBehaviour
 
 
     [SerializeField] List<GameObject> characters = new List<GameObject>();
+
     [SerializeField] GameObject cannon;
+    [SerializeField] Transform cannonHandler;
+
     [SerializeField] GameObject pirate;
     [SerializeField] GameObject pirateCaptain;
-    int numberOfCannons;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +44,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
     void PlaceCannons()
     {
         int[] array = { 7, 7, 7, 1, 11, 7, 11, 1 };
-        numberOfCannons = array.Length / 2;
+        int numberOfCannons = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfCannons; arrayIndex++)
         {
             for (int i = 0; i < transform.childCount; i++)
@@ -57,7 +60,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
                         rotation.y += 180.0f;
                     }
 
-                    transform.GetChild(i).GetComponent<GridPiece>().unit = Instantiate(cannon, pos, rotation);
+                    transform.GetChild(i).GetComponent<GridPiece>().unit = Instantiate(cannon, pos, rotation, cannonHandler);
                     //transform.GetChild(i).GetComponent<GridPiece>().unit.AddComponent<GameObjectEntity>();
                     break;
                 }

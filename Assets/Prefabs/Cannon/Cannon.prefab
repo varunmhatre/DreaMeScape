@@ -4878,6 +4878,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400448510348157597}
+  - component: {fileID: 5808825450601023180}
+  - component: {fileID: 4166431156428709291}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -4900,6 +4902,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5808825450601023180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654685926998424055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbdcb38dfe7f134888db73002d343ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4166431156428709291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654685926998424055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1870c70082c83d42a70cda0178044cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge: 1
+  isThisCannonSelected: 0
 --- !u!1 &682538040823104893
 GameObject:
   m_ObjectHideFlags: 0
