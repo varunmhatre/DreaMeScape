@@ -17,4 +17,10 @@ public class UnitRotation : MonoBehaviour
         rotation = newRotation;
         transform.rotation = newRotation;
     }
+
+    public void SetLocalRotation(Quaternion newRotation)
+    {
+        rotation = newRotation;
+        transform.localRotation = newRotation;
+    }
 }

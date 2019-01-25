@@ -17,7 +17,7 @@ public class GridSystem : ComponentSystem {
         //Example for using other stuff with systems
         foreach (var item in GetEntities<gridObjects>())
         {
-            //Whatever needs to be done with these entities
+            
         }
     }
 }
