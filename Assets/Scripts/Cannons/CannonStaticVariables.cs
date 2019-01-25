@@ -6,6 +6,7 @@ public class CannonStaticVariables : MonoBehaviour
 {
     public static bool isCannonSelected;
     public static int cannonRadius;
+    public CannonCrossbarController crossbar;
 
     // Start is called before the first frame update
     void Start()

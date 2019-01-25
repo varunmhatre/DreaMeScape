@@ -16,7 +16,7 @@ public class CannonScript : MonoBehaviour
         rotation = transform.rotation;
         cannonExplosionAnimation = transform.GetChild(0).GetComponent<Animator>();
         explosionBlast = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
-        cannonExplosionAnimation.enabled = false;// = false;
+        cannonExplosionAnimation.enabled = false;
     }
 
     private void Update()
