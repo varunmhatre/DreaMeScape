@@ -22,7 +22,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     void Start()
     {
         // isPressed = true;
-        //playerControlsLocked = false;
+        playerControlsLocked = true;
     }
     public void BootSequence()
     { 
@@ -48,12 +48,9 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 UpdatePanelState(); 
             }
             BootSequence();                
-        }
+        } 
         if (Input.GetKey(KeyCode.P) || countDialogueLength >= currentEvent.dialogues.Count)
         {
-            Debug.Log("countDialogueLength:     "+countDialogueLength);
-            Debug.Log("currentEvent.dialogues.Count:     " + currentEvent.dialogues.Count);
-            Debug.Log("SceneManager.GetActiveScene().buildIndex:        " + SceneManager.GetActiveScene().buildIndex);
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 dialoguePanel.SetActive(false);
@@ -68,11 +65,11 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 playerControlsLocked = false;
                 countDialogueLength = currentEvent.dialogues.Count;
             }
-        }
+        }       
         else if (countDialogueLength < currentEvent.dialogues.Count)
         {
             playerControlsLocked = true;
-        }        
+        }
     }
     private void InitiziliasePanels()
     { 
