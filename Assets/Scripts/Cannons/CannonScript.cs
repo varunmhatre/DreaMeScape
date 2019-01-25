@@ -6,22 +6,17 @@ public class CannonScript : MonoBehaviour
 {
     public int charge = 1;
     public bool isThisCannonSelected;
+    Animator cannonExplosionAnimation;
+    ParticleSystem explosionBlast;
+
     Quaternion rotation;
 
     private void Start()
     {
         rotation = transform.rotation;
-    }
-
-    public bool isChargeLeft
-    {
-        get { return charge > 0; }
-    }
-
-    public void Disengage()
-    {
-        isThisCannonSelected = false;
-        transform.rotation = rotation;
+        cannonExplosionAnimation = transform.GetChild(0).GetComponent<Animator>();
+        explosionBlast = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
+        cannonExplosionAnimation.enabled = false;// = false;
     }
 
     private void Update()
@@ -30,6 +25,25 @@ public class CannonScript : MonoBehaviour
         {
             FaceMouse();
         }
+    }
+
+    public bool isChargeLeft
+    {
+        get { return (charge > 0); }
+    }
+
+    public void Disengage()
+    {
+        isThisCannonSelected = false;
+        transform.rotation = rotation;
+    }
+
+    public void Attack()
+    {
+        charge--;
+        explosionBlast.Play();
+        cannonExplosionAnimation.enabled = true;
+        Disengage();
     }
 
     void FaceMouse()

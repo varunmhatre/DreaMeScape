@@ -33,7 +33,8 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
                 if ((piece.x == array[arrayIndex * 2]) && (piece.y == ((array[(arrayIndex * 2) + 1]) )))
                 {
-                    transform.GetChild(i).GetComponent<GridPiece>().unit = Instantiate(characters[arrayIndex], transform.GetChild(i).position, Quaternion.identity);
+                    transform.GetChild(i).GetComponent<GridPiece>().unit =
+                        Instantiate(characters[arrayIndex], transform.GetChild(i).position, Quaternion.identity);
                    // transform.GetChild(i).GetComponent<GridPiece>().unit.AddComponent<GameObjectEntity>();
                     break;
                 }
@@ -60,7 +61,8 @@ public class SetupCharactersOnBoard : MonoBehaviour
                         rotation.y += 180.0f;
                     }
 
-                    transform.GetChild(i).GetComponent<GridPiece>().unit = Instantiate(cannon, pos, rotation, cannonHandler);
+                    transform.GetChild(i).GetComponent<GridPiece>().unit = 
+                        Instantiate(cannon, pos, rotation, cannonHandler);
                     //transform.GetChild(i).GetComponent<GridPiece>().unit.AddComponent<GameObjectEntity>();
                     break;
                 }
