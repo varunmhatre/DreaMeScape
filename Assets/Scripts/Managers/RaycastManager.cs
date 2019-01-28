@@ -10,7 +10,6 @@ public class RaycastManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hit = new RaycastHit();
     }
 
     // Update is called once per frame
