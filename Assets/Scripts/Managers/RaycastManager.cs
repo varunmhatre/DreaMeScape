@@ -5,7 +5,7 @@ using UnityEngine;
 public class RaycastManager : MonoBehaviour
 {
 
-    private RaycastHit hit;
+    private RaycastHit[] hitTargets;
 
     // Start is called before the first frame update
     void Start()
@@ -15,16 +15,28 @@ public class RaycastManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
+        //Update hit when you click the primary mouse button
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-            Physics.Raycast(ray, out hit, Mathf.Infinity);
+            hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
         }         
     }
 
-    public string getRaycastHitTag()
+    //Get the last hit Raycast for provided tag
+    public RaycastHit getRaycastHitForTag(string tag)
     {
-        Debug.Log(hit.transform.tag);
-        return hit.transform.tag;
+        RaycastHit hit = new RaycastHit();
+
+        for(int i = 0; i < hitTargets.Length; i++)
+        {
+            if(hitTargets[i].transform.tag == tag)
+            {
+                hit = hitTargets[i];
+            }
+        }
+
+        //If tag doesn't exist, will return new RaycastHit() and have 'null' hit.transform
+        return hit;
     }
 }
