@@ -19,11 +19,13 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     [SerializeField]
     private GameObject dialoguePanel;
 
+    private bool isCharacterPanelDisabled;
 
     void Start()
     {
         // isPressed = true;
         playerControlsLocked = true;
+        isCharacterPanelDisabled = false;
     }
     public void BootSequence()
     { 
@@ -70,23 +72,29 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 
                 dialoguePanel.SetActive(false);
                 playerControlsLocked = false;
+                isCharacterPanelDisabled = true;
                 countDialogueLength = currentEvent.dialogues.Count;
             }
         }       
         else if (countDialogueLength < currentEvent.dialogues.Count)
         {
             characterPanel.isTalking = false;
+           
             playerControlsLocked = true;
         }
         //Debug.Log("countDialogueLength:     " + countDialogueLength);
     }
     private void InitiziliasePanels()
     { 
-        characterPanel.isTalking = true;        
-        stepIndex++;
-        countDialogueLength++;
-        characterPanel.Configure(currentEvent.dialogues[stepIndex]);
-        CharacterActive = !CharacterActive;
+        if(!isCharacterPanelDisabled)
+        {
+            characterPanel.isTalking = true;
+            stepIndex++;
+            countDialogueLength++;
+            characterPanel.Configure(currentEvent.dialogues[stepIndex]);
+            CharacterActive = !CharacterActive;
+        }
+       
     }
     private void ConfigurePanels()
     {
