@@ -10,13 +10,14 @@ public class CannonScript : MonoBehaviour
     ParticleSystem explosionBlast;
 
     Quaternion rotation;
+    public bool test;
 
     private void Start()
     {
         rotation = transform.rotation;
         cannonExplosionAnimation = transform.GetChild(0).GetComponent<Animator>();
         explosionBlast = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
-        cannonExplosionAnimation.enabled = false;
+        //cannonExplosionAnimation.enabled = false;
     }
 
     private void Update()
@@ -24,6 +25,11 @@ public class CannonScript : MonoBehaviour
         if (isThisCannonSelected)
         {
             FaceMouse();
+        }
+        if (test)
+        {
+            Attack();
+            test = false;
         }
     }
 
@@ -42,7 +48,8 @@ public class CannonScript : MonoBehaviour
     {
         charge--;
         explosionBlast.Play();
-        cannonExplosionAnimation.enabled = true;
+        //cannonExplosionAnimation.enabled = true;
+        cannonExplosionAnimation.SetBool("isPlay", true);
         Disengage();
     }
 
