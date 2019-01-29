@@ -462,6 +462,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5235816070025862605, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 5235816070025862605, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}
 --- !u!1 &103759893 stripped

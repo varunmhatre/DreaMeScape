@@ -1415,7 +1415,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3796869317963857853}
   - component: {fileID: 3799134281630586899}
-  - component: {fileID: 3905787815682427957}
   - component: {fileID: 5235816070025862605}
   m_Layer: 5
   m_Name: EnergyLeftThisRound
@@ -1451,18 +1450,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4010860255592167579}
   m_CullTransparentMesh: 0
---- !u!114 &3905787815682427957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4010860255592167579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356ffeb93d9514544b734ef6b8ddeaf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5235816070025862605
 MonoBehaviour:
   m_ObjectHideFlags: 0
