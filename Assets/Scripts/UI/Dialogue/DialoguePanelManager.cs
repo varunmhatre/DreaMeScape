@@ -19,6 +19,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     [SerializeField]
     private GameObject dialoguePanel;
 
+
     void Start()
     {
         // isPressed = true;
@@ -28,7 +29,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     { 
         if(GameObject.Find("CharacterPanel") != null)
         {
-            Debug.Log("characterpanel is active");
+          //  Debug.Log("characterpanel is active");
             characterPanel = GameObject.Find("CharacterPanel").GetComponent<DialoguePanelConfig>();
         }
         
@@ -50,10 +51,9 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             if(DialoguePanelConfig.isDialogueTextOver)
             {               
                 UpdatePanelState();
-                BootSequence();
+                
             }
-           // Debug.Log("Activating the dialogue");
-                         
+            BootSequence();
         } 
         if (Input.GetKey(KeyCode.P) || countDialogueLength >= currentEvent.dialogues.Count)
         {
@@ -67,15 +67,15 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             }
             if (SceneManager.GetActiveScene().buildIndex == 2)
             {
-                //Debug.Log("Characterpanel disappear");
+                
                 dialoguePanel.SetActive(false);
                 playerControlsLocked = false;
-                countDialogueLength = currentEvent.dialogues.Count + 1;
-              //  Debug.Log("countDialogueLength:     " + countDialogueLength);
+                countDialogueLength = currentEvent.dialogues.Count;
             }
         }       
         else if (countDialogueLength < currentEvent.dialogues.Count)
         {
+            characterPanel.isTalking = false;
             playerControlsLocked = true;
         }
         //Debug.Log("countDialogueLength:     " + countDialogueLength);
