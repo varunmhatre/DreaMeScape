@@ -15,7 +15,7 @@ public class FaceCamera : ComponentSystem
         Quaternion cameraRotation = Camera.main.transform.rotation;
         foreach (var item in GetEntities<units>())
         {
-            item.unitRotation.SetRotation(cameraRotation);
+            item.unitRotation.SetLocalRotation(cameraRotation);
         }
     }
 }

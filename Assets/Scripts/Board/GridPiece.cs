@@ -27,9 +27,4 @@ public class GridPiece : MonoBehaviour{
     {
         get { return (unit != null) || isDead; }
     }
-
-    public void PrintLog()
-    {
-        Debug.Log("what crap");
-    }
 }
