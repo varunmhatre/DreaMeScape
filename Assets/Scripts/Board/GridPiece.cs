@@ -27,4 +27,5 @@ public class GridPiece : MonoBehaviour{
     {
         get { return (unit != null) || isDead; }
     }
+
 }

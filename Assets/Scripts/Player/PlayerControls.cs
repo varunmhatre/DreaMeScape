@@ -20,21 +20,18 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //Check hitTargets to see if we clicked on a player tag
-            //Store the transform of the selected player
-            //Pull the player name substring from the GameObject name
-            //If we click on anything that's not a player, we unselect the last selected player
-            RaycastHit hit = GetComponent<RaycastManager>().getRaycastHitForTag("Player");
-            if (hit.transform != null)
-            {
-                selectedUnit = hit.transform;
-                selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
+            //Populates selectedUnitName and selectedUnit
+            getPlayer();
+            if(selectedUnit)
+            {                
+                
+                gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName);
             }
             else
             {
-                selectedUnit = null;
-                selectedUnitName = "NoUnitSelected";
+                //clear highlight
             }
+            
         }
     }
 
@@ -42,4 +39,26 @@ public class PlayerControls : MonoBehaviour
     {
         return selectedUnitName;
     }
+
+    //Check hitTargets to see if we clicked on a player tag
+    //Store the transform of the selected player
+    //Pull the player name substring from the GameObject name
+    //If we click on anything that's not a player, we unselect the last selected player
+    private void getPlayer()
+    {
+        RaycastHit hit = GetComponent<RaycastManager>().getRaycastHitForTag("Player");
+        if (hit.transform != null)
+        {
+            selectedUnit = hit.transform;
+            selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
+            Debug.Log(selectedUnitName);
+        }
+        else
+        {
+            selectedUnit = null;
+            selectedUnitName = "NoUnitSelected";
+        }
+
+    }
+
 }

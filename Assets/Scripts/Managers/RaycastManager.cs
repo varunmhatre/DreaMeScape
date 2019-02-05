@@ -12,8 +12,8 @@ public class RaycastManager : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
-    void Update()
+    // FixedUpdate so that it occurs before Updates that require Raycast to be completed
+    void FixedUpdate()
     {        
         //Update hit when you click the primary mouse button
         if (Input.GetMouseButtonDown(0))
@@ -30,7 +30,7 @@ public class RaycastManager : MonoBehaviour
 
         for(int i = 0; i < hitTargets.Length; i++)
         {
-            if(hitTargets[i].transform.tag == tag)
+            if (hitTargets[i].transform.tag == tag)
             {
                 hit = hitTargets[i];
             }
