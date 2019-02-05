@@ -6,6 +6,16 @@ TagManager:
   tags:
   - GridAreaToPlace
   - GridAreaToIgnore
+  - Enemy
+  - PirateBoss
+  - Resist
+  - Presence
+  - LettersHolderKent
+  - LettersHolderMeda
+  - LettersHolderEd
+  - LettersHolderJade
+  - LettersHolderHally
+  - GridPiece
   layers:
   - Default
   - TransparentFX
