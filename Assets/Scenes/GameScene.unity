@@ -130,8 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &23354055
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,8 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &41263511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155285956569718122, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -200,8 +202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &48725602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154810951232956834, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -220,8 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &49205381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154932541579691170, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -240,8 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &60501386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155183627034918666, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -260,8 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &91374740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154578256967279776, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -280,8 +286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &95589682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155439614216158042, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -300,8 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &96609732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4156150828464868322, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -320,8 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &138693902 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154808954452345734, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -340,8 +349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &140503740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154589664745763420, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -360,8 +370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &155747896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154648375799499454, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -380,8 +391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &162576661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155645771580292102, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -400,8 +412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &167079370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4156222796606765168, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -420,8 +433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,8 +523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &222389067 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155643280767344186, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -529,8 +544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &244380862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155477419840099808, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -549,8 +565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &259484370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154755751032840026, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -569,8 +586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &277865774 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155653431960831966, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -589,8 +607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &291395577 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4156138211371802966, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -609,8 +628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &303255843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154932558573042526, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -629,8 +649,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &308926229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155399920193429298, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -649,8 +670,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &323001846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3029151448620798142, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -669,8 +691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &339819717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155422629057305336, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -689,8 +712,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &345742170 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155668291382487570, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -709,8 +733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &354879251
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,8 +823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &385172911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154591461854088616, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -818,8 +844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &406606126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155421219967348504, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -838,8 +865,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &459787443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155371128563852914, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -858,8 +886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &467630610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155283134402072982, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -878,8 +907,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &467721599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154845433777330416, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -898,8 +928,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &504405511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155548675269028430, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -918,8 +949,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &520413294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155652570768700646, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -938,8 +970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &531323054 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155241874505131712, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -958,8 +991,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,8 +1118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &563114603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155496084578097972, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1104,8 +1139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &584333611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155146147818099602, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1124,8 +1160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &590251312 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154669490760182530, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1144,8 +1181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &653481500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155319449718695468, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1164,8 +1202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &681277016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155384006705143676, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1184,8 +1223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &686818015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155448056964176028, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1204,8 +1244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &745953645 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155283654098395172, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1224,8 +1265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &781763268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155176605010287682, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1244,8 +1286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &851071495 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155151942606536678, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1264,8 +1307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &866267808 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155522178264736050, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1284,8 +1328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &894211226 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155522671648197924, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1304,8 +1349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &903009235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154846206473004730, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1324,8 +1370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &983903964 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155391513046178010, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1344,8 +1391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &991245319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154768699855961474, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1364,8 +1412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1001871478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154577690633358522, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1384,8 +1433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1011927814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154785917348731360, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1404,8 +1454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1037845248 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155640472721497024, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1424,8 +1475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1052978684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154763407295425738, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1444,8 +1496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1053335086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155370430071406652, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1464,8 +1517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1104879689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154709526528081232, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1484,8 +1538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1105568848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154613709821970228, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1504,8 +1559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1165103754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154784235454617486, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1524,8 +1580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1184201386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4156175405722421246, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1544,8 +1601,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1212721741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154625784156013514, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1564,8 +1622,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1221743908 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155650963963322928, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1584,8 +1643,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1264737190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155259350036015052, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1604,8 +1664,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1269941421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154957088012141004, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1624,8 +1685,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!4 &1276576701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6905824317569734920, guid: b1923f66bc8ac094cac37aeab3e2ec1f,
@@ -1650,8 +1712,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1295220362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155617243658618798, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1670,8 +1733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1310219675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4156241324543998378, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1690,8 +1754,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1320169418 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155381938206872880, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1710,8 +1775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1001 &1328032856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1799,8 +1865,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1408969131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155655298382001236, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1819,8 +1886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1415984682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155552453269683188, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1839,8 +1907,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1428618516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155342089855559728, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1859,8 +1928,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1446962197 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155294530460760664, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1879,8 +1949,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1451064633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154815496394348158, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1899,8 +1970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1464661544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155645556968348032, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1919,8 +1991,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1467187676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4156162608564805140, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1939,8 +2012,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1470349935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155275802809889486, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1959,8 +2033,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1501480933 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154783542428867582, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1979,8 +2054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1524871153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155307233135974184, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -1999,8 +2075,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1530532799 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155507732654077860, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -2019,8 +2096,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1593166862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155241161004426238, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -2039,8 +2117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1001 &1606486555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2057,6 +2136,401 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155433825518361420, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155309519015009994, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155285956569718122, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154810951232956834, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154932541579691170, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155183627034918666, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154578256967279776, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155439614216158042, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156150828464868322, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154808954452345734, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154589664745763420, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154648375799499454, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155645771580292102, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156222796606765168, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154578250642946042, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155643280767344186, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155477419840099808, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154755751032840026, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155653431960831966, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156138211371802966, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154932558573042526, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155399920193429298, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029151448620798142, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155422629057305336, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155668291382487570, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155381811447050320, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154591461854088616, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155421219967348504, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155371128563852914, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155283134402072982, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154845433777330416, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155548675269028430, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155652570768700646, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155241874505131712, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155652234020215858, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155496084578097972, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155146147818099602, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154669490760182530, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155319449718695468, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155384006705143676, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155448056964176028, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155283654098395172, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155176605010287682, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155151942606536678, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155522178264736050, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155522671648197924, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154846206473004730, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155391513046178010, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154768699855961474, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154577690633358522, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154785917348731360, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155640472721497024, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154763407295425738, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155370430071406652, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154709526528081232, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154613709821970228, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154784235454617486, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156175405722421246, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154625784156013514, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155650963963322928, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155259350036015052, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154957088012141004, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154709950644839898, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155617243658618798, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156241324543998378, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155381938206872880, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155238735215447676, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155655298382001236, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155552453269683188, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155342089855559728, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155294530460760664, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154815496394348158, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155645556968348032, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156162608564805140, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155275802809889486, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154783542428867582, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155307233135974184, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155507732654077860, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155241161004426238, guid: abfa6314f88e7184ea0a922d203505fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GridPiece
       objectReference: {fileID: 0}
     - target: {fileID: 6435529759455092757, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
@@ -2122,22 +2596,7 @@ PrefabInstance:
       propertyPath: cannonHandler
       value: 
       objectReference: {fileID: 1276576701}
-    - target: {fileID: 3029151448620798142, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 5405367381984835146, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155477419840099808, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155645771580292102, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -2147,57 +2606,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4154589664745763420, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154648375799499454, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4155267696744684266, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155275802809889486, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155522671648197924, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155645556968348032, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155650963963322928, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155496084578097972, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155307233135974184, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154755751032840026, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155241161004426238, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -2207,42 +2616,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4154763407295425738, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4155563236067192164, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154578250642946042, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155381938206872880, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154768699855961474, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154709950644839898, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155668291382487570, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154957088012141004, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -2252,47 +2626,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4155309519015009994, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155552453269683188, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154709526528081232, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155241874505131712, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155448056964176028, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4155546622071977454, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155146147818099602, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154669490760182530, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155399920193429298, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -2302,47 +2636,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4156241324543998378, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155183627034918666, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154845433777330416, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155176605010287682, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155238735215447676, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155548675269028430, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4155536930039891790, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155422629057305336, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154578256967279776, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -2352,57 +2646,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4155652570768700646, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4155412734020027494, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154613709821970228, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155640472721497024, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155285956569718122, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154810951232956834, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155283134402072982, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155421219967348504, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155151942606536678, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156138211371802966, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155522178264736050, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -2412,47 +2656,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4155617243658618798, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155319449718695468, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154784235454617486, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154591461854088616, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4155248379533279398, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154625784156013514, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155655298382001236, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155652234020215858, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155294530460760664, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -2462,22 +2666,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4154932558573042526, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4154720182885055420, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155283654098395172, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155371128563852914, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -2487,122 +2676,12 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4154785917348731360, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155259350036015052, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155433825518361420, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4154832277908841714, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
       objectReference: {fileID: 0}
-    - target: {fileID: 4156150828464868322, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154932541579691170, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155370430071406652, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154783542428867582, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155653431960831966, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
     - target: {fileID: 4154698000642689846, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155643280767344186, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155439614216158042, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155391513046178010, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155384006705143676, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154808954452345734, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156175405722421246, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154577690633358522, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154815496394348158, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155342089855559728, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4154846206473004730, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155381811447050320, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156162608564805140, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155507732654077860, guid: abfa6314f88e7184ea0a922d203505fc,
-        type: 3}
-      propertyPath: m_TagString
-      value: GridPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156222796606765168, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_TagString
       value: GridPiece
@@ -3027,8 +3106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1001 &1632033592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3108,8 +3188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1644814042 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154663685076690328, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3128,8 +3209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1685162266 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155267696744684266, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3148,8 +3230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1685612595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154955411395522384, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3168,8 +3251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1712037430 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155549474484941294, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3188,8 +3272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1726384601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155546622071977454, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3208,8 +3293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1730538882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155529307205050268, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3228,8 +3314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1774292773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155248379533279398, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3248,8 +3335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1872785311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154831276939798824, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3268,8 +3356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1889292830
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,8 +3407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1901472474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155637266531461404, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3338,8 +3428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1927638828 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6435529759455092757, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3358,8 +3449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1943684309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155563236067192164, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3378,8 +3470,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &1979847192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155620413406997514, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3398,8 +3491,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &2020736516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155536930039891790, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3418,8 +3512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &2050269785
 GameObject:
   m_ObjectHideFlags: 0
@@ -3468,8 +3563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &2078381736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154698000642689846, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3488,8 +3584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0
 --- !u!1 &2118558840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4154720182885055420, guid: abfa6314f88e7184ea0a922d203505fc,
@@ -3508,5 +3605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed19e30977308d4f8c004295ac07e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHighlight: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
-  moveLowdark: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  highlightMat: {fileID: 2100000, guid: 39306fdd9aaa6fc409a9911c70410b4b, type: 2}
+  normalMat: {fileID: 2100000, guid: 64c7c4116d98cda41beaa5e6c6fc12cb, type: 2}
+  isHighlighted: 0

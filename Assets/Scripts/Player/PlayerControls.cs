@@ -22,25 +22,41 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+
+            moveOnClickedGridPiece();
+
             //Populates selectedUnitName and selectedUnit
             getPlayer();
+
             if (piecesHighlighted)
             {
                 gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
                 piecesHighlighted = false;
             }
+
             if (selectedUnit)
             {
                 gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight : true);
                 piecesHighlighted = true;
             }
-            
         }
     }
 
     public string getSelectedUnitName()
     {
         return selectedUnitName;
+    }
+
+    private void moveOnClickedGridPiece()
+    {
+        int[] moveCoords = gameObject.GetComponent<GridPieceSelect>().getGridPieceCoordsOnClick();
+        GameObject moveLoc = GameObject.Find("GridX" + moveCoords[0] + "Y" + moveCoords[1]);
+
+        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted)
+        {
+            Debug.Log(moveLoc.transform.position);
+            selectedUnit.position = moveLoc.transform.position;
+        }
     }
 
     //Check hitTargets to see if we clicked on a player tag
