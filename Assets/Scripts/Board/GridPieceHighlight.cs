@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GridPieceHighlight : MonoBehaviour
 {
-    [SerializeField] Material moveHighlight;
-    [SerializeField] Material moveLowdark;
-    bool isHighlighted;
+    [SerializeField] Material highlightMat;
+    [SerializeField] Material normalMat;
+    public bool isHighlighted;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +23,12 @@ public class GridPieceHighlight : MonoBehaviour
     public void highlightPiece()
     {
         isHighlighted = true;
-        GetComponent<Renderer>().material = moveHighlight;
+        GetComponent<Renderer>().material = highlightMat;
     }
 
-    public void lowdarkPiece()
+    public void removeHighlight()
     {
         isHighlighted = false;
-        GetComponent<Renderer>().material = moveLowdark;
+        GetComponent<Renderer>().material = normalMat;
     }
 }

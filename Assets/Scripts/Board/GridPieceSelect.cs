@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GridPieceSelect : MonoBehaviour
 {
+    int[] playerGridPiece;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +18,13 @@ public class GridPieceSelect : MonoBehaviour
         
     }
 
-    public void highlightMoveSpaces(string playerName)
+    public void highlightMoveSpaces(string playerName, bool toHighlight)
     {
-        int[] playerCoords = getGridPieceCoordsOnClick();
+        if (toHighlight)
+        {
+            playerGridPiece = getGridPieceCoordsOnClick();
+        }
+
         int[,] playerMov = PlayerMoveSpaces.Player_Movements[playerName];
 
         //Array that holds movespaces is 0,1,2...
@@ -34,17 +40,24 @@ public class GridPieceSelect : MonoBehaviour
             {
                 if (playerMov[i, j] > 0)
                 {
-                    GameObject neighborPiece = GameObject.Find("GridX" + (playerCoords[0] + (j - x)) + "Y" + (playerCoords[1] + (i - y)));
+                    GameObject neighborPiece = GameObject.Find("GridX" + (playerGridPiece[0] + (j - x)) + "Y" + (playerGridPiece[1] + (i - y)));
                     Debug.Log(neighborPiece);
-                    if (neighborPiece)
+                    if (neighborPiece && !neighborPiece.GetComponent<GridPiece>().isOccupied)
                     {
-                        neighborPiece.GetComponent<GridPieceHighlight>().highlightPiece();
+                        if (toHighlight)
+                        {
+                            neighborPiece.GetComponent<GridPieceHighlight>().highlightPiece();
+                        }
+                        else
+                        {
+                            neighborPiece.GetComponent<GridPieceHighlight>().removeHighlight();
+                        }
                     }
                 }
             }
         }
     }
-
+    
     public int[] getGridPieceCoordsOnClick()
     {
         int[] coords = { -1, -1 };

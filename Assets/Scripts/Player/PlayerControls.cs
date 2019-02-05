@@ -6,12 +6,14 @@ public class PlayerControls : MonoBehaviour
 {
 
     private string selectedUnitName;
+    private string lastSelectedUnitName;
     private Transform selectedUnit;
-
+    private bool piecesHighlighted;
     // Start is called before the first frame update
     void Start()
     {
         selectedUnitName = "NoUnitSelected";
+        lastSelectedUnitName = "NoUnitSelected";
 
     }
 
@@ -23,13 +25,18 @@ public class PlayerControls : MonoBehaviour
             //Populates selectedUnitName and selectedUnit
             getPlayer();
             if(selectedUnit)
-            {                
-                
-                gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName);
-            }
-            else
             {
-                //clear highlight
+                if (lastSelectedUnitName != "NoUnitSelected")
+                {
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
+                }
+                gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight : true);
+                piecesHighlighted = true;
+            }
+            else if(piecesHighlighted)
+            {
+                gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
+                piecesHighlighted = false;
             }
             
         }
@@ -46,6 +53,7 @@ public class PlayerControls : MonoBehaviour
     //If we click on anything that's not a player, we unselect the last selected player
     private void getPlayer()
     {
+        lastSelectedUnitName = selectedUnitName;
         RaycastHit hit = GetComponent<RaycastManager>().getRaycastHitForTag("Player");
         if (hit.transform != null)
         {
