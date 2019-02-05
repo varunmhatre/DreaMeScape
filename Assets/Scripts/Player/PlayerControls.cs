@@ -24,19 +24,15 @@ public class PlayerControls : MonoBehaviour
         {
             //Populates selectedUnitName and selectedUnit
             getPlayer();
-            if(selectedUnit)
-            {
-                if (lastSelectedUnitName != "NoUnitSelected")
-                {
-                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
-                }
-                gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight : true);
-                piecesHighlighted = true;
-            }
-            else if(piecesHighlighted)
+            if (piecesHighlighted)
             {
                 gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
                 piecesHighlighted = false;
+            }
+            if (selectedUnit)
+            {
+                gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight : true);
+                piecesHighlighted = true;
             }
             
         }
@@ -59,7 +55,6 @@ public class PlayerControls : MonoBehaviour
         {
             selectedUnit = hit.transform;
             selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
-            Debug.Log(selectedUnitName);
         }
         else
         {
