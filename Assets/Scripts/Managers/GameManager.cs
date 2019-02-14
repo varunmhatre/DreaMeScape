@@ -48,8 +48,4 @@ public class GameManager : MonoBehaviour
         return currentEnergy > 0;
     }
 
-    public bool IsPlayerTurn()
-    {
-        return isPlayerTurn;
-    }
 }
