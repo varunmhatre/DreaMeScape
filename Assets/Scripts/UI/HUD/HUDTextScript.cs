@@ -7,14 +7,10 @@ public class HUDTextScript : MonoBehaviour
 {
     [SerializeField] Text[] presenceTextArr;
     [SerializeField] Text[] resistTextArr;
-
-    private int healthValue;
-    private int attackValue;
-    private bool temp;
-
     [SerializeField]
     private GameObject[] characterPortrait;
-    
+    private int healthValue;
+    private int attackValue;    
     public static bool isVisible;
 
     // Use this for initialization
@@ -30,19 +26,7 @@ public class HUDTextScript : MonoBehaviour
     }
 
     void UpdateText()
-    {       
-       /* foreach (var item in Board.possibleMoveableChars)
-        {
-            for (int i = 0; i < Board.possibleMoveableChars.Length; i++)
-            {
-                healthValue = Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().health;
-                presenceTextArr[i].text = healthValue.ToString();
-
-                attackValue = Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().damage;
-                resistTextArr[i].text = attackValue.ToString();                   
-            }
-        }*/
-
+    {    
         if(!DialoguePanelManager.playerControlsLocked && !TutorialCards.isTutorialRunning)
         {
             for(int i = 0; i < characterPortrait.Length; i++)

@@ -32,4 +32,9 @@ public class EndturnController : MonoBehaviour, IPointerEnterHandler, IPointerEx
             transform.GetComponent<Image>().enabled = false;
         }                 
     }
+    public void OnPointerDown(PointerEventData pointerEventData)
+    {
+        isInteractable = true;
+        transform.GetComponent<Image>().enabled = true;
+    }
 }
