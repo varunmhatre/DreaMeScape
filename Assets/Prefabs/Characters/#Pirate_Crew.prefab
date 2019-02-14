@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23841827095298382}
   - component: {fileID: 65235228475624612}
   - component: {fileID: 3590840056170152912}
+  - component: {fileID: 5566488666859369226}
   m_Layer: 9
   m_Name: '#Pirate_Crew'
   m_TagString: Enemy
@@ -109,6 +110,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
+--- !u!114 &5566488666859369226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005522361513020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f409edcba3aff46835126793293377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 8
+  damage: 2
+  presence: 3
+  isEncumbered: 0
+  isEnemy: 1
 --- !u!1 &1149869578562094
 GameObject:
   m_ObjectHideFlags: 0
