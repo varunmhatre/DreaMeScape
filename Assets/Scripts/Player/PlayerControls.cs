@@ -48,13 +48,11 @@ public class PlayerControls : MonoBehaviour
         {
             ToggleStatVisibility();
         }
+
+        MouseClickToggle();
     }
 
-            mouseClickToggle();
-        }
-    }
-
-    public void mouseClickToggle()
+    public void MouseClickToggle()
     {
         mouseClick = !mouseClick;
     }

@@ -21,7 +21,7 @@ public class RaycastManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
             hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
 
-            GetComponent<PlayerControls>().mouseClickToggle();
+            GetComponent<PlayerControls>().MouseClickToggle();
         }         
     }
 
@@ -30,11 +30,14 @@ public class RaycastManager : MonoBehaviour
     {
         RaycastHit hit = new RaycastHit();
 
-        for (int i = 0; i < hitTargets.Length; i++)
+        if (hitTargets != null)
         {
-            if (hitTargets[i].transform.tag == tag)
+            for (int i = 0; i < hitTargets.Length; i++)
             {
-                hit = hitTargets[i];
+                if (hitTargets[i].transform.tag == tag)
+                {
+                    hit = hitTargets[i];
+                }
             }
         }
 
