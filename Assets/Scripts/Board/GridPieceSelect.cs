@@ -41,9 +41,9 @@ public class GridPieceSelect : MonoBehaviour
                 if (playerMov[i, j] > 0)
                 {
                     GameObject neighborPiece = GameObject.Find("GridX" + (playerGridPiece[0] + (j - x)) + "Y" + (playerGridPiece[1] + (i - y)));
-                    if (neighborPiece && !neighborPiece.GetComponent<GridPiece>().isOccupied)
+                    if (neighborPiece)
                     {
-                        if (toHighlight)
+                        if (toHighlight && !neighborPiece.GetComponent<GridPiece>().isOccupied)
                         {
                             neighborPiece.GetComponent<GridPieceHighlight>().highlightPiece();
                         }
