@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyTextEnable : MonoBehaviour
+public class EnableObjects : MonoBehaviour
 {
     [SerializeField]
-    private GameObject energyText;
-
-    [SerializeField]
-    private GameObject controlButton;
+    private GameObject[] size;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +16,17 @@ public class EnergyTextEnable : MonoBehaviour
     {
         if(!DialoguePanelManager.playerControlsLocked && !TutorialCards.isTutorialRunning)
         {
-            energyText.SetActive(true);
-            controlButton.SetActive(true);
+            for(int i = 0; i < size.Length; i++)
+            {
+                size[i].SetActive(true);
+            }            
         }
         else
         {
-            energyText.SetActive(false);
-            controlButton.SetActive(false);
+            for (int i = 0; i < size.Length; i++)
+            {
+                size[i].SetActive(false);
+            }
         }
     }
 }
