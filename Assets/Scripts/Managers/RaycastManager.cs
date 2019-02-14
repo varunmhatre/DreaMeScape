@@ -16,7 +16,7 @@ public class RaycastManager : MonoBehaviour
     void FixedUpdate()
     {        
         //Update hit when you click the primary mouse button
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
             hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
@@ -24,7 +24,7 @@ public class RaycastManager : MonoBehaviour
     }
 
     //Get the last hit Raycast for provided tag
-    public RaycastHit getRaycastHitForTag(string tag)
+    public RaycastHit GetRaycastHitForTag(string tag)
     {
         RaycastHit hit = new RaycastHit();
 

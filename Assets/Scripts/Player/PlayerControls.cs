@@ -14,7 +14,6 @@ public class PlayerControls : MonoBehaviour
     {
         selectedUnitName = "NoUnitSelected";
         lastSelectedUnitName = "NoUnitSelected";
-
     }
 
     // Update is called once per frame
@@ -23,10 +22,10 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            moveOnClickedGridPiece();
+            MoveOnClickedGridPiece();
 
             //Populates selectedUnitName and selectedUnit
-            getPlayer();
+            GetPlayer();
 
             if (piecesHighlighted)
             {
@@ -40,14 +39,19 @@ public class PlayerControls : MonoBehaviour
                 piecesHighlighted = true;
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            ToggleStatVisibility();
+        }
     }
 
-    public string getSelectedUnitName()
+    public string GetSelectedUnitName()
     {
         return selectedUnitName;
     }
 
-    private void moveOnClickedGridPiece()
+    private void MoveOnClickedGridPiece()
     {
         int[] moveCoords = gameObject.GetComponent<GridPieceSelect>().getGridPieceCoordsOnClick();
         GameObject moveLoc = GameObject.Find("GridX" + moveCoords[0] + "Y" + moveCoords[1]);
@@ -63,10 +67,10 @@ public class PlayerControls : MonoBehaviour
     //Store the transform of the selected player
     //Pull the player name substring from the GameObject name
     //If we click on anything that's not a player, we unselect the last selected player
-    private void getPlayer()
+    private void GetPlayer()
     {
         lastSelectedUnitName = selectedUnitName;
-        RaycastHit hit = GetComponent<RaycastManager>().getRaycastHitForTag("Player");
+        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
         if (hit.transform != null)
         {
             selectedUnit = hit.transform;
@@ -78,6 +82,38 @@ public class PlayerControls : MonoBehaviour
             selectedUnitName = "NoUnitSelected";
         }
 
+    }
+
+    private void ToggleStatVisibility()
+    {
+        Transform clickedUnit = null;
+        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+        if (hit.transform == null)
+        {
+            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
+        }
+        if (hit.transform == null)
+        {
+            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("PirateBoss");
+        }
+        if (hit.transform != null)
+        {
+            clickedUnit = hit.transform;
+
+            Debug.Log(clickedUnit);
+
+            //find the objects and their children
+            GameObject presenceObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiPresenceObject;
+            GameObject presenceObjChild = presenceObj.transform.GetChild(0).gameObject;
+            GameObject resistObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiResistObject;
+            GameObject resistObjChild = resistObj.transform.GetChild(0).gameObject;
+            //set the parents to be the opposite of what they are
+            presenceObj.SetActive(!presenceObj.activeSelf);
+            resistObj.SetActive(!resistObj.activeSelf);
+            //set the children to be equal to their parent
+            presenceObjChild.SetActive(presenceObj.activeSelf);
+            resistObjChild.SetActive(resistObj.activeSelf);
+        }
     }
 
 }

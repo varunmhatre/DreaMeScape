@@ -17,5 +17,10 @@ public class FaceCamera : ComponentSystem
         {
             item.unitRotation.SetLocalRotation(cameraRotation);
         }
+        foreach (var item in GameObject.FindGameObjectsWithTag("GridRotater"))
+        {
+            UnitRotation rot = item.GetComponent<UnitRotation>();
+            rot.SetLocalRotation(cameraRotation);
+        }
     }
 }
