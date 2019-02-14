@@ -26,7 +26,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
 
     void PlaceCharacters()
     {
-        int[] array = { 3, 5, 2, 5, 1, 4, 2, 3, 7, 2 };
+        int[] array = { 3, 5, 2, 5, 1, 4, 2, 3, 3, 3 };
         for (int arrayIndex = 0; arrayIndex < characters.Count; arrayIndex++)
         {
             for (int i = 0; i < transform.childCount; i++)

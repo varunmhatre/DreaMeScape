@@ -13,13 +13,15 @@ public class RaycastManager : MonoBehaviour
     }
 
     // FixedUpdate so that it occurs before Updates that require Raycast to be completed
-    void FixedUpdate()
+    void Update()
     {        
         //Update hit when you click the primary mouse button
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
             hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
+
+            GetComponent<PlayerControls>().mouseClickToggle();
         }         
     }
 

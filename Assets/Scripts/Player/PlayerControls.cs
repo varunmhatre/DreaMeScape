@@ -9,6 +9,9 @@ public class PlayerControls : MonoBehaviour
     private string lastSelectedUnitName;
     private Transform selectedUnit;
     private bool piecesHighlighted;
+    private int[] playerLoc;
+    private bool mouseClick;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (mouseClick)
         {
 
             MoveOnClickedGridPiece();
@@ -33,6 +36,7 @@ public class PlayerControls : MonoBehaviour
                 piecesHighlighted = false;
             }
 
+
             if (selectedUnit)
             {
                 gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight : true);
@@ -44,6 +48,15 @@ public class PlayerControls : MonoBehaviour
         {
             ToggleStatVisibility();
         }
+    }
+
+            mouseClickToggle();
+        }
+    }
+
+    public void mouseClickToggle()
+    {
+        mouseClick = !mouseClick;
     }
 
     public string GetSelectedUnitName()
@@ -59,7 +72,9 @@ public class PlayerControls : MonoBehaviour
         if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted)
         {
             Debug.Log(moveLoc.transform.position);
+            GameObject.Find("GridX" + playerLoc[0] + "Y" + playerLoc[1]).GetComponent<GridPiece>().unit = null;
             selectedUnit.position = moveLoc.transform.position;
+            moveLoc.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
         }
     }
 
@@ -73,6 +88,7 @@ public class PlayerControls : MonoBehaviour
         RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
         if (hit.transform != null)
         {
+            playerLoc = gameObject.GetComponent<GridPieceSelect>().getGridPieceCoordsOnClick();
             selectedUnit = hit.transform;
             selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
         }
