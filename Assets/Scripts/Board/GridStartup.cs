@@ -26,14 +26,12 @@ public class GridStartup : MonoBehaviour {
 
     void CreateGrid()
     {
-        GridMatrix.gameGrid = new GameObject[maxX, maxY];
-
         Vector3 placementOrigin = Vector3.zero;
         Vector3 directionVector = -Vector3.up;
 
         //LayerMasking every component
         int layerMask = LayerMask.GetMask("GridArea");
-
+        GameObject gameObject;
         for (int x = 0; x < maxX; x++)
         {
             for (int y = 0; y < maxY; y++)
@@ -43,18 +41,18 @@ public class GridStartup : MonoBehaviour {
                 RaycastHit hit;
                 if (Physics.Raycast(placementOrigin, directionVector, out hit, Mathf.Infinity, layerMask))
                 {
-                    GridMatrix.gameGrid[x, y] = Instantiate(gridPrefab, hit.point, Quaternion.identity, transform);
+                    gameObject = Instantiate(gridPrefab, hit.point, Quaternion.identity, transform);
                 }
                 else
                 {
-                    GridMatrix.gameGrid[x, y] = Instantiate(gridPrefab, placementOrigin, Quaternion.identity, transform);
-                    GridMatrix.gameGrid[x, y].GetComponent<MeshRenderer>().enabled = false;
-                    GridMatrix.gameGrid[x, y].GetComponent<BoxCollider>().enabled = false;
-                    GridMatrix.gameGrid[x, y].GetComponent<GridPiece>().isDead = true;
+                    gameObject = Instantiate(gridPrefab, placementOrigin, Quaternion.identity, transform);
+                    gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    gameObject.GetComponent<GridPiece>().isDead = true;
                 }
-                GridMatrix.gameGrid[x, y].name = "GridX" + x + "Y" + y;
-                GridMatrix.gameGrid[x, y].GetComponent<GridCoordinates>().x = x;
-                GridMatrix.gameGrid[x, y].GetComponent<GridCoordinates>().y = y;
+                gameObject.name = "GridX" + x + "Y" + y;
+                gameObject.GetComponent<GridCoordinates>().x = x;
+                gameObject.GetComponent<GridCoordinates>().y = y;
             }
         }
     }

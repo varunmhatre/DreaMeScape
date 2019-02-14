@@ -6,12 +6,12 @@ public class CannonCrossbarController : MonoBehaviour
 {
     [SerializeField] public Texture2D mouseTarget;
 
-    void EnableCrossBar()
+    public void EnableCrossBar()
     {
         Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.Auto);
     }
 
-    void DisableCrossBar()
+    public void DisableCrossBar()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
