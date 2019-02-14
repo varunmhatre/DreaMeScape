@@ -22,7 +22,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mouseClick)
+        if (mouseClick && GetComponent<GameManager>().isPlayerTurn)
         {
 
             MoveOnClickedGridPiece();
@@ -67,12 +67,12 @@ public class PlayerControls : MonoBehaviour
         int[] moveCoords = gameObject.GetComponent<GridPieceSelect>().getGridPieceCoordsOnClick();
         GameObject moveLoc = GameObject.Find("GridX" + moveCoords[0] + "Y" + moveCoords[1]);
 
-        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted)
+        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GetComponent<GameManager>().HaveEnergy())
         {
-            Debug.Log(moveLoc.transform.position);
             GameObject.Find("GridX" + playerLoc[0] + "Y" + playerLoc[1]).GetComponent<GridPiece>().unit = null;
             selectedUnit.position = moveLoc.transform.position;
             moveLoc.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
+            GetComponent<GameManager>().ReduceEnergy();
         }
     }
 

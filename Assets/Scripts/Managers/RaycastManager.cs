@@ -21,7 +21,8 @@ public class RaycastManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
             hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
 
-            GetComponent<PlayerControls>().MouseClickToggle();
+            GetComponent<PlayerControls>().mouseClickToggle();
+            GameObject.Find("CannonHandler").GetComponent<CannonSystem>().mouseClickToggle();
         }         
     }
 

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CannonSystem : MonoBehaviour
 {
+
+    private bool mouseClick;
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (mouseClick)
         {
             if (CannonStaticVariables.isCannonSelected)
             {
@@ -14,7 +17,14 @@ public class CannonSystem : MonoBehaviour
                 CannonStaticVariables.CannonUnSelected();
             }
             SelectCannon();
+
+            mouseClickToggle();
         }
+    }
+
+    public void mouseClickToggle()
+    {
+        mouseClick = !mouseClick;
     }
 
     void SelectCannon()
