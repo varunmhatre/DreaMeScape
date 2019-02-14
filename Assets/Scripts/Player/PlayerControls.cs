@@ -62,7 +62,7 @@ public class PlayerControls : MonoBehaviour
         int[] moveCoords = gameObject.GetComponent<GridPieceSelect>().getGridPieceCoordsOnClick();
         GameObject moveLoc = GameObject.Find("GridX" + moveCoords[0] + "Y" + moveCoords[1]);
 
-        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted)
+        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GetComponent<GameManager>().HaveEnergy())
         {
             GameObject.Find("GridX" + playerLoc[0] + "Y" + playerLoc[1]).GetComponent<GridPiece>().unit = null;
             selectedUnit.position = moveLoc.transform.position;

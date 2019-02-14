@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int totalEnergy;
 
     private int currentEnergy;
-    private bool isPlayerTurn;
+    public bool isPlayerTurn;
 
     // Start is called before the first frame update
     void Start()
@@ -27,24 +27,25 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void refreshCurrentEnergy()
+    public void RefreshCurrentEnergy()
     {
         currentEnergy = totalEnergy;
     }
 
-    public void reduceEnergy()
+    public void ReduceEnergy()
     {
         if (currentEnergy > 0)
         {
             currentEnergy--;
         }
-        else
-        {
-            isPlayerTurn = false;
-        }
+    }
+
+    public bool HaveEnergy()
+    {
+        return currentEnergy > 0;
     }
 
     public bool IsPlayerTurn()
