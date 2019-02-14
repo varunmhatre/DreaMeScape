@@ -12,22 +12,42 @@ public class HUDTextScript : MonoBehaviour
     private int healthValue;
     private int attackValue;    
     public static bool isVisible;
-
+    [SerializeField] RectTransform[] dreamMeterBarArr;
+    private float startingWidth;
+    private int meterValue;
+    private bool temp;
     // Use this for initialization
     void Start ()
     {
-       
+        if (dreamMeterBarArr[0] != null)
+        {
+            startingWidth = dreamMeterBarArr[0].rect.width;
+        }
+
+        for (int i = 0; i < dreamMeterBarArr.Length; i++)
+        {
+            dreamMeterBarArr[i].sizeDelta = new Vector2(0.0f, dreamMeterBarArr[i].rect.height);
+        }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {       
-        UpdateText();        
+        UpdateText();
+        UpdateMeter();
     }
 
     void UpdateText()
-    {    
-        if(!DialoguePanelManager.playerControlsLocked && !TutorialCards.isTutorialRunning)
+    {
+        /*for (int i = 0; i < Board.possibleMoveableChars.Length; i++)
+        {
+            attackValue = Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().damage;
+            presenceTextArr[i].text = attackValue.ToString();
+
+            healthValue = Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().health;
+            resistTextArr[i].text = healthValue.ToString();
+        }*/
+        if (!DialoguePanelManager.playerControlsLocked && !TutorialCards.isTutorialRunning)
         {
             for(int i = 0; i < characterPortrait.Length; i++)
             {
@@ -41,5 +61,14 @@ public class HUDTextScript : MonoBehaviour
                 characterPortrait[i].SetActive(false);
             }
         }
+    }
+    void UpdateMeter()
+    {
+       /* for (int i = 0; i < Board.possibleMoveableChars.Length; i++)
+        {
+            meterValue = Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().meterUnitsFilled;
+            dreamMeterBarArr[i].sizeDelta = new Vector2(startingWidth * meterValue / Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().maxMeter, dreamMeterBarArr[i].rect.height);
+            dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 2, dreamMeterBarArr[i].rect.width);
+        }*/
     }
 }

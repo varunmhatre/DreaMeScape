@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 65235228475624612}
   - component: {fileID: 3590840056170152912}
   - component: {fileID: 5566488666859369226}
+  - component: {fileID: 9004187157623655000}
   m_Layer: 9
   m_Name: '#Pirate_Crew'
   m_TagString: Enemy
@@ -127,6 +128,20 @@ MonoBehaviour:
   presence: 3
   isEncumbered: 0
   isEnemy: 1
+--- !u!114 &9004187157623655000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005522361513020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb248eae42efdb04c91cc6ff5d5b4ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  presenceValue: {fileID: 1590191265046264}
+  attackValue: {fileID: 1978429140124236}
 --- !u!1 &1149869578562094
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +450,7 @@ GameObject:
   - component: {fileID: 4406308278732470}
   - component: {fileID: 23116984816897058}
   - component: {fileID: 102639950482770328}
+  - component: {fileID: 5707478959002650154}
   m_Layer: 9
   m_Name: Value
   m_TagString: Presence
@@ -515,6 +531,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &5707478959002650154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590191265046264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 2
 --- !u!1 &1852947560284858
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +647,7 @@ GameObject:
   - component: {fileID: 4980381792115218}
   - component: {fileID: 23063992051689548}
   - component: {fileID: 102495451176927698}
+  - component: {fileID: 970142034080575434}
   m_Layer: 9
   m_Name: Value
   m_TagString: Resist
@@ -698,3 +728,16 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &970142034080575434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978429140124236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 4

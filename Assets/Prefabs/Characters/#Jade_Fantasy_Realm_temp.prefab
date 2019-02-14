@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4294436083911640}
   - component: {fileID: 136626439936959738}
   - component: {fileID: 8400446053569639359}
+  - component: {fileID: 278363303345413035}
   m_Layer: 8
   m_Name: '#Jade_Fantasy_Realm_temp'
   m_TagString: Player
@@ -67,6 +68,20 @@ MonoBehaviour:
   presence: 0
   isEncumbered: 0
   isEnemy: 0
+--- !u!114 &278363303345413035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004241752199634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb248eae42efdb04c91cc6ff5d5b4ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  presenceValue: {fileID: 1369043185569868}
+  attackValue: {fileID: 1760815516882720}
 --- !u!1 &1064420892271248
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +204,7 @@ GameObject:
   - component: {fileID: 4226101692083772}
   - component: {fileID: 23290256238826984}
   - component: {fileID: 102830383939805372}
+  - component: {fileID: 6941026783520439897}
   m_Layer: 8
   m_Name: Value
   m_TagString: Presence
@@ -269,6 +285,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &6941026783520439897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369043185569868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 2
 --- !u!1 &1581971038881714
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +469,7 @@ GameObject:
   - component: {fileID: 4870195191550202}
   - component: {fileID: 23704845013502330}
   - component: {fileID: 102193220076862306}
+  - component: {fileID: 8615435388510486659}
   m_Layer: 8
   m_Name: Value
   m_TagString: Resist
@@ -520,6 +550,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &8615435388510486659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760815516882720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 4
 --- !u!1 &1793467070284282
 GameObject:
   m_ObjectHideFlags: 0

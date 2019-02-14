@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 65508460898467686}
   - component: {fileID: 2886812673504510298}
   - component: {fileID: 2664741095685880707}
+  - component: {fileID: 4509467305457466444}
+  - component: {fileID: 4390818963015280262}
   m_Layer: 9
   m_Name: '#Pirate_Captain'
   m_TagString: PirateBoss
@@ -127,6 +129,33 @@ MonoBehaviour:
   presence: 4
   isEncumbered: 0
   isEnemy: 1
+--- !u!114 &4509467305457466444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177191238569498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb248eae42efdb04c91cc6ff5d5b4ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  presenceValue: {fileID: 1181089732719746}
+  attackValue: {fileID: 1327967462865806}
+--- !u!114 &4390818963015280262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177191238569498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 0
 --- !u!1 &1181089732719746
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +167,7 @@ GameObject:
   - component: {fileID: 4446987348908440}
   - component: {fileID: 23244998542019996}
   - component: {fileID: 102133676880972512}
+  - component: {fileID: 8269139391195533992}
   m_Layer: 9
   m_Name: Value
   m_TagString: Presence
@@ -218,6 +248,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &8269139391195533992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181089732719746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 2
 --- !u!1 &1327967462865806
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +272,7 @@ GameObject:
   - component: {fileID: 4258163306882406}
   - component: {fileID: 23173973273883674}
   - component: {fileID: 102711501736299518}
+  - component: {fileID: 2751581932776736143}
   m_Layer: 9
   m_Name: Value
   m_TagString: Resist
@@ -309,6 +353,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &2751581932776736143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327967462865806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 4
 --- !u!1 &1389910977712744
 GameObject:
   m_ObjectHideFlags: 0

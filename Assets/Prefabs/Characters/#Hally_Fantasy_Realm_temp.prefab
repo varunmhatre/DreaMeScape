@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4877821589269168}
   - component: {fileID: 136731682684400072}
   - component: {fileID: 4142786472820673639}
+  - component: {fileID: 7959371267567303025}
   m_Layer: 8
   m_Name: '#Hally_Fantasy_Realm_temp'
   m_TagString: Player
@@ -67,6 +68,20 @@ MonoBehaviour:
   presence: 0
   isEncumbered: 0
   isEnemy: 0
+--- !u!114 &7959371267567303025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099632027117354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb248eae42efdb04c91cc6ff5d5b4ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  presenceValue: {fileID: 1519046492363298}
+  attackValue: {fileID: 1469482944337208}
 --- !u!1 &1103372154033702
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +173,7 @@ GameObject:
   - component: {fileID: 4217887088823792}
   - component: {fileID: 23595550905042096}
   - component: {fileID: 102510853855939480}
+  - component: {fileID: 2449908938118313528}
   m_Layer: 8
   m_Name: Value
   m_TagString: Resist
@@ -238,6 +254,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &2449908938118313528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469482944337208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 4
 --- !u!1 &1519046492363298
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +278,7 @@ GameObject:
   - component: {fileID: 4545191334074960}
   - component: {fileID: 23783149831225316}
   - component: {fileID: 102506099599751548}
+  - component: {fileID: 2986181848769205794}
   m_Layer: 8
   m_Name: Value
   m_TagString: Presence
@@ -329,6 +359,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &2986181848769205794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519046492363298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 2
 --- !u!1 &1539324171489462
 GameObject:
   m_ObjectHideFlags: 0

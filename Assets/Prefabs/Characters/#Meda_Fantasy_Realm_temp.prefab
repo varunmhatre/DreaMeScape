@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4983474328087922}
   - component: {fileID: 23935534138586494}
   - component: {fileID: 102345925870723736}
+  - component: {fileID: 3008410955070087162}
   m_Layer: 8
   m_Name: Value
   m_TagString: Resist
@@ -91,6 +92,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &3008410955070087162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179842924804012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 4
 --- !u!1 &1314531710186940
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +116,7 @@ GameObject:
   - component: {fileID: 4385626478165618}
   - component: {fileID: 23836421924539194}
   - component: {fileID: 102036997040739796}
+  - component: {fileID: 6171684785084030572}
   m_Layer: 8
   m_Name: Value
   m_TagString: Presence
@@ -182,6 +197,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &6171684785084030572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314531710186940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf721c2b90f03e41812d9efb25adb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialValue: 2
 --- !u!1 &1319786522092248
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +301,7 @@ GameObject:
   - component: {fileID: 4209687209096584}
   - component: {fileID: 136597630464958948}
   - component: {fileID: 455605083893208475}
+  - component: {fileID: 8753135292598776780}
   m_Layer: 8
   m_Name: '#Meda_Fantasy_Realm_temp'
   m_TagString: Player
@@ -329,6 +358,20 @@ MonoBehaviour:
   presence: 0
   isEncumbered: 0
   isEnemy: 0
+--- !u!114 &8753135292598776780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445851507171124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb248eae42efdb04c91cc6ff5d5b4ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  presenceValue: {fileID: 1314531710186940}
+  attackValue: {fileID: 1179842924804012}
 --- !u!1 &1469560358481866
 GameObject:
   m_ObjectHideFlags: 0
