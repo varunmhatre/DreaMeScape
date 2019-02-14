@@ -23,9 +23,8 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mouseClick)
+        if (mouseClick && GetComponent<GameManager>().IsPlayerTurn())
         {
-
             moveOnClickedGridPiece();
 
             //Populates selectedUnitName and selectedUnit
@@ -65,10 +64,10 @@ public class PlayerControls : MonoBehaviour
 
         if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted)
         {
-            Debug.Log(moveLoc.transform.position);
             GameObject.Find("GridX" + playerLoc[0] + "Y" + playerLoc[1]).GetComponent<GridPiece>().unit = null;
             selectedUnit.position = moveLoc.transform.position;
             moveLoc.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
+            GetComponent<GameManager>().reduceEnergy();
         }
     }
 
