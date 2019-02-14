@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7bf8871bff3d83e41b49eaddb727c5a2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Aubrey
+  fontNames:
+  - Aubrey
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9521fab11b7ffc04ca4883b9fd1f96bd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

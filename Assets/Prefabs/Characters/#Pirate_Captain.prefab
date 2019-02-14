@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 33240489094467430}
   - component: {fileID: 23582959480228324}
   - component: {fileID: 65508460898467686}
+  - component: {fileID: 2886812673504510298}
+  - component: {fileID: 2664741095685880707}
   m_Layer: 9
   m_Name: '#Pirate_Captain'
   m_TagString: PirateBoss
@@ -94,6 +96,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2886812673504510298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177191238569498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe4e4bc7e2fdd4a9916ed2f1bf3446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+--- !u!114 &2664741095685880707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177191238569498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f409edcba3aff46835126793293377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 15
+  damage: 3
+  presence: 4
+  isEncumbered: 0
+  isEnemy: 1
 --- !u!1 &1181089732719746
 GameObject:
   m_ObjectHideFlags: 0

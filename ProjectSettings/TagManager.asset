@@ -16,6 +16,7 @@ TagManager:
   - LettersHolderJade
   - LettersHolderHally
   - GridPiece
+  - Cannon
   layers:
   - Default
   - TransparentFX

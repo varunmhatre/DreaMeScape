@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 5afaf48da1080d1459fd0e81f272a661
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Lane - Narrow
+  fontNames:
+  - Lane - Narrow
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b7fec2c248fa782438db1b0cff4847b2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

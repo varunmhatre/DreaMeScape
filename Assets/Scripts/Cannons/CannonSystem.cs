@@ -4,22 +4,46 @@ using UnityEngine;
 
 public class CannonSystem : MonoBehaviour
 {
-    CannonCrossbarController crossbarController;
-    Transform selectedCannon;
-
-    public void CannonSelected(Transform cannon)
+    private void Update()
     {
-        selectedCannon = cannon;
-        crossbarController.EnableCrossBar();
-        cannon.GetComponent<CannonRadius>().HighlightGrids();
-        CannonStaticVariables.isCannonSelected = true;
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (CannonStaticVariables.isCannonSelected)
+            {
+                AttackEnemy();
+                CannonStaticVariables.CannonUnSelected();
+            }
+            SelectCannon();
+        }
     }
 
-    public void CannonUnSelected()
+    void SelectCannon()
     {
-        crossbarController.EnableCrossBar();
-        CannonStaticVariables.isCannonSelected = false;
-        selectedCannon.GetComponent<CannonRadius>().RemoveHighlights();
-        selectedCannon = null;
+        RaycastHit hit = CannonStaticVariables.raycastManager.getRaycastHitForTag("Cannon");
+        if (hit.transform != null && hit.transform.GetComponent<CannonScript>().isChargeLeft)
+        {
+            if (hit.transform.GetComponent<CannonRadius>().CheckIfPlayerAround())
+            {
+                CannonStaticVariables.CannonSelected(hit.transform);
+            }
+        }
+    }
+
+    void AttackEnemy()
+    {
+        RaycastHit hit = CannonStaticVariables.raycastManager.getRaycastHitForTag("Enemy");
+        if (hit.transform != null)
+        {
+            UnitCoordinates enemySpot = hit.transform.GetComponent<UnitCoordinates>();
+            UnitCoordinates cannonSpot = CannonStaticVariables.selectedCannon.GetComponent<UnitCoordinates>();
+            if ((enemySpot.x >= (cannonSpot.x - CannonStaticVariables.cannonRadius) &&
+                    enemySpot.x <= (cannonSpot.x + CannonStaticVariables.cannonRadius)) &&
+                (enemySpot.y >= (cannonSpot.y - CannonStaticVariables.cannonRadius) &&
+                    enemySpot.y <= (cannonSpot.y + CannonStaticVariables.cannonRadius)))
+            {
+                CannonStaticVariables.selectedCannon.Attack();
+                Destroy(hit.transform.gameObject);
+            }
+        }
     }
 }

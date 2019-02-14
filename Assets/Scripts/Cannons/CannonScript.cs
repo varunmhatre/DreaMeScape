@@ -10,7 +10,6 @@ public class CannonScript : MonoBehaviour
     ParticleSystem explosionBlast;
 
     Quaternion rotation;
-    public bool test;
 
     private void Start()
     {
@@ -25,11 +24,6 @@ public class CannonScript : MonoBehaviour
         if (isThisCannonSelected)
         {
             FaceMouse();
-        }
-        if (test)
-        {
-            Attack();
-            test = false;
         }
     }
 
@@ -48,9 +42,7 @@ public class CannonScript : MonoBehaviour
     {
         charge--;
         explosionBlast.Play();
-        //cannonExplosionAnimation.enabled = true;
         cannonExplosionAnimation.SetBool("isPlay", true);
-        Disengage();
     }
 
     void FaceMouse()

@@ -16,4 +16,10 @@ public class UnitCoordinates : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void SetUnitCoordinates(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
 }
