@@ -15,6 +15,8 @@ public class SetupCharactersOnBoard : MonoBehaviour
     [SerializeField] GameObject pirate;
     [SerializeField] GameObject pirateCaptain;
 
+    [SerializeField] GameObject generator;
+    [SerializeField] GameObject generatorHandler;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,33 @@ public class SetupCharactersOnBoard : MonoBehaviour
         int[] array = { 7, 7, 7, 1, 11, 7, 11, 1 };
         int numberOfCannons = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfCannons; arrayIndex++)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
+                if ((piece.x == array[arrayIndex * 2]) && (piece.y == ((array[(arrayIndex * 2) + 1]))))
+                {
+                    Vector3 pos = transform.GetChild(i).position;
+                    pos.y += 0.53f;
+                    Quaternion rotation = Quaternion.identity;
+                    if (piece.y < 4)
+                    {
+                        rotation.y += 180.0f;
+                    }
+                    cannon.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[arrayIndex * 2], array[(arrayIndex * 2) + 1]);
+                    transform.GetChild(i).GetComponent<GridPiece>().unit =
+                        Instantiate(cannon, pos, rotation, cannonHandler);
+                    break;
+                }
+            }
+        }
+    }
+
+    void PlaceGenerators()
+    {
+        int[] array = { 6, 3, 13, 4 };
+        int numberOfGenerators = array.Length / 2;
+        for (int arrayIndex = 0; arrayIndex < numberOfGenerators; arrayIndex++)
         {
             for (int i = 0; i < transform.childCount; i++)
             {
