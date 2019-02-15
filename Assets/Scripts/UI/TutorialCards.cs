@@ -13,9 +13,11 @@ public class TutorialCards : MonoBehaviour {
     bool isEnabled;
     float timer;
     bool lastTutorial;
+    float bloatSpeed;
 
 	// Use this for initialization
 	void Start () {
+        bloatSpeed = 3.0f;
         transform.GetChild(0).GetComponent<Image>().enabled = false;
         transform.GetChild(1).GetComponent<Image>().enabled = false;
         transform.GetChild(2).GetComponent<Button>().enabled = false;
@@ -65,7 +67,7 @@ public class TutorialCards : MonoBehaviour {
                     transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Lets Play!";
                 }
 
-                float timeIncrement = Time.deltaTime * 1.6f;
+                float timeIncrement = Time.deltaTime * bloatSpeed;
                 transform.GetChild(0).localScale += new Vector3(timeIncrement, timeIncrement, timeIncrement);
                 transform.GetChild(1).localScale += new Vector3(timeIncrement, timeIncrement, timeIncrement);
 

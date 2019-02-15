@@ -41,9 +41,9 @@ public class GridPieceSelect : MonoBehaviour
                 if (playerMov[i, j] > 0)
                 {
                     GameObject neighborPiece = GameObject.Find("GridX" + (playerGridPiece[0] + (j - x)) + "Y" + (playerGridPiece[1] + (i - y)));
-                    if (neighborPiece && !neighborPiece.GetComponent<GridPiece>().isOccupied)
+                    if (neighborPiece)
                     {
-                        if (toHighlight)
+                        if (toHighlight && !neighborPiece.GetComponent<GridPiece>().isOccupied)
                         {
                             neighborPiece.GetComponent<GridPieceHighlight>().highlightPiece();
                         }
@@ -60,7 +60,7 @@ public class GridPieceSelect : MonoBehaviour
     public int[] getGridPieceCoordsOnClick()
     {
         int[] coords = { -1, -1 };
-        RaycastHit hit = GetComponent<RaycastManager>().getRaycastHitForTag("GridPiece");
+        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("GridPiece");
         if (hit.transform != null)
         {
             coords[0] = hit.transform.GetComponent<GridCoordinates>().x;

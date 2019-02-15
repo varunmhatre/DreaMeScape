@@ -75,30 +75,18 @@
     },
     {
       "Conversation": 12,
-      "CharacterName": "Ed",
-      "CharacterImage": "Ed",
-      "DialogueText": "…"
-    },
-    {
-      "Conversation": 13,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
       "DialogueText": " I’ll race you to the front of the ship!"
     },
     {
-      "Conversation": 14,
+      "Conversation": 13,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
       "DialogueText": "...and make a lot of alien friends..."
     },
     {
-      "Conversation": 15,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
-      "DialogueText": "Heh, this is silly. But I guess it could be fun. Let’s GO!"
-    },
-    {
-      "Conversation": 16,
+      "Conversation": 14,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "."
