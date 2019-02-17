@@ -22,7 +22,7 @@ public class RaycastManager : MonoBehaviour
             hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
 
             GetComponent<PlayerControls>().MouseClickToggle();
-            GameObject.Find("CannonHandler").GetComponent<CannonSystem>().mouseClickToggle();
+            GameObject.Find("CannonHandler").GetComponent<CannonSystem>().MouseClickToggleCannon();
         }         
     }
 

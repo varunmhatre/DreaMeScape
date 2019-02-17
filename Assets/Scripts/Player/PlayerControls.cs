@@ -22,34 +22,36 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mouseClick && GetComponent<GameManager>().isPlayerTurn)
+        if(DialoguePanelManager.playerControlsUnlocked)
         {
-
-            MoveOnClickedGridPiece();
-
-            //Populates selectedUnitName and selectedUnit
-            GetPlayer();
-
-            if (piecesHighlighted)
+            if (mouseClick && GetComponent<GameManager>().isPlayerTurn)
             {
-                gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
-                piecesHighlighted = false;
+
+                MoveOnClickedGridPiece();
+
+                //Populates selectedUnitName and selectedUnit
+                GetPlayer();
+
+                if (piecesHighlighted)
+                {
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
+                    piecesHighlighted = false;
+                }
+
+
+                if (selectedUnit)
+                {
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true);
+                    piecesHighlighted = true;
+                }
             }
 
-
-            if (selectedUnit)
+            if (Input.GetMouseButtonDown(1))
             {
-                gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight : true);
-                piecesHighlighted = true;
+                ToggleStatVisibility();
             }
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            ToggleStatVisibility();
-        }
-
-        MouseClickToggle();
+            MouseClickToggle();
+        }        
     }
 
     public void MouseClickToggle()
@@ -67,12 +69,12 @@ public class PlayerControls : MonoBehaviour
         int[] moveCoords = gameObject.GetComponent<GridPieceSelect>().getGridPieceCoordsOnClick();
         GameObject moveLoc = GameObject.Find("GridX" + moveCoords[0] + "Y" + moveCoords[1]);
 
-        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GetComponent<GameManager>().HaveEnergy())
+        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
         {
             GameObject.Find("GridX" + playerLoc[0] + "Y" + playerLoc[1]).GetComponent<GridPiece>().unit = null;
             selectedUnit.position = moveLoc.transform.position;
             moveLoc.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
-            GetComponent<GameManager>().ReduceEnergy();
+            GameManager.ReduceEnergy();
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class EndturnController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class EndturnController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     public static bool isInteractable;
 
@@ -15,26 +15,36 @@ public class EndturnController : MonoBehaviour, IPointerEnterHandler, IPointerEx
     }
     void Update()
     {
-        
+        if(!GameManager.HaveEnergy())
+        {
+            transform.GetComponent<Image>().enabled = true;
+        }
+        if(!TutorialCards.isTutorialRunning)
+        {
+            isInteractable = true;
+        }
     } 
-    public void OnClick()
-    {
-        isInteractable = true;
-    }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.GetComponent<Image>().enabled = true;     
+        if(isInteractable)
+        {
+            transform.GetComponent<Image>().enabled = true;
+        }        
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(!isInteractable)
+        if (isInteractable)
         {
             transform.GetComponent<Image>().enabled = false;
         }                 
     }
     public void OnPointerDown(PointerEventData pointerEventData)
     {
-        isInteractable = true;
-        transform.GetComponent<Image>().enabled = true;
+        if(isInteractable)
+        {
+            GameManager.RefreshCurrentEnergy();
+            transform.GetComponent<Image>().enabled = false;
+            isInteractable = false;
+        }
     }
 }

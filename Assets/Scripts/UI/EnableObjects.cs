@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnableObjects : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] size;
+    [SerializeField] private GameObject[] size;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,18 +13,24 @@ public class EnableObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!DialoguePanelManager.playerControlsLocked && !TutorialCards.isTutorialRunning)
+        if(DialoguePanelManager.playerControlsUnlocked && !TutorialCards.isTutorialRunning)
         {
             for(int i = 0; i < size.Length; i++)
             {
-                size[i].SetActive(true);
+                if (size != null)
+                {
+                    size[i].SetActive(true);
+                }                    
             }            
         }
         else
         {
             for (int i = 0; i < size.Length; i++)
             {
-                size[i].SetActive(false);
+                if (size != null)
+                {
+                    size[i].SetActive(false);
+                }
             }
         }
     }

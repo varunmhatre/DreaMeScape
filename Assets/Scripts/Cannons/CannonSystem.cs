@@ -18,11 +18,11 @@ public class CannonSystem : MonoBehaviour
             }
             SelectCannon();
 
-            mouseClickToggle();
+            MouseClickToggleCannon();
         }
     }
 
-    public void mouseClickToggle()
+    public void MouseClickToggleCannon()
     {
         mouseClick = !mouseClick;
     }

@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] public Material highlightMat;
     [SerializeField] public Material normalMat;
-    [SerializeField] private int totalEnergy;
+    [SerializeField] public static int totalEnergy;
 
-    private int currentEnergy;
+    public static int currentEnergy;
     public bool isPlayerTurn;
 
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
             totalEnergy = 7;
         }
 
-        currentEnergy = totalEnergy;
+        RefreshCurrentEnergy();
     }
 
     // Update is called once per frame
@@ -30,12 +30,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void RefreshCurrentEnergy()
+    public static void RefreshCurrentEnergy()
     {
         currentEnergy = totalEnergy;
     }
 
-    public void ReduceEnergy()
+    public static void ReduceEnergy()
     {
         if (currentEnergy > 0)
         {
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool HaveEnergy()
+    public static bool HaveEnergy()
     {
         return currentEnergy > 0;
     }

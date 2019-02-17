@@ -28,13 +28,14 @@ public class HUDTextScript : MonoBehaviour
         {
             dreamMeterBarArr[i].sizeDelta = new Vector2(0.0f, dreamMeterBarArr[i].rect.height);
         }
-    }
-	
+    }	
 	// Update is called once per frame
 	void Update ()
     {       
         UpdateText();
         UpdateMeter();
+
+        //
     }
 
     void UpdateText()
@@ -47,7 +48,7 @@ public class HUDTextScript : MonoBehaviour
             healthValue = Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().health;
             resistTextArr[i].text = healthValue.ToString();
         }*/
-        if (!DialoguePanelManager.playerControlsLocked && !TutorialCards.isTutorialRunning)
+        if (DialoguePanelManager.playerControlsUnlocked && !TutorialCards.isTutorialRunning)
         {
             for(int i = 0; i < characterPortrait.Length; i++)
             {
@@ -70,5 +71,7 @@ public class HUDTextScript : MonoBehaviour
             dreamMeterBarArr[i].sizeDelta = new Vector2(startingWidth * meterValue / Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().maxMeter, dreamMeterBarArr[i].rect.height);
             dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 2, dreamMeterBarArr[i].rect.width);
         }*/
+
+      
     }
 }
