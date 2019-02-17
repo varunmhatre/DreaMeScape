@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2886812673504510298}
   - component: {fileID: 2664741095685880707}
   - component: {fileID: 5987064025009696590}
+  - component: {fileID: 3193364913365068475}
   m_Layer: 9
   m_Name: '#Pirate_Captain'
   m_TagString: PirateBoss
@@ -127,6 +128,8 @@ MonoBehaviour:
   health: 15
   damage: 3
   presence: 4
+  meterUnitsFilled: 0
+  maxMeter: 0
   isEncumbered: 0
   isEnemy: 1
 --- !u!114 &5987064025009696590
@@ -141,10 +144,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba664ce78c0156242bc7162689d38f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPresenceObject: {fileID: 8276071649243743029}
-  uiResistObject: {fileID: 7112541177099831384}
-  uiPresenceValueObj: {fileID: 5348446163380928840}
-  uiResistValueObj: {fileID: 3950036472352384424}
+  uiAttackObject: {fileID: 8276071649243743029}
+  uiHealthObject: {fileID: 7112541177099831384}
+  uiAttackValueObj: {fileID: 5348446163380928840}
+  uiHealthValueObj: {fileID: 3950036472352384424}
+--- !u!114 &3193364913365068475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177191238569498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 12
+  initialAttack: 3
 --- !u!1 &1798306027273804
 GameObject:
   m_ObjectHideFlags: 0

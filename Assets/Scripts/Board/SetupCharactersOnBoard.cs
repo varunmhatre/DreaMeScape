@@ -7,7 +7,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
 {
 
 
-    [SerializeField] List<GameObject> characters = new List<GameObject>();
+    [SerializeField] public List<GameObject> characters = new List<GameObject>();
 
     [SerializeField] GameObject cannon;
     [SerializeField] Transform cannonHandler;
@@ -19,6 +19,10 @@ public class SetupCharactersOnBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CharacterManager.allCharacters = new List<GameObject>();
+        CharacterManager.allAlliedCharacters = new List<GameObject>();
+        CharacterManager.allEnemyCharacters = new List<GameObject>();
+
         PlaceCharacters();
         PlaceCannons();
         PlacePirates();
@@ -36,6 +40,8 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 {
                     transform.GetChild(i).GetComponent<GridPiece>().unit =
                         Instantiate(characters[arrayIndex], transform.GetChild(i).position, Quaternion.identity);
+                    CharacterManager.allAlliedCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                    CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     break;
                 }
             }
@@ -83,6 +89,8 @@ public class SetupCharactersOnBoard : MonoBehaviour
                     pirate.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[arrayIndex * 2], array[(arrayIndex * 2) + 1]);
                     transform.GetChild(i).GetComponent<GridPiece>().unit =
                         Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity);
+                    CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                    CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     break;
                 }
             }

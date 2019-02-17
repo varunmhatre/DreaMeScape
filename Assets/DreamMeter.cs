@@ -21,7 +21,6 @@ public class DreamMeter : MonoBehaviour
             dreamMeterBarArr[i].sizeDelta = new Vector2(0.0f, dreamMeterBarArr[i].rect.height);
         }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -29,11 +28,13 @@ public class DreamMeter : MonoBehaviour
     }
     void UpdateMeter()
     {
-        /* for (int i = 0; i < Board.possibleMoveableChars.Length; i++)
-         {
-             meterValue = Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().meterUnitsFilled;
-             dreamMeterBarArr[i].sizeDelta = new Vector2(startingWidth * meterValue / Board.possibleMoveableChars[i].thePiece.GetComponent<Stats>().maxMeter, dreamMeterBarArr[i].rect.height);
-             dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 2, dreamMeterBarArr[i].rect.width);
-         }*/
+        for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
+        {
+            meterValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().meterUnitsFilled;
+
+
+            dreamMeterBarArr[i].sizeDelta = new Vector2(startingWidth * meterValue / CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().maxMeter, dreamMeterBarArr[i].rect.height);
+            dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 2, dreamMeterBarArr[i].rect.width);
+        }
     }
 }

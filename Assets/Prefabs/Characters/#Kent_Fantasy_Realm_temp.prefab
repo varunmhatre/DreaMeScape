@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4964885027249370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kent Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4515649314270814}
   - component: {fileID: 33406858470119138}
   - component: {fileID: 23476141302052430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,9 +118,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4823822571576702}
-  m_Layer: 0
+  - component: {fileID: 7678709125484212705}
+  - component: {fileID: 307166135404467785}
+  - component: {fileID: 3161083261242561017}
+  - component: {fileID: 5889785409903405484}
+  m_Layer: 8
   m_Name: '#Kent_Fantasy_Realm_temp'
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,13 +140,76 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 9031100968298811435}
   - {fileID: 5479067809341197543}
+  - {fileID: 9031100968298811435}
   - {fileID: 2010067640921199436}
   - {fileID: 3778953698605757587}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7678709125484212705
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564457944671518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &307166135404467785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564457944671518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f409edcba3aff46835126793293377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 8
+  damage: 2
+  presence: 0
+  meterUnitsFilled: 3
+  maxMeter: 5
+  isEncumbered: 0
+  isEnemy: 0
+--- !u!114 &3161083261242561017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564457944671518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba664ce78c0156242bc7162689d38f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiAttackObject: {fileID: 8885215218645793852}
+  uiHealthObject: {fileID: 5255486569376678846}
+  uiAttackValueObj: {fileID: 8357429442810131400}
+  uiHealthValueObj: {fileID: 4738997413214351561}
+--- !u!114 &5889785409903405484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564457944671518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 8
+  initialAttack: 2
 --- !u!1 &1675767865263438
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +221,7 @@ GameObject:
   - component: {fileID: 4173591909742482}
   - component: {fileID: 33403605678515154}
   - component: {fileID: 23774850180519350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +298,7 @@ GameObject:
   - component: {fileID: 4947701891610562}
   - component: {fileID: 33499230909644018}
   - component: {fileID: 23025230400546908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword. Gems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +393,7 @@ Transform:
   m_LocalScale: {x: 0.29999998, y: 0.3000001, z: 0.3000001}
   m_Children: []
   m_Father: {fileID: 4823822571576702}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &8706576668150846755
 SpriteRenderer:
@@ -463,7 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9031100968298811435}
   - component: {fileID: 5856582254797605986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Whole_Kent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +551,7 @@ Transform:
   - {fileID: 4173591909742482}
   - {fileID: 4964885027249370}
   m_Father: {fileID: 4823822571576702}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!114 &5856582254797605986
 MonoBehaviour:

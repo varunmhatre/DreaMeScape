@@ -4,10 +4,29 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    [SerializeField] int health;
-    [SerializeField] int damage;
+    [SerializeField] public int health;
+    [SerializeField] public int damage;
     [SerializeField] int presence;
+
+    public int meterUnitsFilled;
+    [SerializeField] public int maxMeter;
 
     public bool isEncumbered;
     public bool isEnemy;
+
+
+    public void GainMeter(int amt)
+    {
+        
+        meterUnitsFilled += amt;
+        if (meterUnitsFilled > maxMeter)
+        {
+            meterUnitsFilled = maxMeter;
+        }
+    }
+
+    public void EmptyMeter()
+    {
+        meterUnitsFilled = 0;
+    }
 }

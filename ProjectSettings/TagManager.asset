@@ -18,6 +18,7 @@ TagManager:
   - GridPiece
   - Cannon
   - GridRotater
+  - Control
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIText : MonoBehaviour
 {
@@ -23,6 +24,6 @@ public class UIText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 136731682684400072}
   - component: {fileID: 4142786472820673639}
   - component: {fileID: 3497847483207723555}
+  - component: {fileID: 6279221586428202368}
   m_Layer: 8
   m_Name: '#Hally_Fantasy_Realm_temp'
   m_TagString: Player
@@ -66,6 +67,8 @@ MonoBehaviour:
   health: 8
   damage: 2
   presence: 0
+  meterUnitsFilled: 2
+  maxMeter: 5
   isEncumbered: 0
   isEnemy: 0
 --- !u!114 &3497847483207723555
@@ -80,10 +83,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba664ce78c0156242bc7162689d38f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPresenceObject: {fileID: 1103372154033702}
-  uiResistObject: {fileID: 1539324171489462}
-  uiPresenceValueObj: {fileID: 1519046492363298}
-  uiResistValueObj: {fileID: 1469482944337208}
+  uiAttackObject: {fileID: 1103372154033702}
+  uiHealthObject: {fileID: 1539324171489462}
+  uiAttackValueObj: {fileID: 1519046492363298}
+  uiHealthValueObj: {fileID: 1469482944337208}
+--- !u!114 &6279221586428202368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099632027117354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 8
+  initialAttack: 2
 --- !u!1 &1103372154033702
 GameObject:
   m_ObjectHideFlags: 0

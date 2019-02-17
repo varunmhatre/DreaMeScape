@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 136626439936959738}
   - component: {fileID: 8400446053569639359}
   - component: {fileID: 6413935986810368859}
+  - component: {fileID: 4016189808243797759}
   m_Layer: 8
   m_Name: '#Jade_Fantasy_Realm_temp'
   m_TagString: Player
@@ -66,6 +67,8 @@ MonoBehaviour:
   health: 8
   damage: 2
   presence: 0
+  meterUnitsFilled: 4
+  maxMeter: 5
   isEncumbered: 0
   isEnemy: 0
 --- !u!114 &6413935986810368859
@@ -80,10 +83,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba664ce78c0156242bc7162689d38f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPresenceObject: {fileID: 3923644730610329981}
-  uiResistObject: {fileID: 6785503860777215170}
-  uiPresenceValueObj: {fileID: 8180491087694601792}
-  uiResistValueObj: {fileID: 6284920258234209843}
+  uiAttackObject: {fileID: 3923644730610329981}
+  uiHealthObject: {fileID: 6785503860777215170}
+  uiAttackValueObj: {fileID: 8180491087694601792}
+  uiHealthValueObj: {fileID: 6284920258234209843}
+--- !u!114 &4016189808243797759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004241752199634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 8
+  initialAttack: 2
 --- !u!1 &1064420892271248
 GameObject:
   m_ObjectHideFlags: 0

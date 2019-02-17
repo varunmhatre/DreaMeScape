@@ -5,7 +5,6 @@
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
       "DialogueText": "Ooooo, I love pirates! Can I be the captain?"
-      /*"FontName": "ComicaRegular"*/
     },
     {
       "Conversation": 1,
@@ -23,7 +22,7 @@
       "Conversation": 3,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": "We attack them! We surround them!"
+      "DialogueText": "Attack them! Surround them!"
     },
     {
       "Conversation": 4,
@@ -67,26 +66,32 @@
       "CharacterImage": "Hally",
       "DialogueText": "Yay! Then I can sail it to outer space!"
     },
-    {
+       {
       "Conversation": 11,
+      "CharacterName": "Meda",
+      "CharacterImage": "Meda",
+      "DialogueText": "One final thing... use WASD to move the camera and L to switch the view."
+    },
+    {
+      "Conversation": 12,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
       "DialogueText": "Is everybody ready? Let's get to the bow of the ship!"
     },
     {
-      "Conversation": 12,
+      "Conversation": 13,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
       "DialogueText": " I’ll race you to the front of the ship!"
     },
     {
-      "Conversation": 13,
+      "Conversation": 14,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
       "DialogueText": "...and make a lot of alien friends..."
     },
     {
-      "Conversation": 14,
+      "Conversation": 15,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "."

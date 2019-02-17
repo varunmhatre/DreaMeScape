@@ -20,10 +20,13 @@ public class RaycastManager : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
             hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
+        }
 
+        if (Input.GetMouseButtonDown(0))
+        {
             GetComponent<PlayerControls>().MouseClickToggle();
             GameObject.Find("CannonHandler").GetComponent<CannonSystem>().MouseClickToggleCannon();
-        }         
+        }
     }
 
     //Get the last hit Raycast for provided tag

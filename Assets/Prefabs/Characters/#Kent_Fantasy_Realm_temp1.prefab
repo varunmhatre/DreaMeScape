@@ -273,8 +273,9 @@ GameObject:
   - component: {fileID: 136521991603015288}
   - component: {fileID: 2492079447489377232}
   - component: {fileID: 6815282835161574068}
+  - component: {fileID: 2596792472818510254}
   m_Layer: 8
-  m_Name: '#Kent_Fantasy_Realm_temp'
+  m_Name: '#Kent_Fantasy_Realm_temp1'
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,6 +328,8 @@ MonoBehaviour:
   health: 8
   damage: 2
   presence: 0
+  meterUnitsFilled: 0
+  maxMeter: 5
   isEncumbered: 0
   isEnemy: 0
 --- !u!114 &6815282835161574068
@@ -341,10 +344,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba664ce78c0156242bc7162689d38f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPresenceObject: {fileID: 4321834682909073148}
-  uiResistObject: {fileID: 2369389060219533340}
-  uiPresenceValueObj: {fileID: 6152510960297044953}
-  uiResistValueObj: {fileID: 5727772489761878472}
+  uiAttackObject: {fileID: 4321834682909073148}
+  uiHealthObject: {fileID: 2369389060219533340}
+  uiAttackValueObj: {fileID: 6152510960297044953}
+  uiHealthValueObj: {fileID: 5727772489761878472}
+--- !u!114 &2596792472818510254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673096372370608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 8
+  initialAttack: 2
 --- !u!1 &2369389060219533340
 GameObject:
   m_ObjectHideFlags: 0

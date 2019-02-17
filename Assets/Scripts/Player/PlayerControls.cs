@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-
     private string selectedUnitName;
     private string lastSelectedUnitName;
-    private Transform selectedUnit;
+    public static Transform selectedUnit;
     private bool piecesHighlighted;
     private int[] playerLoc;
     private bool mouseClick;
@@ -22,11 +21,10 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DialoguePanelManager.playerControlsUnlocked)
+        if (DialoguePanelManager.playerControlsUnlocked)
         {
             if (mouseClick && GetComponent<GameManager>().isPlayerTurn)
             {
-
                 MoveOnClickedGridPiece();
 
                 //Populates selectedUnitName and selectedUnit
@@ -38,20 +36,20 @@ public class PlayerControls : MonoBehaviour
                     piecesHighlighted = false;
                 }
 
-
                 if (selectedUnit)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true);
                     piecesHighlighted = true;
                 }
+
+                MouseClickToggle();
             }
 
             if (Input.GetMouseButtonDown(1))
             {
                 ToggleStatVisibility();
             }
-            MouseClickToggle();
-        }        
+        }
     }
 
     public void MouseClickToggle()
@@ -75,6 +73,11 @@ public class PlayerControls : MonoBehaviour
             selectedUnit.position = moveLoc.transform.position;
             moveLoc.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
             GameManager.ReduceEnergy();
+            Stats characterStats = selectedUnit.gameObject.GetComponent<Stats>();
+            if (characterStats != null)
+            {
+                characterStats.GainMeter(1);
+            }
         }
     }
 
@@ -97,9 +100,7 @@ public class PlayerControls : MonoBehaviour
             selectedUnit = null;
             selectedUnitName = "NoUnitSelected";
         }
-
     }
-
     private void ToggleStatVisibility()
     {
         Transform clickedUnit = null;
@@ -116,12 +117,10 @@ public class PlayerControls : MonoBehaviour
         {
             clickedUnit = hit.transform;
 
-            Debug.Log(clickedUnit);
-
             //find the objects and their children
-            GameObject presenceObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiPresenceObject;
+            GameObject presenceObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiAttackObject;
             GameObject presenceObjChild = presenceObj.transform.GetChild(0).gameObject;
-            GameObject resistObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiResistObject;
+            GameObject resistObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiHealthObject;
             GameObject resistObjChild = resistObj.transform.GetChild(0).gameObject;
             //set the parents to be the opposite of what they are
             presenceObj.SetActive(!presenceObj.activeSelf);
@@ -131,5 +130,15 @@ public class PlayerControls : MonoBehaviour
             resistObjChild.SetActive(resistObj.activeSelf);
         }
     }
+    /*
+    public void IncreaseCharacterMeter(int value, GameObject character)
+    {
+        if(!character.GetComponent<Stats>())
+        {
+            character.GetComponent<Stats>().GainMeter(value);
+        }
+    }
+    */
 
+    
 }
