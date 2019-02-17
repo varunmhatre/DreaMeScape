@@ -1231,6 +1231,11 @@ PrefabInstance:
       propertyPath: cannonHandler
       value: 
       objectReference: {fileID: 421276262}
+    - target: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
+      propertyPath: characters.Array.data[3]
+      value: 
+      objectReference: {fileID: 1564457944671518, guid: b68ed281115e78a428b91b34add8a8ad,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
 --- !u!1001 &1632033592
