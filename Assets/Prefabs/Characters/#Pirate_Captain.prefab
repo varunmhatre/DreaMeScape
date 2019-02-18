@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2664741095685880707}
   - component: {fileID: 5987064025009696590}
   - component: {fileID: 3193364913365068475}
+  - component: {fileID: 3325050303587920848}
   m_Layer: 9
   m_Name: '#Pirate_Captain'
   m_TagString: PirateBoss
@@ -111,8 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fe4e4bc7e2fdd4a9916ed2f1bf3446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
+  x: -10
+  y: -10
 --- !u!114 &2664741095685880707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +163,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 12
   initialAttack: 3
+  alt: 0
+--- !u!114 &3325050303587920848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177191238569498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03eb9e4b3e048f42aaac7043d406d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1798306027273804
 GameObject:
   m_ObjectHideFlags: 0

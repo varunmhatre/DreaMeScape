@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 2492079447489377232}
   - component: {fileID: 6815282835161574068}
   - component: {fileID: 2596792472818510254}
+  - component: {fileID: 1651914349455986567}
   m_Layer: 8
   m_Name: '#Kent_Fantasy_Realm_temp1'
   m_TagString: Player
@@ -362,6 +363,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 8
   initialAttack: 2
+  alt: 0
+--- !u!114 &1651914349455986567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673096372370608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe4e4bc7e2fdd4a9916ed2f1bf3446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -10
+  y: -10
 --- !u!1 &2369389060219533340
 GameObject:
   m_ObjectHideFlags: 0

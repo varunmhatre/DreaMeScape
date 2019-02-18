@@ -43,6 +43,7 @@ public class EndturnController : MonoBehaviour, IPointerEnterHandler, IPointerEx
         if(isInteractable)
         {
             GameManager.RefreshCurrentEnergy();
+            GameManager.RefreshCharacters();
             transform.GetComponent<Image>().enabled = false;
             isInteractable = false;
         }

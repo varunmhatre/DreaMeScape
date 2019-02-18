@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GridPieceSelect : MonoBehaviour
 {
-    int[] playerGridPiece;
+    public int[] playerGridPiece;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class GridPieceSelect : MonoBehaviour
     {
         if (toHighlight)
         {
-            playerGridPiece = getGridPieceCoordsOnClick();
+            playerGridPiece = GetGridPieceCoordsOnClick();
         }
 
         int[,] playerMov = PlayerMoveSpaces.Player_Movements[playerName];
@@ -57,7 +57,7 @@ public class GridPieceSelect : MonoBehaviour
         }
     }
     
-    public int[] getGridPieceCoordsOnClick()
+    public int[] GetGridPieceCoordsOnClick()
     {
         int[] coords = { -1, -1 };
         RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("GridPiece");
@@ -69,5 +69,4 @@ public class GridPieceSelect : MonoBehaviour
 
         return coords;
     }
-
 }

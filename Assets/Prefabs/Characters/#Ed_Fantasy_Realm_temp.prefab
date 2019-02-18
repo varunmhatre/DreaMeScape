@@ -608,6 +608,7 @@ GameObject:
   - component: {fileID: 4580748952386191745}
   - component: {fileID: 6439709359283347899}
   - component: {fileID: 1296671384888068144}
+  - component: {fileID: 234934631095483399}
   m_Layer: 8
   m_Name: '#Ed_Fantasy_Realm_temp'
   m_TagString: Player
@@ -662,7 +663,7 @@ MonoBehaviour:
   health: 8
   damage: 2
   presence: 0
-  meterUnitsFilled: 2
+  meterUnitsFilled: 0
   maxMeter: 5
   isEncumbered: 0
   isEnemy: 0
@@ -696,6 +697,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 8
   initialAttack: 2
+  alt: 0
+--- !u!114 &234934631095483399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596011827401411954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe4e4bc7e2fdd4a9916ed2f1bf3446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -10
+  y: -10
 --- !u!1 &7596363654049756512
 GameObject:
   m_ObjectHideFlags: 0

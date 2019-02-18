@@ -26,6 +26,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
         PlaceCharacters();
         PlaceCannons();
         PlacePirates();
+        PlacePirateCaptain();
     }
 
     void PlaceCharacters()
@@ -38,6 +39,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
                 if ((piece.x == array[arrayIndex * 2]) && (piece.y == ((array[(arrayIndex * 2) + 1]))))
                 {
+                    characters[arrayIndex].GetComponent<UnitCoordinates>().SetUnitCoordinates(array[arrayIndex * 2], array[(arrayIndex * 2) + 1]);
                     transform.GetChild(i).GetComponent<GridPiece>().unit =
                         Instantiate(characters[arrayIndex], transform.GetChild(i).position, Quaternion.identity);
                     CharacterManager.allAlliedCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
@@ -77,7 +79,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
 
     void PlacePirates()
     {
-        int[] array = { 16, 7, 16, 1, 11, 6, 11, 2};
+        int[] array = { 16, 7, 11, 6, 11, 2, 6, 7, 6, 1};
         int numberOfPirates = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfPirates; arrayIndex++)
         {
@@ -93,6 +95,25 @@ public class SetupCharactersOnBoard : MonoBehaviour
                     CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     break;
                 }
+            }
+        }
+    }
+
+    void PlacePirateCaptain()
+    {
+        int[] array = { 16, 4 };
+        int numberOfPirates = array.Length / 2;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
+            if ((piece.x == array[0]) && (piece.y == ((array[1]))))
+            {
+                pirateCaptain.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[0], array[1]);
+                transform.GetChild(i).GetComponent<GridPiece>().unit =
+                    Instantiate(pirateCaptain, transform.GetChild(i).position, Quaternion.identity);
+                CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                break;
             }
         }
     }

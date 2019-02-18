@@ -4,7 +4,7 @@ using UnityEngine;
 using Unity.Entities;
 
 public class PirateAI : ComponentSystem
-{
+{    
     private struct pirates
     {
         public PirateCrew pieceData;
@@ -15,7 +15,7 @@ public class PirateAI : ComponentSystem
     {
         foreach (var pirate in GetEntities<pirates>())
         {
-
+            
         }
-    }
+    }    
 }

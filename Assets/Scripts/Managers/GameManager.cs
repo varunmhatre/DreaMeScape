@@ -35,6 +35,14 @@ public class GameManager : MonoBehaviour
         currentEnergy = totalEnergy;
     }
 
+    public static void RefreshCharacters()
+    {
+        for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
+        {
+            CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().hasAttacked = false;
+        }
+    }
+
     public static void ReduceEnergy()
     {
         if (currentEnergy > 0)

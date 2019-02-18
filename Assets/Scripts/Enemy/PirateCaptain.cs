@@ -6,15 +6,16 @@ public class PirateCaptain : MonoBehaviour
 {
     int x;
     int y;
-    int damage;
-    int health;
-    int noOfTurns;
 
     void Start()
     {
-        damage = 3;
-        health = 15;
-        noOfTurns = 5;
+
+    }
+
+    void Update()
+    {
+        gameObject.GetComponent<Stats>().CheckDeath();
+        gameObject.GetComponent<Stats>().UpdateDisplay();
     }
 
     void SetCoordinates(int x, int y)
@@ -22,24 +23,5 @@ public class PirateCaptain : MonoBehaviour
         this.x = x;
         this.y = y;
     }
-
-    public void TakeDamage(int damage)
-    {
-        health = health - damage;
-        if (health <= 0)
-        {
-            //We could effectively pool it too
-            Destroy(gameObject);
-        }
-    }
-
-    public int GetDamage()
-    {
-        return damage;
-    }
-
-    public int GetNumberOfTurns()
-    {
-        return noOfTurns;
-    }
+    
 }
