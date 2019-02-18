@@ -19,6 +19,7 @@ TagManager:
   - Cannon
   - GridRotater
   - Control
+  - Generator
   layers:
   - Default
   - TransparentFX
