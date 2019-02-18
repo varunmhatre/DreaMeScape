@@ -83,4 +83,14 @@ public class StatsTextDisplay : MonoBehaviour
     {
         return attackValue;
     }
+
+    public int GetInitialHealth()
+    {
+        return initialHealth;
+    }
+
+    public int GetInitialAttack()
+    {
+        return initialAttack;
+    }
 }

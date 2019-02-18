@@ -57,5 +57,6 @@ public class Stats : MonoBehaviour
     public void UpdateDisplay()
     {
         gameObject.GetComponent<StatsTextDisplay>().SetHealth(health);
+        gameObject.GetComponent<StatsTextDisplay>().SetAttack(damage);
     }
 }
