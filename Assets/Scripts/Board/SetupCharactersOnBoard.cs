@@ -15,6 +15,8 @@ public class SetupCharactersOnBoard : MonoBehaviour
     [SerializeField] GameObject pirate;
     [SerializeField] GameObject pirateCaptain;
 
+    [SerializeField] GameObject generator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
         PlaceCannons();
         PlacePirates();
         PlacePirateCaptain();
+        PlaceGenerators();
     }
 
     void PlaceCharacters()
@@ -114,6 +117,26 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                 CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                 break;
+            }
+        }
+    }
+
+    void PlaceGenerators()
+    {
+        int[] array = { 4, 1, 13, 4 };
+        int numberOfGenerators = array.Length / 2;
+        for (int arrayIndex = 0; arrayIndex < numberOfGenerators; arrayIndex++)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
+                if ((piece.x == array[arrayIndex * 2]) && (piece.y == ((array[(arrayIndex * 2) + 1]))))
+                {
+                    generator.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[arrayIndex * 2], array[(arrayIndex * 2) + 1]);
+                    transform.GetChild(i).GetComponent<GridPiece>().unit =
+                        Instantiate(generator, transform.GetChild(i).position, Quaternion.identity);
+                    break;
+                }
             }
         }
     }

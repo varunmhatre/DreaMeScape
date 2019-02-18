@@ -53,9 +53,7 @@ public class PlayerControls : MonoBehaviour
                 ToggleStatVisibility();
             }
         }
-
     }
-
     public void MouseClickToggle()
     {
         mouseClick = !mouseClick;
