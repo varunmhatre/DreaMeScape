@@ -17,6 +17,9 @@ TagManager:
   - LettersHolderHally
   - GridPiece
   - Cannon
+  - GridRotater
+  - Control
+  - Generator
   layers:
   - Default
   - TransparentFX

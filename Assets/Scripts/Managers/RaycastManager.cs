@@ -16,26 +16,32 @@ public class RaycastManager : MonoBehaviour
     void Update()
     {        
         //Update hit when you click the primary mouse button
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
             hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
+        }
 
-            GetComponent<PlayerControls>().mouseClickToggle();
-            GameObject.Find("CannonHandler").GetComponent<CannonSystem>().mouseClickToggle();
-        }         
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponent<PlayerControls>().MouseClickToggle();
+            GameObject.Find("CannonHandler").GetComponent<CannonSystem>().MouseClickToggleCannon();
+        }
     }
 
     //Get the last hit Raycast for provided tag
-    public RaycastHit getRaycastHitForTag(string tag)
+    public RaycastHit GetRaycastHitForTag(string tag)
     {
         RaycastHit hit = new RaycastHit();
 
-        for (int i = 0; i < hitTargets.Length; i++)
+        if (hitTargets != null)
         {
-            if (hitTargets[i].transform.tag == tag)
+            for (int i = 0; i < hitTargets.Length; i++)
             {
-                hit = hitTargets[i];
+                if (hitTargets[i].transform.tag == tag)
+                {
+                    hit = hitTargets[i];
+                }
             }
         }
 

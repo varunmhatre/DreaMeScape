@@ -18,18 +18,18 @@ public class CannonSystem : MonoBehaviour
             }
             SelectCannon();
 
-            mouseClickToggle();
+            MouseClickToggleCannon();
         }
     }
 
-    public void mouseClickToggle()
+    public void MouseClickToggleCannon()
     {
         mouseClick = !mouseClick;
     }
 
     void SelectCannon()
     {
-        RaycastHit hit = CannonStaticVariables.raycastManager.getRaycastHitForTag("Cannon");
+        RaycastHit hit = CannonStaticVariables.raycastManager.GetRaycastHitForTag("Cannon");
         if (hit.transform != null && hit.transform.GetComponent<CannonScript>().isChargeLeft)
         {
             if (hit.transform.GetComponent<CannonRadius>().CheckIfPlayerAround())
@@ -41,7 +41,7 @@ public class CannonSystem : MonoBehaviour
 
     void AttackEnemy()
     {
-        RaycastHit hit = CannonStaticVariables.raycastManager.getRaycastHitForTag("Enemy");
+        RaycastHit hit = CannonStaticVariables.raycastManager.GetRaycastHitForTag("Enemy");
         if (hit.transform != null)
         {
             UnitCoordinates enemySpot = hit.transform.GetComponent<UnitCoordinates>();
