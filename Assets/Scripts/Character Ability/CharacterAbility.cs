@@ -15,7 +15,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         amountMeterNeeded = 5;
         isInteractable = false;
-
     }
 
     // Update is called once per frame
