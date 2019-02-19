@@ -75,10 +75,6 @@ public class PirateAI : MonoBehaviour
         timer = 0.0f;
         phase1 = false;
         piratesInProgress = false;
-        foreach (var pirate in pirates)
-        {
-            pirate.GetComponent<Pirate>().isStunned = false;
-        }
         gameManager.isPlayerTurn = true;
     }
 
@@ -89,6 +85,13 @@ public class PirateAI : MonoBehaviour
             ProgressToPlayerTurn();
             return;
         }
+
+        if (pirates[selectedPirate].GetComponent<Pirate>().isStunned)
+        {
+            selectedPirate++;
+            return;
+        }
+
         UnitCoordinates closestPlayer = FindClosestPlayer();
         //Astar to player
         PopulateTheDestination(closestPlayer);
