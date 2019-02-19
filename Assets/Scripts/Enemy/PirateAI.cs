@@ -102,6 +102,20 @@ public class PirateAI : MonoBehaviour
         }
     }
 
+    GridCoordinates GetTheGrid(UnitCoordinates unit)
+    {
+        GridCoordinates unitLocation = new GridCoordinates();
+        foreach (var item in GridMatrix.gameGrid)
+        {
+            if (item.x == unit.x && item.y == unit.y)
+            {
+                unitLocation = item;
+                break;
+            }
+        }
+        return unitLocation;
+    }
+
     void PopulateTheDestination(UnitCoordinates closestPlayer)
     {
         int count = 0;
@@ -109,25 +123,8 @@ public class PirateAI : MonoBehaviour
         UnitCoordinates pirateCoordinate = pirates[selectedPirate].GetComponent<UnitCoordinates>();
         bool canMoveLeft, canMoveRight, canMoveUp, canMoveDown;
 
-        GridCoordinates currentUnitLocaton = new GridCoordinates();
-        foreach (var item in GridMatrix.gameGrid)
-        {
-            if (item.x == pirateCoordinate.x && item.y == pirateCoordinate.y)
-            {
-                currentUnitLocaton = item;
-                break;
-            }
-        }
-
-        GridCoordinates targetUnitLocation = new GridCoordinates();
-        foreach (var item in GridMatrix.gameGrid)
-        {
-            if (item.x == closestPlayer.x && item.y == closestPlayer.y)
-            {
-                targetUnitLocation = item;
-                break;
-            }
-        }
+        GridCoordinates currentUnitLocaton = GetTheGrid(pirateCoordinate);
+        GridCoordinates targetUnitLocation = GetTheGrid(closestPlayer);
 
         GetPriority(currentUnitLocaton, targetUnitLocation);
 
@@ -147,14 +144,7 @@ public class PirateAI : MonoBehaviour
             {
 
             }
-            foreach (var item in GridMatrix.gameGrid)
-            {
-
-
-
-
-
-            }
+            
         }
     }
 
