@@ -75,6 +75,10 @@ public class PirateAI : MonoBehaviour
         timer = 0.0f;
         phase1 = false;
         piratesInProgress = false;
+        foreach (var pirate in pirates)
+        {
+            pirate.GetComponent<Pirate>().isStunned = false;
+        }
         gameManager.isPlayerTurn = true;
     }
 

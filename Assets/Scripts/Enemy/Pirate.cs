@@ -11,7 +11,7 @@ public class Pirate : MonoBehaviour
     }
 
     public int moveCounter;
-    bool isStunned;
+    public bool isStunned;
 
     void Start()
     {
