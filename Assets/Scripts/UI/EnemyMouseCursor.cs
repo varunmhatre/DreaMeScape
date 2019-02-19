@@ -34,4 +34,13 @@ public class EnemyMouseCursor : MonoBehaviour
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
     }
+
+    private void OnDestroy()
+    {
+        if (cursorChanged)
+        {
+            cursorChanged = false;
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
+    }
 }
