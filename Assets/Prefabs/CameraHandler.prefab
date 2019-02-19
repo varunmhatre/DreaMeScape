@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bb56d2cf708d4eb5a6ed7561cd661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMoveSpeed: 5
+  cameraMoveSpeed: 8
   cameraViews:
   - {fileID: 3360379653080031147}
   - {fileID: 3360379654872098613}
@@ -165,7 +165,7 @@ MonoBehaviour:
   vertCap: 5
   zoomOutMax: 18
   zoomInMin: 3
-  scrollSpeed: 1
+  scrollSpeed: 0.7
 --- !u!1 &3360379654872098613
 GameObject:
   m_ObjectHideFlags: 0

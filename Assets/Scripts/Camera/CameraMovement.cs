@@ -140,7 +140,6 @@ public class CameraMovement : MonoBehaviour {
     {
         if (moving)
         {
-            Debug.Log("Moving!");
             if (transform.position != newObjToTakeValues.transform.position || transform.rotation != newObjToTakeValues.transform.rotation)
             {
                 transform.position = Vector3.Lerp(prevObjToTakeValues.transform.position, newObjToTakeValues.transform.position, portionOfJourney);

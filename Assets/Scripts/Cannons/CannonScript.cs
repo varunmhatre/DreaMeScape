@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CannonScript : MonoBehaviour
 {
-    public int charge = 1;
+    public int charge;
     public bool isThisCannonSelected;
     Animator cannonExplosionAnimation;
     ParticleSystem explosionBlast;
@@ -13,6 +13,7 @@ public class CannonScript : MonoBehaviour
 
     private void Start()
     {
+        charge = 1;
         rotation = transform.rotation;
         cannonExplosionAnimation = transform.GetChild(0).GetComponent<Animator>();
         explosionBlast = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();

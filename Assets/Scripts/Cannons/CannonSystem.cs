@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CannonSystem : MonoBehaviour
 {
+
+    private bool mouseClick;
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (mouseClick)
         {
             if (CannonStaticVariables.isCannonSelected)
             {
@@ -14,12 +17,19 @@ public class CannonSystem : MonoBehaviour
                 CannonStaticVariables.CannonUnSelected();
             }
             SelectCannon();
+
+            MouseClickToggleCannon();
         }
+    }
+
+    public void MouseClickToggleCannon()
+    {
+        mouseClick = !mouseClick;
     }
 
     void SelectCannon()
     {
-        RaycastHit hit = CannonStaticVariables.raycastManager.getRaycastHitForTag("Cannon");
+        RaycastHit hit = CannonStaticVariables.raycastManager.GetRaycastHitForTag("Cannon");
         if (hit.transform != null && hit.transform.GetComponent<CannonScript>().isChargeLeft)
         {
             if (hit.transform.GetComponent<CannonRadius>().CheckIfPlayerAround())
@@ -31,7 +41,7 @@ public class CannonSystem : MonoBehaviour
 
     void AttackEnemy()
     {
-        RaycastHit hit = CannonStaticVariables.raycastManager.getRaycastHitForTag("Enemy");
+        RaycastHit hit = CannonStaticVariables.raycastManager.GetRaycastHitForTag("Enemy");
         if (hit.transform != null)
         {
             UnitCoordinates enemySpot = hit.transform.GetComponent<UnitCoordinates>();
