@@ -934,6 +934,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7786937100721687587, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786937100721687587, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786937100721687587, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786937100721687587, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1818709916}
     m_RemovedComponents:
     - {fileID: 3283651953970839273, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}
     - {fileID: 1614255840452445264, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}
@@ -1356,6 +1376,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f08902402959148b53a8c78adc21ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1818709916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7580717716601801732, guid: 058a87112e1a79047a44b1cbba485b50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1085766348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1888378606 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5565395466458644952, guid: 058a87112e1a79047a44b1cbba485b50,
