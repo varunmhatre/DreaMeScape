@@ -15,14 +15,12 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     [SerializeField]
     private string buttonText;
-    public Transform target;
-    public Transform to;
+    //public Transform target;
+    //public Transform to;
 
     private float timeCount = 0.0f;
     private float flipSpeed = 0.0f;
-
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +30,6 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData eventData)
     { 
         transform.GetComponent<Image>().sprite = onSprite;
-       /* Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(to.rotation, lookRotation, Time.deltaTime * flipSpeed).eulerAngles;
-        to.rotation = Quaternion.Euler(0f, rotation.y, 0f);*/
-
-
         transform.GetChild(0).GetComponent<Text>().text = "";
     }
 
