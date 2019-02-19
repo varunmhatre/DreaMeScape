@@ -16,4 +16,10 @@ public class Pirate : MonoBehaviour
     {
         moveCounter = 0;
     }
+
+    void Update()
+    {
+        gameObject.GetComponent<Stats>().CheckDeath();
+        gameObject.GetComponent<Stats>().UpdateDisplay();
+    }
 }
