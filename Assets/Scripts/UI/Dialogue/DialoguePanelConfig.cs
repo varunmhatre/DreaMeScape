@@ -12,7 +12,7 @@ public class DialoguePanelConfig : MonoBehaviour
     private Color maskActiveColor = new Color(103.0f / 255.0f, 101.0f / 255.0f, 101.0f / 255.0f);
     public static bool isDialogueTextOver;
     private int count = 1;
-    public Font[] characterFont;
+    //public Font[] characterFont;
 
     [SerializeField] private Font edsFont;
     [SerializeField] private Font medasFont;

@@ -13,9 +13,11 @@ public class TutorialCards : MonoBehaviour {
     bool isEnabled;
     float timer;
     bool lastTutorial;
+    float bloatSpeed;
 
 	// Use this for initialization
 	void Start () {
+        bloatSpeed = 3.0f;
         transform.GetChild(0).GetComponent<Image>().enabled = false;
         transform.GetChild(1).GetComponent<Image>().enabled = false;
         transform.GetChild(2).GetComponent<Button>().enabled = false;
@@ -35,7 +37,7 @@ public class TutorialCards : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (!isEnabled && !DialoguePanelManager.playerControlsLocked)//!TextManager.playerControlsLocked)
+        if (!isEnabled && DialoguePanelManager.playerControlsUnlocked)//!TextManager.playerControlsLocked)
         {
             isTutorialRunning = true;
             isEnabled = true;
@@ -65,7 +67,7 @@ public class TutorialCards : MonoBehaviour {
                     transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Lets Play!";
                 }
 
-                float timeIncrement = Time.deltaTime * 1.6f;
+                float timeIncrement = Time.deltaTime * bloatSpeed;
                 transform.GetChild(0).localScale += new Vector3(timeIncrement, timeIncrement, timeIncrement);
                 transform.GetChild(1).localScale += new Vector3(timeIncrement, timeIncrement, timeIncrement);
 
@@ -75,7 +77,6 @@ public class TutorialCards : MonoBehaviour {
                 }
                 if (!card2 && transform.GetChild(1).localScale.x >= 2.0f)
                 {
-                    Debug.Log("Enable next button");
                     transform.GetChild(1).localScale = new Vector3(2.0f, 2.0f, 2.0f);
                     transform.GetChild(2).GetComponent<Button>().enabled = true;
                     transform.GetChild(2).GetComponent<Image>().enabled = true;
@@ -89,7 +90,6 @@ public class TutorialCards : MonoBehaviour {
 
     public void NextRound()
     {
-        Debug.Log("Next button pressed");
         transform.GetChild(2).GetChild(0).GetComponent<Text>().enabled = false;
         transform.GetChild(0).GetComponent<Image>().enabled = false;
         transform.GetChild(1).GetComponent<Image>().enabled = false;

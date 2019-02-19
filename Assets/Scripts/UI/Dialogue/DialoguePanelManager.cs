@@ -12,7 +12,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     private bool CharacterActive = true;
     private int stepIndex = -1;
     public static bool isPressed;
-    public static bool playerControlsLocked;
+    public static bool playerControlsUnlocked;
     public static int countDialogueLength;
     [SerializeField] private int maxCountDialogueLength;
 
@@ -23,15 +23,13 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
 
     void Start()
     {
-        // isPressed = true;
-        playerControlsLocked = true;
+        playerControlsUnlocked = false;
         isCharacterPanelDisabled = false;
     }
     public void BootSequence()
     { 
         if(GameObject.Find("CharacterPanel") != null)
         {
-          //  Debug.Log("characterpanel is active");
             characterPanel = GameObject.Find("CharacterPanel").GetComponent<DialoguePanelConfig>();
         }
         
@@ -52,8 +50,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             isPressed = false; 
             if(DialoguePanelConfig.isDialogueTextOver)
             {               
-                UpdatePanelState();
-                
+                UpdatePanelState();                
             }
             BootSequence();
         } 
@@ -64,25 +61,23 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 dialoguePanel.SetActive(false);
                 countDialogueLength = 0;
                 stepIndex = 0;
-                playerControlsLocked = false;
+                playerControlsUnlocked = true;
                 SceneManager.LoadScene("PirateshipScene");
             }
             if (SceneManager.GetActiveScene().buildIndex == 2)
             {
                 
                 dialoguePanel.SetActive(false);
-                playerControlsLocked = false;
+                playerControlsUnlocked = true;
                 isCharacterPanelDisabled = true;
                 countDialogueLength = currentEvent.dialogues.Count;
             }
         }       
         else if (countDialogueLength < currentEvent.dialogues.Count)
         {
-            characterPanel.isTalking = false;
-           
-            playerControlsLocked = true;
+            characterPanel.isTalking = false;           
+            playerControlsUnlocked = false;
         }
-        //Debug.Log("countDialogueLength:     " + countDialogueLength);
     }
     private void InitiziliasePanels()
     { 
@@ -93,18 +88,13 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             countDialogueLength++;
             characterPanel.Configure(currentEvent.dialogues[stepIndex]);
             CharacterActive = !CharacterActive;
-        }
-       
+        }       
     }
     private void ConfigurePanels()
     {
         if(CharacterActive)
         {
             characterPanel.Configure(currentEvent.dialogues[stepIndex]);
-        }
-        else
-        {
-            
         }
     }
     void UpdatePanelState()
@@ -116,10 +106,6 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             CharacterActive = !CharacterActive;
 
             stepIndex++;             
-        }
-        else
-        {
-            
         }
     }
 }

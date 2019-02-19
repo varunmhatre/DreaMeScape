@@ -14,7 +14,7 @@ public class HUDEnable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!DialoguePanelManager.playerControlsLocked && !TutorialCards.isTutorialRunning && isVisible)
+        if (DialoguePanelManager.playerControlsUnlocked && !TutorialCards.isTutorialRunning && isVisible)
         {
             gameObject.GetComponent<Image>().enabled = true;
         }
