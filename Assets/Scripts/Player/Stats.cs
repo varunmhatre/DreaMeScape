@@ -7,6 +7,7 @@ public class Stats : MonoBehaviour
     [SerializeField] public int health;
     [SerializeField] public int damage;
     [SerializeField] int presence;
+    public bool statsVisible;
     public bool hasAttacked;
 
     public int meterUnitsFilled;

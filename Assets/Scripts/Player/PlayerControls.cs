@@ -126,12 +126,23 @@ public class PlayerControls : MonoBehaviour
             GameObject presenceObjChild = presenceObj.transform.GetChild(0).gameObject;
             GameObject resistObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiHealthObject;
             GameObject resistObjChild = resistObj.transform.GetChild(0).gameObject;
-            //set the parents to be the opposite of what they are
-            presenceObj.SetActive(!presenceObj.activeSelf);
-            resistObj.SetActive(!resistObj.activeSelf);
-            //set the children to be equal to their parent
-            presenceObjChild.SetActive(presenceObj.activeSelf);
-            resistObjChild.SetActive(resistObj.activeSelf);
+            //turn them both on if one is off
+            if ((presenceObj.activeSelf && !resistObj.activeSelf) || (!presenceObj.activeSelf && resistObj.activeSelf))
+            {
+                presenceObj.SetActive(true);
+                resistObj.SetActive(true);
+                presenceObjChild.SetActive(true);
+                resistObjChild.SetActive(true);
+            }
+            else
+            {
+                //set the parents to be the opposite of what they are
+                presenceObj.SetActive(!presenceObj.activeSelf);
+                resistObj.SetActive(!resistObj.activeSelf);
+                //set the children to be equal to their parent
+                presenceObjChild.SetActive(presenceObj.activeSelf);
+                resistObjChild.SetActive(resistObj.activeSelf);
+            }
         }
     }
 
