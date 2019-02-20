@@ -67,8 +67,8 @@ public class PlayerControls : MonoBehaviour
 
     private void MoveOnClickedGridPiece()
     {
-        RaycastHit hitCannon = GetComponent<RaycastManager>().GetRaycastHitForTag("Cannon");
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+        RaycastHit hitCannon = RaycastManager.GetRaycastHitForTag("Cannon");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         Transform moveLoc = GetComponent<GridPieceSelect>().GetGridPieceOnClick();
 
         if (hitCannon.transform == null && hit.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
@@ -95,8 +95,8 @@ public class PlayerControls : MonoBehaviour
     {
         lastSelectedUnitName = selectedUnitName;
         prevSelectedUnit = selectedUnit;
-        RaycastHit hitCannon = GetComponent<RaycastManager>().GetRaycastHitForTag("Cannon");
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+        RaycastHit hitCannon = RaycastManager.GetRaycastHitForTag("Cannon");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         if (hitCannon.transform == null && hit.transform != null)
         {
             selectedUnit = hit.transform;

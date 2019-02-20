@@ -59,7 +59,7 @@ public class GridPieceSelect : MonoBehaviour
 
     public Transform GetGridPieceOnClick()
     {
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("GridPiece");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("GridPiece");
         return hit.transform;
     }
 
