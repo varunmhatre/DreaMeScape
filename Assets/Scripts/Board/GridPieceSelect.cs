@@ -60,7 +60,7 @@ public class GridPieceSelect : MonoBehaviour
     public int[] GetGridPieceCoordsOnClick()
     {
         int[] coords = { -1, -1 };
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("GridPiece");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("GridPiece");
         if (hit.transform != null)
         {
             coords[0] = hit.transform.GetComponent<GridCoordinates>().x;
