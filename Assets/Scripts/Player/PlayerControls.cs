@@ -24,7 +24,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (DialoguePanelManager.playerControlsUnlocked)
         {
-            if (mouseClick && GetComponent<GameManager>().isPlayerTurn)
+            if (mouseClick && GameManager.isPlayerTurn)
             {
                 MoveOnClickedGridPiece();
 
@@ -161,6 +161,11 @@ public class PlayerControls : MonoBehaviour
             {
                 Stats bossStats = hitBoss.transform.gameObject.GetComponent<Stats>();
                 bossStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
+                bossStats.CheckDeath();
+                if (!bossStats)
+                {
+                    CharacterManager.ReCalculateEnemyCharacters();
+                }
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
             }
@@ -168,6 +173,11 @@ public class PlayerControls : MonoBehaviour
             {
                 Stats enemyStats = hitEnemy.transform.gameObject.GetComponent<Stats>();
                 enemyStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
+                enemyStats.CheckDeath();
+                if (!enemyStats)
+                {
+                    CharacterManager.ReCalculateEnemyCharacters();
+                }
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
             }

@@ -53,6 +53,7 @@ public class CannonSystem : MonoBehaviour
             {
                 CannonStaticVariables.selectedCannon.Attack();
                 Destroy(hit.transform.gameObject);
+                CharacterManager.ReCalculateEnemyCharacters();
             }
         }
     }

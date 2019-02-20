@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class Pirate : MonoBehaviour
 {
-    [SerializeField]
-    public int noOfTurns
+    [SerializeField] int noOfTurns;
+
+    public int GetNumberOfTurns()
     {
-        get; private set;
+        return noOfTurns;
     }
 
-    public int moveCounter;
     public bool isStunned;
-
-    void Start()
-    {
-        moveCounter = 0;
-    }
 }
