@@ -29,7 +29,7 @@ public class CannonSystem : MonoBehaviour
 
     void SelectCannon()
     {
-        RaycastHit hit = CannonStaticVariables.raycastManager.GetRaycastHitForTag("Cannon");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Cannon");
         if (hit.transform != null && hit.transform.GetComponent<CannonScript>().isChargeLeft)
         {
             if (hit.transform.GetComponent<CannonRadius>().CheckIfPlayerAround())
@@ -41,7 +41,7 @@ public class CannonSystem : MonoBehaviour
 
     void AttackEnemy()
     {
-        RaycastHit hit = CannonStaticVariables.raycastManager.GetRaycastHitForTag("Enemy");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Enemy");
         if (hit.transform != null)
         {
             UnitCoordinates enemySpot = hit.transform.GetComponent<UnitCoordinates>();

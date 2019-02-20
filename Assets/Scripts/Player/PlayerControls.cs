@@ -114,14 +114,14 @@ public class PlayerControls : MonoBehaviour
     private void ToggleStatVisibility()
     {
         Transform clickedUnit = null;
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         if (hit.transform == null)
         {
-            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
+            hit = RaycastManager.GetRaycastHitForTag("Enemy");
         }
         if (hit.transform == null)
         {
-            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("PirateBoss");
+            hit = RaycastManager.GetRaycastHitForTag("PirateBoss");
         }
         if (hit.transform != null)
         {
@@ -132,19 +132,30 @@ public class PlayerControls : MonoBehaviour
             GameObject presenceObjChild = presenceObj.transform.GetChild(0).gameObject;
             GameObject resistObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiHealthObject;
             GameObject resistObjChild = resistObj.transform.GetChild(0).gameObject;
-            //set the parents to be the opposite of what they are
-            presenceObj.SetActive(!presenceObj.activeSelf);
-            resistObj.SetActive(!resistObj.activeSelf);
-            //set the children to be equal to their parent
-            presenceObjChild.SetActive(presenceObj.activeSelf);
-            resistObjChild.SetActive(resistObj.activeSelf);
+            //turn them both on if one is off
+            if ((presenceObj.activeSelf && !resistObj.activeSelf) || (!presenceObj.activeSelf && resistObj.activeSelf))
+            {
+                presenceObj.SetActive(true);
+                resistObj.SetActive(true);
+                presenceObjChild.SetActive(true);
+                resistObjChild.SetActive(true);
+            }
+            else
+            {
+                //set the parents to be the opposite of what they are
+                presenceObj.SetActive(!presenceObj.activeSelf);
+                resistObj.SetActive(!resistObj.activeSelf);
+                //set the children to be equal to their parent
+                presenceObjChild.SetActive(presenceObj.activeSelf);
+                resistObjChild.SetActive(resistObj.activeSelf);
+            }
         }
     }
 
     public void AttackEnemy()
     {
-        RaycastHit hitEnemy = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
-        RaycastHit hitBoss = GetComponent<RaycastManager>().GetRaycastHitForTag("Boss");
+        RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
+        RaycastHit hitBoss = RaycastManager.GetRaycastHitForTag("Boss");
 
         bool hittingBoss = false;
 
@@ -169,6 +180,7 @@ public class PlayerControls : MonoBehaviour
                 bossStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
+                prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
             else if (!hittingBoss && AdjacencyHandler.CompareAdjacency(hitEnemy.transform.gameObject, prevSelectedUnit.gameObject, 1))
             {
@@ -177,7 +189,29 @@ public class PlayerControls : MonoBehaviour
                 Debug.Log("Enemy taking damage!");
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
+                prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
         }
     }
+
+    /*
+    public void CheckSelection(CharacterAbility.selectionType selectType, string abilityName)
+    {
+        if (selectType == CharacterAbility.selectionType.enemy)
+        {
+            RaycastHit hitEnemy = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
+            if (hitEnemy.transform != null)
+            {
+                if (AdjacencyHandler.CompareAdjacency(prevSelectedUnit.gameObject, hitEnemy.transform.gameObject, 2))
+                {
+                    CharacterAbility.ActivateFireball(prevSelectedUnit.gameObject, hitEnemy.transform.gameObject);
+                }
+            }
+            else
+            {
+                inSelectionMode = false;
+            }
+        }
+    }
+    */
 }
