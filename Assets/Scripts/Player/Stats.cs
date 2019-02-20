@@ -33,6 +33,11 @@ public class Stats : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        UpdateDisplay();
+    }
+
     public void Encumber()
     {
         isEncumbered = true;
