@@ -67,7 +67,7 @@ public class PirateAI : MonoBehaviour
             return;
         }
         timer += Time.deltaTime;
-        if (timer < 0.3f)
+        if (timer < 0.5f)
         {
             return;
         }
