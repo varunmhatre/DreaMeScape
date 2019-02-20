@@ -92,7 +92,7 @@ public class PlayerControls : MonoBehaviour
     {
         lastSelectedUnitName = selectedUnitName;
         prevSelectedUnit = selectedUnit;
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         if (hit.transform != null)
         {
             playerLoc = gameObject.GetComponent<GridPieceSelect>().GetGridPieceCoordsOnClick();
@@ -108,14 +108,14 @@ public class PlayerControls : MonoBehaviour
     private void ToggleStatVisibility()
     {
         Transform clickedUnit = null;
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         if (hit.transform == null)
         {
-            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
+            hit = RaycastManager.GetRaycastHitForTag("Enemy");
         }
         if (hit.transform == null)
         {
-            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("PirateBoss");
+            hit = RaycastManager.GetRaycastHitForTag("PirateBoss");
         }
         if (hit.transform != null)
         {
@@ -148,8 +148,8 @@ public class PlayerControls : MonoBehaviour
 
     public void AttackEnemy()
     {
-        RaycastHit hitEnemy = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
-        RaycastHit hitBoss = GetComponent<RaycastManager>().GetRaycastHitForTag("Boss");
+        RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
+        RaycastHit hitBoss = RaycastManager.GetRaycastHitForTag("Boss");
 
         bool hittingBoss = false;
 
@@ -174,15 +174,37 @@ public class PlayerControls : MonoBehaviour
                 bossStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
+                prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
             else if (!hittingBoss && AdjacencyHandler.CompareAdjacency(hitEnemy.transform.gameObject, prevSelectedUnit.gameObject, 1))
             {
                 Stats enemyStats = hitEnemy.transform.gameObject.GetComponent<Stats>();
                 enemyStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
-                Debug.Log("Enemy taking damage!");
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
+                prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
         }
     }
+
+    /*
+    public void CheckSelection(CharacterAbility.selectionType selectType, string abilityName)
+    {
+        if (selectType == CharacterAbility.selectionType.enemy)
+        {
+            RaycastHit hitEnemy = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
+            if (hitEnemy.transform != null)
+            {
+                if (AdjacencyHandler.CompareAdjacency(prevSelectedUnit.gameObject, hitEnemy.transform.gameObject, 2))
+                {
+                    CharacterAbility.ActivateFireball(prevSelectedUnit.gameObject, hitEnemy.transform.gameObject);
+                }
+            }
+            else
+            {
+                inSelectionMode = false;
+            }
+        }
+    }
+    */
 }

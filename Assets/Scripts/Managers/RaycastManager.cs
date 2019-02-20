@@ -5,7 +5,7 @@ using UnityEngine;
 public class RaycastManager : MonoBehaviour
 {
 
-    private RaycastHit[] hitTargets;
+    private static RaycastHit[] hitTargets;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class RaycastManager : MonoBehaviour
     }
 
     //Get the last hit Raycast for provided tag
-    public RaycastHit GetRaycastHitForTag(string tag)
+    public static RaycastHit GetRaycastHitForTag(string tag)
     {
         RaycastHit hit = new RaycastHit();
 
@@ -47,5 +47,19 @@ public class RaycastManager : MonoBehaviour
 
         //If tag doesn't exist, will return new RaycastHit() and have 'null' hit.transform
         return hit;
+    }
+
+    public static void EmptyRaycastTargets()
+    {
+        hitTargets = null;
+    }
+
+    public static bool IsRaycastTargetsEmpty()
+    {
+        if (hitTargets == null)
+        {
+            return true;
+        }
+        return false;
     }
 }
