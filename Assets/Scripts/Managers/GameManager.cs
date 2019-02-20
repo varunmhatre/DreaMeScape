@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public static int totalEnergy;
 
     public static int currentEnergy;
-    public bool isPlayerTurn;
+    public static bool isPlayerTurn;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,18 @@ public class GameManager : MonoBehaviour
         RefreshCurrentEnergy();
     }
 
+    public static void EndCurrentTurn()
+    {
+        isPlayerTurn = false;
+    }
+
+    public static void BeginNewTurn()
+    {
+        isPlayerTurn = true;
+        RefreshCurrentEnergy();
+        RefreshCharacters();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +45,14 @@ public class GameManager : MonoBehaviour
     public static void RefreshCurrentEnergy()
     {
         currentEnergy = totalEnergy;
+    }
+
+    public static void RefreshEnemies()
+    {
+        foreach (var enemy in CharacterManager.allEnemyCharacters)
+        {
+            enemy.GetComponent<Stats>().hasAttacked = false;
+        }
     }
 
     public static void RefreshCharacters()

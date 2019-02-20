@@ -59,6 +59,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             if (AdjacencyHandler.CompareAdjacency(character, enemy, 2))
             {
                 enemy.GetComponent<Stats>().TakeDamage(3);
+                enemy.GetComponent<Stats>().CheckDeath();
                 hitsSomeone = true;
             }
         }

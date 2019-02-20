@@ -52,7 +52,10 @@ public class CannonSystem : MonoBehaviour
                     enemySpot.y <= (cannonSpot.y + CannonStaticVariables.cannonRadius)))
             {
                 CannonStaticVariables.selectedCannon.Attack();
-                Destroy(hit.transform.gameObject);
+
+                //We can make this a number
+                hit.transform.GetComponent<Stats>().TakeDamage(8);
+                hit.transform.GetComponent<Stats>().CheckDeath();
             }
         }
     }
