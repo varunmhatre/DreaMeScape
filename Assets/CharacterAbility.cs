@@ -61,10 +61,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             {
                 enemy.GetComponent<Stats>().TakeDamage(3);
                 enemy.GetComponent<Stats>().CheckDeath();
-                if (!enemy)
-                {
-                    CharacterManager.ReCalculateEnemyCharacters();
-                }
                 hitsSomeone = true;
             }
         }

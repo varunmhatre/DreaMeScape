@@ -8,36 +8,42 @@ public static class CharacterManager
     public static List<GameObject> allEnemyCharacters;
     public static List<GameObject> allCharacters;
 
-    public static void ReCalculateAlliedCharacters()
+    public static void RemoveFromAllies(GameObject unit)    
     {
-        for (int i = allAlliedCharacters.Count - 1; i > -1; i--)
+        for (int i = 0; i < allAlliedCharacters.Count; i++)
         {
-            if (allAlliedCharacters[i] == null)
+            if (allAlliedCharacters[i] == unit)
             {
                 allAlliedCharacters.RemoveAt(i);
+                break;
             }
         }
+        ReCalculateAllCharacters();
     }
 
-    public static void ReCalculateEnemyCharacters()
+    public static void RemoveFromEnemies(GameObject unit)
     {
-        for (int i = allEnemyCharacters.Count - 1; i > -1; i--)
+        for (int i = 0; i < allEnemyCharacters.Count; i++)
         {
-            if (allEnemyCharacters[i] == null)
+            if (allEnemyCharacters[i] == unit)
             {
                 allEnemyCharacters.RemoveAt(i);
+                break;
             }
         }
+        ReCalculateAllCharacters();
     }
 
     public static void ReCalculateAllCharacters()
     {
-        for (int i = allCharacters.Count - 1; i > -1; i--)
+        allCharacters.Clear();
+        foreach (var item in allAlliedCharacters)
         {
-            if (allCharacters[i] == null)
-            {
-                allCharacters.RemoveAt(i);
-            }
+            allCharacters.Add(item);
+        }
+        foreach (var item in allEnemyCharacters)
+        {
+            allCharacters.Add(item);
         }
     }
 }

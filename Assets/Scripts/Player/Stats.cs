@@ -40,6 +40,15 @@ public class Stats : MonoBehaviour
     {
         if (health <= 0)
         {
+            if (isEnemy)
+            {
+                CharacterManager.RemoveFromEnemies(gameObject);
+            }
+            else
+            {
+                CharacterManager.RemoveFromAllies(gameObject);
+            }
+
             Die();
         }
     }

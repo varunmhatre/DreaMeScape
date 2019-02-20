@@ -60,10 +60,6 @@ public class PirateAI : MonoBehaviour
             {
                 alliedCharacter.GetComponent<Stats>().TakeDamage(CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<Stats>().damage);
                 alliedCharacter.GetComponent<Stats>().CheckDeath();
-                if (alliedCharacter == null)
-                {
-                    CharacterManager.ReCalculateAlliedCharacters();
-                }
                 alliedCharacter = null;
             }
             piratesInProgress = false;
