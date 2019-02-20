@@ -12,4 +12,9 @@ public class Pirate : MonoBehaviour
     }
 
     public bool isStunned;
+
+    void Update()
+    {
+        gameObject.GetComponent<Stats>().UpdateDisplay();
+    }
 }

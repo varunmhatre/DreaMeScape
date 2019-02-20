@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 3161083261242561017}
   - component: {fileID: 5889785409903405484}
   - component: {fileID: 4244825096391330691}
-  - component: {fileID: 7221698724044913733}
   m_Layer: 8
   m_Name: '#Kent_Fantasy_Realm_temp'
   m_TagString: Player
@@ -140,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 1564457944671518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 5479067809341197543}
   - {fileID: 9031100968298811435}
@@ -178,6 +177,8 @@ MonoBehaviour:
   health: 8
   damage: 2
   presence: 0
+  unchargedDamage: 2
+  statsVisible: 0
   hasAttacked: 0
   meterUnitsFilled: 0
   maxMeter: 5
@@ -228,18 +229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: -10
   y: -10
---- !u!114 &7221698724044913733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564457944671518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1675767865263438
 GameObject:
   m_ObjectHideFlags: 0

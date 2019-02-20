@@ -8,13 +8,27 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 {
     private int amountMeterNeeded;
     [SerializeField] private int buttonId;
-     private bool isInteractable;
+    private bool isInteractable;
+    private string currAbilityName;
+    public static bool inSelectionMode;
+    private bool justClickedButton;
+
+    public enum selectionType
+    {
+        ally,
+        enemy,
+        emptySpace
+    }
+
+    private selectionType currSelectionType;
 
     // Start is called before the first frame update
     void Start()
     {
         amountMeterNeeded = 5;
         isInteractable = false;
+        inSelectionMode = false;
+
     }
 
     // Update is called once per frame
@@ -24,8 +38,14 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {            
             isInteractable = true;
         }
+
+        if (inSelectionMode)
+        {
+            CheckSelection(currSelectionType, currAbilityName);
+        }
         
         gameObject.GetComponent<Button>().interactable = isInteractable;
+        justClickedButton = false;
     }
 
     public void ActivateAbility()
@@ -36,11 +56,18 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             ActivateCleave(charStats.gameObject);
         }
+        else if (buttonId == 4 && GameManager.currentEnergy >= 1)
+        {
+            TryFireball(charStats.gameObject);
+        }
+        else if (buttonId == 2 && GameManager.currentEnergy >= 1)
+        {
+            TrySprint(charStats.gameObject);
+        }
     }
 
     public bool CheckIfMeterFull(int id, Stats charStats)
     {
-       // Debug.Log(charStats);
         if (buttonId == id && charStats.meterUnitsFilled >= amountMeterNeeded)
         {
             return true;
@@ -48,7 +75,54 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         return false;
     }
-
+    
+    public void CheckSelection(selectionType selectType, string abilityName)
+    {
+        if (selectType == selectionType.enemy)
+        {
+            if (abilityName == "fireball")
+            {
+                if (Input.GetMouseButtonDown(0) && !justClickedButton)
+                {
+                    RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
+                    if (hitEnemy.transform != null)
+                    {
+                        if (AdjacencyHandler.CompareAdjacency(CharacterManager.allAlliedCharacters[buttonId], hitEnemy.transform.gameObject, 2))
+                        {
+                            ActivateFireball(CharacterManager.allAlliedCharacters[buttonId], hitEnemy.transform.gameObject);
+                        }
+                    }
+                    else
+                    {
+                        inSelectionMode = false;
+                    }
+                }
+            }
+        }
+        else if (selectType == selectionType.emptySpace)
+        {
+            if (abilityName == "sprint")
+            {
+                if (Input.GetMouseButtonDown(0) && !justClickedButton)
+                {
+                    Debug.Log("Preparing to sprint");
+                    RaycastHit hitPiece = RaycastManager.GetRaycastHitForTag("GridPiece");
+                    if (hitPiece.transform != null)
+                    {
+                        Debug.Log("Moving to a space.");
+                        if (AdjacencyHandler.CompareAdjacency(CharacterManager.allAlliedCharacters[buttonId], hitPiece.transform.gameObject, 2))
+                        {
+                            ActivateSprint(CharacterManager.allAlliedCharacters[buttonId], hitPiece.transform.gameObject);
+                        }
+                    }
+                    else
+                    {
+                        inSelectionMode = false;
+                    }
+                }
+            }
+        }
+    }
 
     public void ActivateCleave(GameObject character)
     {
@@ -59,7 +133,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             if (AdjacencyHandler.CompareAdjacency(character, enemy, 2))
             {
                 enemy.GetComponent<Stats>().TakeDamage(3);
-                enemy.GetComponent<Stats>().CheckDeath();
                 hitsSomeone = true;
             }
         }
@@ -71,11 +144,89 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         }
     }
 
+    public void ActivateSprint(GameObject character, GameObject space)
+    {
+        int thisCharacterX = character.GetComponent<UnitCoordinates>().x;
+        int thisCharacterY = character.GetComponent<UnitCoordinates>().y;
+
+        int spaceX = space.GetComponent<GridCoordinates>().x;
+        int spaceY = space.GetComponent<GridCoordinates>().y;
+
+        int count = 0;
+
+        for (int i = 0; i < CharacterManager.allCharacters.Count; i++)
+        {
+            int characterX = CharacterManager.allCharacters[i].GetComponent<UnitCoordinates>().x;
+            int characterY = CharacterManager.allCharacters[i].GetComponent<UnitCoordinates>().y;
+
+            if (spaceX != characterX || spaceY != characterY)
+            {
+                count++;
+            }
+        }
+
+        if (count >= CharacterManager.allCharacters.Count)
+        {
+            Debug.Log("You are sprinting!");
+            GameObject.Find("GridX" + thisCharacterX + "Y" + thisCharacterY).GetComponent<GridPiece>().unit = null;
+            character.transform.position = space.transform.position;
+            character.GetComponent<UnitCoordinates>().SetUnitCoordinates(spaceX, spaceY);
+            space.GetComponent<GridPiece>().unit = character;
+            character.GetComponent<Stats>().damage += 2;
+            character.GetComponent<Stats>().SetCharging(true);
+            GameManager.currentEnergy--;
+            character.GetComponent<Stats>().EmptyMeter();
+            isInteractable = false;
+            inSelectionMode = false;
+        }
+    }
+
+    public void ActivateFireball(GameObject character, GameObject enemy)
+    {
+        enemy.GetComponent<Stats>().TakeDamage(6);
+        GameManager.currentEnergy--;
+        character.GetComponent<Stats>().EmptyMeter();
+        isInteractable = false;
+        inSelectionMode = false;
+    }
+
+    public void TryFireball(GameObject character)
+    {
+        bool hasTarget = false;
+        for (int i = 0; i < CharacterManager.allEnemyCharacters.Count; i++)
+        {
+            GameObject enemy = CharacterManager.allEnemyCharacters[i];
+            if (AdjacencyHandler.CompareAdjacency(character, enemy, 2))
+            {
+                hasTarget = true;
+            }
+        }
+
+        if (hasTarget)
+        {
+            inSelectionMode = true;
+            currSelectionType = selectionType.enemy;
+            currAbilityName = "fireball";
+            RaycastManager.EmptyRaycastTargets();
+        }
+        else
+        {
+            Debug.Log("There is no legal target!");
+        }
+    }
+
+    public void TrySprint(GameObject character)
+    {
+        inSelectionMode = true;
+        currSelectionType = selectionType.emptySpace;
+        currAbilityName = "sprint";
+        RaycastManager.EmptyRaycastTargets();
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (isInteractable)
         {
-            Debug.Log("OnPointerEnter");
             transform.GetComponent<Image>().color = Color.blue;
         }
     }
@@ -83,7 +234,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (isInteractable)
         {
-            Debug.Log("OnPointerExit");
             transform.GetComponent<Image>().color = Color.white;
         }
     }
@@ -91,6 +241,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (isInteractable)
         {
+            justClickedButton = true;
             ActivateAbility();
         }
     }

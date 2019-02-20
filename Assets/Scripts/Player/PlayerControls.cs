@@ -17,6 +17,7 @@ public class PlayerControls : MonoBehaviour
     {
         selectedUnitName = "NoUnitSelected";
         lastSelectedUnitName = "NoUnitSelected";
+        playerLoc = new int[2];
     }
 
     // Update is called once per frame
@@ -35,13 +36,13 @@ public class PlayerControls : MonoBehaviour
 
                 if (piecesHighlighted)
                 {
-                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLocation: null);
                     piecesHighlighted = false;
                 }
 
                 if (selectedUnit)
                 {
-                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true);
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
                     piecesHighlighted = true;
                 }
 
@@ -66,15 +67,17 @@ public class PlayerControls : MonoBehaviour
 
     private void MoveOnClickedGridPiece()
     {
-        int[] moveCoords = gameObject.GetComponent<GridPieceSelect>().GetGridPieceCoordsOnClick();
-        GameObject moveLoc = GameObject.Find("GridX" + moveCoords[0] + "Y" + moveCoords[1]);
+        RaycastHit hitCannon = RaycastManager.GetRaycastHitForTag("Cannon");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
+        Transform moveLoc = GetComponent<GridPieceSelect>().GetGridPieceOnClick();
 
-        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
+        if (hitCannon.transform == null && hit.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
         {
-            GameObject.Find("GridX" + playerLoc[0] + "Y" + playerLoc[1]).GetComponent<GridPiece>().unit = null;
+            GameObject playerCoords = GetComponent<GridPieceSelect>().GetGridPieceCoords(playerLoc[0], playerLoc[1]).gameObject;
+            playerCoords.GetComponent<GridPiece>().unit = null;
             selectedUnit.position = moveLoc.transform.position;
-            selectedUnit.GetComponent<UnitCoordinates>().SetUnitCoordinates(moveCoords[0], moveCoords[1]);
-            moveLoc.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
+            selectedUnit.GetComponent<UnitCoordinates>().SetUnitCoordinates(moveLoc.gameObject.GetComponent<GridCoordinates>().x, moveLoc.gameObject.GetComponent<GridCoordinates>().y);
+            moveLoc.gameObject.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
             GameManager.ReduceEnergy();
             Stats characterStats = selectedUnit.gameObject.GetComponent<Stats>();
             if (characterStats != null)
@@ -92,11 +95,14 @@ public class PlayerControls : MonoBehaviour
     {
         lastSelectedUnitName = selectedUnitName;
         prevSelectedUnit = selectedUnit;
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
-        if (hit.transform != null)
+        RaycastHit hitCannon = RaycastManager.GetRaycastHitForTag("Cannon");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
+        if (hitCannon.transform == null && hit.transform != null)
         {
             playerLoc = gameObject.GetComponent<GridPieceSelect>().GetGridPieceCoordsOnClick();
             selectedUnit = hit.transform;
+            playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
+            playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
             selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
         }
         else
@@ -104,18 +110,19 @@ public class PlayerControls : MonoBehaviour
             selectedUnit = null;
             selectedUnitName = "NoUnitSelected";
         }
+       
     }
     private void ToggleStatVisibility()
     {
         Transform clickedUnit = null;
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         if (hit.transform == null)
         {
-            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
+            hit = RaycastManager.GetRaycastHitForTag("Enemy");
         }
         if (hit.transform == null)
         {
-            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("PirateBoss");
+            hit = RaycastManager.GetRaycastHitForTag("PirateBoss");
         }
         if (hit.transform != null)
         {
@@ -126,19 +133,30 @@ public class PlayerControls : MonoBehaviour
             GameObject presenceObjChild = presenceObj.transform.GetChild(0).gameObject;
             GameObject resistObj = clickedUnit.gameObject.GetComponent<KeyObjectReferences>().uiHealthObject;
             GameObject resistObjChild = resistObj.transform.GetChild(0).gameObject;
-            //set the parents to be the opposite of what they are
-            presenceObj.SetActive(!presenceObj.activeSelf);
-            resistObj.SetActive(!resistObj.activeSelf);
-            //set the children to be equal to their parent
-            presenceObjChild.SetActive(presenceObj.activeSelf);
-            resistObjChild.SetActive(resistObj.activeSelf);
+            //turn them both on if one is off
+            if ((presenceObj.activeSelf && !resistObj.activeSelf) || (!presenceObj.activeSelf && resistObj.activeSelf))
+            {
+                presenceObj.SetActive(true);
+                resistObj.SetActive(true);
+                presenceObjChild.SetActive(true);
+                resistObjChild.SetActive(true);
+            }
+            else
+            {
+                //set the parents to be the opposite of what they are
+                presenceObj.SetActive(!presenceObj.activeSelf);
+                resistObj.SetActive(!resistObj.activeSelf);
+                //set the children to be equal to their parent
+                presenceObjChild.SetActive(presenceObj.activeSelf);
+                resistObjChild.SetActive(resistObj.activeSelf);
+            }
         }
     }
 
     public void AttackEnemy()
     {
-        RaycastHit hitEnemy = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
-        RaycastHit hitBoss = GetComponent<RaycastManager>().GetRaycastHitForTag("Boss");
+        RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
+        RaycastHit hitBoss = RaycastManager.GetRaycastHitForTag("Boss");
 
         bool hittingBoss = false;
 
@@ -161,20 +179,40 @@ public class PlayerControls : MonoBehaviour
             {
                 Stats bossStats = hitBoss.transform.gameObject.GetComponent<Stats>();
                 bossStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
-                bossStats.CheckDeath();
-
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
+                prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
             else if (!hittingBoss && AdjacencyHandler.CompareAdjacency(hitEnemy.transform.gameObject, prevSelectedUnit.gameObject, 1))
             {
                 Stats enemyStats = hitEnemy.transform.gameObject.GetComponent<Stats>();
                 enemyStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
-                enemyStats.CheckDeath();
-
+                Debug.Log("Enemy taking damage!");
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
+                prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
         }
     }
+
+    /*
+    public void CheckSelection(CharacterAbility.selectionType selectType, string abilityName)
+    {
+        if (selectType == CharacterAbility.selectionType.enemy)
+        {
+            RaycastHit hitEnemy = GetComponent<RaycastManager>().GetRaycastHitForTag("Enemy");
+            if (hitEnemy.transform != null)
+            {
+                if (AdjacencyHandler.CompareAdjacency(prevSelectedUnit.gameObject, hitEnemy.transform.gameObject, 2))
+                {
+                    CharacterAbility.ActivateFireball(prevSelectedUnit.gameObject, hitEnemy.transform.gameObject);
+                }
+            }
+            else
+            {
+                inSelectionMode = false;
+            }
+        }
+    }
+    */
 }

@@ -6,8 +6,11 @@ public class Stats : MonoBehaviour
 {
     [SerializeField] public int health;
     [SerializeField] public int damage;
-    [SerializeField] public int presence;
+    [SerializeField] int presence;
+    [SerializeField] public int unchargedDamage;
+    public bool statsVisible;
     public bool hasAttacked;
+    private bool charging;
 
     public int meterUnitsFilled;
     [SerializeField] public int maxMeter;
@@ -79,5 +82,16 @@ public class Stats : MonoBehaviour
     {
         gameObject.GetComponent<StatsTextDisplay>().SetHealth(health);
         gameObject.GetComponent<StatsTextDisplay>().SetAttack(damage);
+    }
+
+    public void SetCharging(bool charge)
+    {
+        charging = charge;
+    }
+
+    public void ReleaseCharge()
+    {
+        damage = unchargedDamage;
+        charging = false;
     }
 }
