@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         isPlayerTurn = true;
         RefreshCurrentEnergy();
         RefreshCharacters();
+        EndturnController.isInteractable = true;
     }
 
     // Update is called once per frame
