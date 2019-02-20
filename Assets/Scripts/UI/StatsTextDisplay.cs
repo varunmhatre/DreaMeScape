@@ -32,7 +32,6 @@ public class StatsTextDisplay : MonoBehaviour
             attackTextAlt = gameObject.GetComponent<KeyObjectReferences>().uiAttackValueObj.GetComponent<Text>();
         }
 
-
         healthValue = initialHealth;
         attackValue = initialAttack;
 
@@ -60,7 +59,7 @@ public class StatsTextDisplay : MonoBehaviour
         if (alt)
         {
             healthTextAlt.text = healthValue.ToString();
-            attackTextAlt.text = attackValue.ToString();
+            attackTextAlt.text = attackValue.ToString();          
         }
     }
 

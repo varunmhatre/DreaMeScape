@@ -38,7 +38,7 @@ public class RaycastManager : MonoBehaviour
         {
             for (int i = 0; i < hitTargets.Length; i++)
             {
-                if (hitTargets[i].transform.tag == tag)
+                if (hitTargets[i].transform != null && hitTargets[i].transform.tag == tag)
                 {
                     hit = hitTargets[i];
                 }

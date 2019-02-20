@@ -6,7 +6,7 @@ public class Stats : MonoBehaviour
 {
     [SerializeField] public int health;
     [SerializeField] public int damage;
-    [SerializeField] int presence;
+    [SerializeField] public int presence;
     [SerializeField] public int unchargedDamage;
     public bool statsVisible;
     public bool hasAttacked;
@@ -16,8 +16,12 @@ public class Stats : MonoBehaviour
     [SerializeField] public int maxMeter;
 
     public bool isEncumbered;
-    public bool isEnemy;
+    [SerializeField] public bool isEnemy;
 
+    private void Start()
+    {
+        isEncumbered = false;
+    }
 
     public void GainMeter(int amt)
     {
@@ -29,6 +33,19 @@ public class Stats : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        UpdateDisplay();
+    }
+
+    public void Encumber()
+    {
+        isEncumbered = true;
+        damage /= 2;
+        health /= 3;
+        CheckDeath();
+    }
+
     public void EmptyMeter()
     {
         meterUnitsFilled = 0;
@@ -36,30 +53,6 @@ public class Stats : MonoBehaviour
 
     public void Die()
     {
-        for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
-        {
-            if (gameObject == CharacterManager.allAlliedCharacters[i])
-            {
-                CharacterManager.allAlliedCharacters.Remove(gameObject);
-            }
-        }
-
-        for (int i = 0; i < CharacterManager.allCharacters.Count; i++)
-        {
-            if (gameObject == CharacterManager.allCharacters[i])
-            {
-                CharacterManager.allCharacters.Remove(gameObject);
-            }
-        }
-
-        for (int i = 0; i < CharacterManager.allEnemyCharacters.Count; i++)
-        {
-            if (gameObject == CharacterManager.allEnemyCharacters[i])
-            {
-                CharacterManager.allEnemyCharacters.Remove(gameObject);
-            }
-        }
-
         Destroy(gameObject);
     }
 
@@ -67,6 +60,15 @@ public class Stats : MonoBehaviour
     {
         if (health <= 0)
         {
+            if (isEnemy)
+            {
+                CharacterManager.RemoveFromEnemies(gameObject);
+            }
+            else
+            {
+                CharacterManager.RemoveFromAllies(gameObject);
+            }
+
             Die();
         }
     }
