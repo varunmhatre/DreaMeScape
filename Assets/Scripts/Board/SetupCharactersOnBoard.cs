@@ -5,8 +5,6 @@ using Unity.Entities;
 
 public class SetupCharactersOnBoard : MonoBehaviour
 {
-
-
     [SerializeField] public List<GameObject> characters = new List<GameObject>();
 
     [SerializeField] GameObject cannon;
@@ -14,6 +12,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
 
     [SerializeField] GameObject pirate;
     [SerializeField] GameObject pirateCaptain;
+    [SerializeField] GameObject pirateAIHandler;
 
     [SerializeField] GameObject generator;
 
@@ -140,4 +139,34 @@ public class SetupCharactersOnBoard : MonoBehaviour
             }
         }
     }
+
+    /*
+    public void AddMorePirates(int numberOfPirates)
+    {
+        for (int i = 0; i < numberOfPirates; i++)
+        {
+            foreach (var item in GridMatrix.gameGrid)
+            {
+                GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
+                pirate.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[0], array[1]);
+                transform.GetChild(i).GetComponent<GridPiece>().unit =
+                    Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity);
+                CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                break;
+            }
+
+
+            GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
+            if ((piece.x == array[0]) && (piece.y == ((array[1]))))
+            {
+                pirate.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[0], array[1]);
+                transform.GetChild(i).GetComponent<GridPiece>().unit =
+                    Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity);
+                CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                break;
+            }
+        }
+    }*/
 }

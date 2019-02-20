@@ -81,6 +81,7 @@ public class PirateAI : MonoBehaviour
         timer = 0.0f;
         selectedPirate = 0;
         piratesInProgress = false;
+        GameManager.RefreshEnemies();
         GameManager.BeginNewTurn();
     }
 
@@ -168,15 +169,10 @@ public class PirateAI : MonoBehaviour
         GetPriority(currentUnitLocaton, targetUnitLocation);
         pirateTurns.Insert(0, currentUnitLocaton);
 
+
+        //Populate the movement array
         while (pirateTurns.Count <= numberOfTurns && !repeatingNodes)
         {
-            //Reached target
-            //if ((pirateTurns[0].GetComponent<GridCoordinates>().x == pirateCoordinate.x &&
-            //pirateTurns[0].GetComponent<GridCoordinates>().y == pirateCoordinate.y))
-            //{
-            //    break;
-            //}
-
             if (IsPlayerNextToYou(pirateTurns[0]))
             {
                 break;
@@ -305,11 +301,14 @@ public class PirateAI : MonoBehaviour
             {
                 if (pirateTurns[i] == pirateTurns[0])
                 {
+                    pirateTurns.RemoveAt(0);
                     repeatingNodes = true;
                     break;
                 }
             }
         }
+
+        piratesInProgress = true;
     }
 
     UnitCoordinates FindClosestPlayer()

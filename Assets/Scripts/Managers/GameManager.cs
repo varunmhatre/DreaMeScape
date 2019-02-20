@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public static int currentEnergy;
     public static bool isPlayerTurn;
+    public static int roundCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
         }
 
         RefreshCurrentEnergy();
+        roundCounter = 0;
     }
 
     public static void EndCurrentTurn()
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public static void BeginNewTurn()
     {
+        roundCounter++;
         isPlayerTurn = true;
         RefreshCurrentEnergy();
         RefreshCharacters();
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
         foreach (var enemy in CharacterManager.allEnemyCharacters)
         {
             enemy.GetComponent<Stats>().hasAttacked = false;
+            enemy.GetComponent<Pirate>().isStunned = false;
         }
     }
 
