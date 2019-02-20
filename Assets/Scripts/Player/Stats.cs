@@ -6,15 +6,19 @@ public class Stats : MonoBehaviour
 {
     [SerializeField] public int health;
     [SerializeField] public int damage;
-    [SerializeField] int presence;
+    [SerializeField] public int presence;
     public bool hasAttacked;
 
     public int meterUnitsFilled;
     [SerializeField] public int maxMeter;
 
     public bool isEncumbered;
-    public bool isEnemy;
+    [SerializeField] public bool isEnemy;
 
+    private void Start()
+    {
+        isEncumbered = false;
+    }
 
     public void GainMeter(int amt)
     {
@@ -24,6 +28,14 @@ public class Stats : MonoBehaviour
         {
             meterUnitsFilled = maxMeter;
         }
+    }
+
+    public void Encumber()
+    {
+        isEncumbered = true;
+        damage /= 2;
+        health /= 3;
+        CheckDeath();
     }
 
     public void EmptyMeter()

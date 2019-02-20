@@ -12,7 +12,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
 
     [SerializeField] GameObject pirate;
     [SerializeField] GameObject pirateCaptain;
-    [SerializeField] GameObject pirateAIHandler;
+    [SerializeField] Transform pirateAIHandler;
 
     [SerializeField] GameObject generator;
 
@@ -92,7 +92,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 {
                     pirate.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[arrayIndex * 2], array[(arrayIndex * 2) + 1]);
                     transform.GetChild(i).GetComponent<GridPiece>().unit =
-                        Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity);
+                        Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity, pirateAIHandler);
                     CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     break;
@@ -112,7 +112,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
             {
                 pirateCaptain.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[0], array[1]);
                 transform.GetChild(i).GetComponent<GridPiece>().unit =
-                    Instantiate(pirateCaptain, transform.GetChild(i).position, Quaternion.identity);
+                    Instantiate(pirateCaptain, transform.GetChild(i).position, Quaternion.identity, pirateAIHandler);
                 CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                 CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                 break;

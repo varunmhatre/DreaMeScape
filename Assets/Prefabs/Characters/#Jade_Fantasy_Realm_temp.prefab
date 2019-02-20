@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6413935986810368859}
   - component: {fileID: 4016189808243797759}
   - component: {fileID: 6904719733578921599}
+  - component: {fileID: 8725674890652907724}
   m_Layer: 8
   m_Name: '#Jade_Fantasy_Realm_temp'
   m_TagString: Player
@@ -68,6 +69,7 @@ MonoBehaviour:
   health: 8
   damage: 2
   presence: 0
+  hasAttacked: 0
   meterUnitsFilled: 0
   maxMeter: 5
   isEncumbered: 0
@@ -117,6 +119,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: -10
   y: -10
+--- !u!114 &8725674890652907724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004241752199634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1064420892271248
 GameObject:
   m_ObjectHideFlags: 0

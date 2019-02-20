@@ -686,6 +686,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6160367199262499877, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 833693794578274776, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300185119576647558, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467607957848119631, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814897530460151899, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121956624488904523, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3798650189779176173, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -821,36 +851,6 @@ PrefabInstance:
       propertyPath: charSetup
       value: 
       objectReference: {fileID: 1778784537}
-    - target: {fileID: 6160367199262499877, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 833693794578274776, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3300185119576647558, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467607957848119631, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814897530460151899, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121956624488904523, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6785591823748664370, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_Layer
@@ -1106,6 +1106,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1923f66bc8ac094cac37aeab3e2ec1f, type: 3}
+--- !u!4 &1232606334 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7506440632940839586, guid: 21bd380745295354ab0410dbf9424070,
+    type: 3}
+  m_PrefabInstance: {fileID: 1011459081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1496350269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5440059108026527876, guid: 058a87112e1a79047a44b1cbba485b50,
@@ -1291,6 +1297,10 @@ PrefabInstance:
       propertyPath: cannonHandler
       value: 
       objectReference: {fileID: 421276262}
+    - target: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
+      propertyPath: pirateAIHandler
+      value: 
+      objectReference: {fileID: 1232606334}
     - target: {fileID: 7443970515535003870, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: y
@@ -1513,6 +1523,24 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: STUFF
+--- !u!1 &2120012926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3360379654646257596, guid: c4907334ee52dac4e865baf0ab37361f,
+    type: 3}
+  m_PrefabInstance: {fileID: 255719139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120012931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120012926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0dc843061dbbc545a27d7a8738b1e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2145029015
 GameObject:
   m_ObjectHideFlags: 0
