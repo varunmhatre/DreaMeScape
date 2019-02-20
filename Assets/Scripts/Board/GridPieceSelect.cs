@@ -18,11 +18,11 @@ public class GridPieceSelect : MonoBehaviour
         
     }
 
-    public void highlightMoveSpaces(string playerName, bool toHighlight)
+    public void highlightMoveSpaces(string playerName, bool toHighlight, int[] playerLocation)
     {
         if (toHighlight)
         {
-            playerGridPiece = GetGridPieceCoordsOnClick();
+            playerGridPiece = playerLocation;
         }
 
         int[,] playerMov = PlayerMoveSpaces.Player_Movements[playerName];
@@ -40,7 +40,7 @@ public class GridPieceSelect : MonoBehaviour
             {
                 if (playerMov[i, j] > 0)
                 {
-                    GameObject neighborPiece = GameObject.Find("GridX" + (playerGridPiece[0] + (j - x)) + "Y" + (playerGridPiece[1] + (i - y)));
+                    GridCoordinates neighborPiece = GetGridPieceCoords((playerGridPiece[0] + (j - x)), (playerGridPiece[1] + (i - y)));
                     if (neighborPiece)
                     {
                         if (toHighlight && !neighborPiece.GetComponent<GridPiece>().isOccupied)
@@ -56,17 +56,24 @@ public class GridPieceSelect : MonoBehaviour
             }
         }
     }
-    
-    public int[] GetGridPieceCoordsOnClick()
-    {
-        int[] coords = { -1, -1 };
-        RaycastHit hit = RaycastManager.GetRaycastHitForTag("GridPiece");
-        if (hit.transform != null)
-        {
-            coords[0] = hit.transform.GetComponent<GridCoordinates>().x;
-            coords[1] = hit.transform.GetComponent<GridCoordinates>().y;
-        }
 
-        return coords;
+    public Transform GetGridPieceOnClick()
+    {
+        RaycastHit hit = RaycastManager.GetRaycastHitForTag("GridPiece");
+        return hit.transform;
+    }
+
+    
+    //Replace with Burhan's dictionary idea (store int <x,y> against corresponding grid piece)
+    public GridCoordinates GetGridPieceCoords(int x, int y)
+    {
+        foreach (GridCoordinates gc in GridMatrix.gameGrid)
+        {
+            if (gc.x == x && gc.y == y)
+            {
+                return gc;
+            }
+        }
+        return null;
     }
 }
