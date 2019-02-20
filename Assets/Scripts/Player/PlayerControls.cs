@@ -17,6 +17,7 @@ public class PlayerControls : MonoBehaviour
     {
         selectedUnitName = "NoUnitSelected";
         lastSelectedUnitName = "NoUnitSelected";
+        playerLoc = new int[2];
     }
 
     // Update is called once per frame
@@ -35,13 +36,13 @@ public class PlayerControls : MonoBehaviour
 
                 if (piecesHighlighted)
                 {
-                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLocation: null);
                     piecesHighlighted = false;
                 }
 
                 if (selectedUnit)
                 {
-                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true);
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
                     piecesHighlighted = true;
                 }
 
@@ -66,15 +67,17 @@ public class PlayerControls : MonoBehaviour
 
     private void MoveOnClickedGridPiece()
     {
-        int[] moveCoords = gameObject.GetComponent<GridPieceSelect>().GetGridPieceCoordsOnClick();
-        GameObject moveLoc = GameObject.Find("GridX" + moveCoords[0] + "Y" + moveCoords[1]);
+        RaycastHit hitCannon = GetComponent<RaycastManager>().GetRaycastHitForTag("Cannon");
+        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+        Transform moveLoc = GetComponent<GridPieceSelect>().GetGridPieceOnClick();
 
-        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
+        if (hitCannon.transform == null && hit.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
         {
-            GameObject.Find("GridX" + playerLoc[0] + "Y" + playerLoc[1]).GetComponent<GridPiece>().unit = null;
+            GameObject playerCoords = GetComponent<GridPieceSelect>().GetGridPieceCoords(playerLoc[0], playerLoc[1]).gameObject;
+            playerCoords.GetComponent<GridPiece>().unit = null;
             selectedUnit.position = moveLoc.transform.position;
-            selectedUnit.GetComponent<UnitCoordinates>().SetUnitCoordinates(moveCoords[0], moveCoords[1]);
-            moveLoc.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
+            selectedUnit.GetComponent<UnitCoordinates>().SetUnitCoordinates(moveLoc.gameObject.GetComponent<GridCoordinates>().x, moveLoc.gameObject.GetComponent<GridCoordinates>().y);
+            moveLoc.gameObject.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
             GameManager.ReduceEnergy();
             Stats characterStats = selectedUnit.gameObject.GetComponent<Stats>();
             if (characterStats != null)
@@ -92,11 +95,13 @@ public class PlayerControls : MonoBehaviour
     {
         lastSelectedUnitName = selectedUnitName;
         prevSelectedUnit = selectedUnit;
+        RaycastHit hitCannon = GetComponent<RaycastManager>().GetRaycastHitForTag("Cannon");
         RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
-        if (hit.transform != null)
+        if (hitCannon.transform == null && hit.transform != null)
         {
-            playerLoc = gameObject.GetComponent<GridPieceSelect>().GetGridPieceCoordsOnClick();
             selectedUnit = hit.transform;
+            playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
+            playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
             selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
         }
         else
@@ -104,6 +109,7 @@ public class PlayerControls : MonoBehaviour
             selectedUnit = null;
             selectedUnitName = "NoUnitSelected";
         }
+       
     }
     private void ToggleStatVisibility()
     {

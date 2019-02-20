@@ -1340,7 +1340,27 @@ PrefabInstance:
       propertyPath: charSetup
       value: 
       objectReference: {fileID: 1778784537}
+    - target: {fileID: 6160367199262499877, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 833693794578274776, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300185119576647558, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467607957848119631, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814897530460151899, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_Layer
       value: 10
@@ -1360,27 +1380,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 3300185119576647558, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6160367199262499877, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467607957848119631, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5440059108026527876, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814897530460151899, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_Layer
       value: 10
@@ -1742,6 +1742,10 @@ PrefabInstance:
         type: 3}
       propertyPath: y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 653481508, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
+      propertyPath: isHighlighted
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
