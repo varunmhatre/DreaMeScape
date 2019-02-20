@@ -6,7 +6,7 @@ public class Stats : MonoBehaviour
 {
     [SerializeField] public int health;
     [SerializeField] public int damage;
-    [SerializeField] int presence;
+    [SerializeField] public int presence;
     [SerializeField] public int unchargedDamage;
     public bool statsVisible;
     public bool hasAttacked;

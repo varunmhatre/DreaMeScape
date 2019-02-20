@@ -99,7 +99,6 @@ public class PlayerControls : MonoBehaviour
         RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         if (hitCannon.transform == null && hit.transform != null)
         {
-            playerLoc = gameObject.GetComponent<GridPieceSelect>().GetGridPieceCoordsOnClick();
             selectedUnit = hit.transform;
             playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
             playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
@@ -179,6 +178,7 @@ public class PlayerControls : MonoBehaviour
             {
                 Stats bossStats = hitBoss.transform.gameObject.GetComponent<Stats>();
                 bossStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
+                bossStats.CheckDeath();
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;
                 prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
@@ -187,6 +187,7 @@ public class PlayerControls : MonoBehaviour
             {
                 Stats enemyStats = hitEnemy.transform.gameObject.GetComponent<Stats>();
                 enemyStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
+                enemyStats.CheckDeath();
                 Debug.Log("Enemy taking damage!");
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 GameManager.currentEnergy--;

@@ -7,9 +7,6 @@ public class SetupCharactersOnBoard : MonoBehaviour
 {
     [SerializeField] public List<GameObject> characters = new List<GameObject>();
 
-
-    [SerializeField] List<GameObject> characters = new List<GameObject>();
-
     [SerializeField] GameObject cannon;
     [SerializeField] Transform cannonHandler;
 

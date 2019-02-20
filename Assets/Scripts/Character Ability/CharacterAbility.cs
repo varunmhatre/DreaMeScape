@@ -133,6 +133,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             if (AdjacencyHandler.CompareAdjacency(character, enemy, 2))
             {
                 enemy.GetComponent<Stats>().TakeDamage(3);
+                enemy.GetComponent<Stats>().CheckDeath();
                 hitsSomeone = true;
             }
         }
@@ -184,6 +185,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void ActivateFireball(GameObject character, GameObject enemy)
     {
         enemy.GetComponent<Stats>().TakeDamage(6);
+        enemy.GetComponent<Stats>().CheckDeath();
         GameManager.currentEnergy--;
         character.GetComponent<Stats>().EmptyMeter();
         isInteractable = false;
