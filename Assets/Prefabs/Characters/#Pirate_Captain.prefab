@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1177191238569498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 4636372988984184}
   - {fileID: 4860612550994470}
@@ -128,6 +128,8 @@ MonoBehaviour:
   health: 15
   damage: 3
   presence: 4
+  unchargedDamage: 3
+  statsVisible: 0
   hasAttacked: 0
   meterUnitsFilled: 0
   maxMeter: 0

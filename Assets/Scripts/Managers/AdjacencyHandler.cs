@@ -50,11 +50,29 @@ public static class AdjacencyHandler
 
     public static bool CompareAdjacency(GameObject obj1, GameObject obj2, int distance)
     {
-        int xPos1 = obj1.GetComponent<UnitCoordinates>().x;
-        int yPos1 = obj1.GetComponent<UnitCoordinates>().y;
 
-        int xPos2 = obj2.GetComponent<UnitCoordinates>().x;
-        int yPos2 = obj2.GetComponent<UnitCoordinates>().y;
+        int xPos1 = -10;
+        int yPos1 = -10;
+
+        int xPos2 = -10;
+        int yPos2 = -10;
+
+        if (obj1.GetComponent<UnitCoordinates>() != null && obj2.GetComponent<UnitCoordinates>() != null)
+        {
+            xPos1 = obj1.GetComponent<UnitCoordinates>().x;
+            yPos1 = obj1.GetComponent<UnitCoordinates>().y;
+
+            xPos2 = obj2.GetComponent<UnitCoordinates>().x;
+            yPos2 = obj2.GetComponent<UnitCoordinates>().y;
+        }
+        else if (obj1.GetComponent<UnitCoordinates>() != null && obj2.GetComponent<GridCoordinates>() != null)
+        {
+            xPos1 = obj1.GetComponent<UnitCoordinates>().x;
+            yPos1 = obj1.GetComponent<UnitCoordinates>().y;
+
+            xPos2 = obj2.GetComponent<GridCoordinates>().x;
+            yPos2 = obj2.GetComponent<GridCoordinates>().y;
+        }
 
         if (xPos1 <= xPos2 + distance && xPos1 >= xPos2 - distance
                     && yPos1 <= yPos2 + distance && yPos1 >= yPos2 - distance)
