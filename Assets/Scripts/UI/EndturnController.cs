@@ -23,8 +23,6 @@ public class EndturnController : MonoBehaviour, IPointerEnterHandler, IPointerEx
         {
             isInteractable = true;
         }
-
-        CheckEndTurn();
     } 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -44,19 +42,7 @@ public class EndturnController : MonoBehaviour, IPointerEnterHandler, IPointerEx
     {
         if(isInteractable)
         {
-            GameManager.RefreshCurrentEnergy();
-            GameManager.RefreshCharacters();
-            transform.GetComponent<Image>().enabled = false;
-            isInteractable = false;
-        }
-    }
-
-    public void CheckEndTurn()
-    {
-        if (isInteractable && Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager.RefreshCurrentEnergy();
-            GameManager.RefreshCharacters();
+            GameManager.EndCurrentTurn();
             transform.GetComponent<Image>().enabled = false;
             isInteractable = false;
         }

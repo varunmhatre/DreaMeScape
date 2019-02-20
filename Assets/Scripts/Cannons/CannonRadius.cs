@@ -52,7 +52,7 @@ public class CannonRadius : MonoBehaviour
         foreach (var item in gridsToHighlight)
         {
             //Temp. Need a separate cannon highlight
-            item.GetComponent<GridPieceHighlight>().isHighlighted = true;
+            //item.GetComponent<GridPieceHighlight>().isHighlighted = true;
         }
     }
 
@@ -61,7 +61,7 @@ public class CannonRadius : MonoBehaviour
         foreach (var item in gridsToHighlight)
         {
             //Temp. Need a separate cannon highlight
-            item.GetComponent<GridPieceHighlight>().isHighlighted = false;
+            //item.GetComponent<GridPieceHighlight>().isHighlighted = false;
         }
     }
 

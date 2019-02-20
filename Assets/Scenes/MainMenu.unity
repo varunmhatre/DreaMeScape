@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 39044358}
   - component: {fileID: 39044357}
   - component: {fileID: 39044356}
+  - component: {fileID: 39044355}
   m_Layer: 5
   m_Name: Atlantis
   m_TagString: Finish
@@ -152,6 +153,21 @@ RectTransform:
   m_AnchoredPosition: {x: 176, y: 309}
   m_SizeDelta: {x: 288.6, y: 215.6}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &39044355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39044353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2982ac091139e24da2ba9fb6e07e309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSprite: {fileID: 21300000, guid: 420f7b0d5cf9fbb46a3e8d164da94051, type: 3}
+  offSprite: {fileID: 21300000, guid: 167612db13085ed469d9fcac371aa48d, type: 3}
+  buttonText: 
 --- !u!95 &39044356
 Animator:
   serializedVersion: 3
@@ -233,7 +249,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2ee9d33a5ed319c498505696df49fe0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 420f7b0d5cf9fbb46a3e8d164da94051, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -301,8 +317,6 @@ MonoBehaviour:
   onSprite: {fileID: 0}
   offSprite: {fileID: 0}
   buttonText: 
-  target: {fileID: 0}
-  to: {fileID: 0}
 --- !u!1 &87308885
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +889,7 @@ GameObject:
   - component: {fileID: 296833853}
   - component: {fileID: 296833852}
   - component: {fileID: 296833851}
+  - component: {fileID: 296833850}
   m_Layer: 5
   m_Name: Mayan Jungle
   m_TagString: Untagged
@@ -902,6 +917,21 @@ RectTransform:
   m_AnchoredPosition: {x: 385, y: -222}
   m_SizeDelta: {x: 288.6, y: 215.6}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &296833850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296833848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2982ac091139e24da2ba9fb6e07e309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSprite: {fileID: 21300000, guid: 7768241571537e54d9ea8e955432e1b8, type: 3}
+  offSprite: {fileID: 21300000, guid: faab52b88ee455543a56404418925c00, type: 3}
+  buttonText: 
 --- !u!95 &296833851
 Animator:
   serializedVersion: 3
@@ -983,7 +1013,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7ccabbfd50ca61a41b290b03593c70a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: faab52b88ee455543a56404418925c00, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1252,7 +1282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &402462663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1434,6 +1464,7 @@ GameObject:
   - component: {fileID: 448544582}
   - component: {fileID: 448544581}
   - component: {fileID: 448544580}
+  - component: {fileID: 448544579}
   m_Layer: 5
   m_Name: House
   m_TagString: Untagged
@@ -1461,6 +1492,21 @@ RectTransform:
   m_AnchoredPosition: {x: 777, y: 79}
   m_SizeDelta: {x: 288.6, y: 215.6}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &448544579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448544577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2982ac091139e24da2ba9fb6e07e309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSprite: {fileID: 21300000, guid: 17caf6411d5b4ff4caa45e663a65c7e5, type: 3}
+  offSprite: {fileID: 21300000, guid: 9251b4df797b1ce41b92780a1330f92f, type: 3}
+  buttonText: 
 --- !u!95 &448544580
 Animator:
   serializedVersion: 3
@@ -1542,7 +1588,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d90a32462649c9e4294ef56e61eefd54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17caf6411d5b4ff4caa45e663a65c7e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1690,7 +1736,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f7c27a2e83eb6d84d97d41aadb0f3e80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2ff29d6c0a1b7b46bd7cf72f2ab1831, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1764,7 +1810,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e95a3d36859451647af778640cf05505, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60367242d704bb8448650977ce6a32ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2108,7 +2154,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225450279}
   m_LocalRotation: {x: -0, y: -0.000102246646, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1333499891}
@@ -2117,8 +2163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -0.012, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -294, y: -56}
-  m_SizeDelta: {x: 288.6, y: 215.6}
+  m_AnchoredPosition: {x: -342, y: -14}
+  m_SizeDelta: {x: 378.3, y: 371}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225450281
 MonoBehaviour:
@@ -2132,11 +2178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2982ac091139e24da2ba9fb6e07e309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onSprite: {fileID: 21300000, guid: 5e7f61b0fe2b93149bdd7205c1f27dff, type: 3}
-  offSprite: {fileID: 21300000, guid: 6d66e4a77557e604392766acc2c75f42, type: 3}
+  onSprite: {fileID: 21300000, guid: db612f1bfc278d94a9a4223ccebad2cc, type: 3}
+  offSprite: {fileID: 21300000, guid: 3ac1d5da8cff40a49ac0695d546127fc, type: 3}
   buttonText: 
-  target: {fileID: 0}
-  to: {fileID: 0}
 --- !u!95 &1225450282
 Animator:
   serializedVersion: 3
@@ -2229,7 +2273,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6d66e4a77557e604392766acc2c75f42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db612f1bfc278d94a9a4223ccebad2cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2570,7 +2614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 253, y: 302}
+  m_AnchoredPosition: {x: 258, y: 322}
   m_SizeDelta: {x: 363, y: 119.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1327153619
@@ -3258,7 +3302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1718091127
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3534,8 +3578,6 @@ MonoBehaviour:
   onSprite: {fileID: 21300000, guid: 08dd6d2a4edf0c14c8273e1dd6421a7c, type: 3}
   offSprite: {fileID: 21300000, guid: 08dd6d2a4edf0c14c8273e1dd6421a7c, type: 3}
   buttonText: 
-  target: {fileID: 0}
-  to: {fileID: 0}
 --- !u!95 &1933730293
 Animator:
   serializedVersion: 3
@@ -3682,7 +3724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 253, y: 133.6}
+  m_AnchoredPosition: {x: 268, y: 167}
   m_SizeDelta: {x: 363, y: 119.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061239090
@@ -3819,7 +3861,7 @@ GameObject:
   - component: {fileID: 2115339924}
   - component: {fileID: 2115339923}
   m_Layer: 5
-  m_Name: Back (1)
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

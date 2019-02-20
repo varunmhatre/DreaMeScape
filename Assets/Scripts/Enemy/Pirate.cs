@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class Pirate : MonoBehaviour
 {
-    [SerializeField]
-    public int noOfTurns
+    [SerializeField] int noOfTurns;
+
+    public int GetNumberOfTurns()
     {
-        get; private set;
+        return noOfTurns;
     }
 
-    public int moveCounter;
-
-    void Start()
-    {
-        moveCounter = 0;
-    }
+    public bool isStunned;
 
     void Update()
     {
-        gameObject.GetComponent<Stats>().CheckDeath();
         gameObject.GetComponent<Stats>().UpdateDisplay();
     }
 }
