@@ -15,8 +15,9 @@ public class PlayerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        selectedUnitName = "NoUnitSelected";
-        lastSelectedUnitName = "NoUnitSelected";
+        selectedUnitName = "NoUnit";
+        lastSelectedUnitName = "NoUnit";
+        playerLoc = new int[2];
     }
 
     // Update is called once per frame
@@ -35,13 +36,13 @@ public class PlayerControls : MonoBehaviour
 
                 if (piecesHighlighted)
                 {
-                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false);
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLoc);
                     piecesHighlighted = false;
                 }
 
                 if (selectedUnit)
                 {
-                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true);
+                    gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLoc);
                     piecesHighlighted = true;
                 }
 
@@ -53,7 +54,6 @@ public class PlayerControls : MonoBehaviour
                 ToggleStatVisibility();
             }
 
-            mouseClickToggle();
         }
     }
     public void MouseClickToggle()
@@ -68,15 +68,23 @@ public class PlayerControls : MonoBehaviour
 
     private void MoveOnClickedGridPiece()
     {
-        int[] moveCoords = gameObject.GetComponent<GridPieceSelect>().GetGridPieceCoordsOnClick();
-        GameObject moveLoc = GameObject.Find("GridX" + moveCoords[0] + "Y" + moveCoords[1]);
+        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Cannon");
 
-        if (selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
+        Transform moveLoc = GetComponent<GridPieceSelect>().GetGridPieceOnClick();
+
+        if (hit.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
         {
-            GameObject.Find("GridX" + playerLoc[0] + "Y" + playerLoc[1]).GetComponent<GridPiece>().unit = null;
+            foreach(GridCoordinates gc in GridMatrix.gameGrid)
+            {
+                if(gc.x == playerLoc[0] && gc.y == playerLoc[1])
+                {
+                    gc.GetComponent<GridPiece>().unit = null;
+                }
+            }
+
             selectedUnit.position = moveLoc.transform.position;
-            selectedUnit.GetComponent<UnitCoordinates>().SetUnitCoordinates(moveCoords[0], moveCoords[1]);
-            moveLoc.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
+            selectedUnit.GetComponent<UnitCoordinates>().SetUnitCoordinates(moveLoc.gameObject.GetComponent<GridCoordinates>().x, moveLoc.gameObject.GetComponent<GridCoordinates>().y);
+            moveLoc.gameObject.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
             GameManager.ReduceEnergy();
             Stats characterStats = selectedUnit.gameObject.GetComponent<Stats>();
             if (characterStats != null)
@@ -94,18 +102,24 @@ public class PlayerControls : MonoBehaviour
     {
         lastSelectedUnitName = selectedUnitName;
         prevSelectedUnit = selectedUnit;
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
-        if (hit.transform != null)
+        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Cannon");
+        if (hit.transform == null)
         {
-            playerLoc = gameObject.GetComponent<GridPieceSelect>().GetGridPieceCoordsOnClick();
-            selectedUnit = hit.transform;
-            selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
+            hit = GetComponent<RaycastManager>().GetRaycastHitForTag("Player");
+            if (hit.transform != null)
+            {
+                selectedUnit = hit.transform;
+                playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
+                playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
+                selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
+            }
+            else
+            {
+                selectedUnit = null;
+                selectedUnitName = "NoUnit";
+            }
         }
-        else
-        {
-            selectedUnit = null;
-            selectedUnitName = "NoUnitSelected";
-        }
+        
     }
     private void ToggleStatVisibility()
     {

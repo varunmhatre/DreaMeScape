@@ -18,11 +18,11 @@ public class GridPieceSelect : MonoBehaviour
         
     }
 
-    public void highlightMoveSpaces(string playerName, bool toHighlight)
+    public void highlightMoveSpaces(string playerName, bool toHighlight, int[] playerLocation)
     {
         if (toHighlight)
         {
-            playerGridPiece = GetGridPieceCoordsOnClick();
+            playerGridPiece = playerLocation;
         }
 
         int[,] playerMov = PlayerMoveSpaces.Player_Movements[playerName];
@@ -56,17 +56,11 @@ public class GridPieceSelect : MonoBehaviour
             }
         }
     }
-    
-    public int[] GetGridPieceCoordsOnClick()
-    {
-        int[] coords = { -1, -1 };
-        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("GridPiece");
-        if (hit.transform != null)
-        {
-            coords[0] = hit.transform.GetComponent<GridCoordinates>().x;
-            coords[1] = hit.transform.GetComponent<GridCoordinates>().y;
-        }
 
-        return coords;
+    public Transform GetGridPieceOnClick()
+    {
+        RaycastHit hit = GetComponent<RaycastManager>().GetRaycastHitForTag("GridPiece");
+        return hit.transform;
     }
+
 }
