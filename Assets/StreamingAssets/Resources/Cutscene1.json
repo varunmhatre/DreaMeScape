@@ -22,7 +22,7 @@
       "Conversation": 3,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
-      "DialogueText": "…!"
+      "DialogueText": "...!"
     },
     {
       "Conversation": 4,
@@ -34,13 +34,13 @@
       "Conversation": 5,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "We’re on a pirate ship!! A plank on the port side, cannons on the starboard.There’s no doubt about it!"
+      "DialogueText": "We’re on a pirate ship!! A plank on the port side, cannons on the starboard. There’s no doubt about it!"
     },
     {
       "Conversation": 6,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "Star…. Board?"
+      "DialogueText": "Star... Board?"
     },
     {
       "Conversation": 7,
