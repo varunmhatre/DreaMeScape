@@ -81,7 +81,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
 
     void PlacePirates()
     {
-        int[] array = { 16, 7, 11, 6, 11, 2, 6, 7, 6, 1};
+        int[] array = { 16, 7, 11, 6, 7, 2 };
         int numberOfPirates = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfPirates; arrayIndex++)
         {
