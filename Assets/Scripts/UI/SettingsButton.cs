@@ -18,14 +18,13 @@ public class SettingsButton : MonoBehaviour
     }
     public void ControlAction()
     {
-        if (!isClicked)
+        isClicked = !isClicked;
+        if (isClicked)
         {
-            isClicked = true;
             controlDisplay.SetActive(true);
         }
-        else if (isClicked == true)
+        else 
         {
-            isClicked = false;
             controlDisplay.SetActive(false);
         }
     }
