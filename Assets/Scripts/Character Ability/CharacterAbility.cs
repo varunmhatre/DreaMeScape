@@ -52,17 +52,28 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         transform.GetComponent<Image>().color = Color.blue;
         Stats charStats = CharacterManager.allAlliedCharacters[buttonId].GetComponent<Stats>();
-        if (buttonId == 3 && GameManager.currentEnergy >= 1)
-        {
-            ActivateCleave(charStats.gameObject);
-        }
-        else if (buttonId == 4 && GameManager.currentEnergy >= 1)
+        
+        if (buttonId == 4 && GameManager.currentEnergy >= 1)
         {
             TryFireball(charStats.gameObject);
+        }
+        else if (buttonId == 3 && GameManager.currentEnergy >= 1)
+        {
+            ActivateCleave(charStats.gameObject);
+            //for testing Henry's ability with Kent
+            //ActivateBolster(charStats.gameObject);
         }
         else if (buttonId == 2 && GameManager.currentEnergy >= 1)
         {
             TrySprint(charStats.gameObject);
+        }
+        else if (buttonId == 1 && GameManager.currentEnergy >= 1)
+        {
+            //Hally
+        }
+        else if (buttonId == 0 && GameManager.currentEnergy >= 1)
+        {
+            ActivateParalyzingPotion(charStats.gameObject);
         }
     }
 
@@ -121,6 +132,47 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                     }
                 }
             }
+        }
+    }
+
+    //For Henry when we add him
+    public void ActivateBolster(GameObject character)
+    {
+        bool buffSomeone = false;
+        for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
+        {
+            GameObject ally = CharacterManager.allAlliedCharacters[i];
+            if (AdjacencyHandler.CompareAdjacency(character, ally, 2))
+            {
+                ally.GetComponent<Stats>().GetComponent<Stats>().GainMeter(3);
+                buffSomeone = true;
+            }
+        }
+        if (buffSomeone)
+        {
+            GameManager.currentEnergy--;
+            character.GetComponent<Stats>().EmptyMeter();
+            isInteractable = false;
+        }
+    }
+
+    public void ActivateParalyzingPotion(GameObject character)
+    {
+        bool stunSomeone = false;
+        for (int i = 0; i < CharacterManager.allEnemyCharacters.Count; i++)
+        {
+            GameObject enemy = CharacterManager.allEnemyCharacters[i];
+            if (AdjacencyHandler.CompareAdjacency(character, enemy, 2))
+            {
+                enemy.GetComponent<Pirate>().isStunned = true;
+                stunSomeone = true;
+            }
+        }
+        if (stunSomeone)
+        {
+            GameManager.currentEnergy--;
+            character.GetComponent<Stats>().EmptyMeter();
+            isInteractable = false;
         }
     }
 
