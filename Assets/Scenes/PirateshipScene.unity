@@ -995,6 +995,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1923f66bc8ac094cac37aeab3e2ec1f, type: 3}
+--- !u!1 &1427672603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4156218617627297516, guid: abfa6314f88e7184ea0a922d203505fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606486555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1496350269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5440059108026527876, guid: 058a87112e1a79047a44b1cbba485b50,
@@ -1111,7 +1117,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gridManager
       value: 
-      objectReference: {fileID: 1731381111}
+      objectReference: {fileID: 1427672603}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12c237070ff45be49a9dbd61eb28c42a, type: 3}
 --- !u!1001 &1590797404
@@ -2350,19 +2356,13 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: STUFF
---- !u!1 &1731381111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4156218617627297516, guid: abfa6314f88e7184ea0a922d203505fc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606486555}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1778784537 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc,
     type: 3}
   m_PrefabInstance: {fileID: 1606486555}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731381111}
+  m_GameObject: {fileID: 1427672603}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06f08902402959148b53a8c78adc21ba, type: 3}

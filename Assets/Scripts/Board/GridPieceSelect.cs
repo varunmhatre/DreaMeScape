@@ -9,7 +9,7 @@ public class GridPieceSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerGridPiece = new int[2];
     }
 
     // Update is called once per frame
@@ -22,7 +22,8 @@ public class GridPieceSelect : MonoBehaviour
     {
         if (toHighlight)
         {
-            playerGridPiece = playerLocation;
+            playerGridPiece[0] = playerLocation[0];
+            playerGridPiece[1] = playerLocation[1];
         }
 
         int[,] playerMov = PlayerMoveSpaces.Player_Movements[playerName];
