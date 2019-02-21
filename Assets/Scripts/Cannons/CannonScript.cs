@@ -8,12 +8,12 @@ public class CannonScript : MonoBehaviour
     public bool isThisCannonSelected;
     Animator cannonExplosionAnimation;
     ParticleSystem explosionBlast;
-
+    public CannonBall cannonballScript;
     Quaternion rotation;
 
     private void Start()
     {
-        charge = 1;
+        //charge = 1;
         rotation = transform.rotation;
         cannonExplosionAnimation = transform.GetChild(0).GetComponent<Animator>();
         explosionBlast = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
@@ -42,6 +42,7 @@ public class CannonScript : MonoBehaviour
     public void Attack()
     {
         charge--;
+        cannonballScript.RemoveCannonBall();
         explosionBlast.Play();
         cannonExplosionAnimation.SetBool("isPlay", true);
     }
