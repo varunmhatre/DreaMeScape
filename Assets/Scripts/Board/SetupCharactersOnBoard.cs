@@ -140,33 +140,28 @@ public class SetupCharactersOnBoard : MonoBehaviour
         }
     }
 
-    /*
     public void AddMorePirates(int numberOfPirates)
     {
         for (int i = 0; i < numberOfPirates; i++)
         {
             foreach (var item in GridMatrix.gameGrid)
             {
-                GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
-                pirate.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[0], array[1]);
-                transform.GetChild(i).GetComponent<GridPiece>().unit =
-                    Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity);
-                CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
-                CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
-                break;
-            }
-
-
-            GridCoordinates piece = transform.GetChild(i).GetComponent<GridCoordinates>();
-            if ((piece.x == array[0]) && (piece.y == ((array[1]))))
-            {
-                pirate.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[0], array[1]);
-                transform.GetChild(i).GetComponent<GridPiece>().unit =
-                    Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity);
-                CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
-                CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
-                break;
+                GridPiece gridPiece = item.transform.GetComponent<GridPiece>();
+                if (gridPiece.unit != null)
+                {
+                    continue;
+                }
+                int x = item.x;
+                int y = item.y;
+                if (x > 7 && x < 12 && y > 2 && y < 6 )
+                {
+                    pirate.GetComponent<UnitCoordinates>().SetUnitCoordinates(x, y);
+                    gridPiece.unit = Instantiate(pirate, item.transform.position, Quaternion.identity, pirateAIHandler);
+                    CharacterManager.allEnemyCharacters.Add(gridPiece.unit);
+                    CharacterManager.allCharacters.Add(gridPiece.unit);
+                    break;
+                }
             }
         }
-    }*/
+    }
 }

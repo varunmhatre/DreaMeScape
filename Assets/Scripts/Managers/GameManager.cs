@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Material highlightMat;
     [SerializeField] public Material normalMat;
     [SerializeField] public static int totalEnergy;
+    [SerializeField] public GameObject gridManager;
+    public static SetupCharactersOnBoard characterSetup;
 
     public static int currentEnergy;
     public static bool isPlayerTurn;
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        characterSetup = gridManager.GetComponent<SetupCharactersOnBoard>();
         isPlayerTurn = true;
 
         if (totalEnergy == 0)
@@ -34,16 +37,14 @@ public class GameManager : MonoBehaviour
     public static void BeginNewTurn()
     {
         roundCounter++;
+        if (roundCounter == 3)
+        {
+            characterSetup.AddMorePirates(2);
+        }
         isPlayerTurn = true;
         RefreshCurrentEnergy();
         RefreshCharacters();
         EndturnController.isInteractable = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public static void RefreshCurrentEnergy()

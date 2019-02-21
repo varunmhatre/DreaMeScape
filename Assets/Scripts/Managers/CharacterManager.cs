@@ -7,6 +7,7 @@ public static class CharacterManager
     public static List<GameObject> allAlliedCharacters;
     public static List<GameObject> allEnemyCharacters;
     public static List<GameObject> allCharacters;
+    public static List<GameObject> allHallyCharacters;
 
     public static void RemoveFromAllies(GameObject unit)    
     {
