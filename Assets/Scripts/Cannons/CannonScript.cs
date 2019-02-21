@@ -36,7 +36,7 @@ public class CannonScript : MonoBehaviour
     public void Disengage()
     {
         isThisCannonSelected = false;
-        transform.rotation = rotation;
+        //transform.rotation = rotation;
     }
 
     public void Attack()

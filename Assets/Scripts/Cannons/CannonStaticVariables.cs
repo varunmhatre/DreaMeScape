@@ -13,7 +13,7 @@ public class CannonStaticVariables : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cannonRadius = 4;
+        cannonRadius = 3;
         crossbarController = GetComponent<CannonCrossbarController>() ;
         raycastManager = GameObject.Find("Managers").GetComponent<RaycastManager>();
     }
