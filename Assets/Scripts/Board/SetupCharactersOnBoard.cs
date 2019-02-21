@@ -157,8 +157,8 @@ public class SetupCharactersOnBoard : MonoBehaviour
                 {
                     pirate.GetComponent<UnitCoordinates>().SetUnitCoordinates(x, y);
                     gridPiece.unit = Instantiate(pirate, item.transform.position, Quaternion.identity, pirateAIHandler);
-                    CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
-                    CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                    CharacterManager.allEnemyCharacters.Add(gridPiece.unit);
+                    CharacterManager.allCharacters.Add(gridPiece.unit);
                     break;
                 }
             }
