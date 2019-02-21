@@ -163,8 +163,8 @@ MonoBehaviour:
   journeySpeed: 2
   horizCap: 10
   vertCap: 5
-  zoomOutMax: 18
-  zoomInMin: 3
+  zoomOutMax: 10
+  zoomInMin: 1
   scrollSpeed: 0.7
 --- !u!1 &3360379654872098613
 GameObject:

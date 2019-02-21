@@ -46,13 +46,13 @@
       "Conversation": 7,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "That’s Blackbeard. You're right, Hally. Blackbeard is a meanie. At least, from what I know."
+      "DialogueText": "That’s Blackbeard. You're right, Hally. Blackbeard is a meanie."
     },
     {
       "Conversation": 8,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "I still want to be captain of the ship."
+      "DialogueText": "...I still want to be captain of the ship."
     },
     {
       "Conversation": 9,
@@ -76,22 +76,16 @@
       "Conversation": 12,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Is everybody ready? Let's get to the bow of the ship!"
+      "DialogueText": "Is everybody ready? Let's get to the stern of the ship!"
     },
     {
       "Conversation": 13,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": " I’ll race you to the front of the ship!"
+      "DialogueText": " I’ll race you to the back of the ship!"
     },
     {
       "Conversation": 14,
-      "CharacterName": "Hally",
-      "CharacterImage": "Hally",
-      "DialogueText": "...and make a lot of alien friends..."
-    },
-    {
-      "Conversation": 15,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "."
