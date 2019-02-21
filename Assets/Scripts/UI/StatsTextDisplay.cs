@@ -35,6 +35,8 @@ public class StatsTextDisplay : MonoBehaviour
         healthValue = initialHealth;
         attackValue = initialAttack;
 
+        
+
         if (!alt)
         {
             healthText.text = healthValue.ToString();
