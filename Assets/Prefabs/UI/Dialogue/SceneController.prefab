@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306729605778939906}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -180,28 +180,9 @@ PrefabInstance:
       value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: characterFont.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
       propertyPath: edsFont
       value: 
       objectReference: {fileID: 12800000, guid: d620b48ab811c174fbf6f7412cfd4059,
-        type: 3}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: hallysFont
-      value: 
-      objectReference: {fileID: 12800000, guid: f10af504bd7fad147b55aa57dd32c0a9,
-        type: 3}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: jadesFont
-      value: 
-      objectReference: {fileID: 12800000, guid: 98ffc064449693547b62f6189488600f,
-        type: 3}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: kentsFont
-      value: 
-      objectReference: {fileID: 12800000, guid: 7bf8871bff3d83e41b49eaddb727c5a2,
         type: 3}
     - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
       propertyPath: medasFont
@@ -209,34 +190,24 @@ PrefabInstance:
       objectReference: {fileID: 12800000, guid: 5afaf48da1080d1459fd0e81f272a661,
         type: 3}
     - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
+      propertyPath: kentsFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 7bf8871bff3d83e41b49eaddb727c5a2,
+        type: 3}
+    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
+      propertyPath: jadesFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 98ffc064449693547b62f6189488600f,
+        type: 3}
+    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
+      propertyPath: hallysFont
+      value: 
+      objectReference: {fileID: 12800000, guid: f10af504bd7fad147b55aa57dd32c0a9,
+        type: 3}
+    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
       propertyPath: universalFancyFont
       value: 
       objectReference: {fileID: 12800000, guid: fbdeaf08bb5a0be458af27c9567b12e6,
-        type: 3}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: characterFont.Array.data[0]
-      value: 
-      objectReference: {fileID: 12800000, guid: a5e5344d96bc8a145bd6c5789bd73fab,
-        type: 3}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: characterFont.Array.data[1]
-      value: 
-      objectReference: {fileID: 12800000, guid: 9ec516a5aeee0624b9479aded6b7cbc8,
-        type: 3}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: characterFont.Array.data[2]
-      value: 
-      objectReference: {fileID: 12800000, guid: 47d2663bf7a95d147a38e27a492ae713,
-        type: 3}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: characterFont.Array.data[3]
-      value: 
-      objectReference: {fileID: 12800000, guid: 9521fab11b7ffc04ca4883b9fd1f96bd,
-        type: 3}
-    - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: characterFont.Array.data[4]
-      value: 
-      objectReference: {fileID: 12800000, guid: b2926d0957b4d12408f72031c1ec1a13,
         type: 3}
     - target: {fileID: 2071250716, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
       propertyPath: m_AnchoredPosition.x

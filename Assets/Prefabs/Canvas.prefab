@@ -2498,10 +2498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards:
-  - {fileID: 21300000, guid: 4fbce23c3a241354c877fac0785dbe6f, type: 3}
-  - {fileID: 21300000, guid: ec056b4afda54ae4f9196a7c174466ad, type: 3}
-  - {fileID: 21300000, guid: eecb790bfc91d4242885482f227843f6, type: 3}
-  - {fileID: 21300000, guid: 19feb31e221920f49a654cf049910a7a, type: 3}
+  - {fileID: 21300000, guid: f702ca294270e2b4e8bd14b04ba22459, type: 3}
+  - {fileID: 21300000, guid: dc8b39536aed44640ab4683512ef50db, type: 3}
 --- !u!1 &4010920478170705475
 GameObject:
   m_ObjectHideFlags: 0
@@ -5223,11 +5221,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneController
       objectReference: {fileID: 0}
-    - target: {fileID: 306729605778939906, guid: 50b5f17d8abe9fa4eb030858e9f12635,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 306729605778939905, guid: 50b5f17d8abe9fa4eb030858e9f12635,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5282,6 +5275,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294217281417429251, guid: 50b5f17d8abe9fa4eb030858e9f12635,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294217281417429251, guid: 50b5f17d8abe9fa4eb030858e9f12635,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1050
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50b5f17d8abe9fa4eb030858e9f12635, type: 3}
