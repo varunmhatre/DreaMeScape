@@ -8,6 +8,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 {
     private int amountMeterNeeded;
     [SerializeField] private int buttonId;
+    private static int currButtonId;
     private bool isInteractable;
     private string currAbilityName;
     public static bool inSelectionMode;
@@ -20,11 +21,12 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         emptySpace
     }
 
-    private selectionType currSelectionType;
+    [SerializeField] private selectionType currSelectionType;
 
     // Start is called before the first frame update
     void Start()
     {
+        currButtonId = -1;
         amountMeterNeeded = 5;
         isInteractable = false;
         inSelectionMode = false;
@@ -39,41 +41,36 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             isInteractable = true;
         }
 
-        if (inSelectionMode)
+        gameObject.GetComponent<Button>().interactable = isInteractable;
+
+        if (inSelectionMode && currButtonId == buttonId)
         {
             CheckSelection(currSelectionType, currAbilityName);
         }
-        
-        gameObject.GetComponent<Button>().interactable = isInteractable;
         justClickedButton = false;
     }
 
     public void ActivateAbility()
     {
-        transform.GetComponent<Image>().color = Color.blue;
         Stats charStats = CharacterManager.allAlliedCharacters[buttonId].GetComponent<Stats>();
-        
-        if (buttonId == 4 && GameManager.currentEnergy >= 1)
+        if (buttonId == 3 && GameManager.currentEnergy >= 1)
         {
-            TryFireball(charStats.gameObject);
-        }
-        else if (buttonId == 3 && GameManager.currentEnergy >= 1)
-        {
+            transform.GetComponent<Image>().color = Color.blue;
             ActivateCleave(charStats.gameObject);
-            //for testing Henry's ability with Kent
-            //ActivateBolster(charStats.gameObject);
+        }
+        else if (buttonId == 4 && GameManager.currentEnergy >= 1)
+        {
+            transform.GetComponent<Image>().color = new Color(255.0f, 165.0f, 0.0f);
+            TryFireball(charStats.gameObject);
         }
         else if (buttonId == 2 && GameManager.currentEnergy >= 1)
         {
+            transform.GetComponent<Image>().color = new Color(10.0f, 10.0f, 10.0f);
             TrySprint(charStats.gameObject);
         }
-        else if (buttonId == 1 && GameManager.currentEnergy >= 1)
+        else
         {
-            //Hally
-        }
-        else if (buttonId == 0 && GameManager.currentEnergy >= 1)
-        {
-            ActivateParalyzingPotion(charStats.gameObject);
+            transform.GetComponent<Image>().color = new Color(235.0f, 235.0f, 30.0f);
         }
     }
 
@@ -93,6 +90,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "fireball")
             {
+                Debug.Log("Ability set to fireball");
                 if (Input.GetMouseButtonDown(0) && !justClickedButton)
                 {
                     RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
@@ -114,6 +112,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "sprint")
             {
+                Debug.Log("Ability set to sprint");
                 if (Input.GetMouseButtonDown(0) && !justClickedButton)
                 {
                     Debug.Log("Preparing to sprint");
@@ -132,47 +131,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                     }
                 }
             }
-        }
-    }
-
-    //For Henry when we add him
-    public void ActivateBolster(GameObject character)
-    {
-        bool buffSomeone = false;
-        for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
-        {
-            GameObject ally = CharacterManager.allAlliedCharacters[i];
-            if (AdjacencyHandler.CompareAdjacency(character, ally, 2))
-            {
-                ally.GetComponent<Stats>().GetComponent<Stats>().GainMeter(3);
-                buffSomeone = true;
-            }
-        }
-        if (buffSomeone)
-        {
-            GameManager.currentEnergy--;
-            character.GetComponent<Stats>().EmptyMeter();
-            isInteractable = false;
-        }
-    }
-
-    public void ActivateParalyzingPotion(GameObject character)
-    {
-        bool stunSomeone = false;
-        for (int i = 0; i < CharacterManager.allEnemyCharacters.Count; i++)
-        {
-            GameObject enemy = CharacterManager.allEnemyCharacters[i];
-            if (AdjacencyHandler.CompareAdjacency(character, enemy, 2))
-            {
-                enemy.GetComponent<Pirate>().isStunned = true;
-                stunSomeone = true;
-            }
-        }
-        if (stunSomeone)
-        {
-            GameManager.currentEnergy--;
-            character.GetComponent<Stats>().EmptyMeter();
-            isInteractable = false;
         }
     }
 
@@ -258,8 +216,9 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         if (hasTarget)
         {
+            Debug.Log("Selection mode set to enemy!");
             inSelectionMode = true;
-            currSelectionType = selectionType.enemy;
+            //currSelectionType = selectionType.enemy;
             currAbilityName = "fireball";
             RaycastManager.EmptyRaycastTargets();
         }
@@ -271,8 +230,9 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void TrySprint(GameObject character)
     {
+        Debug.Log("Selection mode set to emptySpace!");
         inSelectionMode = true;
-        currSelectionType = selectionType.emptySpace;
+        //currSelectionType = selectionType.emptySpace;
         currAbilityName = "sprint";
         RaycastManager.EmptyRaycastTargets();
     }
@@ -296,6 +256,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         if (isInteractable)
         {
             justClickedButton = true;
+            currButtonId = buttonId;
             ActivateAbility();
         }
     }

@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonId: 2
+  currSelectionType: 2
 --- !u!1 &833693794578274776
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonId: 0
+  currSelectionType: 0
 --- !u!1 &1101517727772714854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,6 +3304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonId: 3
+  currSelectionType: 0
 --- !u!1 &5296751729328771358
 GameObject:
   m_ObjectHideFlags: 0
@@ -4314,6 +4317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonId: 4
+  currSelectionType: 1
 --- !u!1 &7354827629965385393
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,6 +5064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonId: 1
+  currSelectionType: 2
 --- !u!1001 &141780011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5076,11 +5081,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6232919974813385681, guid: 2291108b4eb1e6048abd8e0cba2a3f41,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6232919974813385692, guid: 2291108b4eb1e6048abd8e0cba2a3f41,
         type: 3}
@@ -5190,6 +5190,11 @@ PrefabInstance:
     - target: {fileID: 6232919974813385694, guid: 2291108b4eb1e6048abd8e0cba2a3f41,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232919974813385681, guid: 2291108b4eb1e6048abd8e0cba2a3f41,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
