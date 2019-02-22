@@ -4,18 +4,18 @@ using System.Collections.Generic;
 
 public class VolumeControls : MonoBehaviour
 {
-    private AudioSource audioSrc;
+    private AudioSource audioSource;
     private float musicVolume = 1f;
 
     void Start()
     {
-        audioSrc = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
-    { 
-        audioSrc.volume = musicVolume;
+    {
+        audioSource.volume = musicVolume;
     }
     public void SetVolume(float vol)
     {
