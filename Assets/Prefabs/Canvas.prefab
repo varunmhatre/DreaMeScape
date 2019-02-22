@@ -1848,7 +1848,6 @@ GameObject:
   - component: {fileID: 1221278620076466498}
   - component: {fileID: 3123333843316516398}
   - component: {fileID: 3560914641827088362}
-  - component: {fileID: 1637872068646561226}
   m_Layer: 5
   m_Name: Kent
   m_TagString: Untagged
@@ -1931,21 +1930,6 @@ MonoBehaviour:
   uiHealthObject: {fileID: 0}
   uiAttackValueObj: {fileID: 2467607957848119631}
   uiHealthValueObj: {fileID: 5440059108026527876}
---- !u!114 &1637872068646561226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3624006664730893394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 8
-  initialAttack: 2
-  alt: 1
 --- !u!1 &3666860062327463875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,6 +2339,7 @@ GameObject:
   - component: {fileID: 8382199264652713415}
   - component: {fileID: 4602387906098532937}
   - component: {fileID: 6913582482328893724}
+  - component: {fileID: 8275014518401624786}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -2451,6 +2436,30 @@ MonoBehaviour:
   - {fileID: 6514044071242177834}
   - {fileID: 5296751729328771358}
   - {fileID: 4266507539885039372}
+--- !u!114 &8275014518401624786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010657693873159453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de4992584047d64184a02cbff8162ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  presenceTextArr:
+  - {fileID: 4752301347594834292}
+  - {fileID: 3063985777413671233}
+  - {fileID: 5208596438272717780}
+  - {fileID: 3497172269873685744}
+  - {fileID: 7533255634383113679}
+  resistTextArr:
+  - {fileID: 6662668601611035756}
+  - {fileID: 6622431257713855216}
+  - {fileID: 2760063878006785162}
+  - {fileID: 6563855666726813455}
+  - {fileID: 5713377355133849106}
 --- !u!1 &4010661972937604009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,7 +2920,6 @@ GameObject:
   - component: {fileID: 7776105354200023824}
   - component: {fileID: 4392924470762499355}
   - component: {fileID: 1374568723514906365}
-  - component: {fileID: 3574901390413631935}
   m_Layer: 5
   m_Name: Ed
   m_TagString: Untagged
@@ -2994,21 +3002,6 @@ MonoBehaviour:
   uiHealthObject: {fileID: 0}
   uiAttackValueObj: {fileID: 1121956624488904523}
   uiHealthValueObj: {fileID: 833693794578274776}
---- !u!114 &3574901390413631935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4266507539885039372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 8
-  initialAttack: 2
-  alt: 1
 --- !u!1 &4576137697292919732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,7 +3308,6 @@ GameObject:
   - component: {fileID: 3866581458647214035}
   - component: {fileID: 7484564356304581027}
   - component: {fileID: 7286868182146839640}
-  - component: {fileID: 4446163982672484576}
   m_Layer: 5
   m_Name: Hally
   m_TagString: Untagged
@@ -3398,21 +3390,6 @@ MonoBehaviour:
   uiHealthObject: {fileID: 0}
   uiAttackValueObj: {fileID: 1796904100099718032}
   uiHealthValueObj: {fileID: 6785591823748664370}
---- !u!114 &4446163982672484576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5296751729328771358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 8
-  initialAttack: 2
-  alt: 1
 --- !u!1 &5440059108026527876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3834,7 +3811,6 @@ GameObject:
   - component: {fileID: 649499112533915941}
   - component: {fileID: 3389794230026027611}
   - component: {fileID: 7824594940642033756}
-  - component: {fileID: 5558879218432411040}
   m_Layer: 5
   m_Name: Jade
   m_TagString: Untagged
@@ -3917,21 +3893,6 @@ MonoBehaviour:
   uiHealthObject: {fileID: 0}
   uiAttackValueObj: {fileID: 6160367199262499877}
   uiHealthValueObj: {fileID: 3300185119576647558}
---- !u!114 &5558879218432411040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6379627880626409972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 8
-  initialAttack: 2
-  alt: 1
 --- !u!1 &6514044071242177834
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,7 +3905,6 @@ GameObject:
   - component: {fileID: 6971124657732415873}
   - component: {fileID: 5264392953597361227}
   - component: {fileID: 836145326563052842}
-  - component: {fileID: 8924035299035569109}
   m_Layer: 5
   m_Name: Meda
   m_TagString: Untagged
@@ -4027,21 +3987,6 @@ MonoBehaviour:
   uiHealthObject: {fileID: 0}
   uiAttackValueObj: {fileID: 2814897530460151899}
   uiHealthValueObj: {fileID: 8513720816998903120}
---- !u!114 &8924035299035569109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6514044071242177834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e2483a612f3374dab95071a13b849a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 8
-  initialAttack: 2
-  alt: 1
 --- !u!1 &6785591823748664370
 GameObject:
   m_ObjectHideFlags: 0
@@ -5221,6 +5166,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneController
       objectReference: {fileID: 0}
+    - target: {fileID: 3294217281417429251, guid: 50b5f17d8abe9fa4eb030858e9f12635,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294217281417429251, guid: 50b5f17d8abe9fa4eb030858e9f12635,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 306729605778939905, guid: 50b5f17d8abe9fa4eb030858e9f12635,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5275,16 +5230,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294217281417429251, guid: 50b5f17d8abe9fa4eb030858e9f12635,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294217281417429251, guid: 50b5f17d8abe9fa4eb030858e9f12635,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1050
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50b5f17d8abe9fa4eb030858e9f12635, type: 3}
