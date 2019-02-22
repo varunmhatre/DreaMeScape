@@ -5,7 +5,7 @@ using UnityEngine;
 public class SettingsButton : MonoBehaviour
 {
     public GameObject controlDisplay;
-    private bool isClicked;
+    public static bool isClicked;
     // Use this for initialization
     void Start()
     {
@@ -19,6 +19,7 @@ public class SettingsButton : MonoBehaviour
     public void ControlAction()
     {
         isClicked = !isClicked;
+        Debug.Log("isClicked    :   " + isClicked);
         if (isClicked)
         {
             controlDisplay.SetActive(true);
