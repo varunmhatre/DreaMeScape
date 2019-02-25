@@ -25,16 +25,13 @@ public class UpdateStats : MonoBehaviour
 
     void UpdateText()
     {
-        foreach (var item in CharacterManager.allAlliedCharacters)
+        for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
-            for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
-            {
-                healthValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().health;
-                presenceTextArr[i].text = healthValue.ToString();
+            healthValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().health;
+            resistTextArr[i].text = healthValue.ToString();
 
-                attackValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().damage;
-                resistTextArr[i].text = attackValue.ToString();
-            }
+            attackValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().damage;
+            presenceTextArr[i].text = attackValue.ToString();
         }
     }
 }
