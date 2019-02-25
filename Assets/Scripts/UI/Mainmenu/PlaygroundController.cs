@@ -30,7 +30,6 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData eventData)
     { 
         transform.GetComponent<Image>().sprite = onSprite;
-        transform.GetChild(0).GetComponent<Text>().text = "";
     }
 
     public void OnPointerExit(PointerEventData eventData)
