@@ -3,7 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GridAreaToPlace
+  - GridAreaToIgnore
+  - Enemy
+  - PirateBoss
+  - Resist
+  - Presence
+  - LettersHolderKent
+  - LettersHolderMeda
+  - LettersHolderEd
+  - LettersHolderJade
+  - LettersHolderHally
+  - GridPiece
+  - Cannon
+  - GridRotater
+  - Control
+  - Generator
   layers:
   - Default
   - TransparentFX
@@ -14,8 +30,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - GridArea
+  - Grid
   - 
   - 
   - 
