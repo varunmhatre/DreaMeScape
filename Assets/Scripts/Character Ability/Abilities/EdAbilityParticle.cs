@@ -34,7 +34,7 @@ public class EdAbilityParticle : MonoBehaviour
             {
                 timer = 0;
                 isSmokeOn = false;
-                poison.Stop();
+                poison.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             }
         }
     }
@@ -47,7 +47,7 @@ public class EdAbilityParticle : MonoBehaviour
 
     public void StoppedHovering()
     {
-        poison.Stop();
+        poison.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     public void Clicked()
