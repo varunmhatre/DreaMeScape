@@ -2638,7 +2638,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 580f080b6b3981244bf05fc898561fd9, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -2653,7 +2653,7 @@ MonoBehaviour:
   m_Text: "Burhanuddin Beawerwala - Programmer\nKaustabh Dutta\r - Design\nMark Obeldobel\r
     - Production \nNaveen Sampath\r - UI Programmer\nNdubisi Ahukanna - Aesthetic
     \nVarun Mhatre\r - Narrative\n\nThomas Ratliff - 3D Modeler\nSally Boniecki -
-    2D Artist\n\nJieting Qian\nYunSheng Zhou"
+    2D Artist\n\nJieting Qian - UI/Typography\nYunSheng Zhou - UI/Typography\n\nAudio"
 --- !u!222 &1219572672
 CanvasRenderer:
   m_ObjectHideFlags: 0
