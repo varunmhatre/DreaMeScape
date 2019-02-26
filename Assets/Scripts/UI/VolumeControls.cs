@@ -1,26 +1,24 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 
 public class VolumeControls : MonoBehaviour
 {
-    private int volumeControl;
-    public Slider volumeSlider;
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+    private float musicVolume = 1f;
+
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-    } 
-
-    public void ChangeVolume()
+        audioSource.volume = musicVolume;
+    }
+    public void SetVolume(float vol)
     {
-        transform.GetComponent<Slider>().value = volumeControl;
+        musicVolume = vol;
     }
 }

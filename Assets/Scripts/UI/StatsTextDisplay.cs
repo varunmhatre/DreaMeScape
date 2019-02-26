@@ -7,7 +7,7 @@ public class StatsTextDisplay : MonoBehaviour
     [SerializeField] private int initialHealth;
     [SerializeField] private int initialAttack;
 
-    [SerializeField] private bool alt;
+    [SerializeField] private bool alt;    
 
     private int healthValue;
     private int attackValue;
@@ -16,7 +16,8 @@ public class StatsTextDisplay : MonoBehaviour
     private Text attackTextAlt;
 
     private TextMesh healthText;
-    private TextMesh attackText;
+    private TextMesh attackText; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +34,7 @@ public class StatsTextDisplay : MonoBehaviour
         }
 
         healthValue = initialHealth;
-        attackValue = initialAttack;
-
-        
+        attackValue = initialAttack; 
 
         if (!alt)
         {
@@ -61,7 +60,7 @@ public class StatsTextDisplay : MonoBehaviour
         if (alt)
         {
             healthTextAlt.text = healthValue.ToString();
-            attackTextAlt.text = attackValue.ToString();          
+            attackTextAlt.text = attackValue.ToString();
         }
     }
 
@@ -94,4 +93,12 @@ public class StatsTextDisplay : MonoBehaviour
     {
         return initialAttack;
     }
+
+
+    public void UpdateStats()
+    {
+        
+        
+    }
+    
 }

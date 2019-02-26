@@ -21,7 +21,7 @@ public class UniversalControls : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         if (!restarting)
         {
@@ -40,7 +40,7 @@ public class UniversalControls : MonoBehaviour {
 
     public void CheckExitGame()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) || Input.GetMouseButtonDown(0))
         {
             escaping = true;
         }
