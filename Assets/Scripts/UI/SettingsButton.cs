@@ -18,8 +18,7 @@ public class SettingsButton : MonoBehaviour
     }
     public void ControlAction()
     {
-        isClicked = !isClicked;
-        Debug.Log("isClicked    :   " + isClicked);
+        isClicked = !isClicked; 
         if (isClicked)
         {
             controlDisplay.SetActive(true);
