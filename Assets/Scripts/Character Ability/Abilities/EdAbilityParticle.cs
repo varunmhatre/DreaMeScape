@@ -21,8 +21,8 @@ public class EdAbilityParticle : MonoBehaviour
         poison.Stop();
         mainModule = poison.main;
         emissionModule = poison.emission;
-        lightPurple = new Vector4(131, 79, 176, 255);
-        deepPurple = new Vector4(122, 0, 227, 255);
+        lightPurple = new Vector4(183, 0, 225, 150);
+        deepPurple = new Vector4(120, 0, 221, 255);
     }
 
     private void Update()
@@ -58,13 +58,17 @@ public class EdAbilityParticle : MonoBehaviour
 
     void SetParticleToHover()
     {
-        mainModule.startColor = deepPurple;
-        emissionModule.rateOverTime = 40;
+        mainModule.startColor = lightPurple;
+        emissionModule.rateOverTime = 100;
+        mainModule.startLifetime = 5.0f;
+        mainModule.startSpeed = 0.2f;
     }
 
     void SetParticleToUse()
     {
-        mainModule.startColor = lightPurple;
-        emissionModule.rateOverTime = 100;
+        mainModule.startColor = deepPurple;
+        mainModule.startLifetime = 1.5f;
+        mainModule.startSpeed = .8f;
+        emissionModule.rateOverTime = 1000;
     }
 }
