@@ -21,4 +21,8 @@ public class SceneTransition : MonoBehaviour
         off.SetActive(false);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
