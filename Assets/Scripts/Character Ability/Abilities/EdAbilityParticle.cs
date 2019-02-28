@@ -7,8 +7,8 @@ public class EdAbilityParticle : MonoBehaviour
     [SerializeField] ParticleSystem poison;
     ParticleSystem.MainModule mainModule;
     ParticleSystem.EmissionModule emissionModule;
-    Color lightPurple;
-    Color deepPurple;
+    Color lightGreen;
+    Color deepGreen;
 
     bool isSmokeOn;
     float timer;
@@ -21,8 +21,8 @@ public class EdAbilityParticle : MonoBehaviour
         poison.Stop();
         mainModule = poison.main;
         emissionModule = poison.emission;
-        lightPurple = new Vector4(183, 0, 225, 150);
-        deepPurple = new Vector4(120, 0, 221, 255);
+        lightGreen = new Vector4(0, 255, 0, 150);
+        deepGreen = new Vector4(0, 255, 0, 255);
     }
 
     private void Update()
@@ -58,15 +58,15 @@ public class EdAbilityParticle : MonoBehaviour
 
     void SetParticleToHover()
     {
-        mainModule.startColor = lightPurple;
-        emissionModule.rateOverTime = 100;
+        mainModule.startColor = lightGreen;
+        emissionModule.rateOverTime = 60;
         mainModule.startLifetime = 5.0f;
         mainModule.startSpeed = 0.2f;
     }
 
     void SetParticleToUse()
     {
-        mainModule.startColor = deepPurple;
+        mainModule.startColor = deepGreen;
         mainModule.startLifetime = 1.5f;
         mainModule.startSpeed = .8f;
         emissionModule.rateOverTime = 1000;

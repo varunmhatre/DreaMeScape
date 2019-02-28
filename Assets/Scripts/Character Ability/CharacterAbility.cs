@@ -173,7 +173,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             GameObject enemy = CharacterManager.allEnemyCharacters[i];
             if (AdjacencyHandler.CompareAdjacency(character, enemy, 2))
             {
-                enemy.GetComponent<Pirate>().isStunned = true;
+                enemy.GetComponent<Pirate>().GetStunned();
                 hitsSomeone = true;
             }
         }
