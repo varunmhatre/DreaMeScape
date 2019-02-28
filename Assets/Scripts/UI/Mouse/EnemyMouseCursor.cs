@@ -6,6 +6,8 @@ public class EnemyMouseCursor : MonoBehaviour
 {
     public bool cursorChanged;
     public Texture2D mouseTarget;
+    Stats selectedUnit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +24,24 @@ public class EnemyMouseCursor : MonoBehaviour
             !CannonStaticVariables.isCannonSelected && PlayerControls.selectedUnit != null &&
                 AdjacencyHandler.CompareAdjacency(gameObject, PlayerControls.selectedUnit.gameObject, 1))
         {
+            selectedUnit = PlayerControls.selectedUnit.GetComponent<Stats>();
             cursorChanged = true;
             Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.Auto);
         }
     }
+    
     private void OnMouseExit()
     {
         if (cursorChanged)
+        {
+            cursorChanged = false;
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
+    }
+
+    private void OnMouseOver()
+    {
+        if (cursorChanged && selectedUnit.hasAttacked)
         {
             cursorChanged = false;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
