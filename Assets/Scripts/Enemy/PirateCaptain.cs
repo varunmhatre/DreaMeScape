@@ -8,6 +8,7 @@ public class PirateCaptain : MonoBehaviour
     // Start is called before the first frame update
     private void OnDestroy()
     {
-        SceneManager.LoadScene(0);
+        if (!Application.isEditor)
+            SceneManager.LoadScene(0);
     }
 }
