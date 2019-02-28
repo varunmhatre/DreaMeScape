@@ -155,42 +155,21 @@ public class PlayerControls : MonoBehaviour
     public void AttackEnemy()
     {
         RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
-        RaycastHit hitBoss = RaycastManager.GetRaycastHitForTag("Boss");
 
-        bool hittingBoss = false;
-
-        if (hitEnemy.transform != null)
-        {
-            hittingBoss = false;
-        }
-        else if (hitBoss.transform != null)
-        {
-            hittingBoss = true;
-        }
-        else if (hitBoss.transform == null && hitEnemy.transform == null)
+        if (hitEnemy.transform == null)
         {
             return;
         }
 
-        if (!CannonStaticVariables.isCannonSelected && prevSelectedUnit && prevSelectedUnit.GetComponent<Stats>().hasAttacked == false && GameManager.currentEnergy > 0)
+        if (!CannonStaticVariables.isCannonSelected && prevSelectedUnit && !prevSelectedUnit.GetComponent<Stats>().hasAttacked)
         {
-            if (hittingBoss && AdjacencyHandler.CompareAdjacency(hitBoss.transform.gameObject, prevSelectedUnit.gameObject, 1))
-            {
-                Stats bossStats = hitBoss.transform.gameObject.GetComponent<Stats>();
-                bossStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
-                bossStats.CheckDeath();
-                prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
-                GameManager.currentEnergy--;
-                prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
-            }
-            else if (!hittingBoss && AdjacencyHandler.CompareAdjacency(hitEnemy.transform.gameObject, prevSelectedUnit.gameObject, 1))
+            if (AdjacencyHandler.CompareAdjacency(hitEnemy.transform.gameObject, prevSelectedUnit.gameObject, 1))
             {
                 Stats enemyStats = hitEnemy.transform.gameObject.GetComponent<Stats>();
                 enemyStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
                 enemyStats.CheckDeath();
                 Debug.Log("Enemy taking damage!");
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
-                GameManager.currentEnergy--;
                 prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
         }
