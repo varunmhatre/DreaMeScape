@@ -46,11 +46,17 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData eventData)
     { 
         transform.GetComponent<Image>().sprite = onSprite;
+        Vector3 newPosition = transform.position;
+        newPosition.x -= 40.0f;
+        transform.position = newPosition;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        transform.GetComponent<Image>().sprite = offSprite; 
+        transform.GetComponent<Image>().sprite = offSprite;
+        Vector3 newPosition = transform.position;
+        newPosition.x += 40.0f;
+        transform.position = newPosition;
     }
     
     public void ApplyParallax(GameObject[] objs, Vector3[] positions)
