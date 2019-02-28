@@ -13,6 +13,12 @@ public class Pirate : MonoBehaviour
 
     public bool isStunned;
 
+    public void GetStunned()
+    {
+        isStunned = true;
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+    }
+
     void Update()
     {
         gameObject.GetComponent<Stats>().UpdateDisplay();

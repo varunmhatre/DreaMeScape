@@ -53,20 +53,29 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void ActivateAbility()
     {
         Stats charStats = CharacterManager.allAlliedCharacters[buttonId].GetComponent<Stats>();
-        if (buttonId == 3 && GameManager.currentEnergy >= 1)
-        {
-            transform.GetComponent<Image>().color = Color.blue;
-            ActivateCleave(charStats.gameObject);
-        }
-        else if (buttonId == 4 && GameManager.currentEnergy >= 1)
+        if (buttonId == 4 && GameManager.currentEnergy >= 1)
         {
             transform.GetComponent<Image>().color = new Color(255.0f, 165.0f, 0.0f);
             TryFireball(charStats.gameObject);
+        }        
+        else if (buttonId == 3 && GameManager.currentEnergy >= 1)
+        {
+            transform.GetComponent<Image>().color = Color.blue;
+            ActivateCleave(charStats.gameObject);
         }
         else if (buttonId == 2 && GameManager.currentEnergy >= 1)
         {
             transform.GetComponent<Image>().color = new Color(10.0f, 10.0f, 10.0f);
             TrySprint(charStats.gameObject);
+        }
+        else if (buttonId == 1 && GameManager.currentEnergy >= 1)
+        {
+            //Hally's Ability
+        }
+        else if (buttonId == 0 && GameManager.currentEnergy >= 1)
+        {
+            transform.GetComponent<Image>().color = Color.green;
+            ActivateParalyzingPotion(charStats.gameObject);
         }
         else
         {
@@ -131,6 +140,48 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                     }
                 }
             }
+        }
+    }
+
+    //Henry's Ability
+    public void ActivateBolster(GameObject character)
+    {
+        bool buffSomeone = false;
+        for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
+        {
+            GameObject ally = CharacterManager.allAlliedCharacters[i];
+            if (AdjacencyHandler.CompareAdjacency(character, ally, 2))
+            {
+                ally.GetComponent<Stats>().GainMeter(3);
+                buffSomeone = true;
+            }
+        }
+        if (buffSomeone)
+        {
+            GameManager.currentEnergy--;
+            character.GetComponent<Stats>().EmptyMeter();
+            isInteractable = false;
+        }
+    }
+
+    public void ActivateParalyzingPotion(GameObject character)
+    {
+        bool hitsSomeone = false;
+        GetComponent<EdAbilityHandler>().OnMouseClickWhenOn();
+        for (int i = 0; i < CharacterManager.allEnemyCharacters.Count; i++)
+        {
+            GameObject enemy = CharacterManager.allEnemyCharacters[i];
+            if (AdjacencyHandler.CompareAdjacency(character, enemy, 2))
+            {
+                enemy.GetComponent<Pirate>().GetStunned();
+                hitsSomeone = true;
+            }
+        }
+        if (hitsSomeone)
+        {
+            GameManager.currentEnergy--;
+            character.GetComponent<Stats>().EmptyMeter();
+            isInteractable = false;
         }
     }
 
@@ -242,6 +293,10 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         if (isInteractable)
         {
             transform.GetComponent<Image>().color = Color.blue;
+            if (buttonId == 0)
+            {
+                GetComponent<EdAbilityHandler>().OnMouseHoveringStart();
+            }
         }
     }
     public void OnPointerExit(PointerEventData eventData)
@@ -249,6 +304,10 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         if (isInteractable)
         {
             transform.GetComponent<Image>().color = Color.white;
+            if (buttonId == 0)
+            {
+                GetComponent<EdAbilityHandler>().OnMouseHoveringExit();
+            }
         }
     }
     public void OnPointerDown(PointerEventData pointerEventData)
