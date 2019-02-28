@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         {
             enemy.GetComponent<Stats>().hasAttacked = false;
             enemy.GetComponent<Pirate>().isStunned = false;
+            enemy.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
