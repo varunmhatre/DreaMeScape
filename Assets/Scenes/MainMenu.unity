@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 12342257}
   - component: {fileID: 12342259}
   - component: {fileID: 12342258}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 35910344}
   - component: {fileID: 35910346}
   - component: {fileID: 35910345}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text24Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 61745372}
   - component: {fileID: 61745374}
   - component: {fileID: 61745373}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 86050349}
   - component: {fileID: 86050351}
   - component: {fileID: 86050350}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text32Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 88416247}
   - component: {fileID: 88416249}
   - component: {fileID: 88416248}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text6Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 134573059}
   - component: {fileID: 134573061}
   - component: {fileID: 134573060}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text28Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 142810302}
   - component: {fileID: 142810304}
   - component: {fileID: 142810303}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text30Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1658,7 +1658,7 @@ GameObject:
   - component: {fileID: 198960006}
   - component: {fileID: 198960008}
   - component: {fileID: 198960007}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text26Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 260882318}
   - component: {fileID: 260882320}
   - component: {fileID: 260882319}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2135,7 +2135,7 @@ GameObject:
   - component: {fileID: 330354552}
   - component: {fileID: 330354554}
   - component: {fileID: 330354553}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2217,7 +2217,7 @@ GameObject:
   - component: {fileID: 338964334}
   - component: {fileID: 338964336}
   - component: {fileID: 338964335}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2634,7 +2634,7 @@ GameObject:
   - component: {fileID: 436932668}
   - component: {fileID: 436932670}
   - component: {fileID: 436932669}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2873,7 +2873,7 @@ GameObject:
   - component: {fileID: 499339756}
   - component: {fileID: 499339758}
   - component: {fileID: 499339757}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3030,7 +3030,7 @@ GameObject:
   - component: {fileID: 526674016}
   - component: {fileID: 526674018}
   - component: {fileID: 526674017}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text34Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3113,7 +3113,7 @@ GameObject:
   - component: {fileID: 566162405}
   - component: {fileID: 566162407}
   - component: {fileID: 566162406}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3196,7 +3196,7 @@ GameObject:
   - component: {fileID: 571563302}
   - component: {fileID: 571563304}
   - component: {fileID: 571563303}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3352,7 +3352,7 @@ GameObject:
   - component: {fileID: 598653871}
   - component: {fileID: 598653873}
   - component: {fileID: 598653872}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text14Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3431,7 +3431,7 @@ GameObject:
   - component: {fileID: 609234007}
   - component: {fileID: 609234009}
   - component: {fileID: 609234008}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text30Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3588,7 +3588,7 @@ GameObject:
   - component: {fileID: 642462505}
   - component: {fileID: 642462507}
   - component: {fileID: 642462506}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3671,7 +3671,7 @@ GameObject:
   - component: {fileID: 645817708}
   - component: {fileID: 645817710}
   - component: {fileID: 645817709}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text34Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3831,7 +3831,7 @@ GameObject:
   - component: {fileID: 691521868}
   - component: {fileID: 691521870}
   - component: {fileID: 691521869}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text16Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3984,7 +3984,7 @@ GameObject:
   - component: {fileID: 721029267}
   - component: {fileID: 721029269}
   - component: {fileID: 721029268}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text4Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4065,7 +4065,7 @@ GameObject:
   - component: {fileID: 737568980}
   - component: {fileID: 737568982}
   - component: {fileID: 737568981}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text34Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4146,7 +4146,7 @@ GameObject:
   - component: {fileID: 754374016}
   - component: {fileID: 754374018}
   - component: {fileID: 754374017}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4229,7 +4229,7 @@ GameObject:
   - component: {fileID: 776820473}
   - component: {fileID: 776820475}
   - component: {fileID: 776820474}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text22Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4344,7 +4344,7 @@ GameObject:
   - component: {fileID: 800561764}
   - component: {fileID: 800561766}
   - component: {fileID: 800561765}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4427,7 +4427,7 @@ GameObject:
   - component: {fileID: 800600740}
   - component: {fileID: 800600742}
   - component: {fileID: 800600741}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text4Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4508,7 +4508,7 @@ GameObject:
   - component: {fileID: 854513298}
   - component: {fileID: 854513300}
   - component: {fileID: 854513299}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text2Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4591,7 +4591,7 @@ GameObject:
   - component: {fileID: 895836100}
   - component: {fileID: 895836102}
   - component: {fileID: 895836101}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text16Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4670,7 +4670,7 @@ GameObject:
   - component: {fileID: 904237351}
   - component: {fileID: 904237353}
   - component: {fileID: 904237352}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text8Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 921669030}
   - component: {fileID: 921669032}
   - component: {fileID: 921669031}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text30Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4904,7 +4904,7 @@ GameObject:
   - component: {fileID: 926866387}
   - component: {fileID: 926866389}
   - component: {fileID: 926866388}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text28Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4983,7 +4983,7 @@ GameObject:
   - component: {fileID: 927504970}
   - component: {fileID: 927504972}
   - component: {fileID: 927504971}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text2Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5066,7 +5066,7 @@ GameObject:
   - component: {fileID: 979581340}
   - component: {fileID: 979581342}
   - component: {fileID: 979581341}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5225,7 +5225,7 @@ GameObject:
   - component: {fileID: 996740454}
   - component: {fileID: 996740456}
   - component: {fileID: 996740455}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text32Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5304,7 +5304,7 @@ GameObject:
   - component: {fileID: 1001441488}
   - component: {fileID: 1001441490}
   - component: {fileID: 1001441489}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text18Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5383,7 +5383,7 @@ GameObject:
   - component: {fileID: 1057761891}
   - component: {fileID: 1057761893}
   - component: {fileID: 1057761892}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5466,7 +5466,7 @@ GameObject:
   - component: {fileID: 1058098874}
   - component: {fileID: 1058098876}
   - component: {fileID: 1058098875}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5619,7 +5619,7 @@ GameObject:
   - component: {fileID: 1143278983}
   - component: {fileID: 1143278985}
   - component: {fileID: 1143278984}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5702,7 +5702,7 @@ GameObject:
   - component: {fileID: 1144589055}
   - component: {fileID: 1144589057}
   - component: {fileID: 1144589056}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text8Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5781,7 +5781,7 @@ GameObject:
   - component: {fileID: 1170090522}
   - component: {fileID: 1170090524}
   - component: {fileID: 1170090523}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text20Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5930,7 +5930,7 @@ GameObject:
   - component: {fileID: 1219572670}
   - component: {fileID: 1219572672}
   - component: {fileID: 1219572671}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6015,7 +6015,7 @@ GameObject:
   - component: {fileID: 1224224931}
   - component: {fileID: 1224224933}
   - component: {fileID: 1224224932}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6348,7 +6348,7 @@ GameObject:
   - component: {fileID: 1236483388}
   - component: {fileID: 1236483390}
   - component: {fileID: 1236483389}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6558,7 +6558,7 @@ GameObject:
   - component: {fileID: 1272701722}
   - component: {fileID: 1272701724}
   - component: {fileID: 1272701723}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text10Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6639,7 +6639,7 @@ GameObject:
   - component: {fileID: 1274466099}
   - component: {fileID: 1274466101}
   - component: {fileID: 1274466100}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text18Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6718,7 +6718,7 @@ GameObject:
   - component: {fileID: 1275710549}
   - component: {fileID: 1275710551}
   - component: {fileID: 1275710550}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text6Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6797,7 +6797,7 @@ GameObject:
   - component: {fileID: 1298630060}
   - component: {fileID: 1298630062}
   - component: {fileID: 1298630061}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text24Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6880,7 +6880,7 @@ GameObject:
   - component: {fileID: 1314440335}
   - component: {fileID: 1314440337}
   - component: {fileID: 1314440336}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7264,7 +7264,7 @@ GameObject:
   - component: {fileID: 1343525350}
   - component: {fileID: 1343525352}
   - component: {fileID: 1343525351}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7347,7 +7347,7 @@ GameObject:
   - component: {fileID: 1344198279}
   - component: {fileID: 1344198281}
   - component: {fileID: 1344198280}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text6Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7425,7 +7425,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1344855536}
   - component: {fileID: 1344855537}
-  m_Layer: 5
+  - component: {fileID: 1344855538}
+  m_Layer: 2
   m_Name: CreditsReelOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7505,6 +7506,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allCreditsPieces:
   - {fileID: 1344855535}
+--- !u!225 &1344855538
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344855535}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1344878191
 GameObject:
   m_ObjectHideFlags: 0
@@ -7552,7 +7565,7 @@ GameObject:
   - component: {fileID: 1365401197}
   - component: {fileID: 1365401199}
   - component: {fileID: 1365401198}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text22Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7710,7 +7723,7 @@ GameObject:
   - component: {fileID: 1393410877}
   - component: {fileID: 1393410879}
   - component: {fileID: 1393410878}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7792,7 +7805,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1394898781}
   - component: {fileID: 1394898782}
-  m_Layer: 0
+  - component: {fileID: 1394898783}
+  m_Layer: 2
   m_Name: CreditsReel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7868,6 +7882,18 @@ MonoBehaviour:
   allCreditsPieces:
   - {fileID: 1394898780}
   - {fileID: 1370093378}
+--- !u!225 &1394898783
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394898780}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1439010266
 GameObject:
   m_ObjectHideFlags: 0
@@ -7958,7 +7984,7 @@ GameObject:
   - component: {fileID: 1442596316}
   - component: {fileID: 1442596318}
   - component: {fileID: 1442596317}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text2Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8041,7 +8067,7 @@ GameObject:
   - component: {fileID: 1444824172}
   - component: {fileID: 1444824174}
   - component: {fileID: 1444824173}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8352,7 +8378,7 @@ GameObject:
   - component: {fileID: 1509682333}
   - component: {fileID: 1509682335}
   - component: {fileID: 1509682334}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8529,7 +8555,7 @@ GameObject:
   - component: {fileID: 1519596363}
   - component: {fileID: 1519596365}
   - component: {fileID: 1519596364}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text10Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8733,7 +8759,7 @@ GameObject:
   - component: {fileID: 1559536798}
   - component: {fileID: 1559536800}
   - component: {fileID: 1559536799}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8816,7 +8842,7 @@ GameObject:
   - component: {fileID: 1578826426}
   - component: {fileID: 1578826428}
   - component: {fileID: 1578826427}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text26Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8895,7 +8921,7 @@ GameObject:
   - component: {fileID: 1585562273}
   - component: {fileID: 1585562275}
   - component: {fileID: 1585562274}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text20Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8978,7 +9004,7 @@ GameObject:
   - component: {fileID: 1585764501}
   - component: {fileID: 1585764503}
   - component: {fileID: 1585764502}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9060,7 +9086,7 @@ GameObject:
   - component: {fileID: 1587206504}
   - component: {fileID: 1587206506}
   - component: {fileID: 1587206505}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9142,7 +9168,7 @@ GameObject:
   - component: {fileID: 1595110817}
   - component: {fileID: 1595110819}
   - component: {fileID: 1595110818}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9224,7 +9250,7 @@ GameObject:
   - component: {fileID: 1643001860}
   - component: {fileID: 1643001862}
   - component: {fileID: 1643001861}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text20Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9307,7 +9333,7 @@ GameObject:
   - component: {fileID: 1646669087}
   - component: {fileID: 1646669089}
   - component: {fileID: 1646669088}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9389,7 +9415,7 @@ GameObject:
   - component: {fileID: 1652913144}
   - component: {fileID: 1652913146}
   - component: {fileID: 1652913145}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text2Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9546,7 +9572,7 @@ GameObject:
   - component: {fileID: 1710264870}
   - component: {fileID: 1710264872}
   - component: {fileID: 1710264871}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text4Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9625,7 +9651,7 @@ GameObject:
   - component: {fileID: 1714680668}
   - component: {fileID: 1714680670}
   - component: {fileID: 1714680669}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text12Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9785,7 +9811,7 @@ GameObject:
   - component: {fileID: 1735380201}
   - component: {fileID: 1735380203}
   - component: {fileID: 1735380202}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text6Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9866,7 +9892,7 @@ GameObject:
   - component: {fileID: 1756622021}
   - component: {fileID: 1756622023}
   - component: {fileID: 1756622022}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9948,7 +9974,7 @@ GameObject:
   - component: {fileID: 1775865323}
   - component: {fileID: 1775865325}
   - component: {fileID: 1775865324}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10033,7 +10059,7 @@ GameObject:
   - component: {fileID: 1790205264}
   - component: {fileID: 1790205266}
   - component: {fileID: 1790205265}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text12Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10114,7 +10140,7 @@ GameObject:
   - component: {fileID: 1837785538}
   - component: {fileID: 1837785540}
   - component: {fileID: 1837785539}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10196,7 +10222,7 @@ GameObject:
   - component: {fileID: 1852495844}
   - component: {fileID: 1852495846}
   - component: {fileID: 1852495845}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text4Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10354,7 +10380,7 @@ GameObject:
   - component: {fileID: 1873982468}
   - component: {fileID: 1873982470}
   - component: {fileID: 1873982469}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10861,7 +10887,7 @@ GameObject:
   - component: {fileID: 1957897719}
   - component: {fileID: 1957897721}
   - component: {fileID: 1957897720}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text34Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11023,7 +11049,7 @@ GameObject:
   - component: {fileID: 2056134900}
   - component: {fileID: 2056134902}
   - component: {fileID: 2056134901}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text20Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11266,7 +11292,7 @@ GameObject:
   - component: {fileID: 2071170755}
   - component: {fileID: 2071170757}
   - component: {fileID: 2071170756}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11349,7 +11375,7 @@ GameObject:
   - component: {fileID: 2088321098}
   - component: {fileID: 2088321100}
   - component: {fileID: 2088321099}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text30Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11671,7 +11697,7 @@ GameObject:
   - component: {fileID: 2137434538}
   - component: {fileID: 2137434540}
   - component: {fileID: 2137434539}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Credit Text14Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
