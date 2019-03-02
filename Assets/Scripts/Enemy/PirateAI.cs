@@ -12,7 +12,15 @@ public class PirateAI : MonoBehaviour
         left
     }
 
+    enum Strategy
+    {
+        groupUp,
+        attackClosest,
+        siegeOnOne
+    }
+
     Direction priority;
+    Strategy strategy;
 
     List<GridCoordinates> pirateTurns;
     GridCoordinates currentUnitLocaton;
@@ -20,14 +28,21 @@ public class PirateAI : MonoBehaviour
 
     bool piratesInProgress;
     bool canPirateAttack;
+    bool switchPirate;
 
     float timer;
+    float timerForCameraSwitch;
     const float timeToWaitForEachMove = 1.0f;
+    const float timeToWaitForNewPirateToMove = 2.0f;
+
+    CameraFocus cameraMain;
 
     int selectedPirate;
 
     private void Start()
     {
+        switchPirate = false;
+        cameraMain = Camera.main.GetComponent<CameraFocus>();
         pirateTurns = new List<GridCoordinates>();
         piratesInProgress = false;
         selectedPirate = 0;
@@ -64,15 +79,17 @@ public class PirateAI : MonoBehaviour
             }
             piratesInProgress = false;
             selectedPirate++;
+            timer = 0.0f;
             return;
         }
         timer += Time.deltaTime;
-        if (timer < 0.5f)
+        if (timer < timeToWaitForEachMove)
         {
             return;
         }
         CharacterManager.allEnemyCharacters[selectedPirate].transform.position = pirateTurns[pirateTurns.Count - 1].transform.position;
         pirateTurns.RemoveAt(pirateTurns.Count - 1);
+        switchPirate = true;
         timer = 0.0f;
     }
 
@@ -81,6 +98,7 @@ public class PirateAI : MonoBehaviour
         timer = 0.0f;
         selectedPirate = 0;
         piratesInProgress = false;
+        cameraMain.ResetCamera();
         GameManager.RefreshEnemies();
         GameManager.BeginNewTurn();
     }
@@ -93,6 +111,24 @@ public class PirateAI : MonoBehaviour
             return;
         }
 
+        if (switchPirate)
+        {
+            timerForCameraSwitch += Time.deltaTime;
+            if (timerForCameraSwitch >= timeToWaitForEachMove)
+            {
+                cameraMain.ChangePirate(CharacterManager.allEnemyCharacters[selectedPirate].transform);
+                switchPirate = false;
+                timerForCameraSwitch = 0.0f;
+            }
+        }
+
+        timer += Time.deltaTime;
+        if (timer < timeToWaitForNewPirateToMove)
+        {
+            return;
+        }
+        timer = 0.0f;
+
         if (CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<Pirate>().isStunned)
         {
             selectedPirate++;
@@ -102,6 +138,7 @@ public class PirateAI : MonoBehaviour
         UnitCoordinates closestPlayer = FindClosestPlayer();
         //Astar to player
         PopulateTheDestination(closestPlayer);
+        
         piratesInProgress = true;
 
         //Setup the Coordinates
