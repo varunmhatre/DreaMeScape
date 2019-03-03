@@ -93,8 +93,9 @@ public class PirateAI : MonoBehaviour
         timer = 0.0f;
     }
 
-    void ProgressToPlayerTurn()
+    IEnumerator ProgressToPlayerTurn()
     {
+        yield return new WaitForSeconds(timeToWaitForEachMove);
         timer = 0.0f;
         selectedPirate = 0;
         piratesInProgress = false;
@@ -107,7 +108,8 @@ public class PirateAI : MonoBehaviour
     {
         if (selectedPirate == CharacterManager.allEnemyCharacters.Count)
         {
-            ProgressToPlayerTurn();
+            IEnumerator cor = ProgressToPlayerTurn();
+            StartCoroutine(cor);
             return;
         }
 

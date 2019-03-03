@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFocus : MonoBehaviour
 {
     public Transform pirate;
-
+    CameraMovement cameraMov;
     Vector3 offset;
 
     Vector3 playerCameraPosition;
@@ -18,16 +18,19 @@ public class CameraFocus : MonoBehaviour
     float playerCameraZoom;
     float timerForMovement;
     float timerForZoom;
+    float timeToWaitForCameraChange;
 
     bool focusSet;
     bool isZoomRequired;
     bool isMovementRequired;
 
+    int playerCameraIndex;
+
     Camera camera;
-    public bool getoffset;
 
     private void Start()
     {
+        cameraMov = GetComponent<CameraMovement>();
         camera = Camera.main;
         focusSet = false;
         isZoomRequired = false;
@@ -47,26 +50,51 @@ public class CameraFocus : MonoBehaviour
     public void ResetCamera()
     {
         pirate = null;
-        focusSet = false;
+        initialPosition = transform.position;
+        finalPosition = playerCameraPosition;
+        if (initialPosition != finalPosition)
+        {
+            isMovementRequired = true;
+        }
+
         startZoom = endZoom;
         endZoom = playerCameraZoom;
         if (startZoom != endZoom)
         {
             isZoomRequired = true;
         }
+        IEnumerator cor = DelayedCameraReset();
+        StartCoroutine(cor);
+    }
 
-        finalPosition = playerCameraPosition;
-        initialPosition = transform.position;
-        if (initialPosition != finalPosition)
-        {
-            isMovementRequired = true;
-        }
+    IEnumerator DelayedCameraReset()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        cameraMov.pirateLock = false;
+        cameraMov.SetCameraIndex(playerCameraIndex);
     }
 
     public void Initiate(Transform pirate)
     {
-        CalculateOffset(pirate);
+        timeToWaitForCameraChange = 0.0f;
+        playerCameraIndex = cameraMov.GetCameraIndex();
+        cameraMov.SetCameraIndex(0);
+        if (playerCameraIndex != 0)
+        {
+            timeToWaitForCameraChange = 1.0f;
+        }
         playerCameraPosition = transform.position;
+        IEnumerator cor = DelayedInitialization(pirate);
+        StartCoroutine(cor);
+    }
+
+    IEnumerator DelayedInitialization(Transform pirate)
+    {
+        yield return new WaitForSeconds(timeToWaitForCameraChange);
+        cameraMov.pirateLock = true;
+        CalculateOffset(pirate);
+        
         playerCameraZoom = camera.orthographicSize;
         startZoom = playerCameraZoom;
         endZoom = 3.7f;
