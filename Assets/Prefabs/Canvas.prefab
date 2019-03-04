@@ -499,7 +499,6 @@ GameObject:
   - component: {fileID: 144370365438831516}
   - component: {fileID: 1541052171322660536}
   - component: {fileID: 8164190961397109266}
-  - component: {fileID: 5794815721707355833}
   m_Layer: 5
   m_Name: Hally
   m_TagString: Untagged
@@ -604,7 +603,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5794815721707355833}
+      - m_Target: {fileID: 0}
         m_MethodName: CharacterSelect
         m_Mode: 1
         m_Arguments:
@@ -617,19 +616,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &5794815721707355833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264062886995686919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e43c76232b3814f94b9a3246519039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickID: 1
 --- !u!1 &437941582866334403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,7 +3567,6 @@ GameObject:
   - component: {fileID: 1461377968740960411}
   - component: {fileID: 9065983203030784999}
   - component: {fileID: 3386604771029107084}
-  - component: {fileID: 3020929812941262554}
   m_Layer: 5
   m_Name: Kent
   m_TagString: Untagged
@@ -3686,7 +3671,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3020929812941262554}
+      - m_Target: {fileID: 0}
         m_MethodName: CharacterSelect
         m_Mode: 1
         m_Arguments:
@@ -3699,19 +3684,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &3020929812941262554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3030855922299102306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e43c76232b3814f94b9a3246519039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickID: 3
 --- !u!1 &3125723575076545281
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,7 +4054,6 @@ GameObject:
   - component: {fileID: 421908939389434643}
   - component: {fileID: 5628144629703593417}
   - component: {fileID: 7266203526467437809}
-  - component: {fileID: 7547384026927113166}
   m_Layer: 5
   m_Name: Ed
   m_TagString: Untagged
@@ -4187,7 +4158,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7547384026927113166}
+      - m_Target: {fileID: 0}
         m_MethodName: CharacterSelect
         m_Mode: 1
         m_Arguments:
@@ -4200,19 +4171,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &7547384026927113166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3474211069864407731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e43c76232b3814f94b9a3246519039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickID: 0
 --- !u!1 &3530037076008849313
 GameObject:
   m_ObjectHideFlags: 0
@@ -9652,7 +9610,6 @@ GameObject:
   - component: {fileID: 4840262986611810387}
   - component: {fileID: 2633357442351626676}
   - component: {fileID: 7384795907832025380}
-  - component: {fileID: 5909275104622953275}
   m_Layer: 5
   m_Name: Jade
   m_TagString: Untagged
@@ -9757,7 +9714,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5909275104622953275}
+      - m_Target: {fileID: 0}
         m_MethodName: CharacterSelect
         m_Mode: 1
         m_Arguments:
@@ -9770,19 +9727,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &5909275104622953275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8033030128763644413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e43c76232b3814f94b9a3246519039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickID: 2
 --- !u!1 &8039343013222774698
 GameObject:
   m_ObjectHideFlags: 0
@@ -10247,7 +10191,6 @@ GameObject:
   - component: {fileID: 8738241803636864299}
   - component: {fileID: 3548838548694046619}
   - component: {fileID: 6792843340253148873}
-  - component: {fileID: 1886764712174792551}
   m_Layer: 5
   m_Name: Meda
   m_TagString: Untagged
@@ -10352,7 +10295,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1886764712174792551}
+      - m_Target: {fileID: 0}
         m_MethodName: CharacterSelect
         m_Mode: 1
         m_Arguments:
@@ -10365,19 +10308,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1886764712174792551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8428899593187240582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e43c76232b3814f94b9a3246519039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickID: 4
 --- !u!1 &8505675270483822911
 GameObject:
   m_ObjectHideFlags: 0
@@ -11470,15 +11400,15 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50b5f17d8abe9fa4eb030858e9f12635, type: 3}
---- !u!4 &1862559369225898590 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 306729605778939905, guid: 50b5f17d8abe9fa4eb030858e9f12635,
-    type: 3}
-  m_PrefabInstance: {fileID: 2132624930763024991}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3472260172280053051 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3294217279762896740, guid: 50b5f17d8abe9fa4eb030858e9f12635,
+    type: 3}
+  m_PrefabInstance: {fileID: 2132624930763024991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1862559369225898590 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 306729605778939905, guid: 50b5f17d8abe9fa4eb030858e9f12635,
     type: 3}
   m_PrefabInstance: {fileID: 2132624930763024991}
   m_PrefabAsset: {fileID: 0}

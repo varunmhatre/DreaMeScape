@@ -39,7 +39,7 @@ public class PlayerControls : MonoBehaviour
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLocation: null);
                     piecesHighlighted = false;
                 }
-
+               // Debug.Log("selectedUnit:        " + selectedUnit);
                 if (selectedUnit)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
