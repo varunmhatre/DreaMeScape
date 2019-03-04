@@ -19,13 +19,16 @@ public class CameraMovement : MonoBehaviour {
     private float currHorizVal;
     private float currVertVal;
 
-    [SerializeField] private float zoomOutMax;
-    [SerializeField] private float zoomInMin;
+    private float zoomedInAmount;
+
+    [SerializeField] private float zoomOutMin;
+    [SerializeField] private float zoomInMax;
     [SerializeField] private float scrollSpeed;
 
 	// Use this for initialization
 	void Start()
     {
+        zoomedInAmount = 0.0f;
         moving = false;
         portionOfJourney = 0.0f;
         currentCameraIndex = 0;
@@ -41,7 +44,7 @@ public class CameraMovement : MonoBehaviour {
 
         //check to see if you are moving the camera up, down, left, or right
         MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
-        ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMin, zoomOutMax);
+        ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
         SwapCameras(Input.GetKeyDown(KeyCode.L));
         AdjustCameraValues(currentCamera, prevCamera);
     }
@@ -95,15 +98,39 @@ public class CameraMovement : MonoBehaviour {
         if (gameObject.GetComponent<Camera>() != null)
         {
             Camera obtainedCam = gameObject.GetComponent<Camera>();
-            if (mouseScroll > 0 && obtainedCam.orthographicSize > min)
+            /*
+            if (obtainedCam.orthographicSize)
             {
-                obtainedCam.orthographicSize -= scrollSpeed;
+                if (mouseScroll > 0 && obtainedCam.orthographicSize > min)
+                {
+                    obtainedCam.orthographicSize -= scrollSpeed;
+                }
+                else if (mouseScroll < 0 && obtainedCam.orthographicSize < max)
+                {
+                    obtainedCam.orthographicSize += scrollSpeed;
+                }
             }
-            else if (mouseScroll < 0 && obtainedCam.orthographicSize < max)
+            */
+            if (mouseScroll > 0 && zoomedInAmount <= zoomInMax)
             {
-                obtainedCam.orthographicSize += scrollSpeed;
+                obtainedCam.transform.position += gameObject.transform.forward * scrollSpeed;
+                for (int i = 0; i < cameraViews.Length; i++)
+                {
+                    cameraViews[i].transform.position += gameObject.transform.forward * scrollSpeed;
+                }
+                zoomedInAmount += gameObject.transform.forward.magnitude * scrollSpeed;
+            }
+            else if (mouseScroll < 0 && zoomedInAmount >= zoomOutMin)
+            {
+                obtainedCam.transform.position -= gameObject.transform.forward * scrollSpeed;
+                for (int i = 0; i < cameraViews.Length; i++)
+                {
+                    cameraViews[i].transform.position -= gameObject.transform.forward * scrollSpeed;
+                }
+                zoomedInAmount -= gameObject.transform.forward.magnitude * scrollSpeed;
             }
         }
+        Debug.Log(zoomedInAmount);
     }
 
     public void SwapCameras(float clicked)

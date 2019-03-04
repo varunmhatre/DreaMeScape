@@ -161,11 +161,11 @@ MonoBehaviour:
   - {fileID: 3360379654872098613}
   - {fileID: 3360379652989382636}
   journeySpeed: 2
-  horizCap: 10
+  horizCap: 20
   vertCap: 5
-  zoomOutMax: 10
-  zoomInMin: 1
-  scrollSpeed: 0.7
+  zoomOutMin: -50
+  zoomInMax: 7
+  scrollSpeed: 1
 --- !u!1 &3360379654872098613
 GameObject:
   m_ObjectHideFlags: 0
