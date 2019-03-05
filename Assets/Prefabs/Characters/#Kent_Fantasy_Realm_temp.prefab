@@ -808,6 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3778953698605757587}
   - component: {fileID: 5067581063414806911}
+  - component: {fileID: 7490829647186439947}
   m_Layer: 8
   m_Name: GridRotater
   m_TagString: GridRotater
@@ -841,6 +842,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75b0e8e7def7f1e44a99aec138f89ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7490829647186439947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421818903842365661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8357429442810131400

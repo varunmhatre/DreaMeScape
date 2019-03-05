@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
+    public bool pirateLock;
     [SerializeField] private float cameraMoveSpeed;
 
     [SerializeField] private GameObject[] cameraViews;
@@ -41,12 +42,27 @@ public class CameraMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-
-        //check to see if you are moving the camera up, down, left, or right
-        MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
-        ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
-        SwapCameras(Input.GetKeyDown(KeyCode.L));
+        if (!pirateLock)
+        {
+            //check to see if you are moving the camera up, down, left, or right
+            MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
+            ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
+            SwapCameras(Input.GetKeyDown(KeyCode.L));
+        }
         AdjustCameraValues(currentCamera, prevCamera);
+    }
+
+    public void SetCameraIndex(int index)
+    {
+        prevCamera = cameraViews[currentCameraIndex];
+        currentCameraIndex = index;
+        currentCamera = cameraViews[currentCameraIndex];
+        moving = true;
+    }
+
+    public int GetCameraIndex()
+    {
+        return currentCameraIndex;
     }
 
     //takes in input values and moves the camera based on the values
