@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 234934631095483399}
   - component: {fileID: 2496651523532325193}
   - component: {fileID: 5495581881032207035}
+  - component: {fileID: 1986082378702433826}
   m_Layer: 8
   m_Name: '#Ed_Fantasy_Realm_temp'
   m_TagString: Player
@@ -744,6 +745,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poison: {fileID: 3609569758650400567}
   poisonDuration: 2
+--- !u!114 &1986082378702433826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596011827401411954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e0d81af1d53034fb6443874a78d076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToBubblePres: {fileID: 2923564550737488456}
+  objToBubbleResist: {fileID: 3712575446182033166}
+  bubblesUpOnAction: 1
+  valueChanged: 0
 --- !u!1 &7596363654049756512
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7037146932436863523}
   - component: {fileID: 1767420438225980208}
   - component: {fileID: 7619952966234644806}
+  - component: {fileID: 3924664785788021715}
   m_Layer: 8
   m_Name: '#Meda_Fantasy_Realm_temp'
   m_TagString: Player
@@ -133,6 +134,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3924664785788021715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445851507171124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e0d81af1d53034fb6443874a78d076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToBubblePres: {fileID: 6539601220942419117}
+  objToBubbleResist: {fileID: 4759528083563396098}
+  bubblesUpOnAction: 1
+  valueChanged: 0
 --- !u!1 &1469560358481866
 GameObject:
   m_ObjectHideFlags: 0
