@@ -25,12 +25,12 @@ public class PlayerControls : MonoBehaviour
     {
         if (DialoguePanelManager.playerControlsUnlocked)
         {
-            if (mouseClick && GameManager.isPlayerTurn)
+            if (mouseClick && GameManager.isPlayerTurn && GameManager.HaveEnergy())
             {
                 MoveOnClickedGridPiece();
 
                 //Populates selectedUnitName and selectedUnit
-                GetPlayer();
+                //GetPlayer();
 
                 AttackEnemy();
 
@@ -44,6 +44,7 @@ public class PlayerControls : MonoBehaviour
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
                     piecesHighlighted = true;
+                    //Debug.Log("selectedUnitName:  " + selectedUnitName);
                 }
 
                 MouseClickToggle();
@@ -71,7 +72,7 @@ public class PlayerControls : MonoBehaviour
         RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         Transform moveLoc = GetComponent<GridPieceSelect>().GetGridPieceOnClick();
 
-        if (hitCannon.transform == null && hit.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
+        if (hitCannon.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
         {
             GameObject playerCoords = GetComponent<GridPieceSelect>().GetGridPieceCoords(playerLoc[0], playerLoc[1]).gameObject;
             playerCoords.GetComponent<GridPiece>().unit = null;
@@ -84,6 +85,17 @@ public class PlayerControls : MonoBehaviour
             {
                 characterStats.GainMeter(1);
             }
+        }
+    }
+
+    public void SetSelectedUnit(Transform newUnit)
+    {
+        selectedUnit = newUnit;
+        if (selectedUnit != null)
+        {
+            playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
+            playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
+
         }
     }
 
