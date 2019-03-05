@@ -14065,7 +14065,9 @@ MonoBehaviour:
   pirate: {fileID: 1005522361513020, guid: 374bbb8663e6df446b2e8d249a9e4a3a, type: 3}
   pirateCaptain: {fileID: 1177191238569498, guid: 5c994aba6d8ede040bea61e6326cdb72,
     type: 3}
+  pirateAIHandler: {fileID: 0}
   generator: {fileID: 1988719070962628, guid: db4df4d97f0857140a7a457474da3b6f, type: 3}
+  levelNum: 1
 --- !u!114 &1707542820
 MonoBehaviour:
   m_ObjectHideFlags: 0

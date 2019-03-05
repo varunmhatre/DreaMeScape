@@ -12,19 +12,10 @@ public class CameraFocus : MonoBehaviour
     Vector3 initialPosition;
     Vector3 finalPosition;
 
-    float startZoom;
-    float endZoom;
-
-    float playerCameraZoom;
     float timerForMovement;
-    float timerForZoom;
-    float timeToWaitForCameraChange;
 
     bool focusSet;
-    bool isZoomRequired;
     bool isMovementRequired;
-
-    int playerCameraIndex;
 
     Camera camera;
 
@@ -33,20 +24,16 @@ public class CameraFocus : MonoBehaviour
         cameraMov = GetComponent<CameraMovement>();
         camera = Camera.main;
         focusSet = false;
-        isZoomRequired = false;
         isMovementRequired = false;
         timerForMovement = 0.0f;
-        timerForZoom = 0.0f;
     }
 
     void CalculateOffset(Transform pirate)
     {
-        Vector3 vecToTarget = transform.position - pirate.position;
         float lambda = (pirate.position.y - transform.position.y) / transform.forward.y;
-        Vector3 intersection = new Vector3(transform.position.x + (transform.forward.x * lambda), pirate.position.y, transform.position.z + (transform.forward.z * lambda));
-        offset = transform.position - intersection;
+        offset = Vector3.Normalize(new Vector3(transform.forward.x * lambda, pirate.position.y - transform.position.y, transform.forward.z * lambda) * -1.0f) * 8.0f;
     }
-
+    
     public void ResetCamera()
     {
         pirate = null;
@@ -57,12 +44,6 @@ public class CameraFocus : MonoBehaviour
             isMovementRequired = true;
         }
 
-        startZoom = endZoom;
-        endZoom = playerCameraZoom;
-        if (startZoom != endZoom)
-        {
-            isZoomRequired = true;
-        }
         IEnumerator cor = DelayedCameraReset();
         StartCoroutine(cor);
     }
@@ -70,38 +51,14 @@ public class CameraFocus : MonoBehaviour
     IEnumerator DelayedCameraReset()
     {
         yield return new WaitForSeconds(1.0f);
-
         cameraMov.pirateLock = false;
-        //cameraMov.SetCameraIndex(playerCameraIndex);
     }
 
     public void Initiate(Transform pirate)
     {
-        timeToWaitForCameraChange = 0.0f;
-        playerCameraIndex = cameraMov.GetCameraIndex();
-        //cameraMov.SetCameraIndex(0);
-        if (playerCameraIndex != 0)
-        {
-            timeToWaitForCameraChange = 1.0f;
-        }
         playerCameraPosition = transform.position;
-        IEnumerator cor = DelayedInitialization(pirate);
-        StartCoroutine(cor);
-    }
-
-    IEnumerator DelayedInitialization(Transform pirate)
-    {
-        yield return new WaitForSeconds(timeToWaitForCameraChange);
         cameraMov.pirateLock = true;
         CalculateOffset(pirate);
-        
-        playerCameraZoom = camera.orthographicSize;
-        startZoom = playerCameraZoom;
-        endZoom = 3.7f;
-        if (endZoom != startZoom)
-        {
-            isZoomRequired = true;
-        }
         ChangePirate(pirate);
     }
 
@@ -119,18 +76,7 @@ public class CameraFocus : MonoBehaviour
 
     void Update()
     {
-        //Zoom
-        if (isZoomRequired)
-        {
-            timerForZoom += Time.deltaTime;
-            camera.orthographicSize = Mathf.Lerp(startZoom, endZoom, timerForZoom);
-            if (timerForZoom >= 1.0f)
-            {
-                camera.orthographicSize = endZoom;
-                timerForZoom = 0.0f;
-                isZoomRequired = false;
-            }
-        }
+        //Setting offset
         if (isMovementRequired)
         {
             timerForMovement += Time.deltaTime;
