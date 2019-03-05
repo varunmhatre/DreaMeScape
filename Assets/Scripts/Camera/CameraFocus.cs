@@ -44,6 +44,9 @@ public class CameraFocus : MonoBehaviour
 
     void CalculateOffset(Transform pirate)
     {
+        Vector3 adj = new Vector3(0, transform.position.y - pirate.position.y, 0);
+        Vector3 hyp = transform.position - pirate.position;
+       // Vector3 opp = 
 
     }
 
@@ -72,14 +75,14 @@ public class CameraFocus : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         cameraMov.pirateLock = false;
-        cameraMov.SetCameraIndex(playerCameraIndex);
+        //cameraMov.SetCameraIndex(playerCameraIndex);
     }
 
     public void Initiate(Transform pirate)
     {
         timeToWaitForCameraChange = 0.0f;
         playerCameraIndex = cameraMov.GetCameraIndex();
-        cameraMov.SetCameraIndex(0);
+        //cameraMov.SetCameraIndex(0);
         if (playerCameraIndex != 0)
         {
             timeToWaitForCameraChange = 1.0f;
