@@ -76,19 +76,19 @@ public class CameraMovement : MonoBehaviour {
         {
             for (int i = 0; i < cameraViews.Length; i++)
             {
-                cameraViews[i].transform.position += cameraViews[i].transform.up * cameraMoveSpeed * Time.deltaTime;
+                cameraViews[i].transform.position += new Vector3(0.0f, 0.0f, 1.0f) * cameraMoveSpeed * Time.deltaTime;
             }
-            transform.position += transform.up * cameraMoveSpeed * Time.deltaTime;
-            currVertVal += transform.up.magnitude * cameraMoveSpeed * Time.deltaTime;
+            transform.position += new Vector3(0.0f, 0.0f, 1.0f) * cameraMoveSpeed * Time.deltaTime;
+            currVertVal += cameraMoveSpeed * Time.deltaTime;
         }
         else if (up < 0 && currVertVal > -vertCap)
         {
             for (int i = 0; i < cameraViews.Length; i++)
             {
-                cameraViews[i].transform.position -= cameraViews[i].transform.up * cameraMoveSpeed * Time.deltaTime;
+                cameraViews[i].transform.position -= new Vector3(0.0f, 0.0f, 1.0f) * cameraMoveSpeed * Time.deltaTime;
             }
-            transform.position -= transform.up * cameraMoveSpeed * Time.deltaTime;
-            currVertVal -= transform.up.magnitude * cameraMoveSpeed * Time.deltaTime;
+            transform.position -= new Vector3(0.0f, 0.0f, 1.0f) * cameraMoveSpeed * Time.deltaTime;
+            currVertVal -= cameraMoveSpeed * Time.deltaTime;
         }
     }
 
