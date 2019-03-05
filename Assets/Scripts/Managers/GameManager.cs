@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public static void EndCurrentTurn()
     {
         isPlayerTurn = false;
+        Camera.main.GetComponent<CameraFocus>().Initiate(CharacterManager.allEnemyCharacters[0].transform);
     }
 
     public static void BeginNewTurn()
