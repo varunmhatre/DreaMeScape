@@ -37,17 +37,14 @@ public class CameraFocus : MonoBehaviour
         isMovementRequired = false;
         timerForMovement = 0.0f;
         timerForZoom = 0.0f;
-
-        //Temp
-        offset = new Vector3(-0.2336006f, 22.02439f, -38.58832f);
     }
 
     void CalculateOffset(Transform pirate)
     {
-        Vector3 adj = new Vector3(0, transform.position.y - pirate.position.y, 0);
-        Vector3 hyp = transform.position - pirate.position;
-       // Vector3 opp = 
-
+        Vector3 vecToTarget = transform.position - pirate.position;
+        float lambda = (pirate.position.y - transform.position.y) / transform.forward.y;
+        Vector3 intersection = new Vector3(transform.position.x + (transform.forward.x * lambda), pirate.position.y, transform.position.z + (transform.forward.z * lambda));
+        offset = transform.position - intersection;
     }
 
     public void ResetCamera()
