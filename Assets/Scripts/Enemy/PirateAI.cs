@@ -32,8 +32,8 @@ public class PirateAI : MonoBehaviour
 
     float timer;
     float timerForCameraSwitch;
-    const float timeToWaitForEachMove = 1.0f;
-    const float timeToWaitForNewPirateToMove = 2.0f;
+    [SerializeField] float timeToWaitForEachMove = 1.0f;
+    [SerializeField] float timeToWaitForNewPirateToMove = 2.0f;
 
     CameraFocus cameraMain;
 
