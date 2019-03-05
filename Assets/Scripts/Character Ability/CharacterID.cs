@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class CharacterID : MonoBehaviour
 {
-    [SerializeField] private int buttonID;
+    public int clickID; 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
+    } 
 }

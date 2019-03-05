@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class CharacterSelection : MonoBehaviour
 { 
     [SerializeField] private int characterID;
-    [SerializeField] private GameObject Manager; 
+    //[SerializeField] private GameObject Manager; 
 
     private string lastSelectedUnitName; 
 
@@ -28,31 +28,12 @@ public class CharacterSelection : MonoBehaviour
         //Debug.Log("Character intial position:  " + CharacterManager.allAlliedCharacters[characterID].name);
         //Debug.Log("Character intial position:  " + name);
         // int[] playerLoc = { CharacterManager.allAlliedCharacters[characterID].GetComponent<UnitCoordinates>().x, CharacterManager.allAlliedCharacters[characterID].GetComponent<UnitCoordinates>().y };
-
+        Debug.Log("characterID:     " + characterID);
 
         //Manager.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: name, toHighlight: true, playerLocation: playerLoc);
 
         //  Manager.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: prevName, toHighlight: false, playerLocation: null);
-        GetLastGameObjectSelected();
-    }
-
-
-
-    public EventSystem eventSystem; //select event system in editor
-    private GameObject lastSelectedButton;
-    private GameObject currentSelectedButton;
-    private GameObject currentSelectedGameObject_Recent;
-
-
-    private void GetLastGameObjectSelected()
-    {
-        if (eventSystem.currentSelectedGameObject != currentSelectedGameObject_Recent)
-        {
-            lastSelectedButton = currentSelectedGameObject_Recent;
-            currentSelectedGameObject_Recent = eventSystem.currentSelectedGameObject;
-            Debug.Log("lastSelectedGameObject:  " + lastSelectedButton);
-            Debug.Log("currentSelectedGameObject_Recent:  " + currentSelectedGameObject_Recent);
-        }
-    }
+        
+    } 
 
 }
