@@ -332,10 +332,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSprite: {fileID: 21300000, guid: 455b5622cc488b440b0764e26bbf4b62, type: 3}
   offSprite: {fileID: 21300000, guid: d565f44a778e229418e705460dda3d5c, type: 3}
+  backgroundMoveId: 2
   parallaxObjects: []
   startingPositions: []
   parallaxMultiplier: 0
   buttonText: 
+  backgroundObj: {fileID: 149224836}
 --- !u!95 &39044356
 Animator:
   serializedVersion: 3
@@ -434,60 +436,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39044353}
   m_CullTransparentMesh: 0
---- !u!1 &53421233
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 53421234}
-  - component: {fileID: 53421235}
-  m_Layer: 5
-  m_Name: Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &53421234
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53421233}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 402462663}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &53421235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53421233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2982ac091139e24da2ba9fb6e07e309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onSprite: {fileID: 0}
-  offSprite: {fileID: 0}
-  parallaxObjects: []
-  startingPositions: []
-  parallaxMultiplier: 0
-  buttonText: 
 --- !u!1 &61745371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,7 +1213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1033, y: 0}
+  m_AnchoredPosition: {x: 1069, y: 0}
   m_SizeDelta: {x: 3982, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149224838
@@ -1864,10 +1812,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSprite: {fileID: 21300000, guid: dee7c1170f9450c488068dadc2b3e98a, type: 3}
   offSprite: {fileID: 21300000, guid: 7f338468aed63fb488bc2d4dc117a882, type: 3}
+  backgroundMoveId: 3
   parallaxObjects: []
   startingPositions: []
   parallaxMultiplier: 0
   buttonText: 
+  backgroundObj: {fileID: 149224836}
 --- !u!95 &296833851
 Animator:
   serializedVersion: 3
@@ -2403,7 +2353,6 @@ RectTransform:
   - {fileID: 39044354}
   - {fileID: 296833849}
   - {fileID: 448544578}
-  - {fileID: 53421234}
   m_Father: {fileID: 198609386}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2760,10 +2709,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSprite: {fileID: 21300000, guid: a82ec46e132844b46a9e970fea0f7782, type: 3}
   offSprite: {fileID: 21300000, guid: d513d80de50919343bf4a51debd1d9ef, type: 3}
+  backgroundMoveId: 4
   parallaxObjects: []
   startingPositions: []
   parallaxMultiplier: 0
   buttonText: 
+  backgroundObj: {fileID: 149224836}
 --- !u!95 &448544580
 Animator:
   serializedVersion: 3
@@ -6116,7 +6067,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225450279}
   m_LocalRotation: {x: -0, y: -0.000102246646, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1333499891}
@@ -6125,7 +6076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -0.012, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -244.9, y: 144}
+  m_AnchoredPosition: {x: -270, y: 144}
   m_SizeDelta: {x: 400, y: 520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225450281
@@ -6142,12 +6093,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSprite: {fileID: 21300000, guid: 6370c98dba6997648953cf7a31ca97b5, type: 3}
   offSprite: {fileID: 21300000, guid: 205ebcb62c7f7254d9d1dbfbb9cd2acf, type: 3}
-  parallaxObjects:
-  - {fileID: 149224836}
-  startingPositions:
-  - {x: 0, y: 0, z: 0}
+  backgroundMoveId: 1
+  parallaxObjects: []
+  startingPositions: []
   parallaxMultiplier: 0
   buttonText: 
+  backgroundObj: {fileID: 149224836}
 --- !u!95 &1225450282
 Animator:
   serializedVersion: 3
@@ -10776,10 +10727,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSprite: {fileID: 21300000, guid: 963a3f84c0a9ae141b40303eeb28fffc, type: 3}
   offSprite: {fileID: 21300000, guid: 10f0fe8517fb32d42a06a20194eaad9e, type: 3}
-  parallaxObjects: []
-  startingPositions: []
+  backgroundMoveId: 1
+  parallaxObjects:
+  - {fileID: 149224836}
+  startingPositions:
+  - {x: 0, y: 0, z: 0}
   parallaxMultiplier: 0
   buttonText: 
+  backgroundObj: {fileID: 149224836}
 --- !u!95 &1933730293
 Animator:
   serializedVersion: 3

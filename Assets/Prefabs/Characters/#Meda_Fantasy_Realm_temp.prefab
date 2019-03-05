@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7037146932436863523}
   - component: {fileID: 1767420438225980208}
   - component: {fileID: 7619952966234644806}
+  - component: {fileID: 3924664785788021715}
   m_Layer: 8
   m_Name: '#Meda_Fantasy_Realm_temp'
   m_TagString: Player
@@ -133,6 +134,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3924664785788021715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445851507171124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e0d81af1d53034fb6443874a78d076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToBubblePres: {fileID: 6539601220942419117}
+  objToBubbleResist: {fileID: 4759528083563396098}
+  bubblesUpOnAction: 1
+  valueChanged: 0
 --- !u!1 &1469560358481866
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +312,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e3e8426912eb38f4f8570f10239d7abb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2f7cbb27db72174fae7f067efbe5a7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -419,6 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6954553722465403189}
   - component: {fileID: 2290175707897138229}
+  - component: {fileID: 4165381279299751371}
   m_Layer: 8
   m_Name: GridRotater
   m_TagString: GridRotater
@@ -452,6 +470,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75b0e8e7def7f1e44a99aec138f89ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4165381279299751371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644949188841572392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4759528083563396098
