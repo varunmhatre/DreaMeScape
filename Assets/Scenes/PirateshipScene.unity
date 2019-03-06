@@ -139,7 +139,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.68235296, g: 0.68235296, b: 0.68235296, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -349,6 +349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0dc843061dbbc545a27d7a8738b1e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &813492604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1038623645874339117, guid: 12c237070ff45be49a9dbd61eb28c42a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1541719036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &843183699
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,101 +587,101 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1114279382137598424, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752301347594834292, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662668601611035756, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622431257713855216, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6563855666726813455, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5713377355133849106, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208596438272717780, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3497172269873685744, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2760063878006785162, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3063985777413671233, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7533255634383113679, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3482723801141117256, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1193453613}
-    - target: {fileID: 5897019062101911119, guid: 058a87112e1a79047a44b1cbba485b50,
+    - target: {fileID: 1862559369225898589, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285660963211328439, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_Name
-      value: Health
+      value: Hally
       objectReference: {fileID: 0}
-    - target: {fileID: 2535480490586015231, guid: 058a87112e1a79047a44b1cbba485b50,
+    - target: {fileID: 4285660963211328439, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -26.3
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2535480490586015231, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2313507695451048775, guid: 058a87112e1a79047a44b1cbba485b50,
+    - target: {fileID: 4285660963449960582, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_Name
-      value: Health
+      value: Ed
       objectReference: {fileID: 0}
-    - target: {fileID: 8039343013222774698, guid: 058a87112e1a79047a44b1cbba485b50,
+    - target: {fileID: 4285660963449960582, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367787299691328028, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_Name
-      value: Health
+      value: Meda
       objectReference: {fileID: 0}
-    - target: {fileID: 4508397154646195900, guid: 058a87112e1a79047a44b1cbba485b50,
+    - target: {fileID: 8367787299691328028, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285660963063878834, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CharacterSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285660963211328442, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CharacterSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285660963449960585, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CharacterSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285660963928093979, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CharacterSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8222087293471006342, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CharacterSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285660963928093976, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_Name
-      value: Health
+      value: Jade
       objectReference: {fileID: 0}
-    - target: {fileID: 1186003683546916145, guid: 058a87112e1a79047a44b1cbba485b50,
+    - target: {fileID: 4285660963928093976, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285660963063878735, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_Name
-      value: Health
+      value: Kent
       objectReference: {fileID: 0}
+    - target: {fileID: 4285660963063878735, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409694868660517507, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 2145029017}
+    - target: {fileID: 1409694868660517507, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: Manager
+      value: 
+      objectReference: {fileID: 813492604}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}
 --- !u!114 &1193453613 stripped
