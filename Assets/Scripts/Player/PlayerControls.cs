@@ -23,7 +23,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialoguePanelManager.playerControlsUnlocked)
+        if (DialoguePanelManager.playerControlsUnlocked && !TutorialCards.isTutorialRunning)
         {
             if (mouseClick && GameManager.isPlayerTurn && GameManager.HaveEnergy())
             {
