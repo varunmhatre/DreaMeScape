@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CannonRadius : MonoBehaviour
 {
     //Temp. Need a separate cannon highlight
-    List<Transform> gridsToHighlight;
+    List<Renderer> gridsToHighlight;
 
     List<GridPiece> playerTracker;
     [SerializeField] Material highlightMaterial;
@@ -15,7 +15,7 @@ public class CannonRadius : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        gridsToHighlight = new List<Transform>();
+        gridsToHighlight = new List<Renderer>();
         playerTracker = new List<GridPiece>();
         GetGridRadius();
         GetAdjacentCells();
@@ -31,7 +31,7 @@ public class CannonRadius : MonoBehaviour
             if ((grid.x >= (gamePiece.x - CannonStaticVariables.cannonRadius) && grid.x <= (gamePiece.x + CannonStaticVariables.cannonRadius)) &&
                 (grid.y >= (gamePiece.y - CannonStaticVariables.cannonRadius) && grid.y <= (gamePiece.y + CannonStaticVariables.cannonRadius)))
             {
-                gridsToHighlight.Add(grid.transform);
+                gridsToHighlight.Add(grid.transform.GetComponent<Renderer>());
             }
         }
     }
@@ -57,7 +57,7 @@ public class CannonRadius : MonoBehaviour
             //Temp. Need a separate cannon highlight
             //item.GetComponent<GridPieceHighlight>().isHighlighted = true;
 
-            item.GetComponent<Renderer>().material = highlightMaterial;
+            item.material = highlightMaterial;
         }
     }
 
@@ -66,7 +66,7 @@ public class CannonRadius : MonoBehaviour
         foreach (var item in gridsToHighlight)
         {
             //Temp. Need a separate cannon highlight
-            item.GetComponent<Renderer>().material = initialMaterial;
+            item.material = initialMaterial;
         }
     }
 

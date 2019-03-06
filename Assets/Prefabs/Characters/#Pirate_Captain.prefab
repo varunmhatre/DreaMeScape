@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 826128777379898271}
   - component: {fileID: 7508745226030182620}
   - component: {fileID: 4445920022397703420}
+  - component: {fileID: 6359800388129397848}
   m_Layer: 9
   m_Name: '#Pirate_Captain'
   m_TagString: Enemy
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f409edcba3aff46835126793293377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 12
   damage: 3
   presence: 4
   unchargedDamage: 3
@@ -222,6 +223,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorChanged: 0
   mouseTarget: {fileID: 2800000, guid: 98bad250e8887ac4688bbd00e4bbb89d, type: 3}
+--- !u!114 &6359800388129397848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177191238569498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e0d81af1d53034fb6443874a78d076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToBubblePres: {fileID: 8276071649243743029}
+  objToBubbleResist: {fileID: 7112541177099831384}
+  bubblesUpOnAction: 1
+  valueChanged: 0
 --- !u!1 &1798306027273804
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 08a2a2aa669b04d49926ce3ef8921e29, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 340e86d42f47a964397b8b4b78201032, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -982,6 +999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2950606645324026007}
   - component: {fileID: 9128605528272759279}
+  - component: {fileID: 6371512571085569470}
   m_Layer: 8
   m_Name: GridRotater
   m_TagString: GridRotater
@@ -1015,5 +1033,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75b0e8e7def7f1e44a99aec138f89ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6371512571085569470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330950189233729409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

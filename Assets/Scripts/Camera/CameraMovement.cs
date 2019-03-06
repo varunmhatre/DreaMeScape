@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
+    public bool pirateLock;
     [SerializeField] private float cameraMoveSpeed;
 
     [SerializeField] private GameObject[] cameraViews;
@@ -19,13 +20,16 @@ public class CameraMovement : MonoBehaviour {
     private float currHorizVal;
     private float currVertVal;
 
-    [SerializeField] private float zoomOutMax;
-    [SerializeField] private float zoomInMin;
+    private float zoomedInAmount;
+
+    [SerializeField] private float zoomOutMin;
+    [SerializeField] private float zoomInMax;
     [SerializeField] private float scrollSpeed;
 
 	// Use this for initialization
 	void Start()
     {
+        zoomedInAmount = 0.0f;
         moving = false;
         portionOfJourney = 0.0f;
         currentCameraIndex = 0;
@@ -38,12 +42,27 @@ public class CameraMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-
-        //check to see if you are moving the camera up, down, left, or right
-        MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
-        ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMin, zoomOutMax);
-        SwapCameras(Input.GetKeyDown(KeyCode.L));
+        if (!pirateLock)
+        {
+            //check to see if you are moving the camera up, down, left, or right
+            MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
+            ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
+            SwapCameras(Input.GetKeyDown(KeyCode.L));
+        }
         AdjustCameraValues(currentCamera, prevCamera);
+    }
+
+    public void SetCameraIndex(int index)
+    {
+        prevCamera = cameraViews[currentCameraIndex];
+        currentCameraIndex = index;
+        currentCamera = cameraViews[currentCameraIndex];
+        moving = true;
+    }
+
+    public int GetCameraIndex()
+    {
+        return currentCameraIndex;
     }
 
     //takes in input values and moves the camera based on the values
@@ -73,19 +92,19 @@ public class CameraMovement : MonoBehaviour {
         {
             for (int i = 0; i < cameraViews.Length; i++)
             {
-                cameraViews[i].transform.position += cameraViews[i].transform.up * cameraMoveSpeed * Time.deltaTime;
+                cameraViews[i].transform.position += new Vector3(0.0f, 0.0f, 1.0f) * cameraMoveSpeed * Time.deltaTime;
             }
-            transform.position += transform.up * cameraMoveSpeed * Time.deltaTime;
-            currVertVal += transform.up.magnitude * cameraMoveSpeed * Time.deltaTime;
+            transform.position += new Vector3(0.0f, 0.0f, 1.0f) * cameraMoveSpeed * Time.deltaTime;
+            currVertVal += cameraMoveSpeed * Time.deltaTime;
         }
         else if (up < 0 && currVertVal > -vertCap)
         {
             for (int i = 0; i < cameraViews.Length; i++)
             {
-                cameraViews[i].transform.position -= cameraViews[i].transform.up * cameraMoveSpeed * Time.deltaTime;
+                cameraViews[i].transform.position -= new Vector3(0.0f, 0.0f, 1.0f) * cameraMoveSpeed * Time.deltaTime;
             }
-            transform.position -= transform.up * cameraMoveSpeed * Time.deltaTime;
-            currVertVal -= transform.up.magnitude * cameraMoveSpeed * Time.deltaTime;
+            transform.position -= new Vector3(0.0f, 0.0f, 1.0f) * cameraMoveSpeed * Time.deltaTime;
+            currVertVal -= cameraMoveSpeed * Time.deltaTime;
         }
     }
 
@@ -95,15 +114,39 @@ public class CameraMovement : MonoBehaviour {
         if (gameObject.GetComponent<Camera>() != null)
         {
             Camera obtainedCam = gameObject.GetComponent<Camera>();
-            if (mouseScroll > 0 && obtainedCam.orthographicSize > min)
+            /*
+            if (obtainedCam.orthographicSize)
             {
-                obtainedCam.orthographicSize -= scrollSpeed;
+                if (mouseScroll > 0 && obtainedCam.orthographicSize > min)
+                {
+                    obtainedCam.orthographicSize -= scrollSpeed;
+                }
+                else if (mouseScroll < 0 && obtainedCam.orthographicSize < max)
+                {
+                    obtainedCam.orthographicSize += scrollSpeed;
+                }
             }
-            else if (mouseScroll < 0 && obtainedCam.orthographicSize < max)
+            */
+            if (mouseScroll > 0 && zoomedInAmount <= zoomInMax)
             {
-                obtainedCam.orthographicSize += scrollSpeed;
+                obtainedCam.transform.position += gameObject.transform.forward * scrollSpeed;
+                for (int i = 0; i < cameraViews.Length; i++)
+                {
+                    cameraViews[i].transform.position += gameObject.transform.forward * scrollSpeed;
+                }
+                zoomedInAmount += gameObject.transform.forward.magnitude * scrollSpeed;
+            }
+            else if (mouseScroll < 0 && zoomedInAmount >= zoomOutMin)
+            {
+                obtainedCam.transform.position -= gameObject.transform.forward * scrollSpeed;
+                for (int i = 0; i < cameraViews.Length; i++)
+                {
+                    cameraViews[i].transform.position -= gameObject.transform.forward * scrollSpeed;
+                }
+                zoomedInAmount -= gameObject.transform.forward.magnitude * scrollSpeed;
             }
         }
+        Debug.Log(zoomedInAmount);
     }
 
     public void SwapCameras(float clicked)
