@@ -11,7 +11,7 @@ public class SettingsHandler : MonoBehaviour
 
     [SerializeField] private int max = 6;
     [SerializeField] private int min = 0;
-    private int currentIndex = 0;
+    public int currentIndex = 0;
     private int count = 1;
 
     // Start is called before the first frame update
@@ -21,6 +21,11 @@ public class SettingsHandler : MonoBehaviour
         {
             slidingImage[i].SetActive(false);
         }
+        
+    }
+    void Update()
+    { 
+
     }
     public void ChangePanel(bool increase)
     {
