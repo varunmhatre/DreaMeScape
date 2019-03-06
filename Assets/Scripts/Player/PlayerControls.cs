@@ -25,12 +25,12 @@ public class PlayerControls : MonoBehaviour
     {
         if (DialoguePanelManager.playerControlsUnlocked)
         {
-            if (mouseClick && GameManager.isPlayerTurn)
+            if (mouseClick && GameManager.isPlayerTurn && GameManager.HaveEnergy())
             {
                 MoveOnClickedGridPiece();
 
                 //Populates selectedUnitName and selectedUnit
-                GetPlayer();
+                //GetPlayer();
 
                 AttackEnemy();
 
@@ -39,11 +39,12 @@ public class PlayerControls : MonoBehaviour
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLocation: null);
                     piecesHighlighted = false;
                 }
-
+               // Debug.Log("selectedUnit:        " + selectedUnit);
                 if (selectedUnit)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
                     piecesHighlighted = true;
+                    //Debug.Log("selectedUnitName:  " + selectedUnitName);
                 }
 
                 MouseClickToggle();
@@ -71,7 +72,7 @@ public class PlayerControls : MonoBehaviour
         RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         Transform moveLoc = GetComponent<GridPieceSelect>().GetGridPieceOnClick();
 
-        if (hitCannon.transform == null && hit.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
+        if (hitCannon.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
         {
             GameObject playerCoords = GetComponent<GridPieceSelect>().GetGridPieceCoords(playerLoc[0], playerLoc[1]).gameObject;
             playerCoords.GetComponent<GridPiece>().unit = null;
@@ -84,6 +85,17 @@ public class PlayerControls : MonoBehaviour
             {
                 characterStats.GainMeter(1);
             }
+        }
+    }
+
+    public void SetSelectedUnit(Transform newUnit)
+    {
+        selectedUnit = newUnit;
+        if (selectedUnit != null)
+        {
+            playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
+            playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
+
         }
     }
 
@@ -155,42 +167,21 @@ public class PlayerControls : MonoBehaviour
     public void AttackEnemy()
     {
         RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
-        RaycastHit hitBoss = RaycastManager.GetRaycastHitForTag("Boss");
 
-        bool hittingBoss = false;
-
-        if (hitEnemy.transform != null)
-        {
-            hittingBoss = false;
-        }
-        else if (hitBoss.transform != null)
-        {
-            hittingBoss = true;
-        }
-        else if (hitBoss.transform == null && hitEnemy.transform == null)
+        if (hitEnemy.transform == null)
         {
             return;
         }
 
-        if (!CannonStaticVariables.isCannonSelected && prevSelectedUnit && prevSelectedUnit.GetComponent<Stats>().hasAttacked == false && GameManager.currentEnergy > 0)
+        if (!CannonStaticVariables.isCannonSelected && prevSelectedUnit && !prevSelectedUnit.GetComponent<Stats>().hasAttacked)
         {
-            if (hittingBoss && AdjacencyHandler.CompareAdjacency(hitBoss.transform.gameObject, prevSelectedUnit.gameObject, 1))
-            {
-                Stats bossStats = hitBoss.transform.gameObject.GetComponent<Stats>();
-                bossStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
-                bossStats.CheckDeath();
-                prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
-                GameManager.currentEnergy--;
-                prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
-            }
-            else if (!hittingBoss && AdjacencyHandler.CompareAdjacency(hitEnemy.transform.gameObject, prevSelectedUnit.gameObject, 1))
+            if (AdjacencyHandler.CompareAdjacency(hitEnemy.transform.gameObject, prevSelectedUnit.gameObject, 1))
             {
                 Stats enemyStats = hitEnemy.transform.gameObject.GetComponent<Stats>();
                 enemyStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
                 enemyStats.CheckDeath();
                 Debug.Log("Enemy taking damage!");
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
-                GameManager.currentEnergy--;
                 prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
         }

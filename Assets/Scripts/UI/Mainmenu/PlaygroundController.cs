@@ -13,6 +13,11 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     public Sprite onSprite; 
     public Sprite offSprite;
 
+    // the parallax objects and their starting positions
+    [SerializeField] public GameObject[] parallaxObjects;
+    public Vector3[] startingPositions;
+    public float parallaxMultiplier;
+
     [SerializeField]
     private string buttonText;
     //public Transform target;
@@ -24,17 +29,48 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     // Start is called before the first frame update
     void Start()
     {
-        isMouseover = false;        
+        parallaxMultiplier = 0.9f;
+        startingPositions = new Vector3[parallaxObjects.Length];
+        isMouseover = false; 
+        for (int i = 0; i < parallaxObjects.Length; i++)
+        {
+            startingPositions[i] = parallaxObjects[i].transform.position;
+        }
+    }
+
+    void Update()
+    {
+        ApplyParallax(parallaxObjects, startingPositions);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     { 
         transform.GetComponent<Image>().sprite = onSprite;
-        transform.GetChild(0).GetComponent<Text>().text = "";
+        Vector3 newPosition = transform.position;
+        newPosition.x -= 40.0f;
+        transform.position = newPosition;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        transform.GetComponent<Image>().sprite = offSprite; 
-    }      
+        transform.GetComponent<Image>().sprite = offSprite;
+        Vector3 newPosition = transform.position;
+        newPosition.x += 40.0f;
+        transform.position = newPosition;
+    }
+    
+    public void ApplyParallax(GameObject[] objs, Vector3[] positions)
+    {
+        Vector3 tempPosition = new Vector3(0.0f, 0.0f, 0.0f);
+        for (int i = 0; i < objs.Length; i++)
+        {
+            float mousePos = Input.mousePosition.x;
+            if (mousePos < 0.0f)
+            {
+                mousePos = 0.0f;
+            }
+            tempPosition = new Vector3(-mousePos * parallaxMultiplier + positions[i].x, positions[i].y, 0.0f);
+            objs[i].transform.position = tempPosition;
+        }
+    }
 }
