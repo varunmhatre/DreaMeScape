@@ -26,9 +26,32 @@ public class CameraMovement : MonoBehaviour {
     [SerializeField] private float zoomInMax;
     [SerializeField] private float scrollSpeed;
 
+    [SerializeField] private Vector3[] positions;
+    [SerializeField] private float[] times;
+    private float timer;
+    private int cameraLocNum;
+    private Vector3 goalLocation;
+    [SerializeField] private float panningSpeed;
+
+    private bool firstTime;
+
 	// Use this for initialization
 	void Start()
     {
+        firstTime = true;
+        positions = new Vector3[3];
+        times = new float[3];
+
+        positions[0] = transform.position;
+        positions[1] = transform.position + transform.right * 30.0f;
+        positions[2] = transform.position;
+
+        times[0] = 2.5f;
+        times[1] = 8.0f;
+        times[2] = 15.0f;
+        goalLocation = transform.position;
+        cameraLocNum = 0;
+        timer = 0.0f;
         zoomedInAmount = 0.0f;
         moving = false;
         portionOfJourney = 0.0f;
@@ -42,12 +65,24 @@ public class CameraMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        if (!pirateLock)
+        if (!pirateLock && DialoguePanelManager.playerControlsUnlocked)
         {
-            //check to see if you are moving the camera up, down, left, or right
-            MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
-            ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
-            SwapCameras(Input.GetKeyDown(KeyCode.L));
+            if (firstTime)
+            {
+                transform.position = positions[0];
+            }
+            if (!TutorialCards.isTutorialRunning)
+            {
+                //check to see if you are moving the camera up, down, left, or right
+                MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
+                ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
+                SwapCameras(Input.GetKeyDown(KeyCode.L));
+            }
+            firstTime = false;
+        }
+        else
+        {
+            PirateShipMoveSetup(positions, times);
         }
         AdjustCameraValues(currentCamera, prevCamera);
     }
@@ -195,5 +230,28 @@ public class CameraMovement : MonoBehaviour {
                 portionOfJourney = 0.0f;
             }
         }
+    }
+
+    public void PirateShipMoveSetup(Vector3[] locations, float[] times)
+    {
+        goalLocation = locations[cameraLocNum];
+        if (timer >= times[cameraLocNum])
+        {
+            timer = 0.0f;
+            cameraLocNum++;
+        }
+
+        if (transform.position != goalLocation)
+        {
+            Vector3 goVector = goalLocation - transform.position;
+            Vector3 goWay = goVector.normalized;
+            if (goVector.magnitude <= 2.5f)
+            {
+                transform.position = goalLocation;
+            }
+            transform.position += goWay * panningSpeed * Time.deltaTime;
+        }
+
+        timer += Time.deltaTime;
     }
 }
