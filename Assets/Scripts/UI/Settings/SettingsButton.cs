@@ -21,11 +21,11 @@ public class SettingsButton : MonoBehaviour
         isClicked = !isClicked; 
         if (isClicked)
         {
-            controlDisplay.SetActive(true);
+            controlDisplay.SetActive(true); 
         }
         else 
         {
-            controlDisplay.SetActive(false);
+            controlDisplay.SetActive(false); 
         }
     }
 }
