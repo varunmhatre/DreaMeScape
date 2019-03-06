@@ -16,6 +16,8 @@ public class SetupCharactersOnBoard : MonoBehaviour
 
     [SerializeField] GameObject generator;
 
+    [SerializeField] int levelNum;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,16 +26,20 @@ public class SetupCharactersOnBoard : MonoBehaviour
         CharacterManager.allAlliedCharacters = new List<GameObject>();
         CharacterManager.allEnemyCharacters = new List<GameObject>();
 
-        PlaceCharacters();
-        PlaceCannons();
-        PlacePirates();
-        PlacePirateCaptain();
-        PlaceGenerators();
+        PlaceCharacters(1);
+        PlaceCannons(1);
+        PlacePirates(1);
+        PlacePirateCaptain(1);
+        PlaceGenerators(1);
     }
 
-    void PlaceCharacters()
+    void PlaceCharacters(int level)
     {
-        int[] array = { 3, 5, 2, 5, 1, 4, 2, 3, 3, 3 };
+        int[] array = { 3, 5, 2, 5, 4, 4, 2, 3, 3, 3 };
+        if (level == 1)
+        {
+            array = new int[] { 3, 5, 2, 5, 4, 4, 2, 3, 3, 3 };
+        }
         for (int arrayIndex = 0; arrayIndex < characters.Count; arrayIndex++)
         {
             for (int i = 0; i < transform.childCount; i++)
@@ -52,9 +58,13 @@ public class SetupCharactersOnBoard : MonoBehaviour
         }
     }
 
-    void PlaceCannons()
+    void PlaceCannons(int level)
     {
         int[] array = { 7, 7, 7, 1, 11, 7, 11, 1 };
+        if (level == 1)
+        {
+            array = new int[] { 7, 7, 7, 1, 11, 7, 11, 1 };
+        }
         int numberOfCannons = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfCannons; arrayIndex++)
         {
@@ -79,9 +89,13 @@ public class SetupCharactersOnBoard : MonoBehaviour
         }
     }
 
-    void PlacePirates()
+    void PlacePirates(int level)
     {
         int[] array = { 16, 7, 11, 6, 7, 2 };
+        if (level == 1)
+        {
+            array = new int[] { 16, 7, 11, 6, 7, 2 };
+        }
         int numberOfPirates = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfPirates; arrayIndex++)
         {
@@ -101,9 +115,13 @@ public class SetupCharactersOnBoard : MonoBehaviour
         }
     }
 
-    void PlacePirateCaptain()
+    void PlacePirateCaptain(int level)
     {
         int[] array = { 16, 4 };
+        if (level == 1)
+        {
+            array = new int[] { 16, 4 };
+        }
         int numberOfPirates = array.Length / 2;
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -120,9 +138,13 @@ public class SetupCharactersOnBoard : MonoBehaviour
         }
     }
 
-    void PlaceGenerators()
+    void PlaceGenerators(int level)
     {
-        int[] array = { 4, 1, 13, 4 };
+        int[] array = { 4, 1, 13, 4};
+        if (level == 1)
+        {
+            array = new int[] { 4, 1, 13, 4 };
+        }
         int numberOfGenerators = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfGenerators; arrayIndex++)
         {

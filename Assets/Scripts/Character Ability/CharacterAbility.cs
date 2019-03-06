@@ -70,11 +70,12 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         }
         else if (buttonId == 1 && GameManager.currentEnergy >= 1)
         {
-            //Hally's Ability
+            transform.GetComponent<Image>().color = new Color(10.0f, 10.0f, 10.0f);
+            ActivateBolster(charStats.gameObject);
         }
         else if (buttonId == 0 && GameManager.currentEnergy >= 1)
         {
-            transform.GetComponent<Image>().color = Color.green;
+            transform.GetComponent<Image>().color = Color.yellow;
             ActivateParalyzingPotion(charStats.gameObject);
         }
         else

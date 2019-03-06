@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4016189808243797759}
   - component: {fileID: 6904719733578921599}
   - component: {fileID: 1431113772343769258}
-  - component: {fileID: 1794052945445466844}
+  - component: {fileID: 4819283006797115714}
   m_Layer: 8
   m_Name: '#Jade_Fantasy_Realm_temp'
   m_TagString: Player
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1794052945445466844
+--- !u!114 &4819283006797115714
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,10 +143,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004241752199634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54bc268ac426505469e40f6e39e273d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 38e0d81af1d53034fb6443874a78d076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickID: 2
+  objToBubblePres: {fileID: 3923644730610329981}
+  objToBubbleResist: {fileID: 6785503860777215170}
+  bubblesUpOnAction: 1
+  valueChanged: 0
 --- !u!1 &1064420892271248
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +376,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: cfd2760dfb693d34e8c56bf703230db9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d6d76469ebedc84c9433e60254c068c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -786,6 +789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678854952462135427}
   - component: {fileID: 2173162576206682306}
+  - component: {fileID: 4357522073300781290}
   m_Layer: 8
   m_Name: GridRotater
   m_TagString: GridRotater
@@ -819,5 +823,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75b0e8e7def7f1e44a99aec138f89ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4357522073300781290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443549057597981493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
