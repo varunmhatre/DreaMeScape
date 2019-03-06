@@ -5,8 +5,8 @@ using UnityEngine;
 /// <summary>
 /// Keep track of the units held by each grid
 /// </summary>
-public class GridPiece : MonoBehaviour{
-
+public class GridPiece : MonoBehaviour
+{
     public GameObject unit = null;
     public bool isDead = false;
     Vector3 inGamePosition;
