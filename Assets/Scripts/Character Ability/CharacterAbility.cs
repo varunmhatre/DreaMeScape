@@ -100,7 +100,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "fireball")
             {
-                Debug.Log("Ability set to fireball");
+               // Debug.Log("Ability set to fireball");
                 if (Input.GetMouseButtonDown(0) && !justClickedButton)
                 {
                     RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
