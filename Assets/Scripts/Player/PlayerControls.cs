@@ -30,7 +30,7 @@ public class PlayerControls : MonoBehaviour
                 MoveOnClickedGridPiece();
 
                 //Populates selectedUnitName and selectedUnit
-                //GetPlayer();
+                GetPlayer();
 
                 AttackEnemy();
 
@@ -72,7 +72,7 @@ public class PlayerControls : MonoBehaviour
         RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         Transform moveLoc = GetComponent<GridPieceSelect>().GetGridPieceOnClick();
 
-        if (hitCannon.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
+        if (hitCannon.transform == null && hit.transform == null && selectedUnit && moveLoc && moveLoc.GetComponent<GridPieceHighlight>().isHighlighted && GameManager.HaveEnergy())
         {
             GameObject playerCoords = GetComponent<GridPieceSelect>().GetGridPieceCoords(playerLoc[0], playerLoc[1]).gameObject;
             playerCoords.GetComponent<GridPiece>().unit = null;
