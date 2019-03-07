@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3360379652989382636}
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -6.54, y: 4.79, z: -5.03}
+  m_LocalPosition: {x: -6.49, y: 3.6, z: -4.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1023205645606300313}
@@ -53,13 +53,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3360379653080031147}
-  m_LocalRotation: {x: 0.2588191, y: -0, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 6.109867, y: 17.833633, z: -36.942055}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0.33000335, y: 2.4999986, z: -6.590001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1023205645606300313}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!1 &3360379654646257596
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,13 +87,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3360379654646257596}
-  m_LocalRotation: {x: 0.2588191, y: -0, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 6.109867, y: 17.833633, z: -36.942055}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0.33000335, y: 2.499998, z: -6.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1023205645606300313}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!20 &3360379654646257570
 Camera:
   m_ObjectHideFlags: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271376fb124cfa149b76e871a986ce40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pirate: {fileID: 0}
 --- !u!114 &3360379654646257568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bb56d2cf708d4eb5a6ed7561cd661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pirateLock: 0
   cameraMoveSpeed: 8
   cameraViews:
   - {fileID: 3360379653080031147}
@@ -179,6 +181,9 @@ MonoBehaviour:
   zoomOutMin: -50
   zoomInMax: 7
   scrollSpeed: 1
+  positions: []
+  times: []
+  panningSpeed: 2
 --- !u!1 &3360379654872098613
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3360379654872098613}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.33, y: 10.93, z: 3.64}
+  m_LocalPosition: {x: 0.33, y: 10.53, z: 3.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1023205645606300313}

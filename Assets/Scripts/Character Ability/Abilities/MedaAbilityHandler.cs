@@ -33,7 +33,7 @@ public class MedaAbilityHandler : MonoBehaviour
         finalPosition = piratePosition;
         fireballPrefab.transform.position = finalPosition + new Vector3(0.0f, 5.0f, 0.0f);
         initialPosition = fireballPrefab.transform.position;
-        fireball = Instantiate(fireballPrefab);
+        fireball = Instantiate(fireballPrefab, fireballPrefab.transform.position, Quaternion.identity);
         isFireballActive = true;
         timer = 0.0f;
     }
