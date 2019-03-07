@@ -268,6 +268,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         if (hasTarget)
         {
+            GetComponent<MedaAbilityHandler>().OnMouseClickWhenOn();
             Debug.Log("Selection mode set to enemy!");
             inSelectionMode = true;
             //currSelectionType = selectionType.enemy;
@@ -298,6 +299,10 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             {
                 GetComponent<EdAbilityHandler>().OnMouseHoveringStart();
             }
+            else if (buttonId == 4)
+            {
+                GetComponent<MedaAbilityHandler>().OnMouseHoveringStart();
+            }
         }
     }
     public void OnPointerExit(PointerEventData eventData)
@@ -308,6 +313,10 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             if (buttonId == 0)
             {
                 GetComponent<EdAbilityHandler>().OnMouseHoveringExit();
+            }
+            else if (buttonId == 4)
+            {
+                GetComponent<MedaAbilityHandler>().OnMouseHoveringExit();
             }
         }
     }
