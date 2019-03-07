@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Material normalMat;
     [SerializeField] public static int totalEnergy;
     [SerializeField] public GameObject gridManager;
+    [SerializeField] public GameObject dialogSceneController;
     public static SetupCharactersOnBoard characterSetup;
 
     public static int currentEnergy;

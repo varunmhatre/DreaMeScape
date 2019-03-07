@@ -4,49 +4,49 @@
       "Conversation": 0,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "Where... Are we?"
+      "DialogueText": "See! Isn't it fun if we actually play on the ship, big brother?"
     },
     {
       "Conversation": 1,
-      "CharacterName": "Meda",
-      "CharacterImage": "Meda",
-      "DialogueText": "Aghh! Pirates!"
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "... Not bad!"
     },
     {
       "Conversation": 2,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
-      "DialogueText": "What? You’re crazy Meda. There aren’t any pir--"
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "Click here on my base to select me and click on the Green Space to move me there!"
     },
     {
       "Conversation": 3,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
-      "DialogueText": "...!"
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "Yay!"
     },
     {
       "Conversation": 4,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
-      "DialogueText": "Meda, there are pirates! Why didn’t you tell us before?"
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "Though I'm getting tired..."
     },
     {
       "Conversation": 5,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "We’re on a pirate ship!! A plank on the port side, cannons on the starboard. There’s no doubt about it!"
+      "DialogueText": "Why don't we use Generators?"
     },
     {
       "Conversation": 6,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "Star... Board?"
+      "DialogueText": "MEDA!"
     },
     {
       "Conversation": 7,
-      "CharacterName": "Meda",
-      "CharacterImage": "Meda",
-      "DialogueText": "*sigh* The right side of the ship. What are we going to do?"
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "That's an awesome idea! (giggles)"
     },
     {
       "Conversation": 8,

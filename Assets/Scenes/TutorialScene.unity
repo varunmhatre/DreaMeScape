@@ -112,6 +112,32 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &225322980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1038623645874339117, guid: 12c237070ff45be49a9dbd61eb28c42a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1435114476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &225322986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225322980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c5eccc0e0ce2a4a902e72f46b097cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hally_Prefab: {fileID: 1099632027117354, guid: 3da84a7cd1d90a64d919fd58f4ebae9c,
+    type: 3}
+--- !u!1 &299715361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 306729605778939906, guid: 50b5f17d8abe9fa4eb030858e9f12635,
+    type: 3}
+  m_PrefabInstance: {fileID: 551888424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &305669044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7506440632940839586, guid: 21bd380745295354ab0410dbf9424070,
@@ -1073,6 +1099,16 @@ PrefabInstance:
       propertyPath: highlightMat
       value: 
       objectReference: {fileID: 2100000, guid: 0680312cfc446f943a2438e498223ef3, type: 2}
+    - target: {fileID: 1038623645874339110, guid: 12c237070ff45be49a9dbd61eb28c42a,
+        type: 3}
+      propertyPath: dialogPanelManager
+      value: 
+      objectReference: {fileID: 299715361}
+    - target: {fileID: 1038623645874339110, guid: 12c237070ff45be49a9dbd61eb28c42a,
+        type: 3}
+      propertyPath: dialogSceneController
+      value: 
+      objectReference: {fileID: 299715361}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12c237070ff45be49a9dbd61eb28c42a, type: 3}
 --- !u!1 &1534051840

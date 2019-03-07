@@ -25,6 +25,8 @@ public class TutorialBoardSetup : MonoBehaviour
         CharacterManager.allAlliedCharacters = new List<GameObject>();
         CharacterManager.allEnemyCharacters = new List<GameObject>();
 
+        InteractablesManager.generators = new List<GameObject>();
+
         PlaceCharacters(levelNum);
         PlaceCannons(levelNum);
         PlacePirates(levelNum);
@@ -94,6 +96,10 @@ public class TutorialBoardSetup : MonoBehaviour
                     cannon.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[arrayIndex * 2], array[(arrayIndex * 2) + 1]);
                     transform.GetChild(i).GetComponent<GridPiece>().unit =
                         Instantiate(cannon, pos, rotation, cannonHandler);
+                    if (level == 0)
+                    {
+                        cannonHandler.GetChild(arrayIndex).gameObject.SetActive(false);
+                    }
                     break;
                 }
             }
@@ -124,7 +130,7 @@ public class TutorialBoardSetup : MonoBehaviour
                         Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity, pirateAIHandler);
                     CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
-                    if (arrayIndex > -1 && level == 0)
+                    if (level == 0)
                     {
                         CharacterManager.allEnemyCharacters[arrayIndex].SetActive(false);
                     }
@@ -183,6 +189,11 @@ public class TutorialBoardSetup : MonoBehaviour
                     generator.GetComponent<UnitCoordinates>().SetUnitCoordinates(array[arrayIndex * 2], array[(arrayIndex * 2) + 1]);
                     transform.GetChild(i).GetComponent<GridPiece>().unit =
                         Instantiate(generator, transform.GetChild(i).position, Quaternion.identity);
+                    InteractablesManager.generators.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                    if (level == 0)
+                    {
+                        InteractablesManager.generators[arrayIndex].SetActive(false);
+                    }
                     break;
                 }
             }
