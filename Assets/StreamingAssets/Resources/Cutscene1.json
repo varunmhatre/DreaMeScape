@@ -34,7 +34,7 @@
       "Conversation": 5,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Why don't we use Generators?"
+      "DialogueText": "Why don't we use Generators to get more Energy?"
     },
     {
       "Conversation": 6,
@@ -50,18 +50,24 @@
     },
     {
       "Conversation": 8,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
-      "DialogueText": "Awww! Looks like the babies are playing their baby games again. Heh… I suppose I’ll play along with your “Pirate Ship.”"
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "But how do we activate it?”"
     },
     {
       "Conversation": 9,
-      "CharacterName": "Jade",
-      "CharacterImage": "Jade",
-      "DialogueText": "Well, I’m excited to fight some pirates!"
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "... We can Surround it..."
     },
     {
       "Conversation": 10,
+      "CharacterName": "Meda",
+      "CharacterImage": "Meda",
+      "DialogueText": "Yeah! If the we stand on 3 out of the 8 tiles around it, we can activate it."
+    },
+    {
+      "Conversation": 11,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
       "DialogueText": "."

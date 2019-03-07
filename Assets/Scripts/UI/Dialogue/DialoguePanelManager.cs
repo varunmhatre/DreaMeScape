@@ -34,15 +34,15 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             characterPanel = GameObject.Find("CharacterPanel").GetComponent<DialoguePanelConfig>();
         }
         
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().name == "TutorialScene")
         {
             currentEvent = JSONAssembly.RunJSONFactoryForScene(1); 
         }
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().name == "FantasyWorldStartScene")
         {
             currentEvent = JSONAssembly.RunJSONFactoryForScene(3);
         }
-        if (SceneManager.GetActiveScene().buildIndex == 3)
+        if (SceneManager.GetActiveScene().name == "PirateshipScene")
         {
             currentEvent = JSONAssembly.RunJSONFactoryForScene(2);
         }
@@ -61,7 +61,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         } 
         if (Input.GetKey(KeyCode.P) || countDialogueLength >= currentEvent.dialogues.Count)
         {
-            if (!Input.GetKey(KeyCode.P) && SceneManager.GetActiveScene().buildIndex == 1)
+            if (!Input.GetKey(KeyCode.P) && SceneManager.GetActiveScene().name == "TutorialScene")
             {
                 dialoguePanel.SetActive(false);
                 playerControlsUnlocked = true;
@@ -71,7 +71,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 //SceneManager.LoadScene("PirateshipScene");
             }
             //Deprecated------------------------------------------------
-            if (SceneManager.GetActiveScene().buildIndex == 2)
+            if (SceneManager.GetActiveScene().name == "FantasyWorldStartScene")
             {
                 dialoguePanel.SetActive(false);
                 countDialogueLength = 0;
@@ -80,7 +80,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 SceneManager.LoadScene("PirateshipScene");
             }
             //Deprecated------------------------------------------------
-            if (SceneManager.GetActiveScene().buildIndex == 3)
+            if (SceneManager.GetActiveScene().name == "PirateshipScene")
             {
                 
                 dialoguePanel.SetActive(false);

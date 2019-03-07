@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
 {
-    bool isOn;
+    public bool isOn;
     [SerializeField] TextMesh generatorPopupText;
     private int numCharsToSurround;
     private int energyProvides;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
+    [SerializeField] GameObject SurroundTiles;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,23 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        if(DialoguePanelManager.stepIndex == 5)
+        if (DialoguePanelManager.stepIndex == 5)
         {
             CharacterManager.allAlliedCharacters[4].SetActive(true);
             InteractablesManager.generators[0].SetActive(true);
         }
+
+        if (DialoguePanelManager.stepIndex == 10)
+        {
+            GameManager.RefreshCurrentEnergy();
+            SurroundTiles.SetActive(true);
+            PauseDialog();
+            if(InteractablesManager.generators[0].GetComponent<Generator>().isOn)
+            {
+                ResumeDialog();
+            }
+        }
+
     }
 
     private void PauseDialog()

@@ -79,10 +79,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 306729605778939905}
     m_Modifications:
-    - target: {fileID: 469731072, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
-      propertyPath: m_Name
-      value: CharacterPanel
-      objectReference: {fileID: 0}
     - target: {fileID: 753362, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -178,6 +174,10 @@ PrefabInstance:
     - target: {fileID: 429560187, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
       propertyPath: m_SizeDelta.y
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 469731072, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
+      propertyPath: m_Name
+      value: CharacterPanel
       objectReference: {fileID: 0}
     - target: {fileID: 469731073, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
       propertyPath: edsFont
@@ -293,6 +293,12 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 3248427076091142126, guid: 32b9a77d4c58fd044aa69a65b0e4c161,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e4b444fb5bcc5bb408ea3c6ab58eb0ed,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b9a77d4c58fd044aa69a65b0e4c161, type: 3}
 --- !u!1 &3294217279798870303 stripped
