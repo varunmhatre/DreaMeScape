@@ -20,16 +20,16 @@ public class SettingsHandler : MonoBehaviour
         for(int i = 1; i < slidingImage.Length; i++)
         {
             slidingImage[i].SetActive(false);
-        }
-        
+        }        
     }
     void Update()
-    { 
-
+    {
+        DisplayButton();
     }
     public void ChangePanel(bool increase)
     {
         currentIndex = Mathf.Clamp(currentIndex + (increase ? count : -count), min, max);
+
         slidingImage[currentIndex].SetActive(true);
         if(increase)
         {
@@ -38,6 +38,24 @@ public class SettingsHandler : MonoBehaviour
         if(!increase)
         {
             slidingImage[currentIndex + 1].SetActive(false);
+        }
+    }
+
+
+    private void DisplayButton()
+    {
+        if (currentIndex == 0)
+        {
+            leftButton.gameObject.SetActive(false);
+        }
+        else if (currentIndex == 5)
+        {
+            rightButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            rightButton.gameObject.SetActive(true);
+            leftButton.gameObject.SetActive(true);
         }
     }
 }
