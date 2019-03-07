@@ -26,7 +26,7 @@ public class EnemyMouseCursor : MonoBehaviour
         {
             selectedUnit = PlayerControls.selectedUnit.GetComponent<Stats>();
             cursorChanged = true;
-            Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.ForceSoftware);
         }
     }
     
