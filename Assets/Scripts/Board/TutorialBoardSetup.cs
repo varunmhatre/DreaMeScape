@@ -55,6 +55,10 @@ public class TutorialBoardSetup : MonoBehaviour
                         Instantiate(characters[arrayIndex], transform.GetChild(i).position, Quaternion.identity);
                     CharacterManager.allAlliedCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                    if (arrayIndex > 1 && level == 0)
+                    {
+                        CharacterManager.allAlliedCharacters[arrayIndex].SetActive(false);
+                    }
                     break;
                 }
             }
@@ -101,7 +105,7 @@ public class TutorialBoardSetup : MonoBehaviour
         int[] array = { 0 };
         if (level == 0)
         {
-            array = new int[] { 2, 7 };
+            array = new int[] { 2, 7, 2, 8 };
         }
         else if (level == 1)
         {
@@ -120,6 +124,10 @@ public class TutorialBoardSetup : MonoBehaviour
                         Instantiate(pirate, transform.GetChild(i).position, Quaternion.identity, pirateAIHandler);
                     CharacterManager.allEnemyCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
+                    if (arrayIndex > -1 && level == 0)
+                    {
+                        CharacterManager.allEnemyCharacters[arrayIndex].SetActive(false);
+                    }
                     break;
                 }
             }

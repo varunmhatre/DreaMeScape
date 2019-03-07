@@ -39,7 +39,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         }
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            currentEvent = JSONAssembly.RunJSONFactoryForScene(1);
+            currentEvent = JSONAssembly.RunJSONFactoryForScene(3);
         }
         if (SceneManager.GetActiveScene().buildIndex == 3)
         {
@@ -60,13 +60,13 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         } 
         if (Input.GetKey(KeyCode.P) || countDialogueLength >= currentEvent.dialogues.Count)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 1)
+            if (!Input.GetKey(KeyCode.P) && SceneManager.GetActiveScene().buildIndex == 1)
             {
                 dialoguePanel.SetActive(false);
-                countDialogueLength = 0;
-                stepIndex = 0;
                 playerControlsUnlocked = true;
-                SceneManager.LoadScene("TutorialScene");
+                isCharacterPanelDisabled = true;
+                countDialogueLength = currentEvent.dialogues.Count;
+                SceneManager.LoadScene("PirateshipScene");
             }
             if (SceneManager.GetActiveScene().buildIndex == 2)
             {
@@ -119,5 +119,10 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
 
             stepIndex++;             
         }
+    }
+
+    int GetStepIndex()
+    {
+        return stepIndex;
     }
 }
