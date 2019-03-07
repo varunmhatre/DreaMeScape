@@ -8,7 +8,9 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown resolutionDropdown;
     private Resolution[] resolutions;
 
-    int currentResolutionIndex; 
+    private int currentResolutionIndex;
+    private List<string> options = new List<string>();
+    private bool onBoot;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +19,8 @@ public class SettingsMenu : MonoBehaviour
 
         resolutionDropdown.ClearOptions();
 
-        List<string> options = new List<string>();
-
         for (int i = 0; i < resolutions.Length; i++)
-        {
+        { 
             string option = resolutions[i].width + "x" + resolutions[i].height;
             options.Add(option);
 
@@ -28,22 +28,30 @@ public class SettingsMenu : MonoBehaviour
             {
                 currentResolutionIndex = i;
             }
-         }
+         } 
 
         resolutionDropdown.value = currentResolutionIndex;
+      
         resolutionDropdown.RefreshShownValue();
 
         resolutionDropdown.AddOptions(options);
+
+        onBoot = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+         if(!onBoot)
+        {
+            resolutionDropdown.value = resolutions.Length - 1;
+            resolutionDropdown.AddOptions(options);
+        }
     }
 
     public void SetQuality(int index) 
     {
+        onBoot = true;
         QualitySettings.SetQualityLevel(index);
     }
 
