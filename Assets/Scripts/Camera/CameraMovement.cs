@@ -70,6 +70,7 @@ public class CameraMovement : MonoBehaviour {
             if (firstTime)
             {
                 transform.position = positions[0];
+                firstTime = false;
             }
             if (!TutorialCards.isTutorialRunning)
             {
@@ -79,9 +80,8 @@ public class CameraMovement : MonoBehaviour {
                 ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
                 SwapCameras(Input.GetKeyDown(KeyCode.L));
             }
-            firstTime = false;
         }
-        else
+        else if (firstTime == true)
         {
             PirateShipMoveSetup(positions, times);
         }
