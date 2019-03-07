@@ -25,4 +25,8 @@ public class SceneTransition : MonoBehaviour
     {
         Application.Quit();
     }
+    public static void GoFade(string scene)
+    {
+        Initiate.Fade(scene, Color.white, 1.0f);
+    }
 }
