@@ -6,7 +6,7 @@ public class PauseGame : MonoBehaviour
 {
     private bool isPaused;
 
-    [SerializeField] private GameObject pauseBackground;
+    //[SerializeField] private GameObject pauseBackground;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +27,12 @@ public class PauseGame : MonoBehaviour
         if(isPaused)
         {
             Time.timeScale = 0;
-            pauseBackground.SetActive(true);
+           // pauseBackground.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
-            pauseBackground.SetActive(false);
+           // pauseBackground.SetActive(false);
         } 
     }
 }
