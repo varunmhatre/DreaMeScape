@@ -146,7 +146,6 @@ public class CameraMovement : MonoBehaviour {
                 zoomedInAmount -= gameObject.transform.forward.magnitude * scrollSpeed;
             }
         }
-        Debug.Log(zoomedInAmount);
     }
 
     public void SwapCameras(float clicked)

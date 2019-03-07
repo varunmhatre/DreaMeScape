@@ -39,6 +39,10 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         }
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            currentEvent = JSONAssembly.RunJSONFactoryForScene(1);
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
             currentEvent = JSONAssembly.RunJSONFactoryForScene(2);
         }
         InitiziliasePanels();
@@ -62,9 +66,17 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 countDialogueLength = 0;
                 stepIndex = 0;
                 playerControlsUnlocked = true;
-                SceneManager.LoadScene("PirateshipScene");
+                SceneManager.LoadScene("TutorialScene");
             }
             if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                dialoguePanel.SetActive(false);
+                countDialogueLength = 0;
+                stepIndex = 0;
+                playerControlsUnlocked = true;
+                SceneManager.LoadScene("PirateshipScene");
+            }
+            if (SceneManager.GetActiveScene().buildIndex == 3)
             {
                 
                 dialoguePanel.SetActive(false);
