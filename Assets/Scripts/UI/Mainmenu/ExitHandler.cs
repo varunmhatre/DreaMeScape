@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterID : MonoBehaviour
+public class ExitHandler : MonoBehaviour
 {
-    public int clickID; 
     // Start is called before the first frame update
     void Start()
     {
-       
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    } 
+    }
+    public void EnableExitPanel()
+    {
+
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
