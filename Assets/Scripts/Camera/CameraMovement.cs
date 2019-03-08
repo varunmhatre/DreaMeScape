@@ -76,11 +76,11 @@ public class CameraMovement : MonoBehaviour {
             {
                 //check to see if you are moving the camera up, down, left, or right
                 MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
-                //MoveCamera(Input.GetAxis("CameraCommandHoriz"), Input.GetAxis("CameraCommandVert"));
+                MoveCamera(Input.GetAxis("CameraCommandHoriz"), Input.GetAxis("CameraCommandVert"));
                 ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
                 SwapCameras(Input.GetKeyDown(KeyCode.L));
             }
-        }
+        } 
         else if (firstTime == true)
         {
             PirateShipMoveSetup(positions, times);
