@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1664cd6d1caf97b42bddc9cdf2713dfe
+guid: 62c6aa464b48ff64db2f225b8c285bd1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,8 +8,8 @@ ModelImporter:
     100004: Door Frame
     100006: Front Sail
     100008: Middle Sail.001
-    100010: Ship Base
-    100012: //RootNode
+    100010: //RootNode
+    100012: Ship Base
     100014: Steering Wheel
     100016: Windows
     400000: Anchor
@@ -17,15 +17,16 @@ ModelImporter:
     400004: Door Frame
     400006: Front Sail
     400008: Middle Sail.001
-    400010: Ship Base
-    400012: //RootNode
+    400010: //RootNode
+    400012: Ship Base
     400014: Steering Wheel
     400016: Windows
-    2100000: No Name
-    2100002: Ship
+    2100000: Sail
+    2100002: Ship Base
     2100004: Window
     2100006: Door
-    2100008: Chain Link
+    2100008: Anchor
+    2100010: Steering Wheel
     2300000: Anchor
     2300002: Door
     2300004: Door Frame
