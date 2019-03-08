@@ -41,7 +41,7 @@ public class DreamMeter : MonoBehaviour
 
             //This is for vertical fill meter.
             dreamMeterBarArr[i].sizeDelta = new Vector2(dreamMeterBarArr[i].rect.width,startingHeight * meterValue / CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().maxMeter);
-            dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 2, dreamMeterBarArr[i].rect.height);
+            dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 2, dreamMeterBarArr[i].rect.height);
         }
     }
 }
