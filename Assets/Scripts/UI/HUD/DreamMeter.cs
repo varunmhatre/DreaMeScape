@@ -34,8 +34,8 @@ public class DreamMeter : MonoBehaviour
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
             meterValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().meterUnitsFilled;
-
-            //This is for Horizontal fill meter.
+            
+           //This is for Horizontal fill meter.
            // dreamMeterBarArr[i].sizeDelta = new Vector2(startingWidth * meterValue / CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().maxMeter, dreamMeterBarArr[i].rect.height);
            // dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 2, dreamMeterBarArr[i].rect.width);
 
