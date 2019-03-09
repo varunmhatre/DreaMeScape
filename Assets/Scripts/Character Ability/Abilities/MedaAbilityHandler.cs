@@ -30,12 +30,15 @@ public class MedaAbilityHandler : MonoBehaviour
 
     void AttackWithFireball(Vector3 piratePosition)
     {
-        finalPosition = piratePosition;
-        fireballPrefab.transform.position = finalPosition + new Vector3(0.0f, 5.0f, 0.0f);
-        initialPosition = fireballPrefab.transform.position;
-        fireball = Instantiate(fireballPrefab, fireballPrefab.transform.position, Quaternion.identity);
-        isFireballActive = true;
-        timer = 0.0f;
+        if (!isFireballActive)
+        {
+            finalPosition = piratePosition;
+            fireballPrefab.transform.position = finalPosition + new Vector3(0.0f, 5.0f, 0.0f);
+            initialPosition = fireballPrefab.transform.position;
+            fireball = Instantiate(fireballPrefab, fireballPrefab.transform.position, Quaternion.identity);
+            isFireballActive = true;
+            timer = 0.0f;
+        }
     }
 
     // Update is called once per frame
@@ -55,6 +58,7 @@ public class MedaAbilityHandler : MonoBehaviour
         if (startCheckingForEnemy && Input.GetMouseButtonDown(0))
         {
             isClickedOn = false;
+            startCheckingForEnemy = false;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -102,6 +106,7 @@ public class MedaAbilityHandler : MonoBehaviour
         if (!isClickedOn)
         {
             UnCheckEverything();
+            isClickedOn = false;
         }
         else
         {
