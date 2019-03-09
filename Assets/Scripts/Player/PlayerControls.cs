@@ -34,6 +34,11 @@ public class PlayerControls : MonoBehaviour
 
                 AttackEnemy();
 
+                /*GameObject character;
+
+                int thisCharacterX = character.GetComponent<UnitCoordinates>().x;
+                int thisCharacterY = character.GetComponent<UnitCoordinates>().y;*/
+
                 if (piecesHighlighted)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLocation: null);
@@ -42,6 +47,7 @@ public class PlayerControls : MonoBehaviour
                 if (selectedUnit)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
+                    GameObject.Find("GridX" + 1 + "Y" + 3).transform.GetChild(0).GetComponent<FreeSpaceHighlightAnim>().isVisible = true;
                     piecesHighlighted = true;                    
                 }
 
@@ -93,7 +99,6 @@ public class PlayerControls : MonoBehaviour
         {
             playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
             playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
-
         }
     }
 
