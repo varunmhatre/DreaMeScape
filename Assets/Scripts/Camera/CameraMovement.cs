@@ -246,34 +246,15 @@ public class CameraMovement : MonoBehaviour {
         {
             Vector3 goVector = goalLocation - transform.position;
             Vector3 goWay = goVector.normalized;
-            if (goVector.magnitude <= 2.5f)
+            transform.position += goWay * panningSpeed * Time.deltaTime;
+            if (goVector.magnitude <= 0.2f)
             {
                 transform.position = goalLocation;
+                if (cameraLocNum == locations.Length - 1)
+                {
+                    firstTime = false;
+                }
             }
-            transform.position += goWay * panningSpeed * Time.deltaTime;
-        }
-
-        timer += Time.deltaTime;
-    }
-
-    public void PirateShipMoveSetup(Vector3[] locations, float[] times)
-    {
-        goalLocation = locations[cameraLocNum];
-        if (timer >= times[cameraLocNum])
-        {
-            timer = 0.0f;
-            cameraLocNum++;
-        }
-
-        if (transform.position != goalLocation)
-        {
-            Vector3 goVector = goalLocation - transform.position;
-            Vector3 goWay = goVector.normalized;
-            if (goVector.magnitude <= 2.5f)
-            {
-                transform.position = goalLocation;
-            }
-            transform.position += goWay * panningSpeed * Time.deltaTime;
         }
 
         timer += Time.deltaTime;

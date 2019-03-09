@@ -14799,6 +14799,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlankSpaceHighlightAnim
       objectReference: {fileID: 0}
+    - target: {fileID: 8172812380992863422, guid: f81965f5564c07d43af48e95e034a3bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8178066188243228700, guid: f81965f5564c07d43af48e95e034a3bd,
         type: 3}
       propertyPath: m_LocalPosition.x
