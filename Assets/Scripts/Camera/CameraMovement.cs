@@ -185,76 +185,17 @@ public class CameraMovement : MonoBehaviour {
         //Debug.Log(zoomedInAmount);
     }
 
-    public void SwapCameras(float clicked)
-    {
-        if (clicked > 0)
-        {
-            prevCamera = cameraViews[currentCameraIndex];
-            currentCameraIndex++;
-            if (currentCameraIndex >= cameraViews.Length)
-            {
-                currentCameraIndex = 0;
-            }
-            currentCamera = cameraViews[currentCameraIndex];
-            moving = true;
         }
-    }
-
-    public void SwapCameras(bool clicked)
-    {
-        if (clicked)
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            prevCamera = cameraViews[currentCameraIndex];
-            currentCameraIndex++;
-            if (currentCameraIndex >= cameraViews.Length)
-            {
-                currentCameraIndex = 0;
-            }
-            currentCamera = cameraViews[currentCameraIndex];
-            moving = true;
-        }
-    }
 
-    public void AdjustCameraValues(GameObject newObjToTakeValues, GameObject prevObjToTakeValues)
-    {
-        if (moving)
-        {
-            if (transform.position != newObjToTakeValues.transform.position || transform.rotation != newObjToTakeValues.transform.rotation)
-            {
-                transform.position = Vector3.Lerp(prevObjToTakeValues.transform.position, newObjToTakeValues.transform.position, portionOfJourney);
-                transform.rotation = Quaternion.Lerp(prevObjToTakeValues.transform.rotation, newObjToTakeValues.transform.rotation, portionOfJourney);
-                portionOfJourney += Time.deltaTime * journeySpeed;
-            }
-            else
-            {
-                moving = false;
-                portionOfJourney = 0.0f;
-            }
         }
-    }
-
-    public void PirateShipMoveSetup(Vector3[] locations, float[] times)
-    {
-        goalLocation = locations[cameraLocNum];
-        if (timer >= times[cameraLocNum])
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             timer = 0.0f;
             cameraLocNum++;
         }
 
-        if (transform.position != goalLocation)
-        {
-            Vector3 goVector = goalLocation - transform.position;
-            Vector3 goWay = goVector.normalized;
-            transform.position += goWay * panningSpeed * Time.deltaTime;
-            if (goVector.magnitude <= 0.2f)
-            {
-                transform.position = goalLocation;
-                if (cameraLocNum == locations.Length - 1)
-                {
-                    firstTime = false;
-                }
-            }
         }
 
         timer += Time.deltaTime;
