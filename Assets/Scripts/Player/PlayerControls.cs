@@ -88,6 +88,7 @@ public class PlayerControls : MonoBehaviour
             if (characterStats != null)
             {
                 characterStats.GainMeter(1);
+                characterStats.HealthMeter(1);
             }
         }
     }
