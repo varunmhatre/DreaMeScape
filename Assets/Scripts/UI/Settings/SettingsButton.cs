@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class SettingsButton : MonoBehaviour
 {
     public GameObject controlDisplay;
@@ -10,23 +10,30 @@ public class SettingsButton : MonoBehaviour
     void Start()
     {
         isClicked = false;
+        transform.GetComponent<Button>().interactable = false;
     }
     // Update is called once per frame
     void Update()
     {
-
+        if(TutorialCards.isTutorialRunning)
+        {
+            transform.GetComponent<Button>().interactable = true;
+        }
     }
     public void ControlAction()
     {
-        isClicked = !isClicked; 
-        if (isClicked)
+        if(TutorialCards.isTutorialRunning)
         {
-            controlDisplay.SetActive(true); 
-        }
-        else 
-        { 
-            SettingsHandler.currentIndex = 0;
-            controlDisplay.SetActive(false); 
-        }
+            isClicked = !isClicked;
+            if (isClicked)
+            {
+                controlDisplay.SetActive(true);
+            }
+            else
+            {
+                SettingsHandler.currentIndex = 0;
+                controlDisplay.SetActive(false);
+            }
+        }        
     }
 }
