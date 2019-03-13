@@ -73,7 +73,7 @@ public class CameraMovement : MonoBehaviour
                 transform.position = positions[0];
                 firstTime = false;
             }
-            if (!TutorialCards.isTutorialRunning)
+            if (TutorialCards.isTutorialRunning)
             {
                 //check to see if you are moving the camera up, down, left, or right
                 MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));

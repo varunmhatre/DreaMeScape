@@ -24,7 +24,8 @@ public class SettingsButton : MonoBehaviour
             controlDisplay.SetActive(true); 
         }
         else 
-        {
+        { 
+            SettingsHandler.currentIndex = 0;
             controlDisplay.SetActive(false); 
         }
     }
