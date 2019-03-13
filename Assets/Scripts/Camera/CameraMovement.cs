@@ -44,7 +44,7 @@ public class CameraMovement : MonoBehaviour
         times = new float[3];
 
         positions[0] = transform.position;
-        positions[1] = transform.position + transform.right * 30.0f;
+        positions[1] = transform.position + transform.right * 16.0f;
         positions[2] = transform.position;
 
         times[0] = 2.5f;
@@ -236,11 +236,28 @@ public class CameraMovement : MonoBehaviour
 
     public void PirateShipMoveSetup(Vector3[] locations, float[] times)
     {
+        Vector3 startingPosition;
+        if (cameraLocNum == 0)
+        {
+            startingPosition = locations[locations.Length - 1];
+        }
+        else
+        {
+            startingPosition = locations[cameraLocNum - 1];
+        }
+        
         goalLocation = locations[cameraLocNum];
+
+        timer += Time.deltaTime;
+        transform.position = Vector3.Lerp(startingPosition, goalLocation, timer / times[cameraLocNum]);
+
         if (timer >= times[cameraLocNum])
         {
             timer = 0.0f;
             cameraLocNum++;
+            transform.position = goalLocation;
+            if (cameraLocNum >= locations.Length)
+                cameraLocNum = 0;
         }
 
         if (transform.position != goalLocation)
@@ -258,6 +275,5 @@ public class CameraMovement : MonoBehaviour
             }
         }
 
-        timer += Time.deltaTime;
     }
 }

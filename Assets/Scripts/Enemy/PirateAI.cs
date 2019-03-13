@@ -14,9 +14,10 @@ public class PirateAI : MonoBehaviour
 
     enum Strategy
     {
+        patrol,
         groupUp,
         attackClosest,
-        siegeOnOne
+        protectCaptain
     }
 
     Direction priority;
@@ -116,8 +117,7 @@ public class PirateAI : MonoBehaviour
             if (!endScriptRunning)
             {
                 endScriptRunning = true;
-                IEnumerator cor = ProgressToPlayerTurn();
-                StartCoroutine(cor);
+                StartCoroutine(progressToPlayerTurn);
             }
             return;
         }
