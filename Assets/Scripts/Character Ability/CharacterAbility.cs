@@ -209,39 +209,32 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void ActivateSprint(GameObject character, GameObject space)
     {
-        int thisCharacterX = character.GetComponent<UnitCoordinates>().x;
-        int thisCharacterY = character.GetComponent<UnitCoordinates>().y;
+        UnitCoordinates characterCoord = character.GetComponent<UnitCoordinates>();
+        int thisCharacterX = characterCoord.x;
+        int thisCharacterY = characterCoord.y;
 
-        int spaceX = space.GetComponent<GridCoordinates>().x;
-        int spaceY = space.GetComponent<GridCoordinates>().y;
+        GridCoordinates gridCoord = space.GetComponent<GridCoordinates>();
+        int spaceX = gridCoord.x;
+        int spaceY = gridCoord.y;
 
-        int count = 0;
+        Debug.Log("You are sprinting!");
+        if (!GameObject.Find("GridX" + thisCharacterX + "Y" + thisCharacterY))
+            return;
 
-        for (int i = 0; i < CharacterManager.allCharacters.Count; i++)
-        {
-            int characterX = CharacterManager.allCharacters[i].GetComponent<UnitCoordinates>().x;
-            int characterY = CharacterManager.allCharacters[i].GetComponent<UnitCoordinates>().y;
+        GridPiece grid = GameObject.Find("GridX" + thisCharacterX + "Y" + thisCharacterY).GetComponent<GridPiece>();
+        if (space.GetComponent<GridPiece>().unit != null)
+            return;
 
-            if (spaceX != characterX || spaceY != characterY)
-            {
-                count++;
-            }
-        }
-
-        if (count >= CharacterManager.allCharacters.Count)
-        {
-            Debug.Log("You are sprinting!");
-            GameObject.Find("GridX" + thisCharacterX + "Y" + thisCharacterY).GetComponent<GridPiece>().unit = null;
-            character.transform.position = space.transform.position;
-            character.GetComponent<UnitCoordinates>().SetUnitCoordinates(spaceX, spaceY);
-            space.GetComponent<GridPiece>().unit = character;
-            character.GetComponent<Stats>().damage += 2;
-            character.GetComponent<Stats>().SetCharging(true);
-            GameManager.currentEnergy--;
-            character.GetComponent<Stats>().EmptyMeter();
-            isInteractable = false;
-            inSelectionMode = false;
-        }
+        grid.unit = null;
+        character.transform.position = space.transform.position;
+        character.GetComponent<UnitCoordinates>().SetUnitCoordinates(spaceX, spaceY);
+        space.GetComponent<GridPiece>().unit = character;
+        character.GetComponent<Stats>().damage += 2;
+        character.GetComponent<Stats>().SetCharging(true);
+        GameManager.currentEnergy--;
+        character.GetComponent<Stats>().EmptyMeter();
+        isInteractable = false;
+        inSelectionMode = false;
     }
 
     public void ActivateFireball(GameObject character, GameObject enemy)
