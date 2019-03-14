@@ -11,7 +11,8 @@ public class GridMatrix : MonoBehaviour {
         gameGrid = new List<GridCoordinates>();
         for (int i = 0; i < transform.childCount; i++)
         {
-            gameGrid.Add(transform.GetChild(i).GetComponent<GridCoordinates>());
+            if (transform.GetChild(i).gameObject.activeInHierarchy)
+                gameGrid.Add(transform.GetChild(i).GetComponent<GridCoordinates>());
         }
     }
 
