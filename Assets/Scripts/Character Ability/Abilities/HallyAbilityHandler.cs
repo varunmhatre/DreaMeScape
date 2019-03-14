@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EdAbilityHandler : MonoBehaviour
+//TEMP
+public class HallyAbilityHandler : MonoBehaviour
 {
-    EdAbilityParticle poison;
     List<ColorRendererCombo> gridsToHighlight;
     List<SpriteRenderer> charactersToHighlight;
     UnitCoordinates gamePiece;
@@ -13,15 +13,13 @@ public class EdAbilityHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        poison = CharacterManager.allAlliedCharacters[0].GetComponent<EdAbilityParticle>();
-        gamePiece = CharacterManager.allAlliedCharacters[0].GetComponent<UnitCoordinates>();
+        gamePiece = CharacterManager.allAlliedCharacters[1].GetComponent<UnitCoordinates>();
         charactersToHighlight = new List<SpriteRenderer>();
         gridsToHighlight = new List<ColorRendererCombo>();
     }
 
     public void OnMouseHoveringStart()
     {
-        poison.IsHovering();
         gridsToHighlight.Clear();
         charactersToHighlight.Clear();
         foreach (var grid in GridMatrix.gameGrid)
@@ -33,42 +31,28 @@ public class EdAbilityHandler : MonoBehaviour
                 grid.transform.GetComponent<Renderer>().material.color = Color.red;
                 if (grid.transform.GetComponent<GridPiece>().unit)
                 {
-                    if (grid.transform.GetComponent<GridPiece>().unit.tag == "Enemy")
+                    if (grid.transform.GetComponent<GridPiece>().unit.tag == "Player")
                     {
                         charactersToHighlight.Add(grid.transform.GetComponent<GridPiece>().unit.transform.GetChild(0).GetComponent<SpriteRenderer>());
                     }
                 }
             }
         }
-        foreach (var item in charactersToHighlight)
-        {
-            item.color = Color.red;
-        }
     }
 
     public void OnMouseHoveringExit()
     {
-        poison.StoppedHovering();
         foreach (var item in gridsToHighlight)
         {
             item.renderer.material.color = item.color;
-        }
-        foreach (var item in charactersToHighlight)
-        {
-            item.color = Color.white;
         }
     }
 
     public void OnMouseClickWhenOn()
     {
-        poison.Clicked();
         foreach (var item in gridsToHighlight)
         {
             item.renderer.material.color = item.color;
-        }
-        foreach (var item in charactersToHighlight)
-        {
-            item.color = Color.white;
         }
     }
 }
