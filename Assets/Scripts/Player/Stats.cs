@@ -8,15 +8,19 @@ public class Stats : MonoBehaviour
     [SerializeField] public int damage;
     [SerializeField] public int presence;
     [SerializeField] public int unchargedDamage;
+    [SerializeField] public int maxHealth;
     public bool statsVisible;
     public bool hasAttacked;
     private bool charging;
 
     public int meterUnitsFilled;
+    public int healthFilled;
     [SerializeField] public int maxMeter;
 
     public bool isEncumbered;
     [SerializeField] public bool isEnemy;
+
+    
 
     private void Start()
     {
@@ -30,6 +34,16 @@ public class Stats : MonoBehaviour
         if (meterUnitsFilled > maxMeter)
         {
             meterUnitsFilled = maxMeter;
+        }
+    }
+
+    public void HealthMeter(int value)
+    {
+        healthFilled += value;
+
+        if(healthFilled < maxHealth)
+        {
+            healthFilled = maxHealth;
         }
     }
 

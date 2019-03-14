@@ -12,11 +12,14 @@ public class SelectCharacterHUD : MonoBehaviour
     private GameObject lastSelectedButton;
     private GameObject currentSelectedButton;
 
-    private int characterID;
+    private int clickID;
     private int index;
     private int[] playerLoc;
 
     private string[] characters;
+    private int[] characterID;
+
+    [SerializeField] private GameObject[] mainCharacter;
     private enum CharacterType
     {
         Ed, Hally, Kent, Jade, Meda
@@ -29,6 +32,14 @@ public class SelectCharacterHUD : MonoBehaviour
     {        
         characters = new string[]{"Ed", "Hally", "Jade", "Kent", "Meda"};
         playerLoc = new int[2];
+
+        characterID = new int[5];
+
+        for(int i = 0; i < characters.Length; i++)
+        {
+            characterID[i] = i;
+        }
+
     }
 
     // Update is called once per frame
@@ -46,30 +57,32 @@ public class SelectCharacterHUD : MonoBehaviour
         }
         for (index = 0; index < CharacterManager.allAlliedCharacters.Count; index++)
         {
-            //Debug.Log("characters[index]:     " + characters[index]);
-            //Debug.Log("currentSelectedButton.name:     " + currentSelectedButton.name);
             if (characters[index] == currentSelectedButton.name)
             {
-                characterID = index; 
+                clickID = index; 
             }
         }   
-
-        Debug.Log("characterID:     " + characterID);   
-
         //Mark: Disable the highlight space.
         if (lastSelectedButton != null)
         { 
             Manager.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedButton.name, toHighlight: false, playerLocation: null);
-            Debug.Log("lastSelectedButton.name:     " + lastSelectedButton.name);
         }
 
         //Mark: Enable the highlight space
         if (currentSelectedButton != null)
         {
-            playerLoc[0] = CharacterManager.allAlliedCharacters[characterID].GetComponent<UnitCoordinates>().x;
-            playerLoc[1] = CharacterManager.allAlliedCharacters[characterID].GetComponent<UnitCoordinates>().y;
-            Manager.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: characters[characterID], toHighlight: true, playerLocation: playerLoc);
-            //Manager.GetComponent<PlayerControls>().SetSelectedUnit(currentSelectedButton.transform);
+            //playerLoc[0] = CharacterManager.allAlliedCharacters[clickID].GetComponent<UnitCoordinates>().x;
+            //playerLoc[1] = CharacterManager.allAlliedCharacters[clickID].GetComponent<UnitCoordinates>().y;
+
+            playerLoc[0] = mainCharacter[clickID].GetComponent<UnitCoordinates>().x;
+            playerLoc[1] = mainCharacter[clickID].GetComponent<UnitCoordinates>().y;
+
+            Manager.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: characters[clickID], toHighlight: true, playerLocation: playerLoc);
+
+
+            Debug.Log("charcaterID :        " + mainCharacter[clickID].name);
+            
+            Manager.GetComponent<PlayerControls>().SetSelectedUnit(mainCharacter[clickID].transform);
         }
 
 
