@@ -21,8 +21,7 @@ public class PathFinding : MonoBehaviour
         return Mathf.Sqrt(x * x + y * y);
     }
 
-    static int Partition(List<GridCoordinates> nodes, int low,
-                               int high)
+    private static int Partition(List<GridCoordinates> nodes, int low, int high)
     {
         GridCoordinates pivot = nodes[high];
 
@@ -126,5 +125,17 @@ public class PathFinding : MonoBehaviour
             node.gCost = 0.0f;
             node.hCost = 0.0f;
         }
+    }
+
+   public static GridCoordinates GetGridFromUnitCoordinate(UnitCoordinates unit)
+    {
+        foreach (var item in GridMatrix.gameGrid)
+        {
+            if (item.x == unit.x && item.y == unit.y)
+            {
+                return item;
+            }
+        }
+        return null;
     }
 }
