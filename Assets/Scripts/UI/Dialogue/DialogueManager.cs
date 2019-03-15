@@ -9,14 +9,14 @@ public class DialogueManager : MonoBehaviour
 {
     private List<DialogueStateManager> managerList = new List<DialogueStateManager>();
     public static AtlasManager atlasManager { get; private set; }
-    public static DialoguePanelManager panelManeger { get; private set; }
+    public static DialoguePanelManager panelManager { get; private set; }
     void Awake()
     {
         atlasManager = GetComponent<AtlasManager>();
-        panelManeger = GetComponent<DialoguePanelManager>();
+        panelManager = GetComponent<DialoguePanelManager>();
 
         managerList.Add(atlasManager);
-        managerList.Add(panelManeger);
+        managerList.Add(panelManager);
         StartCoroutine(BootAllManagers());
     }
 

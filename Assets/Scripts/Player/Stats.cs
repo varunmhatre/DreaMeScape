@@ -67,6 +67,8 @@ public class Stats : MonoBehaviour
 
     public void Die()
     {
+        if (gameObject.GetComponent<PirateCaptain>())
+            PirateCaptain.isPirateDefeated = true;
         Destroy(gameObject);
     }
 

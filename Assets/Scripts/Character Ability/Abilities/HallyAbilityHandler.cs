@@ -6,16 +6,30 @@ using UnityEngine;
 public class HallyAbilityHandler : MonoBehaviour
 {
     List<ColorRendererCombo> gridsToHighlight;
-    List<SpriteRenderer> charactersToHighlight;
+    List<Vector3> charactersToHighlight;
     UnitCoordinates gamePiece;
     [SerializeField] Material defaultMaterial;
+    [SerializeField] GameObject spotLight;
+    List<GameObject> allLights;
+    bool dyingLight;
+    float timer;
 
     // Start is called before the first frame update
     void Start()
     {
+        dyingLight = false;
         gamePiece = CharacterManager.allAlliedCharacters[1].GetComponent<UnitCoordinates>();
-        charactersToHighlight = new List<SpriteRenderer>();
+        charactersToHighlight = new List<Vector3>();
         gridsToHighlight = new List<ColorRendererCombo>();
+        allLights = new List<GameObject>();
+    }
+
+    private void Update()
+    {
+        if (dyingLight)
+        {
+            MouseIsClicked();
+        }
     }
 
     public void OnMouseHoveringStart()
@@ -28,15 +42,21 @@ public class HallyAbilityHandler : MonoBehaviour
                 (grid.y >= (gamePiece.y - 2) && grid.y <= (gamePiece.y + 2)))
             {
                 gridsToHighlight.Add(new ColorRendererCombo(grid.transform.GetComponent<Renderer>()));
-                grid.transform.GetComponent<Renderer>().material.color = Color.red;
+                grid.transform.GetComponent<Renderer>().material.color = Color.white;
                 if (grid.transform.GetComponent<GridPiece>().unit)
                 {
                     if (grid.transform.GetComponent<GridPiece>().unit.tag == "Player")
                     {
-                        charactersToHighlight.Add(grid.transform.GetComponent<GridPiece>().unit.transform.GetChild(0).GetComponent<SpriteRenderer>());
+                        Vector3 position = grid.transform.position;
+                        position.y += 2.0f;
+                        charactersToHighlight.Add(position);
                     }
                 }
             }
+        }
+        foreach (var item in charactersToHighlight)
+        {
+            allLights.Add(Instantiate(spotLight, item, spotLight.transform.rotation));
         }
     }
 
@@ -46,6 +66,11 @@ public class HallyAbilityHandler : MonoBehaviour
         {
             item.renderer.material.color = item.color;
         }
+        for (int i = allLights.Count - 1; i > -1; i--)
+        {
+            Destroy(allLights[i]);
+        }
+        allLights.Clear();
     }
 
     public void OnMouseClickWhenOn()
@@ -53,6 +78,26 @@ public class HallyAbilityHandler : MonoBehaviour
         foreach (var item in gridsToHighlight)
         {
             item.renderer.material.color = item.color;
+        }
+        timer = 0.0f;
+        dyingLight = true;
+    }
+
+    void MouseIsClicked()
+    {
+        timer += Time.deltaTime;
+        foreach (var item in allLights)
+        {
+            item.GetComponent<VLight>().lightMultiplier /= 1.12f;
+        }
+        if (timer >= 1.5f)
+        {
+            dyingLight = false;
+            for (int i = allLights.Count -1 ; i > -1 ; i--)
+            {
+                Destroy(allLights[i]);
+            }
+            allLights.Clear();
         }
     }
 }
