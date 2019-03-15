@@ -48,7 +48,7 @@ public class PirateAI : MonoBehaviour
         pirateTurns = new List<GridCoordinates>();
         piratesInProgress = false;
         selectedPirate = 0;
-        timer = 0.0f;
+        timer = timeToWaitForNewPirateToMove - 1.0f;
         canPirateAttack = false;
         alliedCharacter = null;
     }
@@ -98,7 +98,7 @@ public class PirateAI : MonoBehaviour
     IEnumerator ProgressToPlayerTurn()
     {
         yield return new WaitForSeconds(timeToWaitForEachMove);
-        timer = 0.0f;
+        timer = timeToWaitForNewPirateToMove - 1.0f;
         selectedPirate = 0;
         piratesInProgress = false;
         cameraMain.ResetCamera();
