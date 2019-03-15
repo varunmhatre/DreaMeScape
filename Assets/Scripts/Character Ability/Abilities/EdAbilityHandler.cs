@@ -5,9 +5,10 @@ using UnityEngine;
 public class EdAbilityHandler : MonoBehaviour
 {
     EdAbilityParticle poison;
-    List<Renderer> gridsToHighlight;
+    List<ColorRendererCombo> gridsToHighlight;
     List<SpriteRenderer> charactersToHighlight;
     UnitCoordinates gamePiece;
+    [SerializeField] Material defaultMaterial;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class EdAbilityHandler : MonoBehaviour
         poison = CharacterManager.allAlliedCharacters[0].GetComponent<EdAbilityParticle>();
         gamePiece = CharacterManager.allAlliedCharacters[0].GetComponent<UnitCoordinates>();
         charactersToHighlight = new List<SpriteRenderer>();
-        gridsToHighlight = new List<Renderer>();
+        gridsToHighlight = new List<ColorRendererCombo>();
     }
 
     public void OnMouseHoveringStart()
@@ -28,7 +29,7 @@ public class EdAbilityHandler : MonoBehaviour
             if ((grid.x >= (gamePiece.x - 2) && grid.x <= (gamePiece.x + 2)) &&
                 (grid.y >= (gamePiece.y - 2) && grid.y <= (gamePiece.y + 2)))
             {
-                gridsToHighlight.Add(grid.transform.GetComponent<Renderer>());
+                gridsToHighlight.Add(new ColorRendererCombo(grid.transform.GetComponent<Renderer>()));
                 grid.transform.GetComponent<Renderer>().material.color = Color.red;
                 if (grid.transform.GetComponent<GridPiece>().unit)
                 {
@@ -50,7 +51,7 @@ public class EdAbilityHandler : MonoBehaviour
         poison.StoppedHovering();
         foreach (var item in gridsToHighlight)
         {
-            item.material.color = Color.white;
+            item.renderer.material.color = item.color;
         }
         foreach (var item in charactersToHighlight)
         {
@@ -63,7 +64,7 @@ public class EdAbilityHandler : MonoBehaviour
         poison.Clicked();
         foreach (var item in gridsToHighlight)
         {
-            item.material.color = Color.white;
+            item.renderer.material.color = item.color;
         }
         foreach (var item in charactersToHighlight)
         {
