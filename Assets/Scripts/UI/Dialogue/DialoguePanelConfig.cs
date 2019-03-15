@@ -31,9 +31,9 @@ public class DialoguePanelConfig : MonoBehaviour
         characterImage.sprite = DialogueManager.atlasManager.loadSprite(currentDialogue.CharacterImage);
         characterName.text = currentDialogue.CharacterName;        
         SetFont(characterName, true, characterName.text);
-
+     
         if (isTalking)
-        {
+        { 
             StartCoroutine(AnimateText(currentDialogue.DialogueText));
         }
         else
@@ -43,19 +43,20 @@ public class DialoguePanelConfig : MonoBehaviour
     }
 
     IEnumerator AnimateText(string dialogueText)
-    {
+    {       
         dialogue.text = "";
         SetFont(dialogue, false, characterName.text);
+         
         foreach (char letter in dialogueText)
         {            
-            dialogue.text += letter;            
-            yield return new WaitForSeconds(0.004f);
-
+            dialogue.text += letter;
+ 
+            yield return new WaitForSeconds(0.004f); 
             count++;
             if (dialogueText.Length < count)
             {
                 count = 1;
-                DialoguePanelManager.isPressed = true;
+                DialoguePanelManager.isPressed = true; 
             }
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) && dialogueText.Length < count)
             {

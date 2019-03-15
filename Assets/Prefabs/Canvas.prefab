@@ -11631,7 +11631,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8089005812264132630}
-        m_MethodName: ChangeScene
+        m_MethodName: ExitLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
