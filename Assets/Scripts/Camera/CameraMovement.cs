@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour
+{
 
     public bool pirateLock;
     [SerializeField] private float cameraMoveSpeed;
@@ -35,8 +36,8 @@ public class CameraMovement : MonoBehaviour {
 
     private bool firstTime;
 
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
     {
         firstTime = true;
         positions = new Vector3[3];
@@ -60,10 +61,10 @@ public class CameraMovement : MonoBehaviour {
         prevCamera = currentCamera;
         currHorizVal = 0.0f;
         currVertVal = 0.0f;
-	}
-	
-	// Update is called once per frame
-	void Update()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         if (!pirateLock && DialoguePanelManager.playerControlsUnlocked)
         {
@@ -72,11 +73,11 @@ public class CameraMovement : MonoBehaviour {
                 transform.position = positions[0];
                 firstTime = false;
             }
-            if (!TutorialCards.isTutorialRunning)
+            if (TutorialCards.isTutorialRunning)
             {
                 //check to see if you are moving the camera up, down, left, or right
                 MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
-                //MoveCamera(Input.GetAxis("CameraCommandHoriz"), Input.GetAxis("CameraCommandVert"));
+                MoveCamera(Input.GetAxis("CameraCommandHoriz"), Input.GetAxis("CameraCommandVert"));
                 ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
                 SwapCameras(Input.GetKeyDown(KeyCode.L));
             }
@@ -114,7 +115,7 @@ public class CameraMovement : MonoBehaviour {
             transform.position += transform.right * cameraMoveSpeed * Time.deltaTime;
             currHorizVal += transform.right.magnitude * cameraMoveSpeed * Time.deltaTime;
         }
-        else if (right < 0 && currHorizVal > - horizCap)
+        else if (right < 0 && currHorizVal > -horizCap)
         {
             for (int i = 0; i < cameraViews.Length; i++)
             {
@@ -182,7 +183,7 @@ public class CameraMovement : MonoBehaviour {
                 zoomedInAmount -= gameObject.transform.forward.magnitude * scrollSpeed;
             }
         }
-        Debug.Log(zoomedInAmount);
+        //Debug.Log(zoomedInAmount);
     }
 
     public void SwapCameras(float clicked)

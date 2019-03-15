@@ -37,13 +37,13 @@ public class TutorialCards : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (!isEnabled && DialoguePanelManager.playerControlsUnlocked)
+        /*if (!isEnabled && DialoguePanelManager.playerControlsUnlocked)
         {
             isTutorialRunning = true;
             isEnabled = true;
-        }
-        
-		if (isTutorialRunning)
+        }*/
+
+        if (DialoguePanelManager.playerControlsUnlocked)
         {
             if (changeCards)
             {
@@ -65,6 +65,51 @@ public class TutorialCards : MonoBehaviour {
                     lastTutorial = true;
                     //HUDEnable.isVisible = true;
                     transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Lets Play!";
+
+                }
+
+                float timeIncrement = Time.deltaTime * bloatSpeed;
+                transform.GetChild(0).localScale += new Vector3(timeIncrement, timeIncrement, timeIncrement);
+                transform.GetChild(1).localScale += new Vector3(timeIncrement, timeIncrement, timeIncrement);
+
+                if (!card1 && transform.GetChild(0).localScale.x >= 2.0f)
+                {
+                    transform.GetChild(0).localScale = new Vector3(2.0f, 2.0f, 2.0f);
+                }
+                if (!card2 && transform.GetChild(1).localScale.x >= 2.0f)
+                {
+                    transform.GetChild(1).localScale = new Vector3(2.0f, 2.0f, 2.0f);
+                    transform.GetChild(2).GetComponent<Button>().enabled = true;
+                    transform.GetChild(2).GetComponent<Image>().enabled = true;
+                    transform.GetChild(2).GetChild(0).GetComponent<Text>().enabled = true;
+                    changeCards = false;
+                }
+            }
+        }
+        
+		/*if (isTutorialRunning)
+        {
+            if (changeCards)
+            {
+                timer += Time.deltaTime;
+                if (card1)
+                {
+                    FillSlot(0);
+                    iterator += 1;
+                    card1 = false;
+                }
+                if (timer > 1.0f && card2)
+                {
+                    FillSlot(1);
+                    iterator += 1;
+                    card2 = false;
+                }
+                if (iterator >= cards.Count)
+                {
+                    lastTutorial = true;
+                    //HUDEnable.isVisible = true;
+                    transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Lets Play!";
+                    
                 }
 
                 float timeIncrement = Time.deltaTime * bloatSpeed;
@@ -85,7 +130,7 @@ public class TutorialCards : MonoBehaviour {
                 }
 
             }
-        }
+        }*/
 	}
 
     public void NextRound()
@@ -96,8 +141,8 @@ public class TutorialCards : MonoBehaviour {
         transform.GetChild(2).GetComponent<Button>().enabled = false;
         transform.GetChild(2).GetComponent<Image>().enabled = false;
         if (lastTutorial)
-        {
-            isTutorialRunning = false;
+        { 
+            isTutorialRunning = false; 
         }
         else
         {
@@ -106,6 +151,9 @@ public class TutorialCards : MonoBehaviour {
             card2 = true;
             timer = 0.0f;
         }
+         
+        //When play button is pressed disable the tutorical card running.
+        isTutorialRunning = true;
     }
 
     void FillSlot(int childNumber)

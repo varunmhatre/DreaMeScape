@@ -38,20 +38,17 @@ public class PirateAI : MonoBehaviour
     [SerializeField] float timeToWaitForNewPirateToMove = 2.0f;
 
     CameraFocus cameraMain;
-    IEnumerator progressToPlayerTurn;
-
     int selectedPirate;
 
     private void Start()
     {
-        progressToPlayerTurn = ProgressToPlayerTurn();
         endScriptRunning = false;
         switchPirate = false;
         cameraMain = Camera.main.GetComponent<CameraFocus>();
         pirateTurns = new List<GridCoordinates>();
         piratesInProgress = false;
         selectedPirate = 0;
-        timer = 0.0f;
+        timer = timeToWaitForNewPirateToMove - 1.0f;
         canPirateAttack = false;
         alliedCharacter = null;
     }
@@ -101,7 +98,7 @@ public class PirateAI : MonoBehaviour
     IEnumerator ProgressToPlayerTurn()
     {
         yield return new WaitForSeconds(timeToWaitForEachMove);
-        timer = 0.0f;
+        timer = timeToWaitForNewPirateToMove - 1.0f;
         selectedPirate = 0;
         piratesInProgress = false;
         cameraMain.ResetCamera();
@@ -117,7 +114,7 @@ public class PirateAI : MonoBehaviour
             if (!endScriptRunning)
             {
                 endScriptRunning = true;
-                StartCoroutine(progressToPlayerTurn);
+                StartCoroutine(ProgressToPlayerTurn());
             }
             return;
         }

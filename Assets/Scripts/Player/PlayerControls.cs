@@ -23,7 +23,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialoguePanelManager.playerControlsUnlocked && !TutorialCards.isTutorialRunning)
+        if (DialoguePanelManager.playerControlsUnlocked && TutorialCards.isTutorialRunning)
         {
             if (mouseClick && GameManager.isPlayerTurn && GameManager.HaveEnergy())
             {
@@ -34,17 +34,21 @@ public class PlayerControls : MonoBehaviour
 
                 AttackEnemy();
 
+                /*GameObject character;
+
+                int thisCharacterX = character.GetComponent<UnitCoordinates>().x;
+                int thisCharacterY = character.GetComponent<UnitCoordinates>().y;*/
+
                 if (piecesHighlighted)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLocation: null);
                     piecesHighlighted = false;
-                }
-               // Debug.Log("selectedUnit:        " + selectedUnit);
+                } 
                 if (selectedUnit)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
-                    piecesHighlighted = true;
-                    //Debug.Log("selectedUnitName:  " + selectedUnitName);
+                    GameObject.Find("GridX" + 1 + "Y" + 3).transform.GetChild(0).GetComponent<FreeSpaceHighlightAnim>().isVisible = true;
+                    piecesHighlighted = true;                    
                 }
 
                 MouseClickToggle();
@@ -84,6 +88,7 @@ public class PlayerControls : MonoBehaviour
             if (characterStats != null)
             {
                 characterStats.GainMeter(1);
+                characterStats.HealthMeter(1);
             }
         }
     }
@@ -95,7 +100,6 @@ public class PlayerControls : MonoBehaviour
         {
             playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
             playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
-
         }
     }
 
@@ -115,13 +119,14 @@ public class PlayerControls : MonoBehaviour
             playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
             playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
             selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
+
+            //HUDCharacterHighlight.HighlightPortrait();
         }
         else
         {
             selectedUnit = null;
             selectedUnitName = "NoUnitSelected";
-        }
-       
+        }       
     }
     private void ToggleStatVisibility()
     {

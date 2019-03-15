@@ -6,6 +6,8 @@ public class MedaAbilityHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject fireballPrefab;
+    [SerializeField] Material highlightMaterial;
+    [SerializeField] Material gridMaterial;
     GameObject fireball;
 
     Vector3 initialPosition;
@@ -16,7 +18,7 @@ public class MedaAbilityHandler : MonoBehaviour
     bool isClickedOn;
     bool startCheckingForEnemy;
 
-    List<Renderer> gridsToHighlight;
+    List<ColorRendererCombo> gridsToHighlight;
     List<SpriteRenderer> charactersToHighlight;
 
     [SerializeField] public Texture2D fireballMouse;
@@ -24,7 +26,7 @@ public class MedaAbilityHandler : MonoBehaviour
     private void Start()
     {
         charactersToHighlight = new List<SpriteRenderer>();
-        gridsToHighlight = new List<Renderer>();
+        gridsToHighlight = new List<ColorRendererCombo>();
         isClickedOn = false;
     }
 
@@ -70,7 +72,7 @@ public class MedaAbilityHandler : MonoBehaviour
                     AttackWithFireball(hit.transform.position);
                 }
             }
-            UnCheckEverything();
+            RevertToNormal();
         }
     }
 
@@ -84,7 +86,7 @@ public class MedaAbilityHandler : MonoBehaviour
             if ((grid.x >= (gamePiece.x - 2) && grid.x <= (gamePiece.x + 2)) &&
                 (grid.y >= (gamePiece.y - 2) && grid.y <= (gamePiece.y + 2)))
             {
-                gridsToHighlight.Add(grid.transform.GetComponent<Renderer>());
+                gridsToHighlight.Add(new ColorRendererCombo(grid.transform.GetComponent<Renderer>()));
                 grid.transform.GetComponent<Renderer>().material.color = Color.red;
                 if (grid.transform.GetComponent<GridPiece>().unit)
                 {
@@ -116,6 +118,17 @@ public class MedaAbilityHandler : MonoBehaviour
 
     public void OnMouseClickWhenOn()
     {
+        StartCoroutine(MouseIsClicked());
+    }
+
+    IEnumerator MouseIsClicked()
+    {
+        yield return new WaitForEndOfFrame();
+        foreach (var item in gridsToHighlight)
+        {
+            item.renderer.material = highlightMaterial;
+        }
+
         isClickedOn = true;
         startCheckingForEnemy = false;
         Cursor.SetCursor(fireballMouse, Vector2.zero, CursorMode.Auto);
@@ -125,12 +138,30 @@ public class MedaAbilityHandler : MonoBehaviour
     {
         foreach (var item in gridsToHighlight)
         {
-            item.material.color = Color.white;
+            item.renderer.material.color = item.color;
         }
         foreach (var item in charactersToHighlight)
         {
-            if (item != null)
+            if (item)
+            {
                 item.color = Color.white;
+            }
         }
     }
+
+    void RevertToNormal()
+    {
+        foreach (var item in gridsToHighlight)
+        {
+            item.renderer.material = gridMaterial;
+        }
+        foreach (var item in charactersToHighlight)
+        {
+            if (item)
+            {
+                item.color = Color.white;
+            }
+        }
+    }
+        
 }

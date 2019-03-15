@@ -4,6 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+struct ColorRendererCombo
+{
+    public Renderer renderer;
+    public Color color;
+    public Material material;
+    public ColorRendererCombo(Renderer ren)
+    {
+        renderer = ren;
+        material = renderer.material;
+        color = material.color;
+    }
+}
+
 public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     private int amountMeterNeeded;
@@ -148,6 +161,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void ActivateBolster(GameObject character)
     {
         bool buffSomeone = false;
+        GetComponent<HallyAbilityHandler>().OnMouseClickWhenOn();
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
             GameObject ally = CharacterManager.allAlliedCharacters[i];
@@ -189,6 +203,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void ActivateCleave(GameObject character)
     {
         bool hitsSomeone = false;
+        GetComponent<KentAbilityHandler>().OnMouseClickWhenOn();
         for (int i = 0; i < CharacterManager.allEnemyCharacters.Count; i++)
         {
             GameObject enemy = CharacterManager.allEnemyCharacters[i];
@@ -281,6 +296,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         //currSelectionType = selectionType.emptySpace;
         currAbilityName = "sprint";
         RaycastManager.EmptyRaycastTargets();
+        GetComponent<JadeAbilityHandler>().OnMouseClickWhenOn();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -291,6 +307,18 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             if (buttonId == 0)
             {
                 GetComponent<EdAbilityHandler>().OnMouseHoveringStart();
+            }
+            else if (buttonId == 1)
+            {
+                GetComponent<HallyAbilityHandler>().OnMouseHoveringStart();
+            }
+            else if (buttonId == 2)
+            {
+                GetComponent<JadeAbilityHandler>().OnMouseHoveringStart();
+            }
+            else if (buttonId == 3)
+            {
+                GetComponent<KentAbilityHandler>().OnMouseHoveringStart();
             }
             else if (buttonId == 4)
             {
@@ -306,6 +334,18 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             if (buttonId == 0)
             {
                 GetComponent<EdAbilityHandler>().OnMouseHoveringExit();
+            }
+            else if (buttonId == 1)
+            {
+                GetComponent<HallyAbilityHandler>().OnMouseHoveringExit();
+            }
+            else if (buttonId == 2)
+            {
+                GetComponent<JadeAbilityHandler>().OnMouseHoveringExit();
+            }
+            else if (buttonId == 3)
+            {
+                GetComponent<KentAbilityHandler>().OnMouseHoveringExit();
             }
             else if (buttonId == 4)
             {
