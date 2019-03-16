@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Keep track of the units held by each grid
 /// </summary>
+ [DisallowMultipleComponent]
 public class GridPiece : MonoBehaviour
 {
     public GameObject unit = null;
