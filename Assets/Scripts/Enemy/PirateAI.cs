@@ -81,6 +81,7 @@ public class PirateAI : MonoBehaviour
         {
             return;
         }
+        currentUnitLocaton = pirateTurns[0];
         CharacterManager.allEnemyCharacters[selectedPirate].transform.position = pirateTurns[0].transform.position;
         pirateTurns.RemoveAt(0);
         timer = 0.0f;
@@ -137,15 +138,13 @@ public class PirateAI : MonoBehaviour
         UnitCoordinates closestPlayer = FindClosestPlayer();
         //Astar to player
         PopulateTheDestination(closestPlayer);
-        
+        piratesInProgress = true;
         //Setup the Coordinates
         if (pirateTurns.Count > 0)
         {
-            piratesInProgress = true;
             currentUnitLocaton.transform.GetComponent<GridPiece>().unit = null;
-            currentUnitLocaton = pirateTurns[0];
-            pirateTurns.RemoveAt(pirateTurns.Count - 1);
-            pirateTurns[0].transform.GetComponent<GridPiece>().unit = CharacterManager.allEnemyCharacters[selectedPirate];
+            currentUnitLocaton = pirateTurns[pirateTurns.Count - 1];
+            currentUnitLocaton.transform.GetComponent<GridPiece>().unit = CharacterManager.allEnemyCharacters[selectedPirate];
             CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>().SetUnitCoordinates(currentUnitLocaton.x, currentUnitLocaton.y);
         }
     }
@@ -172,7 +171,10 @@ public class PirateAI : MonoBehaviour
         currentUnitLocaton = PathFinding.GetGridFromUnitCoordinate(pirateCoordinate);
         GridCoordinates targetUnitLocation = PathFinding.GetGridFromUnitCoordinate(closestPlayer);
 
-        pirateTurns = PathFinding.AStar(currentUnitLocaton, targetUnitLocation);
+        List<GridCoordinates> wholePath = PathFinding.AStar(currentUnitLocaton, targetUnitLocation);
+        numberOfTurns = Mathf.Min(numberOfTurns, wholePath.Count);
+
+        pirateTurns = wholePath.GetRange(0, numberOfTurns);
     }
 
     UnitCoordinates FindClosestPlayer()

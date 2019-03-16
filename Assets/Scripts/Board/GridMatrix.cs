@@ -15,5 +15,4 @@ public class GridMatrix : MonoBehaviour {
                 gameGrid.Add(transform.GetChild(i).GetComponent<GridCoordinates>());
         }
     }
-
 }
