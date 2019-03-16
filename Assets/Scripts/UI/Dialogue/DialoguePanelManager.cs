@@ -27,54 +27,55 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         isCharacterPanelDisabled = false;
     }
     public void BootSequence()
-    { 
-        if(GameObject.Find("CharacterPanel") != null)
-        {
+    {        
+        if (GameObject.Find("CharacterPanel") != null)
+        { 
             characterPanel = GameObject.Find("CharacterPanel").GetComponent<DialoguePanelConfig>();
-        }
-        
+        }        
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             currentEvent = JSONAssembly.RunJSONFactoryForScene(1); 
         }
         if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
+        { 
             currentEvent = JSONAssembly.RunJSONFactoryForScene(2);
         }
         InitiziliasePanels();
     }
     void Update()
-    {
+    { 
         if (Input.GetMouseButtonDown(0) && isPressed == true)
-        {
+        { 
             isPressed = false; 
             if(DialoguePanelConfig.isDialogueTextOver)
-            {               
+            { 
                 UpdatePanelState();                
             }
             BootSequence();
-        } 
+        }         
+
         if (Input.GetKey(KeyCode.P) || countDialogueLength >= currentEvent.dialogues.Count)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 1)
+            /*if (SceneManager.GetActiveScene().buildIndex == 1)
             {
+                Debug.Log("Scene 1");
                 dialoguePanel.SetActive(false);
                 countDialogueLength = 0;
                 stepIndex = 0;
                 playerControlsUnlocked = true;
                 SceneManager.LoadScene("PirateshipScene");
-            }
+            }*/
+             
             if (SceneManager.GetActiveScene().buildIndex == 2)
-            {
-                
+            { 
                 dialoguePanel.SetActive(false);
                 playerControlsUnlocked = true;
                 isCharacterPanelDisabled = true;
-                countDialogueLength = currentEvent.dialogues.Count;
+                countDialogueLength =  currentEvent.dialogues.Count;                
             }
         }       
         else if (countDialogueLength < currentEvent.dialogues.Count)
-        {
+        { 
             characterPanel.isTalking = false;           
             playerControlsUnlocked = false;
         }
@@ -82,7 +83,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     private void InitiziliasePanels()
     { 
         if(!isCharacterPanelDisabled)
-        {
+        { 
             characterPanel.isTalking = true;
             stepIndex++;
             countDialogueLength++;
