@@ -354,44 +354,29 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             transform.GetComponent<Image>().color = Color.white;
             if (buttonId == 0)
             {
-                if (tooltipObj != null)
-                {
-                    tooltipObj.SetActive(false);
-                }
                 GetComponent<EdAbilityHandler>().OnMouseHoveringExit();
             }
             else if (buttonId == 1)
             {
-                if (tooltipObj != null)
-                {
-                    tooltipObj.SetActive(false);
-                }
                 GetComponent<HallyAbilityHandler>().OnMouseHoveringExit();
             }
             else if (buttonId == 2)
             {
-                if (tooltipObj != null)
-                {
-                    tooltipObj.SetActive(false);
-                }
                 GetComponent<JadeAbilityHandler>().OnMouseHoveringExit();
             }
             else if (buttonId == 3)
             {
-                if (tooltipObj != null)
-                {
-                    tooltipObj.SetActive(false);
-                }
                 GetComponent<KentAbilityHandler>().OnMouseHoveringExit();
             }
             else if (buttonId == 4)
             {
-                if (tooltipObj != null)
-                {
-                    tooltipObj.SetActive(false);
-                }
                 GetComponent<MedaAbilityHandler>().OnMouseHoveringExit();
             }
+        }
+
+        if (tooltipObj != null)
+        {
+            tooltipObj.SetActive(false);
         }
     }
     public void OnPointerDown(PointerEventData pointerEventData)
