@@ -149,10 +149,10 @@ public class PirateAI : MonoBehaviour
             return;
         }
 
-        UnitCoordinates targerDestination = FindClosestPlayer();
+        UnitCoordinates targetDestination = FindClosestPlayer();
 
         //Astar to targerDestination
-        PopulateTheDestination(targerDestination);
+        PopulateTheDestination(targetDestination);
 
         piratesInProgress = true;
     }
@@ -183,6 +183,28 @@ public class PirateAI : MonoBehaviour
         numberOfTurns = Mathf.Min(numberOfTurns, wholePath.Count);
 
         pirateTurns = wholePath.GetRange(0, numberOfTurns);
+    }
+
+    UnitCoordinates GetTarget()
+    {
+        UnitCoordinates mainTarget = null;
+        switch (strategy)
+        {
+            case Strategy.patrol:
+                break;
+            case Strategy.groupUp:
+                break;
+            case Strategy.attackClosest:
+                mainTarget = FindClosestPlayer();
+                break;
+            case Strategy.protectCaptain:
+                break;
+            default:
+                break;
+        }
+        
+
+        return mainTarget;
     }
 
     UnitCoordinates FindClosestPlayer()
