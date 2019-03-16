@@ -42,6 +42,7 @@ public class PirateAI : MonoBehaviour
         timer = timeToWaitForNewPirateToMove - 1.0f;
         canPirateAttack = false;
         alliedCharacter = null;
+        strategy = Strategy.patrol;
     }
 
     private void Update()
@@ -81,9 +82,22 @@ public class PirateAI : MonoBehaviour
         {
             return;
         }
-        currentUnitLocaton = pirateTurns[0];
-        CharacterManager.allEnemyCharacters[selectedPirate].transform.position = pirateTurns[0].transform.position;
-        pirateTurns.RemoveAt(0);
+
+        //Change pirate's position
+        if (pirateTurns[0].GetComponent<GridPiece>().unit == null)
+        {
+            currentUnitLocaton.transform.GetComponent<GridPiece>().unit = null;
+            currentUnitLocaton = pirateTurns[0];
+            currentUnitLocaton.transform.GetComponent<GridPiece>().unit = CharacterManager.allEnemyCharacters[selectedPirate];
+            CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>().SetUnitCoordinates(currentUnitLocaton.x, currentUnitLocaton.y);
+            CharacterManager.allEnemyCharacters[selectedPirate].transform.position = pirateTurns[0].transform.position;
+            pirateTurns.RemoveAt(0);
+        }
+        //Ocupied spot. End turn now
+        else
+        {
+            pirateTurns.Clear();
+        }
         timer = 0.0f;
     }
 
@@ -135,18 +149,12 @@ public class PirateAI : MonoBehaviour
             return;
         }
 
-        UnitCoordinates closestPlayer = FindClosestPlayer();
-        //Astar to player
-        PopulateTheDestination(closestPlayer);
+        UnitCoordinates targerDestination = FindClosestPlayer();
+
+        //Astar to targerDestination
+        PopulateTheDestination(targerDestination);
+
         piratesInProgress = true;
-        //Setup the Coordinates
-        if (pirateTurns.Count > 0)
-        {
-            currentUnitLocaton.transform.GetComponent<GridPiece>().unit = null;
-            currentUnitLocaton = pirateTurns[pirateTurns.Count - 1];
-            currentUnitLocaton.transform.GetComponent<GridPiece>().unit = CharacterManager.allEnemyCharacters[selectedPirate];
-            CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>().SetUnitCoordinates(currentUnitLocaton.x, currentUnitLocaton.y);
-        }
     }
 
     bool IsPlayerNextToYou(GridCoordinates currentUnitLocaton)
@@ -195,4 +203,10 @@ public class PirateAI : MonoBehaviour
         }
         return playerPosition;
     }
+
+    UnitCoordinates LocateTargetLocation()
+    {
+        return null;
+    }
+
 }

@@ -92,10 +92,11 @@ public class PathFinding : MonoBehaviour
                 if (closedSet.Contains(neighbor))
                     continue;
 
-                //if (neighbor.GetComponent<GridPiece>().unit)
-                    //continue;
-
                 float newMoveCostToNeighbor = currentNode.gCost + Euclidean(currentNode, neighbor);
+                
+                //Add loads of weight if blocked
+                if (neighbor.GetComponent<GridPiece>().unit)
+                    newMoveCostToNeighbor += 5.0f;
 
                 if (newMoveCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
                 {
