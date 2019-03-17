@@ -260,20 +260,6 @@ public class CameraMovement : MonoBehaviour
                 cameraLocNum = 0;
         }
 
-        if (transform.position != goalLocation)
-        {
-            Vector3 goVector = goalLocation - transform.position;
-            Vector3 goWay = goVector.normalized;
-            transform.position += goWay * panningSpeed * Time.deltaTime;
-            if (goVector.magnitude <= 0.2f)
-            {
-                transform.position = goalLocation;
-                if (cameraLocNum == locations.Length - 1)
-                {
-                    firstTime = false;
-                }
-            }
-        }
 
     }
 }
