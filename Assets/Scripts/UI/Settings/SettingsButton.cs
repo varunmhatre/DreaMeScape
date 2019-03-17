@@ -27,8 +27,7 @@ public class SettingsButton : MonoBehaviour
             isClicked = !isClicked;
             if (isClicked)
             {
-                controlDisplay.SetActive(true);
-                // gameObject.GetComponentInChildren.GetComponent<>
+                controlDisplay.SetActive(true); 
                 transform.GetComponentInChildren<Text>().text = "X";
             }
             else
