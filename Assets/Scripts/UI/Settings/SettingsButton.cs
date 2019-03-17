@@ -28,10 +28,13 @@ public class SettingsButton : MonoBehaviour
             if (isClicked)
             {
                 controlDisplay.SetActive(true);
+                // gameObject.GetComponentInChildren.GetComponent<>
+                transform.GetComponentInChildren<Text>().text = "X";
             }
             else
             {
                 SettingsHandler.currentIndex = 0;
+                transform.GetComponentInChildren<Text>().text = "?";
                 controlDisplay.SetActive(false);
             }
         }        
