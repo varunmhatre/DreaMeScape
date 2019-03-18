@@ -261,6 +261,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1201495778}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &774207455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6209287929615068881, guid: 058a87112e1a79047a44b1cbba485b50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1085766348}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &813492604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1038623645874339117, guid: 12c237070ff45be49a9dbd61eb28c42a,
@@ -394,6 +406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6209287929615068881, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3798650189779176173, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -499,6 +516,31 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1409694868660517507, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 2145029017}
+    - target: {fileID: 1409694868660517507, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: Manager
+      value: 
+      objectReference: {fileID: 813492604}
+    - target: {fileID: 7605943094245994391, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456800486431170929, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Name
+      value: NameBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: nameBox
+      value: 
+      objectReference: {fileID: 774207455}
     - target: {fileID: 7392044020194600404, guid: 058a87112e1a79047a44b1cbba485b50,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -523,137 +565,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1409694868660517507, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: eventSystem
-      value: 
-      objectReference: {fileID: 2145029017}
-    - target: {fileID: 1409694868660517507, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: Manager
-      value: 
-      objectReference: {fileID: 813492604}
-    - target: {fileID: 5355768063113836998, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dfe6986adf2199c4facfed2798d01597,
-        type: 3}
-    - target: {fileID: 380013717089162680, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dfe6986adf2199c4facfed2798d01597,
-        type: 3}
-    - target: {fileID: 3440322926418217643, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dfe6986adf2199c4facfed2798d01597,
-        type: 3}
-    - target: {fileID: 4117865191574647476, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dfe6986adf2199c4facfed2798d01597,
-        type: 3}
-    - target: {fileID: 1120167640615001170, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dfe6986adf2199c4facfed2798d01597,
-        type: 3}
-    - target: {fileID: 324996934715343120, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: Paralyzing Potion
-      objectReference: {fileID: 0}
-    - target: {fileID: 6164352413423496931, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: Sprint
-      objectReference: {fileID: 0}
-    - target: {fileID: 7529751460070890851, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: Fireball
-      objectReference: {fileID: 0}
-    - target: {fileID: 597735078597150961, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: Bolster
-      objectReference: {fileID: 0}
-    - target: {fileID: 2579103026363963012, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Text
-      value: Cleave
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: edsFont
-      value: 
-      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
-        type: 3}
-    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: medasFont
-      value: 
-      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
-        type: 3}
-    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: kentsFont
-      value: 
-      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
-        type: 3}
-    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: jadesFont
-      value: 
-      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
-        type: 3}
-    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: hallysFont
-      value: 
-      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
-        type: 3}
-    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: universalFancyFont
-      value: 
-      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
-        type: 3}
-    - target: {fileID: 3472260171620804128, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.103773594
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472260171620804128, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.09936811
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472260171620804128, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.09936811
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472260171778190173, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.09433961
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472260171778190173, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.07698468
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472260171778190173, guid: 058a87112e1a79047a44b1cbba485b50,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.07698468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}

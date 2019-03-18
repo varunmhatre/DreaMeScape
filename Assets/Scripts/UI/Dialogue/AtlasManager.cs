@@ -16,6 +16,7 @@ public class AtlasManager : MonoBehaviour, DialogueStateManager
     {
         sprites = Resources.LoadAll<Sprite>("CharacterPortrait");
         dialogueSprites = Resources.LoadAll<Sprite>("Textbox");
+        dialogueSprites = Resources.LoadAll<Sprite>("Namebox");
         currentState = ManagerState.completed;         
     }
 
@@ -37,6 +38,18 @@ public class AtlasManager : MonoBehaviour, DialogueStateManager
             if (S.name == textboxName)
             {
                
+                return S;
+            }
+        }
+        return null;
+    }
+    public Sprite loadNamebox(string textboxName)
+    {
+        foreach (Sprite S in dialogueSprites)
+        {
+            if (S.name == textboxName)
+            {
+
                 return S;
             }
         }

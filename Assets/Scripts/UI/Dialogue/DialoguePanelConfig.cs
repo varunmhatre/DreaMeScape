@@ -10,6 +10,7 @@ public class DialoguePanelConfig : MonoBehaviour
     public Text characterName;
     public Text dialogue;
     public Image dialoguePanel;
+    public Image nameBox;
     private Color maskActiveColor = new Color(103.0f / 255.0f, 101.0f / 255.0f, 101.0f / 255.0f);
     public static bool isDialogueTextOver;
     private int count = 1;
@@ -31,6 +32,7 @@ public class DialoguePanelConfig : MonoBehaviour
     {
         characterImage.sprite = DialogueManager.atlasManager.loadSprite(currentDialogue.CharacterImage);
         dialoguePanel.sprite = DialogueManager.atlasManager.loadTextbox(currentDialogue.CharacterImage);
+        nameBox.sprite = DialogueManager.atlasManager.loadNamebox(currentDialogue.CharacterImage);
 
         //Debug.Log("characterImage.sprite:   " + characterImage.sprite);
         //Debug.Log("dialoguePanel.sprite:   " + dialoguePanel.sprite);

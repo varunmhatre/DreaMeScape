@@ -34,7 +34,7 @@
         <key>dataFormat</key>
         <string>unity-texture2d</string>
         <key>textureFileName</key>
-        <filename></filename>
+        <filename>Namebox.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -78,7 +78,7 @@
         <key>webpQualityLevel</key>
         <uint>101</uint>
         <key>textureSubPath</key>
-        <string>Textbox.png</string>
+        <string>Namebox.png</string>
         <key>atfFormats</key>
         <string></string>
         <key>textureFormat</key>
@@ -132,7 +132,7 @@
             <key>datafile</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>Textbox.tpsheet</filename>
+                <filename>Namebox.tpsheet</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -181,43 +181,31 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../Images/UI/HUD/BattleHUD/Ed Box.png</key>
+            <key type="filename">../Images/UI/HUD/BattleHUD/Textbox/Ed.png</key>
+            <key type="filename">../Images/UI/HUD/BattleHUD/Textbox/Hally.png</key>
+            <key type="filename">../Images/UI/HUD/BattleHUD/Textbox/Jade.png</key>
+            <key type="filename">../Images/UI/HUD/BattleHUD/Textbox/Kent.png</key>
+            <key type="filename">../Images/UI/HUD/BattleHUD/Textbox/Meda.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>304,78,607,155</rect>
+                <rect>172,57,344,113</rect>
                 <key>scale9Paddings</key>
-                <rect>304,78,607,155</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../Images/UI/HUD/BattleHUD/Hally Box.png</key>
-            <key type="filename">../Images/UI/HUD/BattleHUD/Jade Box.png</key>
-            <key type="filename">../Images/UI/HUD/BattleHUD/Kent Box.png</key>
-            <key type="filename">../Images/UI/HUD/BattleHUD/Meda Box.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>304,76,607,152</rect>
-                <key>scale9Paddings</key>
-                <rect>304,76,607,152</rect>
+                <rect>172,57,344,113</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>../Images/UI/HUD/BattleHUD/Jade Box.png</filename>
-            <filename>../Images/UI/HUD/BattleHUD/Meda Box.png</filename>
-            <filename>../Images/UI/HUD/BattleHUD/Kent Box.png</filename>
-            <filename>../Images/UI/HUD/BattleHUD/Hally Box.png</filename>
-            <filename>../Images/UI/HUD/BattleHUD/Ed Box.png</filename>
+            <filename>../Images/UI/HUD/BattleHUD/Textbox/Meda.png</filename>
+            <filename>../Images/UI/HUD/BattleHUD/Textbox/Hally.png</filename>
+            <filename>../Images/UI/HUD/BattleHUD/Textbox/Jade.png</filename>
+            <filename>../Images/UI/HUD/BattleHUD/Textbox/Ed.png</filename>
+            <filename>../Images/UI/HUD/BattleHUD/Textbox/Kent.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -3,13 +3,16 @@ importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Resources/CharacterPortrait.tpsheet.tps.tpsheet
+- Assets/Resources/Namebox.tpsheet
 - Assets/Resources/Textbox.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Resources/CharacterPortrait.tpsheet.tps.png
+- Assets/Resources/Namebox.png
 - Assets/Resources/Textbox.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 enableDebugOutput: 0
