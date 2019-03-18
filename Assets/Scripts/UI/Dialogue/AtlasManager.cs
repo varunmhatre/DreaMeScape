@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class AtlasManager : MonoBehaviour, DialogueStateManager
 {
     public static Sprite[] sprites;
+    public static Sprite[] dialogueSprites;
     public ManagerState currentState
     {
         get;
@@ -12,10 +13,10 @@ public class AtlasManager : MonoBehaviour, DialogueStateManager
     }
 
     public void BootSequence()
-    { 
-        sprites = Resources.LoadAll<Sprite>("EventAtlas");
-        currentState = ManagerState.completed;
-         
+    {
+        sprites = Resources.LoadAll<Sprite>("CharacterPortrait");
+        dialogueSprites = Resources.LoadAll<Sprite>("Textbox");
+        currentState = ManagerState.completed;         
     }
 
     public Sprite loadSprite(string spriteName)
@@ -28,6 +29,17 @@ public class AtlasManager : MonoBehaviour, DialogueStateManager
             }
         }
         return null;
+    }	
+    public Sprite loadTextbox(string textboxName)
+    {
+        foreach (Sprite S in dialogueSprites)
+        {
+            if (S.name == textboxName)
+            {
+               
+                return S;
+            }
+        }
+        return null;
     }
-	 
 }

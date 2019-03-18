@@ -13,6 +13,7 @@ public struct Dialogue
     public CharacterType Conversation;
     public string CharacterName;
     public string CharacterImage;
+    public string TextBox;
     public string DialogueText;
     public string FontName;
 }

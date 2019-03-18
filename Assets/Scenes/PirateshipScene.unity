@@ -248,6 +248,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3360379654646257570, guid: c4907334ee52dac4e865baf0ab37361f,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4907334ee52dac4e865baf0ab37361f, type: 3}
 --- !u!4 &421276262 stripped
@@ -583,6 +588,72 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Cleave
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: edsFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
+        type: 3}
+    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: medasFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
+        type: 3}
+    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: kentsFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
+        type: 3}
+    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: jadesFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
+        type: 3}
+    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: hallysFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
+        type: 3}
+    - target: {fileID: 3472260172306983745, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: universalFancyFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 019bc7ba1325cfd4f88168926978c8a1,
+        type: 3}
+    - target: {fileID: 3472260171620804128, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.103773594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472260171620804128, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.09936811
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472260171620804128, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.09936811
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472260171778190173, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.09433961
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472260171778190173, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.07698468
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472260171778190173, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.07698468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}
@@ -2087,6 +2158,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PirateShipMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774105520446953583, guid: 5ddebe932af4eb545840169c239d1a64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5774105520446953577, guid: 5ddebe932af4eb545840169c239d1a64,
         type: 3}
