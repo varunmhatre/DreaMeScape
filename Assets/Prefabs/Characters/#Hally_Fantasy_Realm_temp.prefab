@@ -16,8 +16,6 @@ GameObject:
   - component: {fileID: 3549798040341159972}
   - component: {fileID: 7453278310260461460}
   - component: {fileID: 7369214990481268929}
-  - component: {fileID: 5424678158572157601}
-  - component: {fileID: 4536327801259653864}
   m_Layer: 8
   m_Name: '#Hally_Fantasy_Realm_temp'
   m_TagString: Player
@@ -154,31 +152,6 @@ MonoBehaviour:
   objToBubbleResist: {fileID: 1539324171489462}
   bubblesUpOnAction: 1
   valueChanged: 0
---- !u!114 &5424678158572157601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099632027117354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee3ffb8853c443b4d8fc790c84eed2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseTarget: {fileID: 2800000, guid: a738437ae5a4e284986c3c14acf68d87, type: 3}
---- !u!114 &4536327801259653864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099632027117354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f1e43cd34755c4286946a1edc33905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1103372154033702
 GameObject:
   m_ObjectHideFlags: 0

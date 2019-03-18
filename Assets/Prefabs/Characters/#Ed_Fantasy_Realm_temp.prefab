@@ -625,8 +625,6 @@ GameObject:
   - component: {fileID: 2496651523532325193}
   - component: {fileID: 5495581881032207035}
   - component: {fileID: 1986082378702433826}
-  - component: {fileID: 8777486085830330466}
-  - component: {fileID: 3437673563610015627}
   m_Layer: 8
   m_Name: '#Ed_Fantasy_Realm_temp'
   m_TagString: Player
@@ -778,31 +776,6 @@ MonoBehaviour:
   objToBubbleResist: {fileID: 3712575446182033166}
   bubblesUpOnAction: 1
   valueChanged: 0
---- !u!114 &8777486085830330466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7596011827401411954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee3ffb8853c443b4d8fc790c84eed2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseTarget: {fileID: 2800000, guid: a738437ae5a4e284986c3c14acf68d87, type: 3}
---- !u!114 &3437673563610015627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7596011827401411954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f1e43cd34755c4286946a1edc33905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7596363654049756512
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +862,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7601629349037276592}
     m_Modifications:
+    - target: {fileID: 1794351007372954850, guid: 0b626abd04da19542af204ad5e0d30a6,
+        type: 3}
+      propertyPath: m_Name
+      value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794351007372954850, guid: 0b626abd04da19542af204ad5e0d30a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1794351007372954855, guid: 0b626abd04da19542af204ad5e0d30a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1027,16 +1010,6 @@ PrefabInstance:
     - target: {fileID: 1794351007372954852, guid: 0b626abd04da19542af204ad5e0d30a6,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1794351007372954850, guid: 0b626abd04da19542af204ad5e0d30a6,
-        type: 3}
-      propertyPath: m_Name
-      value: Particle System
-      objectReference: {fileID: 0}
-    - target: {fileID: 1794351007372954850, guid: 0b626abd04da19542af204ad5e0d30a6,
-        type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

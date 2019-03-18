@@ -277,8 +277,6 @@ GameObject:
   - component: {fileID: 1651914349455986567}
   - component: {fileID: 744936645760045010}
   - component: {fileID: 8555278555726275855}
-  - component: {fileID: 8168636639514620298}
-  - component: {fileID: 1959088836793937057}
   m_Layer: 8
   m_Name: '#Kent_Fantasy_Realm_temp1'
   m_TagString: Player
@@ -415,31 +413,6 @@ MonoBehaviour:
   objToBubbleResist: {fileID: 2369389060219533340}
   bubblesUpOnAction: 1
   valueChanged: 0
---- !u!114 &8168636639514620298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673096372370608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee3ffb8853c443b4d8fc790c84eed2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseTarget: {fileID: 2800000, guid: a738437ae5a4e284986c3c14acf68d87, type: 3}
---- !u!114 &1959088836793937057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673096372370608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f1e43cd34755c4286946a1edc33905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2369389060219533340
 GameObject:
   m_ObjectHideFlags: 0

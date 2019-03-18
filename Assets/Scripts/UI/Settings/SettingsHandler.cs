@@ -66,7 +66,6 @@ public class SettingsHandler : MonoBehaviour
         {
             rightButton.gameObject.SetActive(true);
             leftButton.gameObject.SetActive(true);
-        }
-        Debug.Log("currentIndex:        "+ currentIndex);
+        } 
     }
 }
