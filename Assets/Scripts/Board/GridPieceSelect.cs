@@ -48,16 +48,13 @@ public class GridPieceSelect : MonoBehaviour
                     if (neighborPiece)
                     {
                         if (toHighlight && !neighborPiece.GetComponent<GridPiece>().isOccupied)
-                        {
-                            Debug.Log("neighborPiece:       " + neighborPiece);
-                            neighborPiece.GetComponent<GridPieceHighlight>().highlightPiece();
-                            //neighborPiece.GetComponentInChildren<FreeSpaceHighlightAnim>().isVisible = true;  
+                        { 
+                            neighborPiece.GetComponent<GridPieceHighlight>().highlightPiece(); 
                             neighborPiece.transform.GetChild(0).GetComponent<FreeSpaceHighlightAnim>().isVisible = true;
                         }
                         else
                         {
-                            neighborPiece.GetComponent<GridPieceHighlight>().removeHighlight();
-                            //neighborPiece.GetComponentInChildren<FreeSpaceHighlightAnim>().isVisible = false;
+                            neighborPiece.GetComponent<GridPieceHighlight>().removeHighlight(); 
                             neighborPiece.transform.GetChild(0).GetComponent<FreeSpaceHighlightAnim>().isVisible = false;
                         }
                     }

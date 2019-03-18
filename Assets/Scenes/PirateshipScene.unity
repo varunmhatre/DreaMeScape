@@ -509,6 +509,46 @@ PrefabInstance:
       propertyPath: Manager
       value: 
       objectReference: {fileID: 813492604}
+    - target: {fileID: 5477500520200029625, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1320
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477500520200029625, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427185029189537183, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: images.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: f724f65a3f352db4a9608eaec3696667,
+        type: 3}
+    - target: {fileID: 6427185029189537183, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: images.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: ccb771bff2107e54d9d6089ea4cfd31f,
+        type: 3}
+    - target: {fileID: 6427185029189537183, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a391713309550e0489d26a809e514edc,
+        type: 3}
+    - target: {fileID: 6427185029189537183, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: a011ee3738cbab047ae3f51a5c8ee628,
+        type: 3}
+    - target: {fileID: 6427185029189537183, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6dcfda6199932bb499f8076aed5ac127,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}
 --- !u!1 &1118820144 stripped

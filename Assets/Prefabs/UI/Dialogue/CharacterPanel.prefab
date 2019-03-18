@@ -187,6 +187,7 @@ MonoBehaviour:
   characterName: {fileID: 1893091936}
   dialogue: {fileID: 2071250717}
   dialoguePanel: {fileID: 0}
+  nameBox: {fileID: 0}
   edsFont: {fileID: 0}
   medasFont: {fileID: 0}
   kentsFont: {fileID: 0}
