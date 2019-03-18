@@ -5,13 +5,13 @@ using UnityEngine;
 public class EnemyMouseCursor : MonoBehaviour
 {
     public bool cursorChanged;
-    public Texture2D mouseTarget;
+    //public Texture2D mouseTarget;
     Stats selectedUnit;
-
+    CustomCursorTexture customCursor;
     // Start is called before the first frame update
     void Start()
     {
-        
+        customCursor = GetComponent<CustomCursorTexture>();
     }
     // Update is called once per frame
     void Update()
@@ -26,7 +26,8 @@ public class EnemyMouseCursor : MonoBehaviour
         {
             selectedUnit = PlayerControls.selectedUnit.GetComponent<Stats>();
             cursorChanged = true;
-            Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.ForceSoftware);
+            //Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.ForceSoftware);
+            customCursor.ForceMode();
         }
     }
     
@@ -35,7 +36,8 @@ public class EnemyMouseCursor : MonoBehaviour
         if (cursorChanged)
         {
             cursorChanged = false;
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            customCursor.DisableCrossBar();
         }
     }
 
@@ -44,7 +46,8 @@ public class EnemyMouseCursor : MonoBehaviour
         if (cursorChanged && selectedUnit.hasAttacked)
         {
             cursorChanged = false;
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            customCursor.DisableCrossBar();
         }
     }
 
@@ -53,7 +56,8 @@ public class EnemyMouseCursor : MonoBehaviour
         if (cursorChanged)
         {
             cursorChanged = false;
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            customCursor.DisableCrossBar();
         }
     }
 }

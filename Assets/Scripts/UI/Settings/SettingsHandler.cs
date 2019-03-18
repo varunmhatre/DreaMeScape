@@ -50,7 +50,8 @@ public class SettingsHandler : MonoBehaviour
     { 
         if (currentIndex == 0)
         {
-            leftButton.gameObject.SetActive(false); 
+            leftButton.gameObject.SetActive(false);
+            rightButton.gameObject.SetActive(true);
             slidingImage[0].SetActive(true);
             for (int i = 1; i < slidingImage.Length; i++)
             {
@@ -66,5 +67,6 @@ public class SettingsHandler : MonoBehaviour
             rightButton.gameObject.SetActive(true);
             leftButton.gameObject.SetActive(true);
         }
+        Debug.Log("currentIndex:        "+ currentIndex);
     }
 }
