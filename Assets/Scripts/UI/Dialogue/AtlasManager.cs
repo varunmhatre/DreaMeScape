@@ -6,6 +6,7 @@ public class AtlasManager : MonoBehaviour, DialogueStateManager
 {
     public static Sprite[] sprites;
     public static Sprite[] dialogueSprites;
+    public static Sprite[] nameSprites;
     public ManagerState currentState
     {
         get;
@@ -14,9 +15,9 @@ public class AtlasManager : MonoBehaviour, DialogueStateManager
 
     public void BootSequence()
     {
-        sprites = Resources.LoadAll<Sprite>("CharacterPortrait");
-        dialogueSprites = Resources.LoadAll<Sprite>("Textbox");
-        dialogueSprites = Resources.LoadAll<Sprite>("Namebox");
+        sprites = Resources.LoadAll<Sprite>("CharPortrait");
+        dialogueSprites = Resources.LoadAll<Sprite>("DialogueTextBox");
+        nameSprites = Resources.LoadAll<Sprite>("Namebox");
         currentState = ManagerState.completed;         
     }
 
@@ -45,7 +46,7 @@ public class AtlasManager : MonoBehaviour, DialogueStateManager
     }
     public Sprite loadNamebox(string textboxName)
     {
-        foreach (Sprite S in dialogueSprites)
+        foreach (Sprite S in nameSprites)
         {
             if (S.name == textboxName)
             {

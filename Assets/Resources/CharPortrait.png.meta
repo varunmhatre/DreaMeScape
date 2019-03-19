@@ -1,27 +1,12 @@
 fileFormatVersion: 2
-guid: ffb8c1ccbf3c17f42a1091f9c77a6ea0
+guid: 71fc84ed2eb781141b62fe82a111ae14
 TextureImporter:
   fileIDToRecycleName:
-    21300000: EventAtlas
-    21300002: BG
-    21300004: Hero_Angry
-    21300006: Hero_Default
-    21300008: Hero_Surprised
-    21300010: Heroine_Angry
-    21300012: Heroine_Neutral
-    21300014: Heroine_Surprised
-    21300016: Parchment
-    21300018: Wizard
-    21300020: Ed_portrait
-    21300022: Hally_portrait
-    21300024: Jade_portrait
-    21300026: Kent_portrait
-    21300028: Meda_portrait
-    21300030: Ed
-    21300032: Hally
-    21300034: Jade
-    21300036: Kent
-    21300038: Meda
+    21300000: Ed
+    21300002: Hally
+    21300004: Jade
+    21300006: Kent
+    21300008: Meda
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -97,17 +82,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 739
-        width: 284
-        height: 284
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 37
+        width: 400
+        height: 474
+      alignment: 9
+      pivot: {x: 0.5, y: 0.528481}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fcd6ff72faf7e746a744b26bc2454c0
+      spriteID: c88589d991bd2984897618229d9db16a
       vertices: []
       indices: 
       edges: []
@@ -116,18 +101,18 @@ TextureImporter:
       name: Hally
       rect:
         serializedVersion: 2
-        x: 1
-        y: 453
-        width: 284
-        height: 284
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 403
+        y: 17
+        width: 399
+        height: 494
+      alignment: 9
+      pivot: {x: 0.49874687, y: 0.5060729}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 152d3b00f5506494db70cd78c4fd5972
+      spriteID: af2031e0d041bc44ebfcdcf1a925babf
       vertices: []
       indices: 
       edges: []
@@ -136,18 +121,18 @@ TextureImporter:
       name: Jade
       rect:
         serializedVersion: 2
-        x: 1
-        y: 167
-        width: 284
-        height: 284
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 804
+        y: 45
+        width: 368
+        height: 466
+      alignment: 9
+      pivot: {x: 0.51358694, y: 0.53648067}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e84d37e84988fda48a8b9d021db5c2aa
+      spriteID: 87298d4f2fa2d854b8b3412bd7e59670
       vertices: []
       indices: 
       edges: []
@@ -156,18 +141,18 @@ TextureImporter:
       name: Kent
       rect:
         serializedVersion: 2
-        x: 573
-        y: 739
-        width: 283
-        height: 284
+        x: 1174
+        y: 16
+        width: 399
+        height: 495
       alignment: 9
-      pivot: {x: 0.5017668, y: 0.5}
+      pivot: {x: 0.49874687, y: 0.5050505}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb68a50a9b252a84bab03b9e7175f2c4
+      spriteID: 60a5d91cbb30102438455df0035637d9
       vertices: []
       indices: 
       edges: []
@@ -176,18 +161,18 @@ TextureImporter:
       name: Meda
       rect:
         serializedVersion: 2
-        x: 287
-        y: 739
-        width: 284
-        height: 284
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1575
+        y: 68
+        width: 400
+        height: 443
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5643341}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7778eec391dfb15439e9a4ae657a8352
+      spriteID: 222df628c27632a4198f89f37afc7f3b
       vertices: []
       indices: 
       edges: []
@@ -195,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bbc5ae051a9d4074dbbeed60320562e8
+    spriteID: 4c1228601e23e24419b41aef74a42cf2
     vertices: []
     indices: 
     edges: []

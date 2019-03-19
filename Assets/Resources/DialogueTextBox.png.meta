@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca2ea9c4ca7e06942ad2c4bf841ca952
+guid: d2c5d92d0ba942b46b4990b31749bceb
 TextureImporter:
   fileIDToRecycleName:
     21300000: Ed
@@ -81,10 +81,10 @@ TextureImporter:
       name: Ed
       rect:
         serializedVersion: 2
-        x: 1219
-        y: 1430
-        width: 632
-        height: 617
+        x: 1
+        y: 1747
+        width: 1200
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -92,7 +92,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f2bc5c0df9f712498f0b21cdbef8dbc
+      spriteID: 13eacd80a56adeb42ae923b0b2882966
       vertices: []
       indices: 
       edges: []
@@ -102,9 +102,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 493
-        width: 627
-        height: 771
+        y: 1445
+        width: 1200
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3fad3f442796bce43a34d5212e36627b
+      spriteID: cfa6a4cedf3faed49b0256ad5690a13f
       vertices: []
       indices: 
       edges: []
@@ -121,10 +121,10 @@ TextureImporter:
       name: Jade
       rect:
         serializedVersion: 2
-        x: 629
-        y: 1282
-        width: 588
-        height: 765
+        x: 1
+        y: 1143
+        width: 1200
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,7 +132,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b338fad291886ed4e829f85eda529774
+      spriteID: 7356c1c97888f4d43a516a1f74400e50
       vertices: []
       indices: 
       edges: []
@@ -142,9 +142,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 1266
-        width: 626
-        height: 781
+        y: 841
+        width: 1200
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,7 +152,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9fc0dcf169da7e84c85259df03101d42
+      spriteID: 16470729ed8474849a360e0a667ec751
       vertices: []
       indices: 
       edges: []
@@ -161,10 +161,10 @@ TextureImporter:
       name: Meda
       rect:
         serializedVersion: 2
-        x: 1219
-        y: 725
-        width: 626
-        height: 703
+        x: 1
+        y: 539
+        width: 1200
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,7 +172,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9580b5c68989087478c870cd08ff989c
+      spriteID: 0c5f9165838e9a34fa8280541eafa82f
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 532e318d2a7bd6d40a9bcc9db501691b
+    spriteID: 3ac9d8aca8b44a4428470d75ea514822
     vertices: []
     indices: 
     edges: []
