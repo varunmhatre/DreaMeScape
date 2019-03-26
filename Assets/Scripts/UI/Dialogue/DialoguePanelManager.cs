@@ -32,11 +32,11 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         { 
             characterPanel = GameObject.Find("CharacterPanel").GetComponent<DialoguePanelConfig>();
         }        
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+      /*  if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             currentEvent = JSONAssembly.RunJSONFactoryForScene(1); 
-        }
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        }*/
+        if (SceneManager.GetActiveScene().name == "PirateshipScene")
         { 
             currentEvent = JSONAssembly.RunJSONFactoryForScene(2);
         }
@@ -66,7 +66,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 SceneManager.LoadScene("PirateshipScene");
             }*/
              
-            if (SceneManager.GetActiveScene().buildIndex == 2)
+            if (SceneManager.GetActiveScene().name == "PirateshipScene")
             { 
                 dialoguePanel.SetActive(false);
                 playerControlsUnlocked = true;

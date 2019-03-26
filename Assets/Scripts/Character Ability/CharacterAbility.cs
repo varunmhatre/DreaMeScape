@@ -139,6 +139,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 Debug.Log("Ability set to sprint");
                 if (Input.GetMouseButtonDown(0) && !justClickedButton)
                 {
+
                     Debug.Log("Preparing to sprint");
                     RaycastHit hitPiece = RaycastManager.GetRaycastHitForTag("GridPiece");
                     if (hitPiece.transform != null)
@@ -387,5 +388,5 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             currButtonId = buttonId;
             ActivateAbility();
         }
-    }
+    } 
 }

@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbdcb38dfe7f134888db73002d343ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crossbar: {fileID: 6905824317569734922}
 --- !u!114 &6905824317569734922
 MonoBehaviour:
   m_ObjectHideFlags: 0
