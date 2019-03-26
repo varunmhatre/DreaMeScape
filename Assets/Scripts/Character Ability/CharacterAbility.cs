@@ -50,6 +50,10 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Update is called once per frame
     void Update()
     {
+        if (buttonId >= CharacterManager.allAlliedCharacters.Count || CharacterManager.allAlliedCharacters[buttonId] == null)
+        {
+            return;
+        }
         if (CheckIfMeterFull(buttonId, CharacterManager.allAlliedCharacters[buttonId].GetComponent<Stats>()))
         {            
             isInteractable = true;
@@ -67,12 +71,12 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void ActivateAbility()
     {
         Stats charStats = CharacterManager.allAlliedCharacters[buttonId].GetComponent<Stats>();
-        if (buttonId == 4 && GameManager.currentEnergy >= 1)
+        if (buttonId == 3 && GameManager.currentEnergy >= 1)
         {
             transform.GetComponent<Image>().color = new Color(255.0f, 165.0f, 0.0f);
             TryFireball(charStats.gameObject);
         }        
-        else if (buttonId == 3 && GameManager.currentEnergy >= 1)
+        else if (buttonId == 4 && GameManager.currentEnergy >= 1)
         {
             transform.GetComponent<Image>().color = Color.blue;
             ActivateCleave(charStats.gameObject);
@@ -330,7 +334,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 }
                 GetComponent<JadeAbilityHandler>().OnMouseHoveringStart();
             }
-            else if (buttonId == 3)
+            else if (buttonId == 4)
             {
                 if (tooltipObj != null)
                 {
@@ -338,7 +342,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 }
                 GetComponent<KentAbilityHandler>().OnMouseHoveringStart();
             }
-            else if (buttonId == 4)
+            else if (buttonId == 3)
             {
                 if (tooltipObj != null)
                 {
@@ -365,11 +369,11 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             {
                 GetComponent<JadeAbilityHandler>().OnMouseHoveringExit();
             }
-            else if (buttonId == 3)
+            else if (buttonId == 4)
             {
                 GetComponent<KentAbilityHandler>().OnMouseHoveringExit();
             }
-            else if (buttonId == 4)
+            else if (buttonId == 3)
             {
                 GetComponent<MedaAbilityHandler>().OnMouseHoveringExit();
             }
