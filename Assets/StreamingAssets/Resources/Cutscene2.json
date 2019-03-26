@@ -16,7 +16,7 @@
       "Conversation": 2,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "Ooooo, I love pirates! Can I be the captain?"
+      "DialogueText": "Ooooo, I love pirates!"
     },
     {
       "Conversation": 3,
@@ -46,34 +46,28 @@
       "Conversation": 7,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "...I still want to be captain of the ship."
+      "DialogueText": "Aren't you at least a little upset with Kent, Ed?"
     },
     {
       "Conversation": 8,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
-      "DialogueText": "Stand next to the wheel and you could pretend you are... I guess."
+      "DialogueText": "I'm not mad at him. He'll learn. He just needs time."
     },
     {
       "Conversation": 9,
-      "CharacterName": "Hally",
-      "CharacterImage": "Hally",
-      "DialogueText": "Yay! Then I can sail it to outer space!"
-    },
-       {
-      "Conversation": 10,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "One final thing... use WASD to move the camera, L to switch the view, and scroll to zoom."
+      "DialogueText": "One final thing... use WASD/Arrow keys to move the camera, L to switch the view, and scroll to zoom."
     },
     {
-      "Conversation": 11,
+      "Conversation": 10,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
       "DialogueText": "Is everybody ready? Let's get to the stern of the ship! Let's stop Kent!"
     },
     {
-      "Conversation": 12,
+      "Conversation": 11,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
       "DialogueText": "I’ll race you to the back of the ship!"
