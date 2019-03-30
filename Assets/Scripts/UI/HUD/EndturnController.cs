@@ -19,10 +19,13 @@ public class EndturnController : MonoBehaviour, IPointerDownHandler
         {
             //transform.GetComponent<Image>().enabled = true;
         }
-        if(!TutorialCards.isTutorialRunning)
+        if(DialoguePanelManager.playerControlsUnlocked)
         {
-            isInteractable = true;
-        }
+            if (TutorialCards.isTutorialRunning)
+            {
+                isInteractable = true;
+            }
+        }        
     } 
   /*  public void OnPointerEnter(PointerEventData eventData)
     {
@@ -41,9 +44,8 @@ public class EndturnController : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData pointerEventData)
     {
         if(isInteractable)
-        {
-            GameManager.EndCurrentTurn();
-            //transform.GetComponent<Image>().enabled = false;
+        { 
+            GameManager.EndCurrentTurn(); 
             isInteractable = false;
         }
     }

@@ -25,4 +25,16 @@ public class SceneTransition : MonoBehaviour
     {
         Application.Quit();
     }
+    public static void GoFade(string scene)
+    {
+        Initiate.Fade(scene, Color.white, 1.0f);
+    }
+
+    public void ExitLevel(string scene)
+    {
+        Time.timeScale = 1;
+        DialoguePanelManager.playerControlsUnlocked = false;
+        DialoguePanelManager.countDialogueLength = 0;
+        SceneManager.LoadScene(scene);
+    }
 }

@@ -28,9 +28,9 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         isCharacterPanelDisabled = false;
     }
     public void BootSequence()
-    { 
-        if(GameObject.Find("CharacterPanel") != null)
-        {
+    {        
+        if (GameObject.Find("CharacterPanel") != null)
+        { 
             characterPanel = GameObject.Find("CharacterPanel").GetComponent<DialoguePanelConfig>();
         }
         
@@ -43,7 +43,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             currentEvent = JSONAssembly.RunJSONFactoryForScene(3);
         }
         if (SceneManager.GetActiveScene().name == "PirateshipScene")
-        {
+        { 
             currentEvent = JSONAssembly.RunJSONFactoryForScene(2);
         }
         InitiziliasePanels();
@@ -54,11 +54,12 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         {
             isPressed = false; 
             if(DialoguePanelConfig.isDialogueTextOver)
-            {               
+            { 
                 UpdatePanelState();                
             }
             BootSequence();
-        } 
+        }         
+
         if (Input.GetKey(KeyCode.P) || countDialogueLength >= currentEvent.dialogues.Count)
         {
             if (!Input.GetKey(KeyCode.P) && SceneManager.GetActiveScene().name == "TutorialScene")
@@ -71,8 +72,10 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 //SceneManager.LoadScene("PirateshipScene");
             }
             //Deprecated------------------------------------------------
-            if (SceneManager.GetActiveScene().name == "FantasyWorldStartScene")
+            //if (SceneManager.GetActiveScene().name == "FantasyWorldStartScene")
+            /*if (SceneManager.GetActiveScene().buildIndex == 1)
             {
+                Debug.Log("Scene 1");
                 dialoguePanel.SetActive(false);
                 countDialogueLength = 0;
                 stepIndex = 0;
@@ -83,10 +86,14 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             if (SceneManager.GetActiveScene().name == "PirateshipScene")
             {
                 
+            }*/
+             
+            if (SceneManager.GetActiveScene().name == "PirateshipScene")
+            { 
                 dialoguePanel.SetActive(false);
                 playerControlsUnlocked = true;
                 isCharacterPanelDisabled = true;
-                countDialogueLength = currentEvent.dialogues.Count;
+                countDialogueLength =  currentEvent.dialogues.Count;                
             }
         }       
         else if (countDialogueLength < currentEvent.dialogues.Count && !isPaused)
@@ -98,7 +105,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     private void InitiziliasePanels()
     { 
         if(!isCharacterPanelDisabled)
-        {
+        { 
             characterPanel.isTalking = true;
             stepIndex++;
             countDialogueLength++;

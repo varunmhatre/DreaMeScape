@@ -4,8 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+struct ColorRendererCombo
+{
+    public Renderer renderer;
+    public Color color;
+    public Material material;
+    public ColorRendererCombo(Renderer ren)
+    {
+        renderer = ren;
+        material = renderer.material;
+        color = material.color;
+    }
+}
+
 public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
+    [SerializeField] GameObject tooltipObj;
     private int amountMeterNeeded;
     [SerializeField] private int buttonId;
     private static int currButtonId;
@@ -125,6 +139,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 Debug.Log("Ability set to sprint");
                 if (Input.GetMouseButtonDown(0) && !justClickedButton)
                 {
+
                     Debug.Log("Preparing to sprint");
                     RaycastHit hitPiece = RaycastManager.GetRaycastHitForTag("GridPiece");
                     if (hitPiece.transform != null)
@@ -148,6 +163,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void ActivateBolster(GameObject character)
     {
         bool buffSomeone = false;
+        GetComponent<HallyAbilityHandler>().OnMouseClickWhenOn();
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
             GameObject ally = CharacterManager.allAlliedCharacters[i];
@@ -189,6 +205,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void ActivateCleave(GameObject character)
     {
         bool hitsSomeone = false;
+        GetComponent<KentAbilityHandler>().OnMouseClickWhenOn();
         for (int i = 0; i < CharacterManager.allEnemyCharacters.Count; i++)
         {
             GameObject enemy = CharacterManager.allEnemyCharacters[i];
@@ -209,39 +226,32 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void ActivateSprint(GameObject character, GameObject space)
     {
-        int thisCharacterX = character.GetComponent<UnitCoordinates>().x;
-        int thisCharacterY = character.GetComponent<UnitCoordinates>().y;
+        UnitCoordinates characterCoord = character.GetComponent<UnitCoordinates>();
+        int thisCharacterX = characterCoord.x;
+        int thisCharacterY = characterCoord.y;
 
-        int spaceX = space.GetComponent<GridCoordinates>().x;
-        int spaceY = space.GetComponent<GridCoordinates>().y;
+        GridCoordinates gridCoord = space.GetComponent<GridCoordinates>();
+        int spaceX = gridCoord.x;
+        int spaceY = gridCoord.y;
 
-        int count = 0;
+        Debug.Log("You are sprinting!");
+        if (!GameObject.Find("GridX" + thisCharacterX + "Y" + thisCharacterY))
+            return;
 
-        for (int i = 0; i < CharacterManager.allCharacters.Count; i++)
-        {
-            int characterX = CharacterManager.allCharacters[i].GetComponent<UnitCoordinates>().x;
-            int characterY = CharacterManager.allCharacters[i].GetComponent<UnitCoordinates>().y;
+        GridPiece grid = GameObject.Find("GridX" + thisCharacterX + "Y" + thisCharacterY).GetComponent<GridPiece>();
+        if (space.GetComponent<GridPiece>().unit != null)
+            return;
 
-            if (spaceX != characterX || spaceY != characterY)
-            {
-                count++;
-            }
-        }
-
-        if (count >= CharacterManager.allCharacters.Count)
-        {
-            Debug.Log("You are sprinting!");
-            GameObject.Find("GridX" + thisCharacterX + "Y" + thisCharacterY).GetComponent<GridPiece>().unit = null;
-            character.transform.position = space.transform.position;
-            character.GetComponent<UnitCoordinates>().SetUnitCoordinates(spaceX, spaceY);
-            space.GetComponent<GridPiece>().unit = character;
-            character.GetComponent<Stats>().damage += 2;
-            character.GetComponent<Stats>().SetCharging(true);
-            GameManager.currentEnergy--;
-            character.GetComponent<Stats>().EmptyMeter();
-            isInteractable = false;
-            inSelectionMode = false;
-        }
+        grid.unit = null;
+        character.transform.position = space.transform.position;
+        character.GetComponent<UnitCoordinates>().SetUnitCoordinates(spaceX, spaceY);
+        space.GetComponent<GridPiece>().unit = character;
+        character.GetComponent<Stats>().damage += 2;
+        character.GetComponent<Stats>().SetCharging(true);
+        GameManager.currentEnergy--;
+        character.GetComponent<Stats>().EmptyMeter();
+        isInteractable = false;
+        inSelectionMode = false;
     }
 
     public void ActivateFireball(GameObject character, GameObject enemy)
@@ -268,6 +278,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         if (hasTarget)
         {
+            GetComponent<MedaAbilityHandler>().OnMouseClickWhenOn();
             Debug.Log("Selection mode set to enemy!");
             inSelectionMode = true;
             //currSelectionType = selectionType.enemy;
@@ -287,6 +298,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         //currSelectionType = selectionType.emptySpace;
         currAbilityName = "sprint";
         RaycastManager.EmptyRaycastTargets();
+        GetComponent<JadeAbilityHandler>().OnMouseClickWhenOn();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -296,7 +308,43 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             transform.GetComponent<Image>().color = Color.blue;
             if (buttonId == 0)
             {
+                if (tooltipObj != null)
+                {
+                    tooltipObj.SetActive(true);
+                }
                 GetComponent<EdAbilityHandler>().OnMouseHoveringStart();
+            }
+            else if (buttonId == 1)
+            {
+                if (tooltipObj != null)
+                {
+                    tooltipObj.SetActive(true);
+                }
+                GetComponent<HallyAbilityHandler>().OnMouseHoveringStart();
+            }
+            else if (buttonId == 2)
+            {
+                if (tooltipObj != null)
+                {
+                    tooltipObj.SetActive(true);
+                }
+                GetComponent<JadeAbilityHandler>().OnMouseHoveringStart();
+            }
+            else if (buttonId == 3)
+            {
+                if (tooltipObj != null)
+                {
+                    tooltipObj.SetActive(true);
+                }
+                GetComponent<KentAbilityHandler>().OnMouseHoveringStart();
+            }
+            else if (buttonId == 4)
+            {
+                if (tooltipObj != null)
+                {
+                    tooltipObj.SetActive(true);
+                }
+                GetComponent<MedaAbilityHandler>().OnMouseHoveringStart();
             }
         }
     }
@@ -309,6 +357,27 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             {
                 GetComponent<EdAbilityHandler>().OnMouseHoveringExit();
             }
+            else if (buttonId == 1)
+            {
+                GetComponent<HallyAbilityHandler>().OnMouseHoveringExit();
+            }
+            else if (buttonId == 2)
+            {
+                GetComponent<JadeAbilityHandler>().OnMouseHoveringExit();
+            }
+            else if (buttonId == 3)
+            {
+                GetComponent<KentAbilityHandler>().OnMouseHoveringExit();
+            }
+            else if (buttonId == 4)
+            {
+                GetComponent<MedaAbilityHandler>().OnMouseHoveringExit();
+            }
+        }
+
+        if (tooltipObj != null)
+        {
+            tooltipObj.SetActive(false);
         }
     }
     public void OnPointerDown(PointerEventData pointerEventData)
@@ -319,5 +388,5 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             currButtonId = buttonId;
             ActivateAbility();
         }
-    }
+    } 
 }

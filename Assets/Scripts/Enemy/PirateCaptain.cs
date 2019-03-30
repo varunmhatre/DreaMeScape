@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PirateCaptain : MonoBehaviour
 {
+    public static bool isPirateDefeated = false;
     // Start is called before the first frame update
     private void OnDestroy()
     {
-        if (!Application.isEditor)
-            SceneManager.LoadScene(0);
+        if (isPirateDefeated)
+        {
+            SceneTransition.GoFade("WinSCene");
+        }            
     }
 }

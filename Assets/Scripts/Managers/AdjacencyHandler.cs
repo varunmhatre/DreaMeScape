@@ -50,28 +50,32 @@ public static class AdjacencyHandler
 
     public static bool CompareAdjacency(GameObject obj1, GameObject obj2, int distance)
     {
+        int xPos1 = 100;
+        int yPos1 = 100;
 
-        int xPos1 = -10;
-        int yPos1 = -10;
+        int xPos2 = -100;
+        int yPos2 = -100;
 
-        int xPos2 = -10;
-        int yPos2 = -10;
-
-        if (obj1.GetComponent<UnitCoordinates>() != null && obj2.GetComponent<UnitCoordinates>() != null)
+        if (obj1.GetComponent<UnitCoordinates>() && obj2.GetComponent<UnitCoordinates>())
         {
-            xPos1 = obj1.GetComponent<UnitCoordinates>().x;
-            yPos1 = obj1.GetComponent<UnitCoordinates>().y;
+            UnitCoordinates obj1Coord = obj1.GetComponent<UnitCoordinates>();
+            UnitCoordinates obj2Coord = obj2.GetComponent<UnitCoordinates>();
 
-            xPos2 = obj2.GetComponent<UnitCoordinates>().x;
-            yPos2 = obj2.GetComponent<UnitCoordinates>().y;
+            xPos1 = obj1Coord.x;
+            yPos1 = obj1Coord.y;
+
+            xPos2 = obj2Coord.x;
+            yPos2 = obj2Coord.y;
         }
-        else if (obj1.GetComponent<UnitCoordinates>() != null && obj2.GetComponent<GridCoordinates>() != null)
+        else if (obj1.GetComponent<UnitCoordinates>() && obj2.GetComponent<GridCoordinates>())
         {
-            xPos1 = obj1.GetComponent<UnitCoordinates>().x;
-            yPos1 = obj1.GetComponent<UnitCoordinates>().y;
+            UnitCoordinates obj1Coord = obj1.GetComponent<UnitCoordinates>();
+            GridCoordinates obj2Coord = obj2.GetComponent<GridCoordinates>();
+            xPos1 = obj1Coord.x;
+            yPos1 = obj1Coord.y;
 
-            xPos2 = obj2.GetComponent<GridCoordinates>().x;
-            yPos2 = obj2.GetComponent<GridCoordinates>().y;
+            xPos2 = obj2Coord.x;
+            yPos2 = obj2Coord.y;
         }
 
         if (xPos1 <= xPos2 + distance && xPos1 >= xPos2 - distance

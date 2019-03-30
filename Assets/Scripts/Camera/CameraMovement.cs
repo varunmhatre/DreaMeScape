@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour
+{
 
     public bool pirateLock;
     [SerializeField] private float cameraMoveSpeed;
@@ -26,9 +27,32 @@ public class CameraMovement : MonoBehaviour {
     [SerializeField] private float zoomInMax;
     [SerializeField] private float scrollSpeed;
 
-	// Use this for initialization
-	void Start()
+    [SerializeField] private Vector3[] positions;
+    [SerializeField] private float[] times;
+    private float timer;
+    private int cameraLocNum;
+    private Vector3 goalLocation;
+    [SerializeField] private float panningSpeed;
+
+    private bool firstTime;
+
+    // Use this for initialization
+    void Start()
     {
+        firstTime = true;
+        positions = new Vector3[3];
+        times = new float[3];
+
+        positions[0] = transform.position;
+        positions[1] = transform.position + transform.right * 16.0f;
+        positions[2] = transform.position;
+
+        times[0] = 2.5f;
+        times[1] = 8.0f;
+        times[2] = 15.0f;
+        goalLocation = transform.position;
+        cameraLocNum = 0;
+        timer = 0.0f;
         zoomedInAmount = 0.0f;
         moving = false;
         portionOfJourney = 0.0f;
@@ -37,17 +61,30 @@ public class CameraMovement : MonoBehaviour {
         prevCamera = currentCamera;
         currHorizVal = 0.0f;
         currVertVal = 0.0f;
-	}
-	
-	// Update is called once per frame
-	void Update()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-        if (!pirateLock)
+        if (!pirateLock && DialoguePanelManager.playerControlsUnlocked)
         {
-            //check to see if you are moving the camera up, down, left, or right
-            MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
-            ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
-            SwapCameras(Input.GetKeyDown(KeyCode.L));
+            if (firstTime)
+            {
+                transform.position = positions[0];
+                firstTime = false;
+            }
+            if (TutorialCards.isTutorialRunning)
+            {
+                //check to see if you are moving the camera up, down, left, or right
+                MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
+                MoveCamera(Input.GetAxis("CameraCommandHoriz"), Input.GetAxis("CameraCommandVert"));
+                ZoomCamera(Input.GetAxis("Mouse Scrollwheel"), zoomInMax, zoomOutMin);
+                SwapCameras(Input.GetKeyDown(KeyCode.L));
+            }
+        }
+        else if (firstTime == true)
+        {
+            PirateShipMoveSetup(positions, times);
         }
         AdjustCameraValues(currentCamera, prevCamera);
     }
@@ -78,7 +115,7 @@ public class CameraMovement : MonoBehaviour {
             transform.position += transform.right * cameraMoveSpeed * Time.deltaTime;
             currHorizVal += transform.right.magnitude * cameraMoveSpeed * Time.deltaTime;
         }
-        else if (right < 0 && currHorizVal > - horizCap)
+        else if (right < 0 && currHorizVal > -horizCap)
         {
             for (int i = 0; i < cameraViews.Length; i++)
             {
@@ -194,5 +231,34 @@ public class CameraMovement : MonoBehaviour {
                 portionOfJourney = 0.0f;
             }
         }
+    }
+
+    public void PirateShipMoveSetup(Vector3[] locations, float[] times)
+    {
+        Vector3 startingPosition;
+        if (cameraLocNum == 0)
+        {
+            startingPosition = locations[locations.Length - 1];
+        }
+        else
+        {
+            startingPosition = locations[cameraLocNum - 1];
+        }
+        
+        goalLocation = locations[cameraLocNum];
+
+        timer += Time.deltaTime;
+        transform.position = Vector3.Lerp(startingPosition, goalLocation, timer / times[cameraLocNum]);
+
+        if (timer >= times[cameraLocNum])
+        {
+            timer = 0.0f;
+            cameraLocNum++;
+            transform.position = goalLocation;
+            if (cameraLocNum >= locations.Length)
+                cameraLocNum = 0;
+        }
+
+
     }
 }

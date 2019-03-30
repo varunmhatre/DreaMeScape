@@ -9,6 +9,8 @@ public class DialoguePanelConfig : MonoBehaviour
     public Image TextBG;
     public Text characterName;
     public Text dialogue;
+    public Image dialoguePanel;
+    public Image nameBox;
     private Color maskActiveColor = new Color(103.0f / 255.0f, 101.0f / 255.0f, 101.0f / 255.0f);
     public static bool isDialogueTextOver;
     private int count = 1;
@@ -29,11 +31,16 @@ public class DialoguePanelConfig : MonoBehaviour
     public void Configure(Dialogue currentDialogue)
     {
         characterImage.sprite = DialogueManager.atlasManager.loadSprite(currentDialogue.CharacterImage);
+        dialoguePanel.sprite = DialogueManager.atlasManager.loadTextbox(currentDialogue.CharacterImage);
+        nameBox.sprite = DialogueManager.atlasManager.loadNamebox(currentDialogue.CharacterImage);
+
+        //Debug.Log("characterImage.sprite:   " + characterImage.sprite);
+        //Debug.Log("dialoguePanel.sprite:   " + dialoguePanel.sprite);
         characterName.text = currentDialogue.CharacterName;        
         SetFont(characterName, true, characterName.text);
-
+     
         if (isTalking)
-        {
+        { 
             StartCoroutine(AnimateText(currentDialogue.DialogueText));
         }
         else
@@ -43,19 +50,20 @@ public class DialoguePanelConfig : MonoBehaviour
     }
 
     IEnumerator AnimateText(string dialogueText)
-    {
+    {       
         dialogue.text = "";
         SetFont(dialogue, false, characterName.text);
+         
         foreach (char letter in dialogueText)
         {            
-            dialogue.text += letter;            
-            yield return new WaitForSeconds(0.004f);
-
+            dialogue.text += letter;
+ 
+            yield return new WaitForSeconds(0.004f); 
             count++;
             if (dialogueText.Length < count)
             {
                 count = 1;
-                DialoguePanelManager.isPressed = true;
+                DialoguePanelManager.isPressed = true; 
             }
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) && dialogueText.Length < count)
             {

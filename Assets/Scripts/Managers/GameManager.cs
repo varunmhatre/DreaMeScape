@@ -20,12 +20,7 @@ public class GameManager : MonoBehaviour
     {
         characterSetup = gridManager.GetComponent<SetupCharactersOnBoard>();
         isPlayerTurn = true;
-
-        if (totalEnergy == 0)
-        {
-            totalEnergy = 7;
-        }
-
+        totalEnergy = 7;
         RefreshCurrentEnergy();
         roundCounter = 0;
     }

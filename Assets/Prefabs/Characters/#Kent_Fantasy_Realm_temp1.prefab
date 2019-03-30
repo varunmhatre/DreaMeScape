@@ -332,9 +332,11 @@ MonoBehaviour:
   damage: 2
   presence: 0
   unchargedDamage: 2
+  maxHealth: 8
   statsVisible: 0
   hasAttacked: 0
   meterUnitsFilled: 0
+  healthFilled: 0
   maxMeter: 5
   isEncumbered: 0
   isEnemy: 0
