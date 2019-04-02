@@ -2,6 +2,7 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Images/UI/New Dialogue/Portrait.tpsheet
 - Assets/Resources/CharacterPortrait.tpsheet
 - Assets/Resources/CharacterPortrait.tpsheet.tps.tpsheet
 - Assets/Resources/DialogueTextBox.tpsheet
@@ -9,6 +10,7 @@ tpsheetFileNames:
 - Assets/Resources/NamePanel.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Images/UI/New Dialogue/Portrait.png
 - Assets/Resources/CharacterPortrait.png
 - Assets/Resources/CharacterPortrait.tpsheet.tps.png
 - Assets/Resources/DialogueTextBox.png
@@ -16,6 +18,7 @@ textureFileNames:
 - Assets/Resources/NamePanel.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 
