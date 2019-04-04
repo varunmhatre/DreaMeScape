@@ -18,8 +18,8 @@ public class RaycastManager : MonoBehaviour
         //Update hit when you click the primary mouse button
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
-            Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-            hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
+          Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+          hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
         }
 
         if (Input.GetMouseButtonDown(0))
