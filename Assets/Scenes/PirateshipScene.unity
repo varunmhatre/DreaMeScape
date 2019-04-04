@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseTarget: {fileID: 2800000, guid: a25e5c4186db40641886463e18e3590d, type: 3}
+  mainMouse: {fileID: 0}
 --- !u!114 &580728996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2358,7 +2359,7 @@ PrefabInstance:
     - target: {fileID: 6283105561350497102, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 96
+      value: 95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
