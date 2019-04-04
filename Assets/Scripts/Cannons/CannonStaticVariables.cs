@@ -6,7 +6,7 @@ public class CannonStaticVariables : MonoBehaviour
 {
     public static bool isCannonSelected;
     public static int cannonRadius;
-    public static CannonCrossbarController crossbarController;
+    public static CursorTexture crossbarController;
     public static CannonScript selectedCannon;
     public static RaycastManager raycastManager;
 
@@ -14,7 +14,7 @@ public class CannonStaticVariables : MonoBehaviour
     void Start()
     {
         cannonRadius = 3;
-        crossbarController = GetComponent<CannonCrossbarController>() ;
+        crossbarController = GetComponent<CursorTexture>() ;
         raycastManager = GameObject.Find("Managers").GetComponent<RaycastManager>();
     }
 

@@ -42,15 +42,20 @@ public class GridPieceSelect : MonoBehaviour
                 if (playerMov[i, j] > 0)
                 {
                     GridCoordinates neighborPiece = GetGridPieceCoords((playerGridPiece[0] + (j - x)), (playerGridPiece[1] + (i - y)));
+
+                    
+
                     if (neighborPiece)
                     {
                         if (toHighlight && !neighborPiece.GetComponent<GridPiece>().isOccupied)
-                        {
-                            neighborPiece.GetComponent<GridPieceHighlight>().highlightPiece();
+                        { 
+                            neighborPiece.GetComponent<GridPieceHighlight>().highlightPiece(); 
+                            neighborPiece.transform.GetChild(0).GetComponent<FreeSpaceHighlightAnim>().isVisible = true;
                         }
                         else
                         {
-                            neighborPiece.GetComponent<GridPieceHighlight>().removeHighlight();
+                            neighborPiece.GetComponent<GridPieceHighlight>().removeHighlight(); 
+                            neighborPiece.transform.GetChild(0).GetComponent<FreeSpaceHighlightAnim>().isVisible = false;
                         }
                     }
                 }

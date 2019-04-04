@@ -20,6 +20,7 @@ TagManager:
   - GridRotater
   - Control
   - Generator
+  - Music
   layers:
   - Default
   - TransparentFX

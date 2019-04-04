@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 645420f664617d04c85cb6a94eb5f673
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Pirate_Crew_Teleport_Sprite_Sheet_2
+    21300002: Pirate_Crew_Teleport_Sprite_Sheet_3
+    21300004: Pirate_Crew_Teleport_Sprite_Sheet_4
+    21300006: Pirate_Crew_Teleport_Sprite_Sheet_5
+    21300008: Pirate_Crew_Teleport_Sprite_Sheet_6
+    21300010: Pirate_Crew_Teleport_Sprite_Sheet_7
+    21300012: Pirate_Crew_Teleport_Sprite_Sheet_8
+    21300014: Pirate_Crew_Teleport_Sprite_Sheet_9
+    21300016: Pirate_Crew_Teleport_Sprite_Sheet_10
+    21300018: Pirate_Crew_Teleport_Sprite_Sheet_11
+    21300020: Pirate_Crew_Teleport_Sprite_Sheet_12
+    21300022: Pirate_Crew_Teleport_Sprite_Sheet_13
+    21300024: Pirate_Crew_Teleport_Sprite_Sheet_14
+    21300026: Pirate_Crew_Teleport_Sprite_Sheet_15
+    21300028: Pirate_Crew_Teleport_Sprite_Sheet_16
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1605
+        width: 481
+        height: 442
+      alignment: 9
+      pivot: {x: 0.51975054, y: 0.4638009}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fc7b8a85e2d39499356613ea17138f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 1658
+        width: 451
+        height: 389
+      alignment: 9
+      pivot: {x: 0.4789357, y: 0.4755784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f37f80dfbd4dc4b92143c560bd4a0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 1305
+        width: 393
+        height: 351
+      alignment: 9
+      pivot: {x: 0.4783715, y: 0.49287748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7672d320101c5fd45bc7f8fff535fb61
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1243
+        width: 333
+        height: 360
+      alignment: 9
+      pivot: {x: 0.4984985, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6187ae804a4adfd41b9866e3ca6a7557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 984
+        width: 276
+        height: 319
+      alignment: 9
+      pivot: {x: 0.5253623, y: 0.5141066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f47c552806b604a87d8fc73ec43866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 922
+        width: 276
+        height: 319
+      alignment: 9
+      pivot: {x: 0.51811594, y: 0.507837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea5bbda8d01f4e346b340acb4bcc6284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 976
+        width: 266
+        height: 327
+      alignment: 9
+      pivot: {x: 0.4924812, y: 0.49847096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f13fc82d5ab9947b4206eb15f1f2fc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 663
+        width: 266
+        height: 319
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5047022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229fd8d9694e05140904a76409e22536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 605
+        width: 263
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49809885, y: 0.4952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71754ba2e2ac18645a4ac5353640856b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 659
+        width: 263
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49809885, y: 0.4984127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8492cd4e4b76f9248a7054ffd9c906fd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 346
+        width: 263
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49429658, y: 0.50158733}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa3eab63f5cc2542bc281f61b79e2fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 288
+        width: 263
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49429658, y: 0.4952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3d3cc4114d90d4990d74db7dd9654d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 29
+        width: 263
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49809885, y: 0.4984127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde4c009d65a95f4993b6da1104bffd8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 342
+        width: 263
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49429658, y: 0.4984127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab033b59eee67834cbb051317989e94c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Crew_Teleport_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 25
+        width: 263
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49429658, y: 0.50158733}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f707aa08fb3b01a4aa21ebce79a45464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ef5c649ad3569bb42a6f646295816ecc
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

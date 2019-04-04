@@ -18,6 +18,7 @@ public class SettingsButton : MonoBehaviour
         if(TutorialCards.isTutorialRunning)
         {
             transform.GetComponent<Button>().interactable = true;
+          //  Debug.Log("Master Volume:   " + VolumeHandler.masterVolume);
         }
     }
     public void ControlAction()
@@ -27,11 +28,13 @@ public class SettingsButton : MonoBehaviour
             isClicked = !isClicked;
             if (isClicked)
             {
-                controlDisplay.SetActive(true);
+                controlDisplay.SetActive(true); 
+                transform.GetComponentInChildren<Text>().text = "X";
             }
             else
             {
                 SettingsHandler.currentIndex = 0;
+                transform.GetComponentInChildren<Text>().text = "?";
                 controlDisplay.SetActive(false);
             }
         }        
