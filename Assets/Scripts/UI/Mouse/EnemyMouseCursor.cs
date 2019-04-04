@@ -7,11 +7,11 @@ public class EnemyMouseCursor : MonoBehaviour
     public bool cursorChanged;
     //public Texture2D mouseTarget;
     Stats selectedUnit;
-    CustomCursorTexture customCursor;
+    CursorTexture customCursor;
     // Start is called before the first frame update
     void Start()
     {
-        customCursor = GetComponent<CustomCursorTexture>();
+        customCursor = GetComponent<CursorTexture>();
     }
     // Update is called once per frame
     void Update()

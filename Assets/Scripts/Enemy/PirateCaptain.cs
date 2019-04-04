@@ -10,6 +10,8 @@ public class PirateCaptain : MonoBehaviour
     private void OnDestroy()
     {
         if (isPirateDefeated)
-            SceneTransition.GoFade("MainMenu");
+        {
+            SceneTransition.GoFade("WinSCene");
+        }            
     }
 }

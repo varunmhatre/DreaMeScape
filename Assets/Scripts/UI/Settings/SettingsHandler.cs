@@ -33,7 +33,7 @@ public class SettingsHandler : MonoBehaviour
     public void ChangePanel(bool increase)
     {
         currentIndex = Mathf.Clamp(currentIndex + (increase ? count : -count), min, max);
-        
+
         slidingImage[currentIndex].SetActive(true); 
         if(increase)
         {

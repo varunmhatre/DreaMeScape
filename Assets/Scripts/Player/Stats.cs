@@ -19,17 +19,14 @@ public class Stats : MonoBehaviour
 
     public bool isEncumbered;
     [SerializeField] public bool isEnemy;
-
     
-
     private void Start()
     {
         isEncumbered = false;
     }
 
     public void GainMeter(int amt)
-    {
-        
+    {        
         meterUnitsFilled += amt;
         if (meterUnitsFilled > maxMeter)
         {
