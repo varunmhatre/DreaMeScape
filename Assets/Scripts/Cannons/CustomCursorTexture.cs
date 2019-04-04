@@ -5,6 +5,7 @@ using UnityEngine;
 public class CustomCursorTexture : MonoBehaviour
 {
     [SerializeField] public Texture2D mouseTarget;
+    [SerializeField] public Texture2D mainMouse;
 
     public void EnableCrossBar()
     {
@@ -13,7 +14,7 @@ public class CustomCursorTexture : MonoBehaviour
 
     public void DisableCrossBar()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(mainMouse, Vector2.zero, CursorMode.Auto);
     }
 
     public void ForceMode()

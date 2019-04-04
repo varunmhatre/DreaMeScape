@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseTarget: {fileID: 2800000, guid: 054a315580bd7a44fa891bd38e201180, type: 3}
+  mainMouse: {fileID: 2800000, guid: c3a4086bb7c77b4479362ff7383e9790, type: 3}
 --- !u!114 &6905824317569734921
 MonoBehaviour:
   m_ObjectHideFlags: 0
