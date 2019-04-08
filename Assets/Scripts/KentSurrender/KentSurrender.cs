@@ -38,7 +38,7 @@ public class KentSurrender : MonoBehaviour
         {
             currSpeed = 0.0f;
         }
-        else
+        else if (timer < 9.4f)
         {
             currSpeed = 2.0f;
         }
@@ -64,7 +64,7 @@ public class KentSurrender : MonoBehaviour
         }
         else if (timer > 8.5f && timer <= 8.6f)
         {
-            currDirection = new Vector3(0.0f, 1.0f, 1.0f) * Time.deltaTime;
+            currDirection = new Vector3(0.0f, 1.5f, 1.0f) * Time.deltaTime;
         }
         else if (timer > 9.0f && timer <= 11.0f)
         {
@@ -73,7 +73,8 @@ public class KentSurrender : MonoBehaviour
 
         if (timer >= 9.4f && timer <= 15.0f)
         {
-            currSpeed += 180.0f * Time.deltaTime;
+            currSpeed += 10.0f * Time.deltaTime;
+            Debug.Log(currSpeed);
         }
 
         currDirection.Normalize();
