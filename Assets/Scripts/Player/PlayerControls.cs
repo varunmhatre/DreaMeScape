@@ -47,7 +47,6 @@ public class PlayerControls : MonoBehaviour
                 if (selectedUnit)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
-                    GameObject.Find("GridX" + 1 + "Y" + 3).transform.GetChild(0).GetComponent<FreeSpaceHighlightAnim>().isVisible = true;
                     piecesHighlighted = true;                    
                 }
 

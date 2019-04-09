@@ -11,6 +11,7 @@ public class SettingsMenu : MonoBehaviour
     private int currentResolutionIndex;
     private List<string> options = new List<string>();
     private bool onBoot;
+    public bool isFullscreenMode;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class SettingsMenu : MonoBehaviour
             string option = resolutions[i].width + "x" + resolutions[i].height;
             options.Add(option);
 
-            if ((resolutions[i].width == Screen.currentResolution.width) && (resolutions[i].height == Screen.currentResolution.height)) ;
+            if ((resolutions[i].width == Screen.currentResolution.width) && (resolutions[i].height == Screen.currentResolution.height)) 
             {
                 currentResolutionIndex = i;
             }
@@ -37,6 +38,7 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
 
         onBoot = false;
+        isFullscreenMode = false;
     }
 
     // Update is called once per frame
@@ -45,7 +47,11 @@ public class SettingsMenu : MonoBehaviour
          if(!onBoot)
         {
             resolutionDropdown.value = resolutions.Length - 1;
-            resolutionDropdown.AddOptions(options);
+           // resolutionDropdown.AddOptions(options);
+        }
+         if(!isFullscreenMode)
+        {
+            Screen.fullScreen = true;
         }
     }
 
@@ -59,4 +65,21 @@ public class SettingsMenu : MonoBehaviour
     {
         Screen.fullScreen = isFullscreen;
     }
+    
+    public void EnableFullScreen(int value)
+    {
+        isFullscreenMode = true;
+        //Screen.SetResolution(val);
+        QualitySettings.SetQualityLevel(value);
+        if(value == 0)
+        {
+            Screen.fullScreen = true;
+        }
+        if(value == 1)
+        {
+            Screen.fullScreen = false;
+        }
+    }
+
+
 }

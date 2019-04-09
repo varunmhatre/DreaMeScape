@@ -57,6 +57,8 @@ public class SelectCharacterHUD : MonoBehaviour
         }
         for (index = 0; index < CharacterManager.allAlliedCharacters.Count; index++)
         {
+            if (!CharacterManager.allAlliedCharacters[index])
+                continue;
             if (characters[index] == currentSelectedButton.name)
             {
                 clickID = index; 

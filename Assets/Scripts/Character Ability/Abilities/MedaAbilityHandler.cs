@@ -78,7 +78,9 @@ public class MedaAbilityHandler : MonoBehaviour
 
     public void OnMouseHoveringStart()
     {
-        UnitCoordinates gamePiece = CharacterManager.allAlliedCharacters[4].GetComponent<UnitCoordinates>();
+        if (!CharacterManager.allAlliedCharacters[3])
+            return;
+        UnitCoordinates gamePiece = CharacterManager.allAlliedCharacters[3].GetComponent<UnitCoordinates>();
         gridsToHighlight.Clear();
         charactersToHighlight.Clear();
         foreach (var grid in GridMatrix.gameGrid)

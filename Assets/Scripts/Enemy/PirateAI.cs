@@ -159,10 +159,15 @@ public class PirateAI : MonoBehaviour
 
     bool IsPlayerNextToYou(GridCoordinates currentUnitLocaton)
     {
+        UnitCoordinates enemyGrid;
         foreach (var item in CharacterManager.allAlliedCharacters)
         {
-            if ((Mathf.Abs(currentUnitLocaton.x - item.GetComponent<UnitCoordinates>().x) + 
-                Mathf.Abs(currentUnitLocaton.y - item.GetComponent<UnitCoordinates>().y) == 1))
+            if (!item)
+                continue;
+
+            enemyGrid = item.GetComponent<UnitCoordinates>();
+            if ((currentUnitLocaton.x < (enemyGrid.x + 2) && currentUnitLocaton.x > (enemyGrid.x - 2)) &&
+                 (currentUnitLocaton.y < (enemyGrid.y + 2) && currentUnitLocaton.y > (enemyGrid.y - 2)))
             {
                 alliedCharacter = item;
                 return true;
@@ -213,17 +218,21 @@ public class PirateAI : MonoBehaviour
 
         UnitCoordinates piratePosition = CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>();
         UnitCoordinates playerPosition = null;
+        int selectedPlayer = 0;
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                continue;
             playerPosition = CharacterManager.allAlliedCharacters[i].GetComponent<UnitCoordinates>();
             int distance = Mathf.Abs(playerPosition.x - piratePosition.x) + Mathf.Abs(playerPosition.y - piratePosition.y);
 
             if (distance < shortestDistance)
             {
+                selectedPlayer = i;
                 shortestDistance = distance;
             }
         }
-        return playerPosition;
+        return CharacterManager.allAlliedCharacters[selectedPlayer].GetComponent<UnitCoordinates>();
     }
 
     UnitCoordinates LocateTargetLocation()

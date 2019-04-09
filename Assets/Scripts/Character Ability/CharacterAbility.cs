@@ -50,6 +50,10 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Update is called once per frame
     void Update()
     {
+        if (buttonId >= CharacterManager.allAlliedCharacters.Count || !CharacterManager.allAlliedCharacters[buttonId])
+        {
+            return;
+        }
         if (CheckIfMeterFull(buttonId, CharacterManager.allAlliedCharacters[buttonId].GetComponent<Stats>()))
         {            
             isInteractable = true;
@@ -66,13 +70,15 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void ActivateAbility()
     {
+        if (!CharacterManager.allAlliedCharacters[buttonId])
+            return;
         Stats charStats = CharacterManager.allAlliedCharacters[buttonId].GetComponent<Stats>();
-        if (buttonId == 4 && GameManager.currentEnergy >= 1)
+        if (buttonId == 3 && GameManager.currentEnergy >= 1)
         {
             transform.GetComponent<Image>().color = new Color(255.0f, 165.0f, 0.0f);
             TryFireball(charStats.gameObject);
         }        
-        else if (buttonId == 3 && GameManager.currentEnergy >= 1)
+        else if (buttonId == 4 && GameManager.currentEnergy >= 1)
         {
             transform.GetComponent<Image>().color = Color.blue;
             ActivateCleave(charStats.gameObject);
@@ -139,6 +145,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 Debug.Log("Ability set to sprint");
                 if (Input.GetMouseButtonDown(0) && !justClickedButton)
                 {
+
                     Debug.Log("Preparing to sprint");
                     RaycastHit hitPiece = RaycastManager.GetRaycastHitForTag("GridPiece");
                     if (hitPiece.transform != null)
@@ -165,6 +172,9 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         GetComponent<HallyAbilityHandler>().OnMouseClickWhenOn();
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                continue;
+
             GameObject ally = CharacterManager.allAlliedCharacters[i];
             if (AdjacencyHandler.CompareAdjacency(character, ally, 2))
             {
@@ -329,7 +339,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 }
                 GetComponent<JadeAbilityHandler>().OnMouseHoveringStart();
             }
-            else if (buttonId == 3)
+            else if (buttonId == 4)
             {
                 if (tooltipObj != null)
                 {
@@ -337,7 +347,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 }
                 GetComponent<KentAbilityHandler>().OnMouseHoveringStart();
             }
-            else if (buttonId == 4)
+            else if (buttonId == 3)
             {
                 if (tooltipObj != null)
                 {
@@ -364,11 +374,11 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             {
                 GetComponent<JadeAbilityHandler>().OnMouseHoveringExit();
             }
-            else if (buttonId == 3)
+            else if (buttonId == 4)
             {
                 GetComponent<KentAbilityHandler>().OnMouseHoveringExit();
             }
-            else if (buttonId == 4)
+            else if (buttonId == 3)
             {
                 GetComponent<MedaAbilityHandler>().OnMouseHoveringExit();
             }
@@ -387,5 +397,5 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             currButtonId = buttonId;
             ActivateAbility();
         }
-    }
+    } 
 }
