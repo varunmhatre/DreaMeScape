@@ -21,6 +21,7 @@ TagManager:
   - Control
   - Generator
   - Music
+  - DamageEffect
   layers:
   - Default
   - TransparentFX

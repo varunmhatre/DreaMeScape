@@ -20,14 +20,14 @@ public class CanvasCursorHandler : MonoBehaviour,IPointerEnterHandler, IPointerE
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (TutorialCards.isTutorialRunning)
+        if (TutorialCards.isTutorialRunning && customCursor)
         {
             customCursor.EnableCrossBar();
         }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (TutorialCards.isTutorialRunning)
+        if (TutorialCards.isTutorialRunning && customCursor)
         {
             customCursor.DisableCrossBar();
         }
