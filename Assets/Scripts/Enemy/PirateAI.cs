@@ -30,6 +30,7 @@ public class PirateAI : MonoBehaviour
 
     CameraFocus cameraMain;
     int selectedPirate;
+    Vector3 initialPiratePosition;
 
     private void Start()
     {
@@ -80,6 +81,8 @@ public class PirateAI : MonoBehaviour
         timer += Time.deltaTime;
         if (timer < timeToWaitForEachMove)
         {
+            CharacterManager.allEnemyCharacters[selectedPirate].transform.position =
+                Vector3.Lerp(initialPiratePosition, pirateTurns[0].transform.position, timer / timeToWaitForEachMove);
             return;
         }
 
@@ -91,6 +94,7 @@ public class PirateAI : MonoBehaviour
             currentUnitLocaton.transform.GetComponent<GridPiece>().unit = CharacterManager.allEnemyCharacters[selectedPirate];
             CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>().SetUnitCoordinates(currentUnitLocaton.x, currentUnitLocaton.y);
             CharacterManager.allEnemyCharacters[selectedPirate].transform.position = pirateTurns[0].transform.position;
+            initialPiratePosition = pirateTurns[0].transform.position;
             pirateTurns.RemoveAt(0);
         }
         //Ocupied spot. End turn now
@@ -113,8 +117,17 @@ public class PirateAI : MonoBehaviour
         endScriptRunning = false;
     }
 
+    void DetermineStrategy()
+    {
+
+    }
+
     void GetPirateAttackMoves()
     {
+        if (selectedPirate == 0 || strategy == Strategy.patrol)
+        {
+            DetermineStrategy();
+        }
         if (selectedPirate == CharacterManager.allEnemyCharacters.Count)
         {
             if (!endScriptRunning)
@@ -149,11 +162,22 @@ public class PirateAI : MonoBehaviour
             return;
         }
 
-        UnitCoordinates targetDestination = FindClosestPlayer();
+        if (strategy == Strategy.patrol && CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<PirateCaptain>())
+        {
+            selectedPirate++;
+            return;
+        }
+
+        //UnitCoordinates targetDestination = FindClosestPlayer();
 
         //Astar to targerDestination
-        PopulateTheDestination(targetDestination);
+        //PopulateTheDestination(targetDestination);
+        // UnitCoordinates targetDestination = GetTarget();
+        UnitCoordinates pirateCoordinate = CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>();
+        currentUnitLocaton = PathFinding.GetGridFromUnitCoordinate(pirateCoordinate);
 
+        CalculateDestination();
+        initialPiratePosition = CharacterManager.allEnemyCharacters[selectedPirate].transform.position;
         piratesInProgress = true;
     }
 
@@ -179,9 +203,7 @@ public class PirateAI : MonoBehaviour
     void PopulateTheDestination(UnitCoordinates closestPlayer)
     {
         int numberOfTurns = CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<Pirate>().GetNumberOfTurns();
-        UnitCoordinates pirateCoordinate = CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>();
-
-        currentUnitLocaton = PathFinding.GetGridFromUnitCoordinate(pirateCoordinate);
+        
         GridCoordinates targetUnitLocation = PathFinding.GetGridFromUnitCoordinate(closestPlayer);
 
         List<GridCoordinates> wholePath = PathFinding.AStar(currentUnitLocaton, targetUnitLocation);
@@ -190,26 +212,43 @@ public class PirateAI : MonoBehaviour
         pirateTurns = wholePath.GetRange(0, numberOfTurns);
     }
 
-    UnitCoordinates GetTarget()
+    void CalculateDestination()
     {
-        UnitCoordinates mainTarget = null;
         switch (strategy)
         {
             case Strategy.patrol:
+                PirateMovementPoints piratePatrol = CharacterManager.allEnemyCharacters[selectedPirate].transform.GetComponent<PirateMovementPoints>();
+                if (piratePatrol.isMovingPositive)
+                {
+                    Point destination = new Point(currentUnitLocaton.x, currentUnitLocaton.y + 1);
+                    GridCoordinates gridToMoveTo = PathFinding.GetGridFromPoint(destination);
+                    pirateTurns.Add(gridToMoveTo);
+                    if (destination.y == piratePatrol.endPosition.y)
+                    {
+                        piratePatrol.isMovingPositive = false;
+                    }
+                }
+                else
+                {
+                    Point destination = new Point(currentUnitLocaton.x, currentUnitLocaton.y - 1);
+                    GridCoordinates gridToMoveTo = PathFinding.GetGridFromPoint(destination);
+                    pirateTurns.Add(gridToMoveTo);
+                    if (destination.y == piratePatrol.endPosition.y)
+                    {
+                        piratePatrol.isMovingPositive = false;
+                    }
+                }
+
                 break;
             case Strategy.groupUp:
                 break;
             case Strategy.attackClosest:
-                mainTarget = FindClosestPlayer();
                 break;
             case Strategy.protectCaptain:
                 break;
             default:
                 break;
         }
-        
-
-        return mainTarget;
     }
 
     UnitCoordinates FindClosestPlayer()

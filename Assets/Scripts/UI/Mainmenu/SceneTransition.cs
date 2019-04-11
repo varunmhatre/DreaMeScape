@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void ChangeScene(string scene)
     {
+        SceneManager.LoadScene("LoadingScene");
         StartCoroutine(LoadYourAsyncScene(scene));
     }
 
