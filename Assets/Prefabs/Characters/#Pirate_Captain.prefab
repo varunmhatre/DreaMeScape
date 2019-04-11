@@ -136,6 +136,7 @@ MonoBehaviour:
   presence: 4
   unchargedDamage: 3
   maxHealth: 0
+  dmgEff: {fileID: 0}
   statsVisible: 0
   hasAttacked: 0
   meterUnitsFilled: 0
@@ -186,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13eb9fb461404a9478661879acfd1b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noOfTurns: 3
+  noOfTurns: 2
   isStunned: 0
 --- !u!114 &826128777379898271
 MonoBehaviour:
@@ -254,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseTarget: {fileID: 2800000, guid: 98bad250e8887ac4688bbd00e4bbb89d, type: 3}
+  mainMouse: {fileID: 0}
 --- !u!1 &1798306027273804
 GameObject:
   m_ObjectHideFlags: 0

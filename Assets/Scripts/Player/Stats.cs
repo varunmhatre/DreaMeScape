@@ -9,6 +9,8 @@ public class Stats : MonoBehaviour
     [SerializeField] public int presence;
     [SerializeField] public int unchargedDamage;
     [SerializeField] public int maxHealth;
+
+    public DamageEffects dmgEff;
     public bool statsVisible;
     public bool hasAttacked;
     private bool charging;
@@ -23,6 +25,10 @@ public class Stats : MonoBehaviour
     private void Start()
     {
         isEncumbered = false;
+        if (GameObject.FindGameObjectWithTag("DamageEffect") != null)
+        {
+            dmgEff = GameObject.FindGameObjectWithTag("DamageEffect").GetComponent<DamageEffects>();
+        }
     }
 
     public void GainMeter(int amt)
@@ -93,6 +99,11 @@ public class Stats : MonoBehaviour
         if (health < 0)
         {
             health = 0;
+        }
+
+        if (dmgEff)
+        {
+            dmgEff.SendToLocation(dmgEff.currIndex, gameObject, amt);
         }
     }
 

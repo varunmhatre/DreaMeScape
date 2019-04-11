@@ -27,13 +27,16 @@ public class EnemyMouseCursor : MonoBehaviour
             selectedUnit = PlayerControls.selectedUnit.GetComponent<Stats>();
             cursorChanged = true;
             //Cursor.SetCursor(mouseTarget, Vector2.zero, CursorMode.ForceSoftware);
-            customCursor.ForceMode();
+            if (customCursor)
+            {
+                customCursor.ForceMode();
+            }
         }
     }
     
     private void OnMouseExit()
     {
-        if (cursorChanged)
+        if (cursorChanged && customCursor)
         {
             cursorChanged = false;
             //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
@@ -43,7 +46,7 @@ public class EnemyMouseCursor : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (cursorChanged && selectedUnit.hasAttacked)
+        if (cursorChanged && selectedUnit && selectedUnit.hasAttacked && customCursor)
         {
             cursorChanged = false;
             //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
@@ -53,7 +56,7 @@ public class EnemyMouseCursor : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (cursorChanged)
+        if (cursorChanged && customCursor)
         {
             cursorChanged = false;
             //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
