@@ -344,6 +344,7 @@ MonoBehaviour:
   parallaxMultiplier: 0
   buttonText: 
   backgroundObj: {fileID: 149224836}
+  levelText: {fileID: 0}
 --- !u!95 &39044356
 Animator:
   serializedVersion: 3
@@ -1043,7 +1044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00024414062, y: 0.00024414062}
+  m_AnchoredPosition: {x: 0.00048828125, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111178928
@@ -2316,6 +2317,7 @@ MonoBehaviour:
   parallaxMultiplier: 0
   buttonText: 
   backgroundObj: {fileID: 149224836}
+  levelText: {fileID: 0}
 --- !u!95 &296833851
 Animator:
   serializedVersion: 3
@@ -3739,6 +3741,7 @@ MonoBehaviour:
   parallaxMultiplier: 0
   buttonText: 
   backgroundObj: {fileID: 149224836}
+  levelText: {fileID: 0}
 --- !u!95 &448544580
 Animator:
   serializedVersion: 3
@@ -7662,7 +7665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 205, y: -188}
+  m_AnchoredPosition: {x: 205, y: -245}
   m_SizeDelta: {x: 236.3, y: 41.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035264378
@@ -8336,6 +8339,7 @@ MonoBehaviour:
   parallaxMultiplier: 0
   buttonText: 
   backgroundObj: {fileID: 149224836}
+  levelText: {fileID: 1333499890}
 --- !u!95 &1225450282
 Animator:
   serializedVersion: 3
@@ -9583,7 +9587,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333499890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0000000013963}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1225450280}
@@ -9591,8 +9595,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000015258789, y: -234.9}
+  m_SizeDelta: {x: 370, y: -256.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333499892
 MonoBehaviour:
@@ -9607,7 +9611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9616,11 +9620,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 580f080b6b3981244bf05fc898561fd9, type: 3}
-    m_FontSize: 60
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 6
-    m_MaxSize: 60
+    m_MinSize: 1
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -14150,6 +14154,7 @@ MonoBehaviour:
   parallaxMultiplier: 0
   buttonText: 
   backgroundObj: {fileID: 149224836}
+  levelText: {fileID: 0}
 --- !u!95 &1933730293
 Animator:
   serializedVersion: 3
@@ -14210,14 +14215,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1517998801}
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: TurnOff
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 402462662}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1517998801}
+        m_MethodName: TurnOn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 993741665}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -15598,6 +15614,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5698651494785228085, guid: 8ac515619f5893747818b400bcfebc6b,
         type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 223
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698651494785228085, guid: 8ac515619f5893747818b400bcfebc6b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -139.00005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698651494785228085, guid: 8ac515619f5893747818b400bcfebc6b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 496.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698651494785228085, guid: 8ac515619f5893747818b400bcfebc6b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698651494785228085, guid: 8ac515619f5893747818b400bcfebc6b,
+        type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.5
       objectReference: {fileID: 0}
@@ -15626,15 +15662,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5698651494785228085, guid: 8ac515619f5893747818b400bcfebc6b,
+    - target: {fileID: 5698651494785228082, guid: 8ac515619f5893747818b400bcfebc6b,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 223
-      objectReference: {fileID: 0}
-    - target: {fileID: 5698651494785228085, guid: 8ac515619f5893747818b400bcfebc6b,
+      propertyPath: audioSrc.Array.data[0]
+      value: 
+      objectReference: {fileID: 405272595}
+    - target: {fileID: 5698651494785228082, guid: 8ac515619f5893747818b400bcfebc6b,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -139.00005
-      objectReference: {fileID: 0}
+      propertyPath: audioSrc.Array.data[1]
+      value: 
+      objectReference: {fileID: 1258840390}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac515619f5893747818b400bcfebc6b, type: 3}

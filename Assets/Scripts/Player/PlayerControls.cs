@@ -184,7 +184,6 @@ public class PlayerControls : MonoBehaviour
                 Stats enemyStats = hitEnemy.transform.gameObject.GetComponent<Stats>();
                 enemyStats.TakeDamage(prevSelectedUnit.gameObject.GetComponent<Stats>().damage);
                 enemyStats.CheckDeath();
-                Debug.Log("Enemy taking damage!");
                 prevSelectedUnit.GetComponent<Stats>().hasAttacked = true;
                 prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }

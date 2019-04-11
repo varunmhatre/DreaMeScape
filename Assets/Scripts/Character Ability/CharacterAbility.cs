@@ -118,7 +118,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "fireball")
             {
-               // Debug.Log("Ability set to fireball");
                 if (Input.GetMouseButtonDown(0) && !justClickedButton)
                 {
                     RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
@@ -140,15 +139,11 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "sprint")
             {
-                Debug.Log("Ability set to sprint");
                 if (Input.GetMouseButtonDown(0) && !justClickedButton)
                 {
-
-                    Debug.Log("Preparing to sprint");
                     RaycastHit hitPiece = RaycastManager.GetRaycastHitForTag("GridPiece");
                     if (hitPiece.transform != null)
                     {
-                        Debug.Log("Moving to a space.");
                         if (AdjacencyHandler.CompareAdjacency(CharacterManager.allAlliedCharacters[buttonId], hitPiece.transform.gameObject, 2))
                         {
                             ActivateSprint(CharacterManager.allAlliedCharacters[buttonId], hitPiece.transform.gameObject);
@@ -237,8 +232,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         GridCoordinates gridCoord = space.GetComponent<GridCoordinates>();
         int spaceX = gridCoord.x;
         int spaceY = gridCoord.y;
-
-        Debug.Log("You are sprinting!");
+        
         if (!GameObject.Find("GridX" + thisCharacterX + "Y" + thisCharacterY))
             return;
 
@@ -283,21 +277,14 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         if (hasTarget)
         {
             GetComponent<MedaAbilityHandler>().OnMouseClickWhenOn();
-            Debug.Log("Selection mode set to enemy!");
             inSelectionMode = true;
-            //currSelectionType = selectionType.enemy;
             currAbilityName = "fireball";
             RaycastManager.EmptyRaycastTargets();
-        }
-        else
-        {
-            Debug.Log("There is no legal target!");
         }
     }
 
     public void TrySprint(GameObject character)
     {
-        Debug.Log("Selection mode set to emptySpace!");
         inSelectionMode = true;
         //currSelectionType = selectionType.emptySpace;
         currAbilityName = "sprint";
@@ -307,7 +294,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (isInteractable)
+        if (TutorialCards.isTutorialRunning)
         {
             transform.GetComponent<Image>().color = Color.blue;
             if (buttonId == 0)
@@ -354,7 +341,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (isInteractable)
+        if (TutorialCards.isTutorialRunning)
         {
             transform.GetComponent<Image>().color = Color.white;
             if (buttonId == 0)

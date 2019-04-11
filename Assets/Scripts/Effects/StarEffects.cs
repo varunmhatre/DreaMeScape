@@ -74,8 +74,6 @@ public class StarEffects : MonoBehaviour
             {
                 allStars[starNum].accelerationY += amt;
             }
-
-            Debug.Log("Too fast!");
         }
         //otherwise change randomly
         else
@@ -100,10 +98,6 @@ public class StarEffects : MonoBehaviour
             {
                 allStars[starNum].accelerationY -= 0.5f * amt;
             }
-            Debug.Log("Randomly changing!");
-
-            Debug.Log(allStars[starNum].accelerationX);
-            Debug.Log(allStars[starNum].accelerationY);
         }
     }
 
@@ -113,7 +107,6 @@ public class StarEffects : MonoBehaviour
         {
             allStars[starNum].speedX += allStars[starNum].accelerationX;
             allStars[starNum].speedY += allStars[starNum].accelerationY;
-            Debug.Log("Increasing!");
         }
         else
         {
@@ -138,11 +131,6 @@ public class StarEffects : MonoBehaviour
 
         allStars[starNum].posX += allStars[starNum].speedX;
         allStars[starNum].posY += allStars[starNum].speedY;
-
-        //Debug.Log(star.speedX);
-        //Debug.Log(star.speedY);
-        //Debug.Log(star.posX);
-        //Debug.Log(star.posY);
 
         allStars[starNum].starObj.transform.position = new Vector3(allStars[starNum].posX, allStars[starNum].posY, allStars[starNum].starObj.transform.position.z);
     }

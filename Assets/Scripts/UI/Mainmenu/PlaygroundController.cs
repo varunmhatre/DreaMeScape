@@ -30,6 +30,7 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     private float flipSpeed = 0.0f;
 
     [SerializeField] public GameObject backgroundObj;
+    [SerializeField] private GameObject levelText;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,7 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData eventData)
     { 
         transform.GetComponent<Image>().sprite = onSprite;
+        levelText.transform.GetComponent<Text>().text = "Pirateship";
         Vector3 newPosition = transform.position;
         transform.position = newPosition;
         SetBackgroundToId(backgroundObj, backgroundMoveId);
@@ -71,6 +73,7 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerExit(PointerEventData eventData)
     {
         transform.GetComponent<Image>().sprite = offSprite;
+        levelText.transform.GetComponent<Text>().text = "";
         Vector3 newPosition = transform.position;
         transform.position = newPosition;
         //SetBackgroundToDefault(backgroundObj);

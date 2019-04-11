@@ -74,7 +74,6 @@ public class KentSurrender : MonoBehaviour
         if (timer >= 9.4f && timer <= 15.0f)
         {
             currSpeed += 10.0f * Time.deltaTime;
-            Debug.Log(currSpeed);
         }
 
         currDirection.Normalize();

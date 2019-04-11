@@ -12,46 +12,47 @@ public class VolumeHandler : MonoBehaviour
 
     [SerializeField] private int max;
     [SerializeField] private int min;
+
+   // [SerializeField] private GameObject volumeObj;
+
     public int currentIndex;
 
     private float volumeControl;
     private float maxVolume;
     private float minVolume;
     private int count;
-
     private int indexCount;
+    [SerializeField] private AudioSource[] audioSrc;
+    private float musicVolume = 1f;
 
-    public static float masterVolume;
-    private bool onLoad;
     // Start is called before the first frame update
     void Start()
     {
-        max = 5;
+        max = 4;
         min = 0;
         currentIndex = 0;
         maxVolume = 1;
         minVolume = 0;
         count = 1;
-        indexCount = 5;
-        onLoad = false;
-        //if(!onLoad)
-        //{
-        //    indexCount = 5;
-        //}
+        indexCount = 4;
+        volumeControl = 1;
     }
     void Update()
     {
-        //SetVolume(indexCount);
-        //masterVolume = indexCount;
-        //AudioListener.volume = masterVolume;
+        if (audioSrc != null)
+        {
+            for (int i = 0; i < audioSrc.Length; i++)
+            {
+                audioSrc[i].volume = volumeControl;
+            }
+        }
     }
     public void ChangeVolume(bool isPressed)
     {
         currentIndex = Mathf.Clamp(currentIndex + (isPressed ? count : -count), min, max);
-        onLoad = true;
+        
         if(isPressed)
         {
-            //Debug.Log("Increase the volume");
             volumeControl += 0.2f;
             
             if (volumeControl >= maxVolume)
@@ -67,13 +68,10 @@ public class VolumeHandler : MonoBehaviour
             {
                 indexCount++;
                 fillVolume[indexCount - 1].GetComponent<Image>().sprite = sprites[0];
-
-            }
-            
+            }            
         }
         if(!isPressed)
         {
-            //Debug.Log("Decrease the volume");
             volumeControl -= 0.2f;
           
             if (volumeControl <= minVolume)
@@ -88,27 +86,18 @@ public class VolumeHandler : MonoBehaviour
             else
             {
                 indexCount--;
-
                 fillVolume[indexCount + 1].GetComponent<Image>().sprite = sprites[1];
-            }
-            
-        }
-        //Debug.Log("indexCount:    " + indexCount);
-
-        AudioListener.volume = indexCount;
-        masterVolume = indexCount;
-
-
-        float setVolume = PlayerPrefs.GetFloat("setVolume", indexCount);
+            }            
+        }       
     }
 
-    //public void SetVolume(int val)
-    //{
-    //    indexCount = val;
-    //}
-    
-    //public int GetVolume()
-    //{
-    //    return indexCount;
-    //}
+    public void SetVolume(int val)
+    {
+        indexCount = val;
+    }
+
+    public void SetVolume(float vol)
+    {
+        musicVolume = vol;
+    }
 }

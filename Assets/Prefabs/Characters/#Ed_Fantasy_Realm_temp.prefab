@@ -682,6 +682,7 @@ MonoBehaviour:
   presence: 0
   unchargedDamage: 2
   maxHealth: 8
+  dmgEff: {fileID: 0}
   statsVisible: 0
   hasAttacked: 0
   meterUnitsFilled: 0

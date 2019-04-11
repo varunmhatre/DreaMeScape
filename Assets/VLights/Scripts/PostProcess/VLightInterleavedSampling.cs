@@ -183,7 +183,6 @@ public class VLightInterleavedSampling : MonoBehaviour
             if (!SystemInfo.SupportsRenderTextureFormat(frameBufferFormat))
             {
                 frameBufferFormat = RenderTextureFormat.ARGB32;
-                Debug.LogWarning("Platform does not support floating point textures");
             }
         }
 #endif
@@ -374,13 +373,11 @@ public class VLightInterleavedSampling : MonoBehaviour
     {
         if (LayerMask.NameToLayer(VLightManager.VOLUMETRIC_LIGHT_LAYER_NAME) == -1)
         {
-            Debug.LogWarning(VLightManager.VOLUMETRIC_LIGHT_LAYER_NAME + " layer does not exist! Cannot use interleaved sampling please add this layer.");
-            return;
+             return;
         }
 
         if (!SystemInfo.supportsImageEffects)
         {
-            Debug.LogWarning("Cannot use interleaved sampling. Image effects not supported");
             return;
         }
 
