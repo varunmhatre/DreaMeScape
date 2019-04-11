@@ -22,6 +22,7 @@ TagManager:
   - Generator
   - Music
   - DamageEffect
+  - Comic
   layers:
   - Default
   - TransparentFX
