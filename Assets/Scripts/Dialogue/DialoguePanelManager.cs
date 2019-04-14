@@ -70,7 +70,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 dialoguePanel.SetActive(false);
                 playerControlsUnlocked = true;
                 isCharacterPanelDisabled = true;
-                countDialogueLength =  currentEvent.dialogues.Count;                
+                countDialogueLength =  currentEvent.dialogues.Count;
             }
         }       
         else if (countDialogueLength < currentEvent.dialogues.Count)

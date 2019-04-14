@@ -15,8 +15,8 @@ public class AtlasManager : MonoBehaviour, DialogueStateManager
 
     public void BootSequence()
     {
-        sprites = Resources.LoadAll<Sprite>("CharacterPortrait");
-        dialogueSprites = Resources.LoadAll<Sprite>("DialogueTextBox");
+        sprites = Resources.LoadAll<Sprite>("CharPortrait");
+        dialogueSprites = Resources.LoadAll<Sprite>("Textbox");
         nameSprites = Resources.LoadAll<Sprite>("Namebox");
         currentState = ManagerState.completed;         
     }

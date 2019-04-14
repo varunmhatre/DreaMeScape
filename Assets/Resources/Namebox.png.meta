@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: a91f4577ff716a64a997c11958c572e0
+guid: 9fb4657c5538f174392c4de95325464d
 TextureImporter:
   fileIDToRecycleName:
     21300000: Ed
     21300002: Hally
-    21300004: Jade
-    21300006: Kent
-    21300008: Meda
+    21300004: Henry
+    21300006: Jade
+    21300008: Kent
+    21300010: Meda
+    21300012: Pirate
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -41,7 +43,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -74,6 +76,39 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -81,18 +116,18 @@ TextureImporter:
       name: Ed
       rect:
         serializedVersion: 2
-        x: 1
-        y: 29
-        width: 688
-        height: 226
+        x: 0
+        y: 1368
+        width: 691
+        height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a28c86c3d0cf0d647bd890c670aaa888
+      spriteID: cf8daf92acc8efe4e9b02ec10d0e06d8
       vertices: []
       indices: 
       edges: []
@@ -101,18 +136,38 @@ TextureImporter:
       name: Hally
       rect:
         serializedVersion: 2
-        x: 691
-        y: 29
-        width: 688
-        height: 226
+        x: 0
+        y: 1140
+        width: 691
+        height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f104cc96ac45ecd4dba43236f46dd237
+      spriteID: 37ee7cac12861c745b871546d44ea371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Henry
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 912
+        width: 691
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b636f427ddcf6d4f87934e6b6bbd572
       vertices: []
       indices: 
       edges: []
@@ -121,18 +176,18 @@ TextureImporter:
       name: Jade
       rect:
         serializedVersion: 2
-        x: 1381
-        y: 29
-        width: 688
-        height: 226
+        x: 0
+        y: 684
+        width: 691
+        height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c353226ece7990a4382cb4c08ac63ec3
+      spriteID: 8171a1c336a4fea4381b3b83e8319293
       vertices: []
       indices: 
       edges: []
@@ -141,18 +196,18 @@ TextureImporter:
       name: Kent
       rect:
         serializedVersion: 2
-        x: 2071
-        y: 29
-        width: 688
-        height: 226
+        x: 0
+        y: 456
+        width: 691
+        height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8f747bd4b5dd8ea4bb4825b7ab8d22a8
+      spriteID: 85c8105daf8a8444d85bc96ab5770b52
       vertices: []
       indices: 
       edges: []
@@ -161,18 +216,38 @@ TextureImporter:
       name: Meda
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 29
-        width: 688
-        height: 226
+        x: 0
+        y: 228
+        width: 691
+        height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2073db15070dee94e8aa5d731d2c5c9c
+      spriteID: 5e79892e97c93dd4f9ffc2700d07fcf2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 691
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b198dde587f34494f884e01b57e5064e
       vertices: []
       indices: 
       edges: []
@@ -180,7 +255,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7a7139bba98e10842858265917b7074d
+    spriteID: 82af995daf2d4ce409b4d5a94ee0401f
     vertices: []
     indices: 
     edges: []

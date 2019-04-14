@@ -18,5 +18,5 @@ public struct Dialogue
 }
 public enum CharacterType
 {
-    Ed, Hally, Kent, Jade, Meda
+    Ed, Hally, Kent, Jade, Meda, Henry, Pirate
 }
