@@ -62,15 +62,10 @@ public class MedaAbilityHandler : MonoBehaviour
             isClickedOn = false;
             startCheckingForEnemy = false;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            RaycastHit hit = RaycastManager.GetRaycastHitForTag("Enemy");
+            if (hit.transform)
             {
-                if (hit.transform.tag == "Enemy")
-                {
-                    AttackWithFireball(hit.transform.position);
-                }
+                AttackWithFireball(hit.transform.position);
             }
             RevertToNormal();
         }
