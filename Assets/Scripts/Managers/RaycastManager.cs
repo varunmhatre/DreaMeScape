@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RaycastManager : MonoBehaviour
 {
-
     private static RaycastHit[] hitTargets;
+    public static bool leftClicked;
+    public static bool rightClicked;
 
     // Start is called before the first frame update
     void Start()
@@ -14,18 +15,20 @@ public class RaycastManager : MonoBehaviour
 
     // FixedUpdate so that it occurs before Updates that require Raycast to be completed
     void Update()
-    {        
-        //Update hit when you click the primary mouse button
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-        {
-          Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-          hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
-        }
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
+
+        leftClicked = false;
+        rightClicked = false;
 
         if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<PlayerControls>().MouseClickToggle();
-            GameObject.Find("CannonHandler").GetComponent<CannonSystem>().MouseClickToggleCannon();
+            leftClicked = true;
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            rightClicked = true;
         }
     }
 

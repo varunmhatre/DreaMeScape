@@ -10,7 +10,6 @@ public class PlayerControls : MonoBehaviour
     public static Transform prevSelectedUnit;
     private bool piecesHighlighted;
     private int[] playerLoc;
-    private bool mouseClick;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (DialoguePanelManager.playerControlsUnlocked && TutorialCards.isTutorialRunning)
         {
-            if (mouseClick && GameManager.isPlayerTurn && GameManager.HaveEnergy())
+            if (RaycastManager.leftClicked && GameManager.isPlayerTurn && GameManager.HaveEnergy())
             {
                 MoveOnClickedGridPiece();
 
@@ -49,19 +48,13 @@ public class PlayerControls : MonoBehaviour
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
                     piecesHighlighted = true;                    
                 }
-
-                MouseClickToggle();
             }
 
-            if (Input.GetMouseButtonDown(1))
+            if (RaycastManager.rightClicked)
             {
                 ToggleStatVisibility();
             }
         }
-    }
-    public void MouseClickToggle()
-    {
-        mouseClick = !mouseClick;
     }
 
     public string GetSelectedUnitName()

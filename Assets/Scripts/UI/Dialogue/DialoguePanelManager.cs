@@ -44,7 +44,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     }
     void Update()
     { 
-        if (Input.GetMouseButtonDown(0) && isPressed == true)
+        if (RaycastManager.leftClicked && isPressed == true)
         { 
             isPressed = false; 
             if(DialoguePanelConfig.isDialogueTextOver)

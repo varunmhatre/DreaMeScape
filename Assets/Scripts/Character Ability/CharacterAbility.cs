@@ -26,7 +26,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private bool isInteractable;
     private string currAbilityName;
     public static bool inSelectionMode;
-    private bool justClickedButton;
 
     public enum selectionType
     {
@@ -65,7 +64,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             CheckSelection(currSelectionType, currAbilityName);
         }
-        justClickedButton = false;
     }
 
     public void ActivateAbility()
@@ -118,7 +116,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "fireball")
             {
-                if (Input.GetMouseButtonDown(0) && !justClickedButton)
+                if (RaycastManager.leftClicked)
                 {
                     RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
                     if (hitEnemy.transform != null)
@@ -139,7 +137,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "sprint")
             {
-                if (Input.GetMouseButtonDown(0) && !justClickedButton)
+                if (RaycastManager.leftClicked)
                 {
                     RaycastHit hitPiece = RaycastManager.GetRaycastHitForTag("GridPiece");
                     if (hitPiece.transform != null)
@@ -375,7 +373,6 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (isInteractable)
         {
-            justClickedButton = true;
             currButtonId = buttonId;
             ActivateAbility();
         }

@@ -57,7 +57,7 @@ public class MedaAbilityHandler : MonoBehaviour
             }
         }
 
-        if (startCheckingForEnemy && Input.GetMouseButtonDown(0))
+        if (startCheckingForEnemy && RaycastManager.leftClicked)
         {
             isClickedOn = false;
             startCheckingForEnemy = false;
