@@ -65,6 +65,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             CheckSelection(currSelectionType, currAbilityName);
         }
+        justClickedButton = false;
     }
 
     public void ActivateAbility()
@@ -374,7 +375,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (isInteractable)
         {
-            justClicked = true;
+            justClickedButton = true;
             currButtonId = buttonId;
             ActivateAbility();
         }
