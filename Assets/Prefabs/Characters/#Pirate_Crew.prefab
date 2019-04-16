@@ -20,7 +20,8 @@ GameObject:
   - component: {fileID: 4026854876000802218}
   - component: {fileID: 5694607804949749323}
   - component: {fileID: 6608301537277391350}
-  - component: {fileID: 4338517779684543940}
+  - component: {fileID: 403336703708844507}
+  - component: {fileID: 8356997128984266929}
   m_Layer: 9
   m_Name: '#Pirate_Crew'
   m_TagString: Enemy
@@ -135,6 +136,7 @@ MonoBehaviour:
   presence: 3
   unchargedDamage: 2
   maxHealth: 0
+  dmgEff: {fileID: 0}
   statsVisible: 0
   hasAttacked: 0
   meterUnitsFilled: 0
@@ -228,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4338517779684543940
+--- !u!114 &403336703708844507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,10 +239,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1005522361513020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee3ffb8853c443b4d8fc790c84eed2c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1487cbcb48ebd1d4a9860594dab8e998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseTarget: {fileID: 2800000, guid: e552285814c74a548a3f4b3f42ccfa4b, type: 3}
+  mouseTarget: {fileID: 2800000, guid: d79d0f5e39ea7bf43817962264ce1b1c, type: 3}
+--- !u!114 &8356997128984266929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005522361513020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395c63450457a7d4d8a3ff51d4af5cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1465424719470760
 GameObject:
   m_ObjectHideFlags: 0

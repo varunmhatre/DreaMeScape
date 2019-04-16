@@ -33,9 +33,7 @@ public class DialoguePanelConfig : MonoBehaviour
         characterImage.sprite = DialogueManager.atlasManager.loadSprite(currentDialogue.CharacterImage);
         dialoguePanel.sprite = DialogueManager.atlasManager.loadTextbox(currentDialogue.CharacterImage);
         nameBox.sprite = DialogueManager.atlasManager.loadNamebox(currentDialogue.CharacterImage);
-
-        //Debug.Log("characterImage.sprite:   " + characterImage.sprite);
-        //Debug.Log("dialoguePanel.sprite:   " + dialoguePanel.sprite);
+        
         characterName.text = currentDialogue.CharacterName;        
         SetFont(characterName, true, characterName.text);
      

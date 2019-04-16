@@ -2,78 +2,84 @@
   "dialogues": [
     {
       "Conversation": 0,
-      "CharacterName": "Hally",
-      "CharacterImage": "Hally",
-      "DialogueText": "Ooooo, I love pirates! Can I be the captain?"
-    },
-    {
-      "Conversation": 1,
-      "CharacterName": "Jade",
-      "CharacterImage": "Jade",
-      "DialogueText": "Lemme at ‘em! Let's attack them! Let's surround them!"
-    },
-    {
-      "Conversation": 2,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Excellent idea! If three of us surround one of them, it will be much weaker. Looks like there are some cannons and generators to help us too."
+      "DialogueText": "Kent, how dare you! Ed didn't do anything wrong! Why are you bugging him?"
+    }, 
+    {
+      "Conversation": 1,
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "Try and stop me! With my new pirate crew, and Ed's generator, I'll be unstoppable!"
+    }, 
+    {
+      "Conversation": 2,
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "Ooooo, I love pirates!"
     },
     {
       "Conversation": 3,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": "Cannons! Now we’re talking!"
+      "DialogueText": "Lemme at ‘em! Let's attack them! Let's surround them!"
     },
     {
       "Conversation": 4,
-      "CharacterName": "Hally",
-      "CharacterImage": "Hally",
-      "DialogueText": "I see the captain of the ship! His beard is on fire! He looks like a meanie!"
+      "CharacterName": "Meda",
+      "CharacterImage": "Meda",
+      "DialogueText": "Excellent idea! If three of us surround one of them, it will be much weaker. Looks like there are some cannons to help us too."
     },
     {
       "Conversation": 5,
-      "CharacterName": "Meda",
-      "CharacterImage": "Meda",
-      "DialogueText": "That’s Blackbeard. You're right, Hally. Blackbeard is a meanie."
+      "CharacterName": "Jade",
+      "CharacterImage": "Jade",
+      "DialogueText": "Cannons! Now we’re talking!"
     },
     {
       "Conversation": 6,
-      "CharacterName": "Hally",
-      "CharacterImage": "Hally",
-      "DialogueText": "...I still want to be captain of the ship."
+      "CharacterName": "Meda",
+      "CharacterImage": "Meda",
+      "DialogueText": "And if we surround Kent's generators, we'll get more energy each turn."
     },
     {
       "Conversation": 7,
-      "CharacterName": "Ed",
-      "CharacterImage": "Kent",
-      "DialogueText": "Stand next to the wheel and you could pretend you are... I guess."
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "They're Ed's generators! Oh, wait, Ed! Aren't you at least a little upset with Kent?"
     },
     {
       "Conversation": 8,
-      "CharacterName": "Hally",
-      "CharacterImage": "Hally",
-      "DialogueText": "Yay! Then I can sail it to outer space!"
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "..."
     },
-       {
+    {
       "Conversation": 9,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "One final thing... use WASD to move the camera, L to switch the view, and scroll to zoom."
+      "DialogueText": "One final thing... use WASD/Arrow keys to move the camera, L to switch the view, and scroll to zoom."
     },
     {
       "Conversation": 10,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Is everybody ready? Let's get to the stern of the ship!"
+      "DialogueText": "Is everybody ready? Let's get to the stern of the ship! Let's stop Kent!"
     },
     {
       "Conversation": 11,
-      "CharacterName": "Jade",
-      "CharacterImage": "Jade",
-      "DialogueText": "I’ll race you to the back of the ship!"
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "Y-Yeah! Let's stop Kent!"
     },
     {
       "Conversation": 12,
+      "CharacterName": "Jade",
+      "CharacterImage": "Jade",
+      "DialogueText": "Great to hear you're starting to stand up for yourself, Ed! I’ll race you to the back of the ship!"
+    },
+    {
+      "Conversation": 13,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "."

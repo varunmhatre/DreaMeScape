@@ -38,7 +38,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
         int[] array = { 3, 5, 2, 5, 1, 4, 2, 3, 3, 3 };
         if (level == 1)
         {
-            array = new int[] { 3, 5, 2, 5, 1, 4, 2, 3, 3, 3 };
+            array = new int[] { 3, 5, 2, 5, 3, 3, 2, 3, 3, 3 };
         }
         for (int arrayIndex = 0; arrayIndex < characters.Count; arrayIndex++)
         {
@@ -94,7 +94,7 @@ public class SetupCharactersOnBoard : MonoBehaviour
         int[] array = { 16, 7, 11, 6, 7, 2 };
         if (level == 1)
         {
-            array = new int[] { 16, 7, 11, 6, 7, 2 };
+            array = new int[] { 16, 2, 13, 6, 9, 2 };
         }
         int numberOfPirates = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfPirates; arrayIndex++)
@@ -140,10 +140,10 @@ public class SetupCharactersOnBoard : MonoBehaviour
 
     void PlaceGenerators(int level)
     {
-        int[] array = { 3, 1, 13, 4};
+        int[] array = { 3, 1, 6, 4};
         if (level == 1)
         {
-            array = new int[] { 3, 1, 13, 4 };
+            array = new int[] { 3, 1, 6, 4 };
         }
         int numberOfGenerators = array.Length / 2;
         for (int arrayIndex = 0; arrayIndex < numberOfGenerators; arrayIndex++)

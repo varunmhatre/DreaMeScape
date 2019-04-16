@@ -30,7 +30,6 @@ public class HUDCharacterHighlight : MonoBehaviour
 
     public static void HighlightPortrait()
     {
-        Debug.Log("ClickID:    " + clickID);
         for (index = 0; index < CharacterManager.allAlliedCharacters.Count; index++)
         {
             if (characters[index] == CharacterManager.allAlliedCharacters[index].name)

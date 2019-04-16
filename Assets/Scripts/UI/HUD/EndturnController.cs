@@ -8,6 +8,8 @@ public class EndturnController : MonoBehaviour, IPointerDownHandler
 {
     public static bool isInteractable;
 
+    GridPieceSelect gridPieceSelect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +50,8 @@ public class EndturnController : MonoBehaviour, IPointerDownHandler
             GameManager.EndCurrentTurn(); 
             isInteractable = false;
         }
+
+      //  gridPieceSelect.highlightMoveSpaces
+
     }
 }

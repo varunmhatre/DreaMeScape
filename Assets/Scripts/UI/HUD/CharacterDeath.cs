@@ -22,11 +22,6 @@ public class CharacterDeath : MonoBehaviour
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
             healthValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().health;  
-                
-            if (healthValue <= deathValue)
-            {
-                Debug.Log("Enable the death panel");
-            }
         }
     }
 }
