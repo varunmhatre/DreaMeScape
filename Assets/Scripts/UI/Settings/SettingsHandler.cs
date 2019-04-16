@@ -14,6 +14,8 @@ public class SettingsHandler : MonoBehaviour
     public static int currentIndex;
     private int count = 1;
 
+    [SerializeField] private GameObject[] symbols;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,5 +69,5 @@ public class SettingsHandler : MonoBehaviour
             rightButton.gameObject.SetActive(true);
             leftButton.gameObject.SetActive(true);
         } 
-    }
+    } 
 }

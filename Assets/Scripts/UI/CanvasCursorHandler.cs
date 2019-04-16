@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CanvasCursorHandler : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
+public class CanvasCursorHandler : MonoBehaviour//,IPointerEnterHandler, IPointerExitHandler
 {
     CursorTexture customCursor;
     // Start is called before the first frame update
@@ -18,18 +18,18 @@ public class CanvasCursorHandler : MonoBehaviour,IPointerEnterHandler, IPointerE
         
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+   /* public void OnPointerEnter(PointerEventData eventData)
     {
-        if (TutorialCards.isTutorialRunning)
+        if (TutorialCards.isTutorialRunning && customCursor)
         {
             customCursor.EnableCrossBar();
         }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (TutorialCards.isTutorialRunning)
+        if (TutorialCards.isTutorialRunning && customCursor)
         {
             customCursor.DisableCrossBar();
         }
-    }
+    }*/
 }

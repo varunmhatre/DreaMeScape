@@ -28,8 +28,6 @@ public class CreditsHandler : MonoBehaviour
         for (int i = 0; i < allCreditsPieces.Length; i++)
         {
             allCreditsPieces[i].transform.position += new Vector3(0.0f, creditsIncrement * Time.deltaTime, 0.0f);
-            Debug.Log(creditsIncrement);
-            Debug.Log(allCreditsPieces[i].transform.position.y);
         }
         if (allCreditsPieces[allCreditsPieces.Length - 1].transform.position.y > creditsMaximum)
         {

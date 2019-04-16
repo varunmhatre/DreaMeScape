@@ -80,9 +80,6 @@ public class SelectCharacterHUD : MonoBehaviour
             playerLoc[1] = mainCharacter[clickID].GetComponent<UnitCoordinates>().y;
 
             Manager.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: characters[clickID], toHighlight: true, playerLocation: playerLoc);
-
-
-            Debug.Log("charcaterID :        " + mainCharacter[clickID].name);
             
             Manager.GetComponent<PlayerControls>().SetSelectedUnit(mainCharacter[clickID].transform);
         }

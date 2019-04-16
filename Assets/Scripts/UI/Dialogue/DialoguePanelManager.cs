@@ -58,7 +58,6 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         {
             /*if (SceneManager.GetActiveScene().buildIndex == 1)
             {
-                Debug.Log("Scene 1");
                 dialoguePanel.SetActive(false);
                 countDialogueLength = 0;
                 stepIndex = 0;

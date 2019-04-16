@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 4445920022397703420}
   - component: {fileID: 6359800388129397848}
   - component: {fileID: 7128133862119056479}
-  - component: {fileID: 1356637600255225280}
+  - component: {fileID: 6210185488603299497}
   m_Layer: 9
   m_Name: '#Pirate_Captain'
   m_TagString: Enemy
@@ -137,6 +137,7 @@ MonoBehaviour:
   presence: 4
   unchargedDamage: 3
   maxHealth: 0
+  dmgEff: {fileID: 0}
   statsVisible: 0
   hasAttacked: 0
   meterUnitsFilled: 0
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13eb9fb461404a9478661879acfd1b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noOfTurns: 3
+  noOfTurns: 2
   isStunned: 0
 --- !u!114 &826128777379898271
 MonoBehaviour:
@@ -255,7 +256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseTarget: {fileID: 2800000, guid: 98bad250e8887ac4688bbd00e4bbb89d, type: 3}
---- !u!114 &1356637600255225280
+  mainMouse: {fileID: 0}
+--- !u!114 &6210185488603299497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {fileID: 0}
   endPosition: {fileID: 0}
-  isGoingToEnd: 1
+  isMovingPositive: 0
 --- !u!1 &1798306027273804
 GameObject:
   m_ObjectHideFlags: 0

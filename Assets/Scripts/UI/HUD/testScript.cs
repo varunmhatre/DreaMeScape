@@ -34,22 +34,17 @@ public class testScript : MonoBehaviour
     private void GetLastGameObjectSelected()
     {
         int currentID = transform.GetComponent<CharacterID>().clickID;
-
-        Debug.Log("currentID:       " + currentID);
+        
         if (eventSystem.currentSelectedGameObject != currentSelectedGameObject_Recent)
         {
             lastSelectedButton = currentSelectedGameObject_Recent;            
             currentSelectedGameObject_Recent = eventSystem.currentSelectedGameObject;
-
-           // Debug.Log("lastSelectedGameObject:  " + lastSelectedButton);
-            Debug.Log("currentSelectedGameObject_Recent:  " + currentSelectedGameObject_Recent.name);
         }
         //int[] playerLoc = { CharacterManager.allAlliedCharacters[characterID].GetComponent<UnitCoordinates>().x, CharacterManager.allAlliedCharacters[characterID].GetComponent<UnitCoordinates>().y };
         //Manager.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: currentSelectedGameObject_Recent.name, toHighlight: true, playerLocation: playerLoc);
                
         if (lastSelectedButton != null)
         {
-            Debug.Log("lastSelectedGameObject:  " + lastSelectedButton.name);
            // Manager.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedButton.name, toHighlight: false, playerLocation: null);
         }
         

@@ -24,11 +24,6 @@ public class CharacterDeath : MonoBehaviour
             if (!CharacterManager.allAlliedCharacters[i])
                 return;
             healthValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().health;  
-                
-            if (healthValue <= deathValue)
-            {
-                Debug.Log("Enable the death panel");
-            }
         }
     }
 }
