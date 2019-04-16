@@ -168,7 +168,8 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             GameObject ally = CharacterManager.allAlliedCharacters[i];
             if (AdjacencyHandler.CompareAdjacency(character, ally, 2))
             {
-                ally.GetComponent<Stats>().GainMeter(3);
+                ally.GetComponent<Stats>().GainMeter(2);
+                ally.GetComponent<Stats>().TakeDamage(-2);
                 buffSomeone = true;
             }
         }
