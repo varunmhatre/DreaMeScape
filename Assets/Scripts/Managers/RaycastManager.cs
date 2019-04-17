@@ -22,6 +22,8 @@ public class RaycastManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
 
+        CleanseFlags();
+
         if (Input.GetMouseButtonDown(0))
         {
             leftClicked = true;
@@ -29,6 +31,25 @@ public class RaycastManager : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             rightClicked = true;
+        }
+    }
+
+    void CleanseFlags()
+    {
+        if (CharacterAbility.cleanSelectionMode)
+        {
+            CharacterAbility.cleanSelectionMode = false;
+            CharacterAbility.inSelectionMode = false;
+        }
+        if (CannonStaticVariables.clearCannonSelection)
+        {
+            CannonStaticVariables.clearCannonSelection = false;
+            CannonStaticVariables.isCannonSelected = false;
+        }
+        if (PlayerControls.clearSelectedUnit)
+        {
+            PlayerControls.clearSelectedUnit = false;
+            PlayerControls.selectedUnit = null;
         }
     }
 

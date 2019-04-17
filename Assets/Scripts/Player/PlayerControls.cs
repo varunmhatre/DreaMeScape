@@ -8,12 +8,14 @@ public class PlayerControls : MonoBehaviour
     private string lastSelectedUnitName;
     public static Transform selectedUnit;
     public static Transform prevSelectedUnit;
+    public static bool clearSelectedUnit;
     private bool piecesHighlighted;
     private int[] playerLoc;
 
     // Start is called before the first frame update
     void Start()
     {
+        clearSelectedUnit = false;
         selectedUnitName = "NoUnitSelected";
         lastSelectedUnitName = "NoUnitSelected";
         playerLoc = new int[2];
@@ -22,9 +24,10 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (DialoguePanelManager.playerControlsUnlocked && TutorialCards.isTutorialRunning)
         {
-            if (RaycastManager.leftClicked && GameManager.isPlayerTurn && GameManager.HaveEnergy())
+            if (RaycastManager.leftClicked && GameManager.isPlayerTurn && GameManager.HaveEnergy() && !CharacterAbility.inSelectionMode && !CannonStaticVariables.isCannonSelected)
             {
                 MoveOnClickedGridPiece();
 
@@ -43,7 +46,7 @@ public class PlayerControls : MonoBehaviour
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLocation: null);
                     piecesHighlighted = false;
                 } 
-                if (selectedUnit)
+                if (selectedUnit && !clearSelectedUnit)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: selectedUnitName, toHighlight: true, playerLocation: playerLoc);
                     piecesHighlighted = true;                    
@@ -116,7 +119,7 @@ public class PlayerControls : MonoBehaviour
         }
         else
         {
-            selectedUnit = null;
+            clearSelectedUnit = true;
             selectedUnitName = "NoUnitSelected";
         }       
     }

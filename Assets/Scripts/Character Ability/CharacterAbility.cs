@@ -26,6 +26,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private bool isInteractable;
     private string currAbilityName;
     public static bool inSelectionMode;
+    public static bool cleanSelectionMode;
     private bool justClickedButton;
 
     public enum selectionType
@@ -40,6 +41,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Start is called before the first frame update
     void Start()
     {
+        cleanSelectionMode = false;
         currButtonId = -1;
         amountMeterNeeded = 5;
         isInteractable = false;
@@ -128,10 +130,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                             ActivateFireball(CharacterManager.allAlliedCharacters[buttonId], hitEnemy.transform.gameObject);
                         }
                     }
-                    else
-                    {
-                        inSelectionMode = false;
-                    }
+                    cleanSelectionMode = true;
                 }
             }
         }
@@ -149,10 +148,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                             ActivateSprint(CharacterManager.allAlliedCharacters[buttonId], hitPiece.transform.gameObject);
                         }
                     }
-                    else
-                    {
-                        inSelectionMode = false;
-                    }
+                    cleanSelectionMode = true;
                 }
             }
         }
@@ -249,7 +245,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         GameManager.currentEnergy--;
         character.GetComponent<Stats>().EmptyMeter();
         isInteractable = false;
-        inSelectionMode = false;
+        cleanSelectionMode = true;
     }
 
     public void ActivateFireball(GameObject character, GameObject enemy)
@@ -259,7 +255,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         GameManager.currentEnergy--;
         character.GetComponent<Stats>().EmptyMeter();
         isInteractable = false;
-        inSelectionMode = false;
+        cleanSelectionMode = true;
     }
 
     public void TryFireball(GameObject character)

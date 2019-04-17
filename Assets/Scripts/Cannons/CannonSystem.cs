@@ -22,7 +22,7 @@ public class CannonSystem : MonoBehaviour
         RaycastHit hit = RaycastManager.GetRaycastHitForTag("Cannon");
         if (hit.transform != null && hit.transform.GetComponent<CannonScript>().isChargeLeft)
         {
-            if (hit.transform.GetComponent<CannonRadius>().CheckIfPlayerAround())
+            if (hit.transform.GetComponent<CannonRadius>().CheckIfPlayerAround() && !PlayerControls.selectedUnit && !CharacterAbility.inSelectionMode)
             {
                 CannonStaticVariables.CannonSelected(hit.transform);
             }
