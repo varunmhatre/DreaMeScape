@@ -290,7 +290,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (TutorialCards.isTutorialRunning)
+        if (TutorialCards.isTutorialRunning && !CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit)
         {
             transform.GetComponent<Image>().color = Color.blue;
             if (buttonId == 0)
@@ -337,7 +337,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (TutorialCards.isTutorialRunning)
+        if (TutorialCards.isTutorialRunning && !CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit)
         {
             transform.GetComponent<Image>().color = Color.white;
             if (buttonId == 0)
@@ -371,9 +371,12 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (isInteractable)
         {
-            justClickedButton = true;
-            currButtonId = buttonId;
-            ActivateAbility();
+            if (!CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit)
+            {
+                justClickedButton = true;
+                currButtonId = buttonId;
+                ActivateAbility();
+            }
         }
     } 
 }
