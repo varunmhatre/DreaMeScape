@@ -63,7 +63,7 @@ public class MedaAbilityHandler : MonoBehaviour
             startCheckingForEnemy = false;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             RaycastHit hit = RaycastManager.GetRaycastHitForTag("Enemy");
-            if (hit.transform)
+            if (hit.transform && AdjacencyHandler.CompareAdjacency(CharacterManager.allAlliedCharacters[3], hit.transform.gameObject, 2))
             {
                 AttackWithFireball(hit.transform.position);
             }
