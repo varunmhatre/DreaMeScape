@@ -119,15 +119,20 @@ public class PirateAI : MonoBehaviour
 
     void DetermineStrategy()
     {
+        if (strategy == Strategy.patrol)
+        {
+            foreach (var item in CharacterManager.allAlliedCharacters)
+            {
+                if (AdjacencyHandler.CompareAdjacency(item, CharacterManager.allEnemyCharacters[selectedPirate], 3))
+                {
 
+                }
+            }
+        }
     }
 
     void GetPirateAttackMoves()
     {
-        if (selectedPirate == 0 || strategy == Strategy.patrol)
-        {
-            DetermineStrategy();
-        }
         if (selectedPirate == CharacterManager.allEnemyCharacters.Count)
         {
             if (!endScriptRunning)
@@ -136,6 +141,11 @@ public class PirateAI : MonoBehaviour
                 StartCoroutine(ProgressToPlayerTurn());
             }
             return;
+        }
+
+        if (selectedPirate == 0 || strategy == Strategy.patrol)
+        {
+            DetermineStrategy();
         }
 
         if (switchPirate)
@@ -158,13 +168,16 @@ public class PirateAI : MonoBehaviour
 
         if (CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<Pirate>().isStunned)
         {
+            CharacterManager.allEnemyCharacters[selectedPirate].transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
             selectedPirate++;
+            switchPirate = true;
             return;
         }
 
         if (strategy == Strategy.patrol && CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<PirateCaptain>())
         {
             selectedPirate++;
+            switchPirate = true;
             return;
         }
 
@@ -173,10 +186,12 @@ public class PirateAI : MonoBehaviour
         //Astar to targerDestination
         //PopulateTheDestination(targetDestination);
         // UnitCoordinates targetDestination = GetTarget();
+
         UnitCoordinates pirateCoordinate = CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>();
         currentUnitLocaton = PathFinding.GetGridFromUnitCoordinate(pirateCoordinate);
 
         CalculateDestination();
+
         initialPiratePosition = CharacterManager.allEnemyCharacters[selectedPirate].transform.position;
         piratesInProgress = true;
     }
