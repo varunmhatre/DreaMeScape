@@ -10,6 +10,7 @@ tpsheetFileNames:
 - Assets/Resources/EventAtlas.tpsheet
 - Assets/Resources/Namebox.tpsheet
 - Assets/Resources/NamePanel.tpsheet
+- Assets/Resources/Panel.tpsheet
 - Assets/Resources/Textbox.tpsheet
 - Assets/StreamingAssets/Resources/EventAtlas.tpsheet
 textureFileNames:
@@ -22,10 +23,12 @@ textureFileNames:
 - Assets/Resources/EventAtlas.png
 - Assets/Resources/Namebox.png
 - Assets/Resources/NamePanel.png
+- Assets/Resources/Panel.png
 - Assets/Resources/Textbox.png
 - Assets/StreamingAssets/Resources/EventAtlas.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 
