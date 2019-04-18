@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5774105520446953582}
   - component: {fileID: 5774105520446953576}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: PirateShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef53a74a22a1fa849a9189d60ad75a36, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09504778f283bdf4085d2164d2b47c08, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
