@@ -125,7 +125,8 @@ public class PirateAI : MonoBehaviour
             {
                 if (AdjacencyHandler.CompareAdjacency(item, CharacterManager.allEnemyCharacters[selectedPirate], 3))
                 {
-
+                    strategy = Strategy.groupUp;
+                    break;
                 }
             }
         }
@@ -287,7 +288,7 @@ public class PirateAI : MonoBehaviour
             }
         }
         return CharacterManager.allAlliedCharacters[selectedPlayer].GetComponent<UnitCoordinates>();
-    }
+    } 
 
     UnitCoordinates LocateTargetLocation()
     {
