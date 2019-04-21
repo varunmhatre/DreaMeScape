@@ -14,6 +14,10 @@ public class Generator : MonoBehaviour
     [SerializeField] private GameObject genObj;
     [SerializeField] private GameObject leverObj;
 
+    [SerializeField] public SpriteRenderer baseVisual;
+    [SerializeField] public Sprite onVisual;
+    [SerializeField] public Sprite offVisual;
+
     private bool hasSwapped;
 
     // Use this for initialization
@@ -33,7 +37,14 @@ public class Generator : MonoBehaviour
         {
             CheckToTurnOn();
             UpdateTextValue();
+            baseVisual.sprite = offVisual;
         }
+        else
+        {
+            baseVisual.sprite = onVisual;
+        }
+        //this segment is under repair
+        /*
         else if (gameObject.transform.GetChild(0).GetComponent<Animator>() != null)
         {
             if (!hasSwapped)
@@ -46,6 +57,8 @@ public class Generator : MonoBehaviour
             leverObj.transform.Rotate(0.0f, 0.0f, 270.0f);
             genObj.GetComponent<Animator>().applyRootMotion = true;
         }
+        */
+        //end segment
 
         if (isOn && !provisionAdded)
         {
