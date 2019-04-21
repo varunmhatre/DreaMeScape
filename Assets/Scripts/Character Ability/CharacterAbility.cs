@@ -26,6 +26,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private bool isInteractable;
     private string currAbilityName;
     public static bool inSelectionMode;
+    public static bool cleanSelectionMode;
     private bool justClickedButton;
 
     public enum selectionType
@@ -40,6 +41,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Start is called before the first frame update
     void Start()
     {
+        cleanSelectionMode = false;
         currButtonId = -1;
         amountMeterNeeded = 5;
         isInteractable = false;
@@ -118,7 +120,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "fireball")
             {
-                if (Input.GetMouseButtonDown(0) && !justClickedButton)
+                if (RaycastManager.leftClicked && !justClickedButton)
                 {
                     RaycastHit hitEnemy = RaycastManager.GetRaycastHitForTag("Enemy");
                     if (hitEnemy.transform != null)
@@ -128,10 +130,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                             ActivateFireball(CharacterManager.allAlliedCharacters[buttonId], hitEnemy.transform.gameObject);
                         }
                     }
-                    else
-                    {
-                        inSelectionMode = false;
-                    }
+                    cleanSelectionMode = true;
                 }
             }
         }
@@ -139,7 +138,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             if (abilityName == "sprint")
             {
-                if (Input.GetMouseButtonDown(0) && !justClickedButton)
+                if (RaycastManager.leftClicked && !justClickedButton)
                 {
                     RaycastHit hitPiece = RaycastManager.GetRaycastHitForTag("GridPiece");
                     if (hitPiece.transform != null)
@@ -149,10 +148,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                             ActivateSprint(CharacterManager.allAlliedCharacters[buttonId], hitPiece.transform.gameObject);
                         }
                     }
-                    else
-                    {
-                        inSelectionMode = false;
-                    }
+                    cleanSelectionMode = true;
                 }
             }
         }
@@ -250,7 +246,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         GameManager.currentEnergy--;
         character.GetComponent<Stats>().EmptyMeter();
         isInteractable = false;
-        inSelectionMode = false;
+        cleanSelectionMode = true;
     }
 
     public void ActivateFireball(GameObject character, GameObject enemy)
@@ -260,7 +256,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         GameManager.currentEnergy--;
         character.GetComponent<Stats>().EmptyMeter();
         isInteractable = false;
-        inSelectionMode = false;
+        cleanSelectionMode = true;
     }
 
     public void TryFireball(GameObject character)
@@ -295,7 +291,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (TutorialCards.isTutorialRunning)
+        if (TutorialCards.isTutorialRunning && !CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit)
         {
             transform.GetComponent<Image>().color = Color.blue;
             if (buttonId == 0)
@@ -342,7 +338,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (TutorialCards.isTutorialRunning)
+        if (TutorialCards.isTutorialRunning && !CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit)
         {
             transform.GetComponent<Image>().color = Color.white;
             if (buttonId == 0)
@@ -376,9 +372,12 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (isInteractable)
         {
-            justClickedButton = true;
-            currButtonId = buttonId;
-            ActivateAbility();
+            if (!CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit)
+            {
+                justClickedButton = true;
+                currButtonId = buttonId;
+                ActivateAbility();
+            }
         }
     } 
 }

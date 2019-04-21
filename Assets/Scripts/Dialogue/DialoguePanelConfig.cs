@@ -63,7 +63,7 @@ public class DialoguePanelConfig : MonoBehaviour
                 count = 1;
                 DialoguePanelManager.isPressed = true; 
             }
-            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) && dialogueText.Length < count)
+            if (RaycastManager.leftClicked || Input.GetKeyDown(KeyCode.Space) && dialogueText.Length < count)
             {
                 count = 1;
                 dialogue.text = dialogueText;
