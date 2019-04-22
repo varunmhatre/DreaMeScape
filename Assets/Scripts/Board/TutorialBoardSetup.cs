@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Entities;
 
 public class TutorialBoardSetup : MonoBehaviour
 {
@@ -36,10 +37,10 @@ public class TutorialBoardSetup : MonoBehaviour
 
     void PlaceCharacters(int level)
     {
-        int[] array = { 3, 4, 4, 4, 5, 4, 2, 4, 1, 4 };
+        int[] array = { 0 };
         if (level == 0)
         {
-            array = new int[] { 3, 4, 4, 4, 5, 4, 2, 4, 1, 4 };
+            array = new int[] { 6, 3, 6, 4, 6, 5, 6, 6 };
         }
         else if(level == 1)
         {
@@ -72,7 +73,7 @@ public class TutorialBoardSetup : MonoBehaviour
         int[] array = { 0 };
         if (level == 0)
         {
-            array = new int[] { 1, 5 };
+            array = new int[] { 12, 1 };
         }
         else if (level == 1)
         {
@@ -172,7 +173,7 @@ public class TutorialBoardSetup : MonoBehaviour
         int[] array = { 0 };
         if (level == 0)
         {
-            array = new int[] { 4, 7 };
+            array = new int[] { 10, 4 };
         }
         else if (level == 1)
         {

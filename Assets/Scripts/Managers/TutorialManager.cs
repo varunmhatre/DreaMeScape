@@ -5,6 +5,7 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     [SerializeField] GameObject SurroundTiles;
+    [SerializeField] List<GameObject> HUDElements = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class TutorialManager : MonoBehaviour
         if(DialoguePanelManager.stepIndex == 2)
         {
             PauseDialog();
-            if(GetComponent<GridPieceSelect>().GetGridPieceCoords(4, 5).gameObject.GetComponent<GridPiece>().unit == CharacterManager.allAlliedCharacters[1])
+            if(GetComponent<GridPieceSelect>().GetGridPieceCoords(6, 4).gameObject.GetComponent<GridPiece>().unit == null)
             {
                 ResumeDialog();
             }
@@ -26,7 +27,8 @@ public class TutorialManager : MonoBehaviour
 
         if (DialoguePanelManager.stepIndex == 5)
         {
-            CharacterManager.allAlliedCharacters[4].SetActive(true);
+            CharacterManager.allAlliedCharacters[3].SetActive(true);
+            HUDElements[3].SetActive(true);
             InteractablesManager.generators[0].SetActive(true);
         }
 
