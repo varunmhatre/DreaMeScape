@@ -49,7 +49,7 @@ public class JadeAbilityHandler : MonoBehaviour
             }
         }
 
-        if (startCheckingForClick && Input.GetMouseButtonDown(0))
+        if (startCheckingForClick && RaycastManager.leftClicked)
         {
             isClickedOn = false;
             startCheckingForClick = false;
