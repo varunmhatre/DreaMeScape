@@ -46,19 +46,19 @@
       "Conversation": 7,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
-      "DialogueText": "Click here on Hally’s base to select her"
+      "DialogueText": "Click here on Hally’s base to select her and click on the Green Space to move her there!"
     },
     {
       "Conversation": 8,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
-      "DialogueText": "And click on the Green Space to move her there!"
+      "DialogueText": "Moving around uses energy"
     },
     {
       "Conversation": 9,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "Aww… Where did it go?"
+      "DialogueText": "Aww… Where did the cannon go?"
     },
     {
       "Conversation": 10,
@@ -124,13 +124,13 @@
       "Conversation": 20,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
-      "DialogueText": "Move Jade next to the Pirate to attack it."
+      "DialogueText": "Move Jade or another character next to the Pirate to attack it."
     },
     {
       "Conversation": 21,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
-      "DialogueText": "Now select Jade and then attack the pirate!"
+      "DialogueText": "Now select the character and then attack the pirate!"
     },
     {
       "Conversation": 22,
@@ -230,138 +230,150 @@
     },
     {
       "Conversation": 38,
-      "CharacterName": "Ed",
-      "CharacterImage": "Ed",
+      "CharacterName": "Meda",
+      "CharacterImage": "Meda",
       "DialogueText": "The 3 of us should stand next to it and turn it on together."
     },
     {
       "Conversation": 39,
-      "CharacterName": "Meda",
-      "CharacterImage": "Meda",
-      "DialogueText": "We’ll get it next turn."
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "Move Ed, Hally, and Meda in the 8 tiles around the Generator to activate it."
     },
     {
       "Conversation": 40,
-      "CharacterName": "Jade",
-      "CharacterImage": "Jade",
-      "DialogueText": "Finally, more energy! Stupid Slow Generator."
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "We didn’t get more energy. And now there are more pirates."
     },
     {
       "Conversation": 41,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Just like you."
+      "DialogueText": "We’ll get it next turn."
     },
     {
       "Conversation": 42,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": "Hey! I’m not slow!"
+      "DialogueText": "Finally, more energy! Stupid Slow Generator."
     },
     {
       "Conversation": 43,
+      "CharacterName": "Meda",
+      "CharacterImage": "Meda",
+      "DialogueText": "Just like you."
+    },
+    {
+      "Conversation": 44,
+      "CharacterName": "Jade",
+      "CharacterImage": "Jade",
+      "DialogueText": "Hey! I’m not slow!"
+    },
+    {
+      "Conversation": 45,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
       "DialogueText": "Don’t fight each other… how do we fight the pirates?"
     },
     {
-      "Conversation": 44,
+      "Conversation": 46,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
       "DialogueText": "Let's use super powers!"
     },
     {
-      "Conversation": 45,
+      "Conversation": 47,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "Each person has a Dream Meter."
     },
     {
-      "Conversation": 46,
+      "Conversation": 48,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "You fill that person’s Dream Meter by moving them. When it’s Full you can use their ability."
     },
     {
-      "Conversation": 47,
+      "Conversation": 49,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
       "DialogueText": "Maybe I can fight if I have a super power."
     },
     {
-      "Conversation": 48,
+      "Conversation": 50,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "Ed is timid and has trouble moving in front of others. So he wants to show the enemy how it feels to not move in his presence!"
     },
     {
-      "Conversation": 49,
+      "Conversation": 51,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "That was amazing, Ed!"
     },
     {
-      "Conversation": 50,
+      "Conversation": 52,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
       "DialogueText": "Be more brave, Ed. I’ll show you how it’s done!"
     },
     {
-      "Conversation": 51,
+      "Conversation": 53,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "Jade is reckless and likes to jump head first in fights. So she will rush to an enemy and hit them hard!"
     },
     {
-      "Conversation": 52,
+      "Conversation": 54,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
       "DialogueText": "Don’t rush ahead alone, Jade! I’ll have to scold you with the pirates."
     },
     {
-      "Conversation": 53,
+      "Conversation": 55,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "Meda cares about her friends but she can be mean sometimes. So burns her enemy with a fireball of sharp words!"
     },
     {
-      "Conversation": 54,
+      "Conversation": 56,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
       "DialogueText": "Be nice to everyone, Meda. I’ll help all of you!"
     },
     {
-      "Conversation": 55,
+      "Conversation": 57,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "Hally likes daydreaming but can’t pay attention for too long. So she boosts the Dream Meter of nearby friends!"
     },
     {
-      "Conversation": 56,
+      "Conversation": 58,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
       "DialogueText": "You’re really sweet, Hally. But try to focus more."
     },
     {
-      "Conversation": 57,
+      "Conversation": 59,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
       "DialogueText": "Yes, big brother!"
     },
     {
-      "Conversation": 58,
+      "Conversation": 60,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
       "DialogueText": "Let’s defeat the pirates together!"
     },
     {
-      "Conversation": 59,
+      "Conversation": 61,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
       "DialogueText": "Alright! We kicked their butts!"
     },
     {
-      "Conversation": 60,
+      "Conversation": 62,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
       "DialogueText": "... That was fun... Working together."

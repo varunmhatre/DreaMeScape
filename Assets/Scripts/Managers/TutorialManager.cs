@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] GameObject IndicatorParticles;
-    [SerializeField] GameObject TutorialArrow;
-    [SerializeField] GameObject SurroundTiles;
-    [SerializeField] List<GameObject> HUDElements = new List<GameObject>();
+    [SerializeField] GameObject indicatorParticles;
+    [SerializeField] GameObject cannonHandler;
+    [SerializeField] GameObject tutorialArrow;
+    [SerializeField] GameObject surroundTiles;
+    [SerializeField] List<GameObject> hudElements = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -21,34 +22,100 @@ public class TutorialManager : MonoBehaviour
 
         if (DialoguePanelManager.stepIndex == 1)
         {
-            CharacterManager.allAlliedCharacters[1].SetActive(true);
-            HUDElements[1].SetActive(true);
+            ShowCharacter(1);
+        }
+
+        if (DialoguePanelManager.stepIndex == 6)
+        {
+            cannonHandler.transform.GetChild(0).gameObject.SetActive(true);
         }
 
         if (DialoguePanelManager.stepIndex == 7)
         {
             PauseDialog();
-            IndicatorParticles.SetActive(true);
-            IndicatorParticles.transform.position = new Vector3(51.0f, 1.3f, 27.4f);
-            //IndicatorParticles.transform.position = 
-            if (GetComponent<GridPieceSelect>().GetGridPieceCoords(6, 4).gameObject.GetComponent<GridPiece>().unit == null)
+            indicatorParticles.transform.position = new Vector3(51.0f, 1.3f, 25.75f);
+            indicatorParticles.SetActive(true);
+            if (GetComponent<GridPieceSelect>().GetGridPieceCoords(6, 3).gameObject.GetComponent<GridPiece>().unit == null)
             {
-                IndicatorParticles.SetActive(false);
+                indicatorParticles.SetActive(false);
                 ResumeDialog();
             }
         }
 
-        if (DialoguePanelManager.stepIndex == 5)
+        if (DialoguePanelManager.stepIndex == 8)
         {
-            CharacterManager.allAlliedCharacters[3].SetActive(true);
-            HUDElements[3].SetActive(true);
-            InteractablesManager.generators[0].SetActive(true);
+            tutorialArrow.SetActive(true);
         }
 
-        if (DialoguePanelManager.stepIndex == 10)
+        if (DialoguePanelManager.stepIndex == 9)
+        {
+            tutorialArrow.SetActive(false);
+        }
+
+        if (DialoguePanelManager.stepIndex == 12)
+        {
+            ShowCharacter(2);
+        }
+
+        if (DialoguePanelManager.stepIndex == 13)
+        {
+            CharacterManager.allEnemyCharacters[0].SetActive(true);
+        }
+
+        if (DialoguePanelManager.stepIndex == 17)
+        {
+            indicatorParticles.transform.position = new Vector3(55.0f, 1.5f, 28.75f);
+            indicatorParticles.SetActive(true);
+        }
+
+        if (DialoguePanelManager.stepIndex == 18)
+        {
+            indicatorParticles.SetActive(false);
+        }
+
+        if (DialoguePanelManager.stepIndex == 20)
+        {
+            PauseDialog();
+            surroundTiles.transform.position = new Vector3(52.75f, 24.63f, 13.3f);
+            surroundTiles.SetActive(true);
+            if(AdjacencyHandler.NumPlayerCharactersAround(CharacterManager.allEnemyCharacters[0], 1) == 1)
+            {
+                surroundTiles.SetActive(false);
+                ResumeDialog();
+            }
+        }
+
+        if (DialoguePanelManager.stepIndex == 21)
+        {
+            PauseDialog();
+            indicatorParticles.transform.position = new Vector3(55.0f, 1.5f, 28.75f);
+            indicatorParticles.SetActive(true);
+            if(CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health < 6)
+            {
+                indicatorParticles.SetActive(false);
+                ResumeDialog();
+            }
+        }
+
+        if (DialoguePanelManager.stepIndex == 26)
+        {
+            ShowCharacter(3);
+        }
+
+        if (DialoguePanelManager.stepIndex == 28)
+        {
+            PauseDialog();
+            if(GameManager.currentEnergy <= 0)
+            {
+                ResumeDialog();
+            }
+        }
+
+        if (DialoguePanelManager.stepIndex == 39)
         {
             GameManager.RefreshCurrentEnergy();
-            SurroundTiles.SetActive(true);
+            surroundTiles.transform.position = new Vector3(54.17f, 24.63f, 9f);
+            surroundTiles.SetActive(true);
             PauseDialog();
             if(InteractablesManager.generators[0].GetComponent<Generator>().isOn)
             {
@@ -56,6 +123,22 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
+        if (DialoguePanelManager.stepIndex == 5)
+        {
+
+        }
+
+        //if (DialoguePanelManager.stepIndex == -1)
+        //{
+        //    ShowCharacter(3);
+        //    InteractablesManager.generators[0].SetActive(true);
+        //}
+    }
+
+    private void ShowCharacter(int charNum)
+    {
+        CharacterManager.allAlliedCharacters[charNum].SetActive(true);
+        hudElements[charNum].SetActive(true);
     }
 
     private void PauseDialog()
