@@ -58,7 +58,7 @@ public class TutorialBoardSetup : MonoBehaviour
                         Instantiate(characters[arrayIndex], transform.GetChild(i).position, Quaternion.identity);
                     CharacterManager.allAlliedCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
                     CharacterManager.allCharacters.Add(transform.GetChild(i).GetComponent<GridPiece>().unit);
-                    if (arrayIndex > 1 && level == 0)
+                    if (arrayIndex > 0 && level == 0)
                     {
                         CharacterManager.allAlliedCharacters[arrayIndex].SetActive(false);
                     }
@@ -173,7 +173,7 @@ public class TutorialBoardSetup : MonoBehaviour
         int[] array = { 0 };
         if (level == 0)
         {
-            array = new int[] { 10, 4 };
+            array = new int[] { 10, 2 };
         }
         else if (level == 1)
         {

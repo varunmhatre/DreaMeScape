@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
+    [SerializeField] GameObject IndicatorParticles;
+    [SerializeField] GameObject TutorialArrow;
     [SerializeField] GameObject SurroundTiles;
     [SerializeField] List<GameObject> HUDElements = new List<GameObject>();
 
@@ -16,11 +18,22 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DialoguePanelManager.stepIndex == 2)
+
+        if (DialoguePanelManager.stepIndex == 1)
+        {
+            CharacterManager.allAlliedCharacters[1].SetActive(true);
+            HUDElements[1].SetActive(true);
+        }
+
+        if (DialoguePanelManager.stepIndex == 7)
         {
             PauseDialog();
-            if(GetComponent<GridPieceSelect>().GetGridPieceCoords(6, 4).gameObject.GetComponent<GridPiece>().unit == null)
+            IndicatorParticles.SetActive(true);
+            IndicatorParticles.transform.position = new Vector3(51.0f, 1.3f, 27.4f);
+            //IndicatorParticles.transform.position = 
+            if (GetComponent<GridPieceSelect>().GetGridPieceCoords(6, 4).gameObject.GetComponent<GridPiece>().unit == null)
             {
+                IndicatorParticles.SetActive(false);
                 ResumeDialog();
             }
         }
