@@ -1313,7 +1313,7 @@ PrefabInstance:
         type: 3}
       propertyPath: audioSrc.Array.data[0]
       value: 
-      objectReference: {fileID: 1907685213}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}
 --- !u!1 &1095447124
@@ -2008,7 +2008,7 @@ PrefabInstance:
     - target: {fileID: 191421239, guid: abfa6314f88e7184ea0a922d203505fc, type: 3}
       propertyPath: generator
       value: 
-      objectReference: {fileID: 1988719070962628, guid: db4df4d97f0857140a7a457474da3b6f,
+      objectReference: {fileID: 7892433362185876354, guid: 57989b0381a52ec44a1abbb87e9ce066,
         type: 3}
     - target: {fileID: 4607163787522987565, guid: abfa6314f88e7184ea0a922d203505fc,
         type: 3}
