@@ -7,7 +7,6 @@ public class PirateAI : MonoBehaviour
     enum Strategy
     {
         patrol,
-        groupUp,
         attackClosest,
         protectCaptain
     }
@@ -17,6 +16,7 @@ public class PirateAI : MonoBehaviour
     List<GridCoordinates> pirateTurns;
     GridCoordinates currentUnitLocaton;
     GameObject alliedCharacter;
+    List<GameObject> closeToPirateCaptain;
 
     bool piratesInProgress;
     bool canPirateAttack;
@@ -37,6 +37,7 @@ public class PirateAI : MonoBehaviour
         endScriptRunning = false;
         switchPirate = false;
         cameraMain = Camera.main.GetComponent<CameraFocus>();
+        closeToPirateCaptain = new List<GameObject>();
         pirateTurns = new List<GridCoordinates>();
         piratesInProgress = false;
         selectedPirate = 0;
@@ -79,16 +80,16 @@ public class PirateAI : MonoBehaviour
             return;
         }
         timer += Time.deltaTime;
-        if (timer < timeToWaitForEachMove)
-        {
-            CharacterManager.allEnemyCharacters[selectedPirate].transform.position =
-                Vector3.Lerp(initialPiratePosition, pirateTurns[0].transform.position, timer / timeToWaitForEachMove);
-            return;
-        }
 
         //Change pirate's position
         if (pirateTurns[0].GetComponent<GridPiece>().unit == null)
         {
+            if (timer < timeToWaitForEachMove)
+            {
+                CharacterManager.allEnemyCharacters[selectedPirate].transform.position =
+                    Vector3.Lerp(initialPiratePosition, pirateTurns[0].transform.position, timer / timeToWaitForEachMove);
+                return;
+            }
             currentUnitLocaton.transform.GetComponent<GridPiece>().unit = null;
             currentUnitLocaton = pirateTurns[0];
             currentUnitLocaton.transform.GetComponent<GridPiece>().unit = CharacterManager.allEnemyCharacters[selectedPirate];
@@ -108,6 +109,7 @@ public class PirateAI : MonoBehaviour
     IEnumerator ProgressToPlayerTurn()
     {
         yield return new WaitForSeconds(timeToWaitForEachMove);
+        closeToPirateCaptain.Clear();
         timer = timeToWaitForNewPirateToMove - 1.0f;
         selectedPirate = 0;
         piratesInProgress = false;
@@ -123,12 +125,34 @@ public class PirateAI : MonoBehaviour
         {
             foreach (var item in CharacterManager.allAlliedCharacters)
             {
+                if (!item)
+                    continue;
                 if (AdjacencyHandler.CompareAdjacency(item, CharacterManager.allEnemyCharacters[selectedPirate], 3))
                 {
-                    strategy = Strategy.groupUp;
+                    strategy = Strategy.protectCaptain;
                     break;
                 }
             }
+        }
+
+        if (strategy == Strategy.protectCaptain)
+        {
+            GameObject pirateCaptain = GetPirateCaptain();
+
+            foreach (var item in CharacterManager.allAlliedCharacters)
+            {
+                if (!item)
+                    continue;
+                if (AdjacencyHandler.CompareAdjacency(pirateCaptain, item, 4))
+                {
+                    closeToPirateCaptain.Add(item);
+                }
+            }
+        }
+
+        if (closeToPirateCaptain.Count == 0)
+        {
+            strategy = Strategy.attackClosest;
         }
     }
 
@@ -175,18 +199,12 @@ public class PirateAI : MonoBehaviour
             return;
         }
 
-        if (strategy == Strategy.patrol && CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<PirateCaptain>())
+        if ((strategy == Strategy.patrol || strategy == Strategy.attackClosest) && CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<PirateCaptain>())
         {
             selectedPirate++;
             switchPirate = true;
             return;
         }
-
-        //UnitCoordinates targetDestination = FindClosestPlayer();
-
-        //Astar to targerDestination
-        //PopulateTheDestination(targetDestination);
-        // UnitCoordinates targetDestination = GetTarget();
 
         UnitCoordinates pirateCoordinate = CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>();
         currentUnitLocaton = PathFinding.GetGridFromUnitCoordinate(pirateCoordinate);
@@ -254,31 +272,42 @@ public class PirateAI : MonoBehaviour
                         piratePatrol.isMovingPositive = false;
                     }
                 }
-
-                break;
-            case Strategy.groupUp:
                 break;
             case Strategy.attackClosest:
+                UnitCoordinates targetDestination = FindClosestPlayer(true);
+                //Astar to targerDestination
+                PopulateTheDestination(targetDestination);
                 break;
             case Strategy.protectCaptain:
+                UnitCoordinates pirateCaptain = FindClosestPlayer(false);
+                //Astar to targerDestination
+                PopulateTheDestination(pirateCaptain);
                 break;
             default:
                 break;
         }
     }
 
-    UnitCoordinates FindClosestPlayer()
+    UnitCoordinates FindClosestPlayer(bool all)
     {
         int shortestDistance = 10000;
 
         UnitCoordinates piratePosition = CharacterManager.allEnemyCharacters[selectedPirate].GetComponent<UnitCoordinates>();
         UnitCoordinates playerPosition = null;
-        int selectedPlayer = 0;
-        for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
+
+        List<GameObject> thingsToCheck = closeToPirateCaptain;
+
+        if (all)
         {
-            if (!CharacterManager.allAlliedCharacters[i])
+            thingsToCheck = CharacterManager.allAlliedCharacters;
+        }
+
+        int selectedPlayer = 0;
+        for (int i = 0; i < thingsToCheck.Count; i++)
+        {
+            if (!thingsToCheck[i])
                 continue;
-            playerPosition = CharacterManager.allAlliedCharacters[i].GetComponent<UnitCoordinates>();
+            playerPosition = thingsToCheck[i].GetComponent<UnitCoordinates>();
             int distance = Mathf.Abs(playerPosition.x - piratePosition.x) + Mathf.Abs(playerPosition.y - piratePosition.y);
 
             if (distance < shortestDistance)
@@ -287,7 +316,7 @@ public class PirateAI : MonoBehaviour
                 shortestDistance = distance;
             }
         }
-        return CharacterManager.allAlliedCharacters[selectedPlayer].GetComponent<UnitCoordinates>();
+        return thingsToCheck[selectedPlayer].GetComponent<UnitCoordinates>();
     } 
 
     UnitCoordinates LocateTargetLocation()
@@ -295,4 +324,17 @@ public class PirateAI : MonoBehaviour
         return null;
     }
 
+    GameObject GetPirateCaptain()
+    {
+        GameObject pirateCaptain = null;
+        for (int i = 0; i < CharacterManager.allEnemyCharacters.Count; i++)
+        {
+            if (CharacterManager.allEnemyCharacters[i].GetComponent<PirateCaptain>())
+            {
+                pirateCaptain = CharacterManager.allEnemyCharacters[i];
+                break;
+            }
+        }
+        return pirateCaptain;
+    }
 }
