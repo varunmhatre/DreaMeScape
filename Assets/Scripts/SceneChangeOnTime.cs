@@ -7,9 +7,14 @@ public class SceneChangeOnTime : MonoBehaviour
     [SerializeField] public SceneTransition sceneTransition;
     private float timer;
 
+    [SerializeField] private GameObject skipIndicatorObj;
+
+    private bool setupSkip;
+
     // Start is called before the first frame update
     void Start()
     {
+        setupSkip = false;
         timer = 0.0f;
     }
 
@@ -22,6 +27,31 @@ public class SceneChangeOnTime : MonoBehaviour
             sceneTransition.ChangeScene("MainMenu");
         }
 
+        CheckForSkip();
+        ShowSkipButton(setupSkip);
+
         timer += Time.deltaTime;
+    }
+
+
+    public void CheckForSkip()
+    {
+        if (Input.GetMouseButtonDown(0) && setupSkip)
+        {
+            sceneTransition.ChangeScene("MainMenu");
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            setupSkip = true;
+        }
+    }
+
+    public void ShowSkipButton(bool isShowing)
+    {
+        if (isShowing)
+        {
+            skipIndicatorObj.SetActive(true);
+        }
     }
 }

@@ -7,10 +7,10 @@ public class ComicStrip : MonoBehaviour
     [SerializeField] private float panSpeed;
     [SerializeField] public GameObject[] imgLocations;
 
-
     private int index;
     private bool halt;
     private float timer;
+
 
     [SerializeField] private float haltDuration;
     // Start is called before the first frame update
