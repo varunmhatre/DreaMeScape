@@ -732,7 +732,7 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 580f080b6b3981244bf05fc898561fd9, type: 3}
+  m_Font: {fileID: 12800000, guid: d0322b6fb9a76e54da4d0f78ec2fbf6c, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -753,7 +753,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 580f080b6b3981244bf05fc898561fd9, type: 3}
+  - {fileID: 2100000, guid: d0322b6fb9a76e54da4d0f78ec2fbf6c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1240,7 +1240,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: d54c7c93bb3d3cc4cb1491bfb1e483f1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7c7fa3eab92819649b9c586f3c59c461, type: 2}
+      objectReference: {fileID: 2100000, guid: 76b66569db252ff4d8930937bd4730cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d54c7c93bb3d3cc4cb1491bfb1e483f1, type: 3}
 --- !u!4 &4609410903885927835 stripped
