@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RaycastManager : MonoBehaviour
 {
-
     private static RaycastHit[] hitTargets;
+    public static bool leftClicked;
+    public static bool rightClicked;
 
     // Start is called before the first frame update
     void Start()
@@ -14,18 +15,41 @@ public class RaycastManager : MonoBehaviour
 
     // FixedUpdate so that it occurs before Updates that require Raycast to be completed
     void Update()
-    {        
-        //Update hit when you click the primary mouse button
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-        {
-          Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-          hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
-        }
+    {
+        leftClicked = false;
+        rightClicked = false;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        hitTargets = Physics.RaycastAll(ray, Mathf.Infinity);
+
+        CleanseFlags();
 
         if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<PlayerControls>().MouseClickToggle();
-            GameObject.Find("CannonHandler").GetComponent<CannonSystem>().MouseClickToggleCannon();
+            leftClicked = true;
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            rightClicked = true;
+        }
+    }
+
+    void CleanseFlags()
+    {
+        if (CharacterAbility.cleanSelectionMode)
+        {
+            CharacterAbility.cleanSelectionMode = false;
+            CharacterAbility.inSelectionMode = false;
+        }
+        if (CannonStaticVariables.clearCannonSelection)
+        {
+            CannonStaticVariables.clearCannonSelection = false;
+            CannonStaticVariables.isCannonSelected = false;
+        }
+        if (PlayerControls.clearSelectedUnit)
+        {
+            PlayerControls.clearSelectedUnit = false;
+            PlayerControls.selectedUnit = null;
         }
     }
 
