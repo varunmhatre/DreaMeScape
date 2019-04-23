@@ -11,10 +11,15 @@ public class PlayerControls : MonoBehaviour
     public static bool clearSelectedUnit;
     private bool piecesHighlighted;
     private int[] playerLoc;
+    private bool startSliding;
+    private Vector3 toMoveLoc;
+    private float slideSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        slideSpeed = 10.0f;
+        startSliding = false;
         clearSelectedUnit = false;
         selectedUnitName = "NoUnitSelected";
         lastSelectedUnitName = "NoUnitSelected";
@@ -36,11 +41,6 @@ public class PlayerControls : MonoBehaviour
 
                 AttackEnemy();
 
-                /*GameObject character;
-
-                int thisCharacterX = character.GetComponent<UnitCoordinates>().x;
-                int thisCharacterY = character.GetComponent<UnitCoordinates>().y;*/
-
                 if (piecesHighlighted)
                 {
                     gameObject.GetComponent<GridPieceSelect>().highlightMoveSpaces(playerName: lastSelectedUnitName, toHighlight: false, playerLocation: null);
@@ -57,6 +57,18 @@ public class PlayerControls : MonoBehaviour
             {
                 ToggleStatVisibility();
             }
+
+            if (startSliding && prevSelectedUnit != null)
+            {
+                Debug.Log("Sliding!");
+                SlideMovedCharacter(prevSelectedUnit.gameObject, prevSelectedUnit.position, toMoveLoc);
+            }
+            else if (startSliding && prevSelectedUnit == null)
+            {
+                
+            }
+
+            //Debug.Log(startSliding);
         }
     }
 
@@ -75,7 +87,9 @@ public class PlayerControls : MonoBehaviour
         {
             GameObject playerCoords = GetComponent<GridPieceSelect>().GetGridPieceCoords(playerLoc[0], playerLoc[1]).gameObject;
             playerCoords.GetComponent<GridPiece>().unit = null;
-            selectedUnit.position = moveLoc.transform.position;
+            //selectedUnit.position = moveLoc.transform.position;
+            startSliding = true;
+            toMoveLoc = moveLoc.position;
             selectedUnit.GetComponent<UnitCoordinates>().SetUnitCoordinates(moveLoc.gameObject.GetComponent<GridCoordinates>().x, moveLoc.gameObject.GetComponent<GridCoordinates>().y);
             moveLoc.gameObject.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
             GameManager.ReduceEnergy();
@@ -110,11 +124,18 @@ public class PlayerControls : MonoBehaviour
         RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         if (hitCannon.transform == null && hit.transform != null)
         {
+            //if currently animating, finish doing so
+            if (startSliding && selectedUnit)
+            {
+                startSliding = false;
+                prevSelectedUnit.transform.position = toMoveLoc;
+            }
+
             selectedUnit = hit.transform;
             playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
             playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
             selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
-
+            
             //HUDCharacterHighlight.HighlightPortrait();
         }
         else
@@ -184,6 +205,29 @@ public class PlayerControls : MonoBehaviour
                 prevSelectedUnit.GetComponent<Stats>().ReleaseCharge();
             }
         }
+    }
+
+    public void SlideMovedCharacter(GameObject character, Vector3 start, Vector3 goal)
+    {
+        Vector3 toGo = goal - start;
+        Vector3 direction = toGo.normalized;
+        Vector3 toMove = direction * slideSpeed;
+
+        Debug.Log(toMove.magnitude);
+
+        character.transform.position += toMove * Time.deltaTime;
+
+        Vector3 newToGo = goal - character.transform.position;
+        Vector3 newDirection = newToGo.normalized;
+
+        //check if you've gone too far
+        if (direction != newDirection)
+        {
+            Debug.Log("You've gone too far!");
+            character.transform.position = goal;
+            startSliding = false;
+        }
+
     }
 
     /*

@@ -33,6 +33,10 @@ public class HealthBar : MonoBehaviour
         {
             healthValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().health;
             //This is for vertical fill meter.
+            if (healthValue > 8)
+            {
+                healthValue = 8;
+            }
             healthBarArr[i].sizeDelta = new Vector2(healthBarArr[i].rect.width, (startingHeight * healthValue / CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().maxHealth));
             healthBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 2, healthBarArr[i].rect.height);
         }

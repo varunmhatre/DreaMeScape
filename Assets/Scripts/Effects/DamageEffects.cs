@@ -46,6 +46,11 @@ public class DamageEffects : MonoBehaviour
         }
     }
 
+    public void ChangeColor(int index, Color newColor)
+    {
+        damageObjs[index].GetComponent<TextMesh>().color = newColor;
+    }
+
     public void BounceAround(int index, float time)
     {
         if (time == 0.0f)
