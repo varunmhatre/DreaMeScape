@@ -99,8 +99,20 @@
     },
     {
       "Conversation": 16,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
+      "DialogueText": "Hello  Henry"
+    },
+    {
+      "Conversation": 17,
+      "CharacterName": "Pirate",
+      "CharacterImage": "Pirate",
+      "DialogueText": "Hey Pirates"
+    },
+    {
+      "Conversation": 18,
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "."
     }
   ]

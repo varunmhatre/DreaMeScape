@@ -11,9 +11,19 @@ public class Generator : MonoBehaviour
     private int energyProvides;
     private bool provisionAdded;
 
+    [SerializeField] private GameObject genObj;
+    [SerializeField] private GameObject leverObj;
+
+    [SerializeField] public SpriteRenderer baseVisual;
+    [SerializeField] public Sprite onVisual;
+    [SerializeField] public Sprite offVisual;
+
+    private bool hasSwapped;
+
     // Use this for initialization
     void Start()
     {
+        hasSwapped = false;
         provisionAdded = false;
         isOn = false;
         energyProvides = 2;
@@ -27,7 +37,28 @@ public class Generator : MonoBehaviour
         {
             CheckToTurnOn();
             UpdateTextValue();
+            baseVisual.sprite = offVisual;
         }
+        else
+        {
+            baseVisual.sprite = onVisual;
+        }
+        //this segment is under repair
+        /*
+        else if (gameObject.transform.GetChild(0).GetComponent<Animator>() != null)
+        {
+            if (!hasSwapped)
+            {
+                gameObject.transform.GetChild(0).GetComponent<Animator>().enabled = true;
+                hasSwapped = true;
+            }
+            genObj.GetComponent<Animator>().applyRootMotion = true;
+            genObj.GetComponent<Animator>().applyRootMotion = false;
+            leverObj.transform.Rotate(0.0f, 0.0f, 270.0f);
+            genObj.GetComponent<Animator>().applyRootMotion = true;
+        }
+        */
+        //end segment
 
         if (isOn && !provisionAdded)
         {

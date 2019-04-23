@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: 71fc84ed2eb781141b62fe82a111ae14
+guid: e697e7a566f22d147bbd3ecf6ea88bef
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Ed
-    21300002: Hally
-    21300004: Jade
-    21300006: Kent
-    21300008: Meda
+    21300000: CharPortrait
+    21300002: Ed
+    21300004: Hally
+    21300006: Henry
+    21300008: Jade
+    21300010: Kent
+    21300012: Meda
+    21300014: Pirate
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -82,17 +85,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 37
+        y: 1547
         width: 400
-        height: 474
-      alignment: 9
-      pivot: {x: 0.5, y: 0.528481}
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c88589d991bd2984897618229d9db16a
+      spriteID: acc246e0a6f40da44be64625812cea41
       vertices: []
       indices: 
       edges: []
@@ -101,8 +104,8 @@ TextureImporter:
       name: Hally
       rect:
         serializedVersion: 2
-        x: 403
-        y: 17
+        x: 1
+        y: 549
         width: 399
         height: 494
       alignment: 9
@@ -112,7 +115,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af2031e0d041bc44ebfcdcf1a925babf
+      spriteID: 08052ba0cd734114cb7eefaa20e7b384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Henry
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1547
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18302309dd632704ead87a2468bb1e21
       vertices: []
       indices: 
       edges: []
@@ -121,8 +144,8 @@ TextureImporter:
       name: Jade
       rect:
         serializedVersion: 2
-        x: 804
-        y: 45
+        x: 1
+        y: 81
         width: 368
         height: 466
       alignment: 9
@@ -132,7 +155,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87298d4f2fa2d854b8b3412bd7e59670
+      spriteID: e37d7d12fc7d41147a218409270a3a38
       vertices: []
       indices: 
       edges: []
@@ -141,18 +164,18 @@ TextureImporter:
       name: Kent
       rect:
         serializedVersion: 2
-        x: 1174
-        y: 16
+        x: 403
+        y: 605
         width: 399
         height: 495
       alignment: 9
       pivot: {x: 0.49874687, y: 0.5050505}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 11, y: 0, z: 2, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60a5d91cbb30102438455df0035637d9
+      spriteID: f4bb95c1f21ff09459b1ef8d97ed5a54
       vertices: []
       indices: 
       edges: []
@@ -161,8 +184,8 @@ TextureImporter:
       name: Meda
       rect:
         serializedVersion: 2
-        x: 1575
-        y: 68
+        x: 403
+        y: 1102
         width: 400
         height: 443
       alignment: 9
@@ -172,7 +195,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 222df628c27632a4198f89f37afc7f3b
+      spriteID: 6ffb6742f778f6d4d914de1fb89bbdb2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1045
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf2ecbc3ba8f5a4899d32151f16660f
       vertices: []
       indices: 
       edges: []
@@ -180,7 +223,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4c1228601e23e24419b41aef74a42cf2
+    spriteID: 39ae1cf1a0b55bc44b2d012ad68f6b0e
     vertices: []
     indices: 
     edges: []
