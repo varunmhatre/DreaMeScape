@@ -57,20 +57,15 @@ public class MedaAbilityHandler : MonoBehaviour
             }
         }
 
-        if (startCheckingForEnemy && Input.GetMouseButtonDown(0))
+        if (startCheckingForEnemy && RaycastManager.leftClicked)
         {
             isClickedOn = false;
             startCheckingForEnemy = false;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            RaycastHit hit = RaycastManager.GetRaycastHitForTag("Enemy");
+            if (hit.transform && AdjacencyHandler.CompareAdjacency(CharacterManager.allAlliedCharacters[3], hit.transform.gameObject, 2))
             {
-                if (hit.transform.tag == "Enemy")
-                {
-                    AttackWithFireball(hit.transform.position);
-                }
+                AttackWithFireball(hit.transform.position);
             }
             RevertToNormal();
         }

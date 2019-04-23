@@ -40,7 +40,7 @@ public class UniversalControls : MonoBehaviour {
 
     public void CheckExitGame()
     {
-        if (Input.GetKey(KeyCode.Escape) || Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.Escape) || RaycastManager.leftClicked)
         {
             escaping = true;
         }

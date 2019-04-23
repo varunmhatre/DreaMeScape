@@ -11,7 +11,7 @@ public class PirateCaptain : MonoBehaviour
     {
         if (isPirateDefeated)
         {
-            SceneTransition.GoFade("WinSCene");
+            SceneTransition.GoFade("KentbeardSurrender");
         }            
     }
 }

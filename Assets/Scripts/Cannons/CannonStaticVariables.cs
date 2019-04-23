@@ -5,6 +5,7 @@ using UnityEngine;
 public class CannonStaticVariables : MonoBehaviour
 {
     public static bool isCannonSelected;
+    public static bool clearCannonSelection;
     public static int cannonRadius;
     public static CustomCursorTexture crossbarController;
     public static CannonScript selectedCannon;
@@ -31,7 +32,7 @@ public class CannonStaticVariables : MonoBehaviour
     {
         selectedCannon.Disengage();
         crossbarController.DisableCrossBar();
-        CannonStaticVariables.isCannonSelected = false;
+        clearCannonSelection = true;
         selectedCannon.isThisCannonSelected = false;
         selectedCannon.GetComponent<CannonRadius>().RemoveHighlights();
         selectedCannon = null;

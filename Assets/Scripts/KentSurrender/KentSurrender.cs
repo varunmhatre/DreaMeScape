@@ -9,6 +9,8 @@ public class KentSurrender : MonoBehaviour
     private float currSpeed;
     private float timer;
 
+    [SerializeField] private SceneTransition sceneTransition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class KentSurrender : MonoBehaviour
     {
         AdjustPosition(currDirection, currSpeed);
         AdjustMovementValues();
+        LookForNewScene();
         timer += Time.deltaTime;
     }
 
@@ -76,6 +79,16 @@ public class KentSurrender : MonoBehaviour
             currSpeed += 10.0f * Time.deltaTime;
         }
 
+
+
         currDirection.Normalize();
+    }
+
+    public void LookForNewScene()
+    {
+        if (timer >= 16.0f)
+        {
+            sceneTransition.ChangeScene("WinScene");
+        }
     }
 }

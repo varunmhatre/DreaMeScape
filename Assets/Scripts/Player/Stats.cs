@@ -103,7 +103,18 @@ public class Stats : MonoBehaviour
 
         if (dmgEff)
         {
-            dmgEff.SendToLocation(dmgEff.currIndex, gameObject, amt);
+            if (amt >= 0)
+            {
+                Color red = new Color(0.52f, 0.106f, 0.106f);
+                dmgEff.ChangeColor(dmgEff.currIndex, red);
+                dmgEff.SendToLocation(dmgEff.currIndex, gameObject, amt);
+            }
+            else
+            {
+                Color green = new Color(0.15f, 0.51f, 0.09f);
+                dmgEff.ChangeColor(dmgEff.currIndex, green);
+                dmgEff.SendToLocation(dmgEff.currIndex, gameObject, -amt);
+            }
         }
     }
 
