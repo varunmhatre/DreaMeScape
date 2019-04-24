@@ -111,6 +111,7 @@ public class PirateAI : MonoBehaviour
         yield return new WaitForSeconds(timeToWaitForEachMove);
         closeToPirateCaptain.Clear();
         timer = timeToWaitForNewPirateToMove - 1.0f;
+        strategy = Strategy.patrol;
         selectedPirate = 0;
         piratesInProgress = false;
         cameraMain.ResetCamera();
@@ -123,14 +124,17 @@ public class PirateAI : MonoBehaviour
     {
         if (strategy == Strategy.patrol)
         {
-            foreach (var item in CharacterManager.allAlliedCharacters)
+            foreach (var ally in CharacterManager.allAlliedCharacters)
             {
-                if (!item)
+                if (!ally)
                     continue;
-                if (AdjacencyHandler.CompareAdjacency(item, CharacterManager.allEnemyCharacters[selectedPirate], 3))
+                foreach (var enemy in CharacterManager.allEnemyCharacters)
                 {
-                    strategy = Strategy.protectCaptain;
-                    break;
+                    if (AdjacencyHandler.CompareAdjacency(ally, enemy, 2))
+                    {
+                        strategy = Strategy.protectCaptain;
+                        break;
+                    }
                 }
             }
         }
@@ -138,6 +142,7 @@ public class PirateAI : MonoBehaviour
         if (strategy == Strategy.protectCaptain)
         {
             GameObject pirateCaptain = GetPirateCaptain();
+            closeToPirateCaptain.Clear();
 
             foreach (var item in CharacterManager.allAlliedCharacters)
             {
@@ -148,12 +153,14 @@ public class PirateAI : MonoBehaviour
                     closeToPirateCaptain.Add(item);
                 }
             }
+
+            if (closeToPirateCaptain.Count == 0)
+            {
+                strategy = Strategy.attackClosest;
+            }
         }
 
-        if (closeToPirateCaptain.Count == 0)
-        {
-            strategy = Strategy.attackClosest;
-        }
+
     }
 
     void GetPirateAttackMoves()
@@ -168,10 +175,7 @@ public class PirateAI : MonoBehaviour
             return;
         }
 
-        if (selectedPirate == 0 || strategy == Strategy.patrol)
-        {
-            DetermineStrategy();
-        }
+        DetermineStrategy();
 
         if (switchPirate)
         {
@@ -283,7 +287,7 @@ public class PirateAI : MonoBehaviour
                         //Astar to targerDestination
                         PopulateTheDestinationForPatrol(toTarget);
                     }
-                    if (pirateTurns.Count > 0)
+                    if (pirateTurns.Count > 0 && !pirateTurns[0].GetComponent<GridPiece>().unit)
                     {
                         break;
                     }
