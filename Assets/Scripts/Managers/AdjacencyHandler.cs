@@ -10,6 +10,8 @@ public static class AdjacencyHandler
 
         for(int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                continue;
 
             int xPosPlyr = -100;
             int yPosPlyr = -100;
@@ -55,6 +57,9 @@ public static class AdjacencyHandler
 
         int xPos2 = -100;
         int yPos2 = -100;
+
+        if (!obj1 || !obj2)
+            return false;
 
         if (obj1.GetComponent<UnitCoordinates>() && obj2.GetComponent<UnitCoordinates>())
         {

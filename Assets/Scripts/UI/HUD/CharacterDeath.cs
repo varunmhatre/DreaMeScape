@@ -21,6 +21,8 @@ public class CharacterDeath : MonoBehaviour
     {
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                return;
             healthValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().health;  
         }
     }
