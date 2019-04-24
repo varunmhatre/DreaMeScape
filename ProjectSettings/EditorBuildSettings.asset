@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/WinScene.unity
     guid: fd5907908c214144ab0e2e4bbbdbe665
   - enabled: 1
+    path: Assets/Scenes/ComicCutscene.unity
+    guid: e90244314285f19469321e93985a5b7e
+  - enabled: 1
+    path: Assets/Scenes/KentbeardSurrender.unity
+    guid: 7b00ffa0ad3e076458981267765c0294
+  - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 98fc1de734206b740ba635b705a00c9a
   m_configObjects: {}
