@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
+    /* --- TODO ---
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -42,6 +43,38 @@ public class SceneTransition : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void TurnOff(GameObject off)
+    {
+        off.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+    public static void GoFade(string scene)
+    {
+        Initiate.Fade(scene, Color.white, 1.0f);
+    }
+
+    public void ExitLevel(string scene)
+    {
+        Time.timeScale = 1;
+        DialoguePanelManager.playerControlsUnlocked = false;
+        DialoguePanelManager.countDialogueLength = 0;
+        SceneManager.LoadScene(scene);
+    }*/
+
+    public void ChangeScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
+    public void TurnOn(GameObject on)
+    {
+        on.SetActive(true);
     }
 
     public void TurnOff(GameObject off)
