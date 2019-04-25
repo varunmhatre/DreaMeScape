@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RaycastManager : MonoBehaviour
 {
@@ -58,7 +59,7 @@ public class RaycastManager : MonoBehaviour
     {
         RaycastHit hit = new RaycastHit();
 
-        if (hitTargets != null)
+        if (hitTargets != null && !GameManager.tutorialBlockClick)
         {
             for (int i = 0; i < hitTargets.Length; i++)
             {

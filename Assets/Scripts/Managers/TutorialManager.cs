@@ -15,6 +15,7 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         pirateTurn = false;
+        GameManager.tutorialBlockClick = true;
     }
 
     // Update is called once per frame
@@ -38,9 +39,9 @@ public class TutorialManager : MonoBehaviour
             indicatorParticles.SetActive(true);
             if (GetComponent<GridPieceSelect>().GetGridPieceCoords(6, 3).gameObject.GetComponent<GridPiece>().unit == null)
             {
+                ResumeDialog();
                 cannonHandler.transform.GetChild(0).gameObject.SetActive(false);
                 indicatorParticles.SetActive(false);
-                ResumeDialog();
             }
         }
 
@@ -287,11 +288,15 @@ public class TutorialManager : MonoBehaviour
 
     private void PauseDialog()
     {
+        GameManager.tutorialBlockClick = false;
+
         DialoguePanelManager.isPaused = true;
         DialoguePanelManager.playerControlsUnlocked = true;
     }
     private void ResumeDialog()
     {
+        GameManager.tutorialBlockClick = true;
+
         DialoguePanelManager.playerControlsUnlocked = false;
         GetComponent<GameManager>().dialogSceneController.GetComponent<DialoguePanelManager>().BootSequence();
         DialoguePanelManager.isPaused = false;
