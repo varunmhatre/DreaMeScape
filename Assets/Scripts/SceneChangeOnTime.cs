@@ -24,7 +24,7 @@ public class SceneChangeOnTime : MonoBehaviour
 
         if (timer >= 25.0f)
         {
-            sceneTransition.ChangeScene("MainMenu");
+            sceneTransition.ChangeScene("PirateshipScene");
         }
 
         CheckForSkip();
