@@ -83,11 +83,6 @@ public class Stats : MonoBehaviour
             {
                 CharacterManager.RemoveFromEnemies(gameObject);
             }
-            else
-            {
-                CharacterManager.RemoveFromAllies(gameObject);
-            }
-
             Die();
         }
     }

@@ -142,4 +142,16 @@ public class PathFinding : MonoBehaviour
         }
         return null;
     }
+
+    public static GridCoordinates GetGridFromPoint(Point unit)
+    {
+        foreach (var item in GridMatrix.gameGrid)
+        {
+            if (item.x == unit.x && item.y == unit.y)
+            {
+                return item;
+            }
+        }
+        return null;
+    }
 }

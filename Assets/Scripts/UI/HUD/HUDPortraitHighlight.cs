@@ -21,6 +21,8 @@ public class HUDPortraitHighlight : MonoBehaviour
     {
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                continue;
             //if (CharacterManager.allAlliedCharacters[i].name == )
         }        
     }

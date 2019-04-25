@@ -27,6 +27,8 @@ public class UpdateStats : MonoBehaviour
     {
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                continue;
             healthValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().health;
             resistTextArr[i].text = healthValue.ToString();
 

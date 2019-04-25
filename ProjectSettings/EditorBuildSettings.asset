@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KentbeardSurrender.unity
     guid: 7b00ffa0ad3e076458981267765c0294
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 98fc1de734206b740ba635b705a00c9a
   m_configObjects: {}

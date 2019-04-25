@@ -59,6 +59,8 @@ public class JadeAbilityHandler : MonoBehaviour
 
     public void OnMouseHoveringStart()
     {
+        if (!CharacterManager.allAlliedCharacters[2])
+            return;
         UnitCoordinates gamePiece = CharacterManager.allAlliedCharacters[2].GetComponent<UnitCoordinates>();
         gridsToHighlight.Clear();
         foreach (var grid in GridMatrix.gameGrid)

@@ -41,6 +41,9 @@ public class DreamMeter : MonoBehaviour
     {
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                continue;
+
             meterValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().meterUnitsFilled;
            // Debug.Log("meterValue:      " + meterValue);
            //This is for Horizontal fill meter.
