@@ -31,6 +31,8 @@ public class HealthBar : MonoBehaviour
     {
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                continue;
             healthValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().health;
             //This is for vertical fill meter.
             if (healthValue > 8)

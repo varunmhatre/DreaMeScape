@@ -30,8 +30,9 @@ public class CameraFocus : MonoBehaviour
 
     void CalculateOffset(Transform pirate)
     {
-        float lambda = (pirate.position.y - transform.position.y) / transform.forward.y;
-        offset = Vector3.Normalize(new Vector3(transform.forward.x * lambda, pirate.position.y - transform.position.y, transform.forward.z * lambda) * -1.0f) * 8.0f;
+        //float lambda = (pirate.position.y - transform.position.y) / transform.forward.y;
+        //offset = Vector3.Normalize(new Vector3(transform.forward.x * lambda, pirate.position.y - transform.position.y, transform.forward.z * lambda) * -1.0f) * 8.0f;
+        offset = transform.forward * -8.0f;
     }
     
     public void ResetCamera()

@@ -23,11 +23,17 @@ public class CursorHandler : MonoBehaviour  //, IPointerEnterHandler, IPointerEx
 
     private void OnMouseEnter()
     {       
-        customCursor.EnableCrossBar();
+       if(!CannonStaticVariables.isCannonSelected && RaycastManager.leftClicked)
+        {
+            customCursor.EnableCrossBar();
+        }      
     }
 
     private void OnMouseExit()
     {
-        customCursor.DisableCrossBar();
+        if (!CannonStaticVariables.isCannonSelected && RaycastManager.leftClicked)
+        {
+            customCursor.DisableCrossBar();
+        }
     }
  }

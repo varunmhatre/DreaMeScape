@@ -11,8 +11,10 @@ public class ConnectingGrids : MonoBehaviour
         GridCoordinates currentGrid = GetComponent<GridCoordinates>();
         foreach (var item in GridMatrix.gameGrid)
         {
-            if (((item.x == (currentGrid.x + 1) || item.x == (currentGrid.x - 1)) && item.y == currentGrid.y) ||
-                 ((item.y == (currentGrid.y + 1) || item.y == (currentGrid.y - 1)) && item.x == currentGrid.x))
+            if (item == currentGrid)
+                continue;
+            if (currentGrid.x < (item.x + 2) && currentGrid.x > (item.x - 2) &&
+                 currentGrid.y < (item.y + 2) && currentGrid.y > (item.y - 2))
             {
                 connectingGrids.Add(item);
             }
