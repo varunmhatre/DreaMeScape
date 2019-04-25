@@ -19,7 +19,7 @@ public class SettingsHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        max = 6;
+        max = 5;
         min = 0;
         currentIndex = 0;
 
@@ -60,7 +60,7 @@ public class SettingsHandler : MonoBehaviour
                 slidingImage[i].SetActive(false);
             }
         }
-        else if (currentIndex == 5)
+        else if (currentIndex == 4)
         {
             rightButton.gameObject.SetActive(false);
         }

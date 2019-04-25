@@ -38,7 +38,7 @@ public class SceneChangeOnTime : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && setupSkip)
         {
-            sceneTransition.ChangeScene("MainMenu");
+            sceneTransition.ChangeScene("PirateshipScene");
         }
 
         if (Input.GetMouseButtonDown(0))
