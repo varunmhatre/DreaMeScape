@@ -291,6 +291,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("Got here!");
         if (TutorialCards.isTutorialRunning && !CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit)
         {
             transform.GetComponent<Image>().color = Color.blue;

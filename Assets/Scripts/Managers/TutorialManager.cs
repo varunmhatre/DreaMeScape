@@ -156,8 +156,8 @@ public class TutorialManager : MonoBehaviour
         if (DialoguePanelManager.stepIndex == 34)
         {
             PauseDialog();
-            surroundTiles.transform.position = new Vector3(55.6f, 24.63f, 11.9f);
-            surroundTiles.SetActive(true);
+            //surroundTiles.transform.position = new Vector3(55.6f, 24.63f, 11.9f);
+            //surroundTiles.SetActive(true);
             if (AdjacencyHandler.NumPlayerCharactersAround(CharacterManager.allEnemyCharacters[0], 1) == 3)
             {
                 surroundTiles.SetActive(false);
@@ -198,8 +198,8 @@ public class TutorialManager : MonoBehaviour
         if (DialoguePanelManager.stepIndex == 40)
         {
             surroundTiles.SetActive(false);
-            CharacterManager.allEnemyCharacters[0].SetActive(true);
-            CharacterManager.allEnemyCharacters[1].SetActive(true);
+            //CharacterManager.allEnemyCharacters[0].SetActive(true);
+            //CharacterManager.allEnemyCharacters[1].SetActive(true);
         }
 
         //Add positions for tut arrow in next many dialogs
