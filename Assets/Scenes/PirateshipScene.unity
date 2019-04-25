@@ -1319,6 +1319,11 @@ PrefabInstance:
       propertyPath: targetTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4762885371029822444, guid: 058a87112e1a79047a44b1cbba485b50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a87112e1a79047a44b1cbba485b50, type: 3}
 --- !u!1 &1095447124
@@ -3670,7 +3675,7 @@ PrefabInstance:
     - target: {fileID: 5774105520446953583, guid: 5ddebe932af4eb545840169c239d1a64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5774105520446953577, guid: 5ddebe932af4eb545840169c239d1a64,
         type: 3}
