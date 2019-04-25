@@ -80,18 +80,6 @@
     },
     {
       "Conversation": 13,
-      "CharacterName": "Henry",
-      "CharacterImage": "Henry",
-      "DialogueText": "I am Henry"
-    },
-    {
-      "Conversation": 14,
-      "CharacterName": "Pirate",
-      "CharacterImage": "Pirate",
-      "DialogueText": "I am Pirate"
-    },
-    {
-      "Conversation": 15,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "."

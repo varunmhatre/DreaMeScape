@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fb1543185dcc314490781af0bbcf37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToWaitForEachMove: 0.5
+  timeToWaitForNewPirateToMove: 2

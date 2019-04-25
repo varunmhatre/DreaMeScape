@@ -52,7 +52,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Update is called once per frame
     void Update()
     {
-        if (buttonId >= CharacterManager.allAlliedCharacters.Count || CharacterManager.allAlliedCharacters[buttonId] == null)
+        if (buttonId >= CharacterManager.allAlliedCharacters.Count || !CharacterManager.allAlliedCharacters[buttonId])
         {
             return;
         }
@@ -72,6 +72,8 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void ActivateAbility()
     {
+        if (!CharacterManager.allAlliedCharacters[buttonId])
+            return;
         Stats charStats = CharacterManager.allAlliedCharacters[buttonId].GetComponent<Stats>();
         if (buttonId == 3 && GameManager.currentEnergy >= 1)
         {
@@ -161,6 +163,9 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
         GetComponent<HallyAbilityHandler>().OnMouseClickWhenOn();
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
+            if (!CharacterManager.allAlliedCharacters[i])
+                continue;
+
             GameObject ally = CharacterManager.allAlliedCharacters[i];
             if (AdjacencyHandler.CompareAdjacency(character, ally, 2))
             {
