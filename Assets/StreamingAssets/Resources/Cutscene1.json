@@ -124,13 +124,13 @@
       "Conversation": 20,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Move Jade or another character next to the Pirate to attack it."
+      "DialogueText": "Move Jade next to the Pirate to attack it."
     },
     {
       "Conversation": 21,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Now select the character and then attack the pirate!"
+      "DialogueText": "Now select Jade and then attack the pirate!"
     },
     {
       "Conversation": 22,

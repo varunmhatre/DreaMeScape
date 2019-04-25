@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static bool isPlayerTurn;
     public static int roundCounter;
     public static bool tutorialBlockClick;
+    public static bool tutorialBlockAbility;
 
     // Start is called before the first frame update
     void Start()

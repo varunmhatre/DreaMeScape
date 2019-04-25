@@ -69,7 +69,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
                 isCharacterPanelDisabled = true;
                 countDialogueLength = currentEvent.dialogues.Count;
                 //Uncomment when tut ready
-                //SceneManager.LoadScene("PirateshipScene");
+                SceneManager.LoadScene("PirateshipScene");
             }
             //Deprecated------------------------------------------------
             //if (SceneManager.GetActiveScene().name == "FantasyWorldStartScene")

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -10,12 +11,18 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] GameObject surroundTiles;
     [SerializeField] List<GameObject> hudElements = new List<GameObject>();
     bool pirateTurn;
+    int enemyMaxHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         pirateTurn = false;
         GameManager.tutorialBlockClick = true;
+        GameManager.tutorialBlockAbility = true;
+        GameManager.currentEnergy = 5;
+        GameManager.totalEnergy = 5;
+        CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health += 6;
+        enemyMaxHealth = CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health;
     }
 
     // Update is called once per frame
@@ -34,6 +41,7 @@ public class TutorialManager : MonoBehaviour
 
         if (DialoguePanelManager.stepIndex == 7)
         {
+            BlockSpecificPlayersClick(new int[] { 0 });
             PauseDialog();
             indicatorParticles.transform.position = new Vector3(51.0f, 1.3f, 25.75f);
             indicatorParticles.SetActive(true);
@@ -42,6 +50,7 @@ public class TutorialManager : MonoBehaviour
                 ResumeDialog();
                 cannonHandler.transform.GetChild(0).gameObject.SetActive(false);
                 indicatorParticles.SetActive(false);
+                AllowSpecificPlayersClick(new int[] { 0 });
             }
         }
 
@@ -67,17 +76,22 @@ public class TutorialManager : MonoBehaviour
 
         if (DialoguePanelManager.stepIndex == 17)
         {
+            BlockSpecificPlayersClick(new int[] { 0, 1, 2 });
+            PauseDialog();
             indicatorParticles.transform.position = new Vector3(58.0f, 1.3f, 27.4f);
             indicatorParticles.SetActive(true);
-        }
-
-        if (DialoguePanelManager.stepIndex == 18)
-        {
-            indicatorParticles.SetActive(false);
+            if(RaycastManager.rightClicked)
+            {
+                ResumeDialog();
+                DialoguePanelManager.stepIndex++;
+                AllowSpecificPlayersClick(new int[] { 0, 1, 2 });
+                indicatorParticles.SetActive(false);
+            }
         }
 
         if (DialoguePanelManager.stepIndex == 20)
         {
+            BlockSpecificPlayersClick(new int[] { 0, 1 });
             PauseDialog();
             surroundTiles.transform.position = new Vector3(55.6f, 24.63f, 11.9f);
             surroundTiles.SetActive(true);
@@ -94,10 +108,11 @@ public class TutorialManager : MonoBehaviour
             PauseDialog();
             indicatorParticles.transform.position = new Vector3(58.0f, 1.3f, 27.4f);
             indicatorParticles.SetActive(true);
-            if(CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health < 6)
+            if(CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health < enemyMaxHealth)
             {
                 indicatorParticles.SetActive(false);
                 ResumeDialog();
+                AllowSpecificPlayersClick(new int[] { 0, 1 });
             }
 
         }
@@ -200,6 +215,7 @@ public class TutorialManager : MonoBehaviour
         //Need to add dialog instructions on how to use abilities
         if (DialoguePanelManager.stepIndex == 49)
         {
+            GameManager.tutorialBlockAbility = false;
             PauseDialog();
             //tutorialArrow.transform.position = new Vector3(); //ed ability icon
             if (CharacterManager.allAlliedCharacters[0].GetComponent<Stats>().meterUnitsFilled == 0)
@@ -208,7 +224,7 @@ public class TutorialManager : MonoBehaviour
             }
             else
             {
-                CharacterManager.allAlliedCharacters[0].GetComponent<Stats>().GainMeter(5);
+                //CharacterManager.allAlliedCharacters[0].GetComponent<Stats>().GainMeter(5);
             }
         }
 
@@ -222,7 +238,7 @@ public class TutorialManager : MonoBehaviour
             }
             else
             {
-                CharacterManager.allAlliedCharacters[2].GetComponent<Stats>().GainMeter(5);
+                //CharacterManager.allAlliedCharacters[2].GetComponent<Stats>().GainMeter(5);
             }
         }
 
@@ -236,7 +252,7 @@ public class TutorialManager : MonoBehaviour
             }
             else
             {
-                CharacterManager.allAlliedCharacters[3].GetComponent<Stats>().GainMeter(5);
+                //CharacterManager.allAlliedCharacters[3].GetComponent<Stats>().GainMeter(5);
             }
         }
 
@@ -251,7 +267,7 @@ public class TutorialManager : MonoBehaviour
             }
             else
             {
-                CharacterManager.allAlliedCharacters[1].GetComponent<Stats>().GainMeter(5);
+                //CharacterManager.allAlliedCharacters[1].GetComponent<Stats>().GainMeter(5);
             }
         }
 
@@ -291,5 +307,20 @@ public class TutorialManager : MonoBehaviour
 
         DialoguePanelManager.playerControlsUnlocked = false;
         DialoguePanelManager.isPaused = false;
+    }
+
+    private void BlockSpecificPlayersClick(int[] players)
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            CharacterManager.allAlliedCharacters[players[i]].tag = "Untagged";
+        }
+    }
+    private void AllowSpecificPlayersClick(int[] players)
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            CharacterManager.allAlliedCharacters[players[i]].tag = "Player";
+        }
     }
 }
