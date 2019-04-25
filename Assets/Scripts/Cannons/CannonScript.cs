@@ -11,10 +11,6 @@ public class CannonScript : MonoBehaviour
     public CannonBall cannonballScript;
     Quaternion rotation;
 
-    [SerializeField] public SpriteRenderer baseVisual;
-    [SerializeField] public Sprite onVisual;
-    [SerializeField] public Sprite offVisual;
-
     private void Start()
     {
         //charge = 1;
@@ -28,12 +24,8 @@ public class CannonScript : MonoBehaviour
     {
         if (isThisCannonSelected)
         {
-            baseVisual.sprite = onVisual;
+            //baseVisual.sprite = onVisual;
             FaceMouse();
-        }
-        else
-        {
-            baseVisual.sprite = offVisual;
         }
     }
 

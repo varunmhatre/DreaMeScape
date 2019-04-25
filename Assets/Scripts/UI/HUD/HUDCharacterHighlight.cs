@@ -32,6 +32,8 @@ public class HUDCharacterHighlight : MonoBehaviour
     {
         for (index = 0; index < CharacterManager.allAlliedCharacters.Count; index++)
         {
+            if (!CharacterManager.allAlliedCharacters[index])
+                continue;
             if (characters[index] == CharacterManager.allAlliedCharacters[index].name)
             {
                 clickID = index;

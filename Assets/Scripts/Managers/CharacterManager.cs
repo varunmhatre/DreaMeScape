@@ -7,20 +7,6 @@ public static class CharacterManager
     public static List<GameObject> allAlliedCharacters;
     public static List<GameObject> allEnemyCharacters;
     public static List<GameObject> allCharacters;
-    public static List<GameObject> allHallyCharacters;
-
-    public static void RemoveFromAllies(GameObject unit)    
-    {
-        for (int i = 0; i < allAlliedCharacters.Count; i++)
-        {
-            if (allAlliedCharacters[i] == unit)
-            {
-                allAlliedCharacters.RemoveAt(i);
-                break;
-            }
-        }
-        ReCalculateAllCharacters();
-    }
 
     public static void RemoveFromEnemies(GameObject unit)
     {
