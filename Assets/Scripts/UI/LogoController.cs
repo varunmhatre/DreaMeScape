@@ -19,6 +19,6 @@ public class LogoController : MonoBehaviour
 
     public void LogoEnds()
     {
-        SceneManager.LoadScene("ComicCutscene");
+        SceneManager.LoadScene("MainMenu");
     }
 }

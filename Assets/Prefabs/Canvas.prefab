@@ -1361,7 +1361,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Paralyzing Potion
+  m_Text: Cleave
 --- !u!1 &1682303019574635328
 GameObject:
   m_ObjectHideFlags: 0
@@ -8422,7 +8422,6 @@ MonoBehaviour:
   - {fileID: 1170574605950745642}
   - {fileID: 2778305631219721751}
   - {fileID: 8343343870526504739}
-  - {fileID: 7015277434003367398}
   - {fileID: 1682303019574635328}
   max: 5
   min: 0
@@ -8505,7 +8504,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Paralyzing Potion
+  m_Text: Fireball
 --- !u!1 &6469425007220034491
 GameObject:
   m_ObjectHideFlags: 0
