@@ -60,7 +60,7 @@ public class PlayerControls : MonoBehaviour
 
             if (startSliding && prevSelectedUnit != null)
             {
-                Debug.Log("Sliding!");
+               // Debug.Log("Sliding!");
                 SlideMovedCharacter(prevSelectedUnit.gameObject, prevSelectedUnit.position, toMoveLoc);
             }
             else if (startSliding && prevSelectedUnit == null)
@@ -213,7 +213,7 @@ public class PlayerControls : MonoBehaviour
         Vector3 direction = toGo.normalized;
         Vector3 toMove = direction * slideSpeed;
 
-        Debug.Log(toMove.magnitude);
+        //Debug.Log(toMove.magnitude);
 
         character.transform.position += toMove * Time.deltaTime;
 
@@ -223,7 +223,7 @@ public class PlayerControls : MonoBehaviour
         //check if you've gone too far
         if (direction != newDirection)
         {
-            Debug.Log("You've gone too far!");
+            //Debug.Log("You've gone too far!");
             character.transform.position = goal;
             startSliding = false;
         }

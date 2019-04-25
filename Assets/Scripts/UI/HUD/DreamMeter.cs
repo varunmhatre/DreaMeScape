@@ -8,6 +8,7 @@ public class DreamMeter : MonoBehaviour
     private float startingWidth;
     private float startingHeight;
     private int meterValue;
+    public float targetTime = 4.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,13 @@ public class DreamMeter : MonoBehaviour
     void Update()
     {
         UpdateMeter();
+
+        //targetTime -= Time.deltaTime;
+        //Debug.Log("targetTime:  " + targetTime);
+        //if (Mathf.Round(targetTime) <= 0)
+        //{
+        //    timerEnded();
+        //}
     }
     void UpdateMeter()
     {
@@ -37,14 +45,29 @@ public class DreamMeter : MonoBehaviour
                 continue;
 
             meterValue = CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().meterUnitsFilled;
-            
+           // Debug.Log("meterValue:      " + meterValue);
            //This is for Horizontal fill meter.
            // dreamMeterBarArr[i].sizeDelta = new Vector2(startingWidth * meterValue / CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().maxMeter, dreamMeterBarArr[i].rect.height);
            // dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 2, dreamMeterBarArr[i].rect.width);
 
             //This is for vertical fill meter.
-            dreamMeterBarArr[i].sizeDelta = new Vector2(dreamMeterBarArr[i].rect.width,startingHeight * meterValue / CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().maxMeter);
-            dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 2, dreamMeterBarArr[i].rect.height);
+            dreamMeterBarArr[i].sizeDelta = new Vector2(dreamMeterBarArr[i].rect.width,startingHeight * meterValue/ CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().maxMeter);
+            dreamMeterBarArr[i].GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 2, dreamMeterBarArr[i].rect.height); 
         }
     }
+
+
+    
+
+     
+
+       
+ 
+
+    //void timerEnded()
+    //{
+    //    //do your stuff here.
+    //    Debug.Log("timerEnded");
+    //}
+
 }
