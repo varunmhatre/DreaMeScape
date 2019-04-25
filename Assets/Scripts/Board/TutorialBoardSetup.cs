@@ -173,7 +173,7 @@ public class TutorialBoardSetup : MonoBehaviour
         int[] array = { 0 };
         if (level == 0)
         {
-            array = new int[] { 0 };
+            array = new int[] { 10, 2 };
         }
         else if (level == 1)
         {

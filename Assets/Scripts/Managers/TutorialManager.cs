@@ -87,10 +87,6 @@ public class TutorialManager : MonoBehaviour
                 ResumeDialog();
             }
 
-            if (GameManager.currentEnergy <= 0)
-            {
-                GameManager.RefreshCurrentEnergy();
-            }
         }
 
         if (DialoguePanelManager.stepIndex == 21)
@@ -104,10 +100,6 @@ public class TutorialManager : MonoBehaviour
                 ResumeDialog();
             }
 
-            if (GameManager.currentEnergy <= 0)
-            {
-                GameManager.RefreshCurrentEnergy();
-            }
         }
 
         if (DialoguePanelManager.stepIndex == 26)
@@ -118,7 +110,7 @@ public class TutorialManager : MonoBehaviour
         if (DialoguePanelManager.stepIndex == 28)
         {
             PauseDialog();
-            if(GameManager.currentEnergy <= 0)
+            if (GameManager.currentEnergy <= 0)
             {
                 ResumeDialog();
             }
@@ -151,7 +143,7 @@ public class TutorialManager : MonoBehaviour
         if (DialoguePanelManager.stepIndex == 32)
         {
             tutorialArrow.SetActive(false);
-            GameManager.RefreshCurrentEnergy();
+            //GameManager.RefreshCurrentEnergy();
         }
 
         if (DialoguePanelManager.stepIndex == 34)
@@ -188,11 +180,6 @@ public class TutorialManager : MonoBehaviour
             if(InteractablesManager.generators[0].GetComponent<Generator>().isOn)
             {
                 ResumeDialog();
-            }
-
-            if (GameManager.currentEnergy <= 0)
-            {
-                GameManager.RefreshCurrentEnergy();
             }
         }
 
@@ -292,13 +279,17 @@ public class TutorialManager : MonoBehaviour
 
         DialoguePanelManager.isPaused = true;
         DialoguePanelManager.playerControlsUnlocked = true;
+        
+        if (GameManager.currentEnergy <= 0 && DialoguePanelManager.stepIndex != 28)
+        {
+            GameManager.RefreshCurrentEnergy();
+        }
     }
     private void ResumeDialog()
     {
         GameManager.tutorialBlockClick = true;
 
         DialoguePanelManager.playerControlsUnlocked = false;
-        GetComponent<GameManager>().dialogSceneController.GetComponent<DialoguePanelManager>().BootSequence();
         DialoguePanelManager.isPaused = false;
     }
 }
