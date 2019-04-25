@@ -2,38 +2,8 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
-- Assets/Images/UI/New Dialogue/EventAAtlas.tpsheet
-- Assets/Images/UI/New Dialogue/Portrait.tpsheet
-- Assets/Resources/CharacterPortrait.tpsheet
-- Assets/Resources/CharPortrait.tpsheet
-- Assets/Resources/DialogueTextBox.tpsheet
-- Assets/Resources/EventAtlas.tpsheet
-- Assets/Resources/Namebox.tpsheet
-- Assets/Resources/NamePanel.tpsheet
-- Assets/Resources/Panel.tpsheet
-- Assets/Resources/Textbox.tpsheet
-- Assets/StreamingAssets/Resources/EventAtlas.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
-- Assets/Images/UI/New Dialogue/Portrait.png
-- Assets/Images/UI/New Dialogue/Portrait.png
-- Assets/Resources/CharacterPortrait.png
-- Assets/Resources/CharPortrait.png
-- Assets/Resources/DialogueTextBox.png
-- Assets/Resources/EventAtlas.png
-- Assets/Resources/Namebox.png
-- Assets/Resources/NamePanel.png
-- Assets/Resources/Panel.png
-- Assets/Resources/Textbox.png
-- Assets/StreamingAssets/Resources/EventAtlas.png
 normalmapFileNames:
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
 enableDebugOutput: 0

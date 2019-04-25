@@ -26,14 +26,14 @@
     },
     {
       "Conversation": 4,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
-      "DialogueText": "Hi there, I’m totally Henry! Let me give you a few tips on how to play DreaMeScape!"
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
+      "DialogueText": "Hi there, I’m Henry! Let me give you a few tips on how to play DreaMeScape!"
     },
     {
       "Conversation": 5,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Use WASD to move the Camera and L to change it’s Angle."
     },
     {
@@ -44,14 +44,14 @@
     },
     {
       "Conversation": 7,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Click here on Hally’s base to select her and click on the Green Space to move her there!"
     },
     {
       "Conversation": 8,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Moving around uses energy"
     },
     {
@@ -80,8 +80,8 @@
     },
     {
       "Conversation": 13,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Pirate",
+      "CharacterImage": "Pirate",
       "DialogueText": "Arr! Did you do your homework?"
     },
     {
@@ -98,14 +98,14 @@
     },
     {
       "Conversation": 16,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Pirate",
+      "CharacterImage": "Pirate",
       "DialogueText": "Don’t you ignore me, you landlubber!"
     },
     {
       "Conversation": 17,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Right click on the Pirate’s base to see his Health and Attack!"
     },
     {
@@ -122,14 +122,14 @@
     },
     {
       "Conversation": 20,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Move Jade or another character next to the Pirate to attack it."
     },
     {
       "Conversation": 21,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Now select the character and then attack the pirate!"
     },
     {
@@ -140,8 +140,8 @@
     },
     {
       "Conversation": 23,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Pirate",
+      "CharacterImage": "Pirate",
       "DialogueText": "That all you got, missy? You’ll fail the test!"
     },
     {
@@ -188,8 +188,8 @@
     },
     {
       "Conversation": 31,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "You’re out of Energy. It’s now the Pirate's turn."
     },
     {
@@ -206,8 +206,8 @@
     },
     {
       "Conversation": 34,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Surround 3 of the characters in the 8 Tiles around the pirate to weaken it."
     },
     {
@@ -218,8 +218,8 @@
     },
     {
       "Conversation": 36,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Pirate",
+      "CharacterImage": "Pirate",
       "DialogueText": "Arr, I’m defeated!"
     },
     {
@@ -236,8 +236,8 @@
     },
     {
       "Conversation": 39,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Move Ed, Hally, and Meda in the 8 tiles around the Generator to activate it."
     },
     {
@@ -284,14 +284,14 @@
     },
     {
       "Conversation": 47,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Each person has a Dream Meter."
     },
     {
       "Conversation": 48,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "You fill that person’s Dream Meter by moving them. When it’s Full you can use their ability."
     },
     {
@@ -302,14 +302,14 @@
     },
     {
       "Conversation": 50,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Ed is timid and has trouble moving in front of others. So he wants to show the enemy how it feels to not move in his presence!"
     },
     {
       "Conversation": 51,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "That was amazing, Ed!"
     },
     {
@@ -320,8 +320,8 @@
     },
     {
       "Conversation": 53,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Jade is reckless and likes to jump head first in fights. So she will rush to an enemy and hit them hard!"
     },
     {
@@ -332,8 +332,8 @@
     },
     {
       "Conversation": 55,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Meda cares about her friends but she can be mean sometimes. So burns her enemy with a fireball of sharp words!"
     },
     {
@@ -344,8 +344,8 @@
     },
     {
       "Conversation": 57,
-      "CharacterName": "Kent",
-      "CharacterImage": "Kent",
+      "CharacterName": "Henry",
+      "CharacterImage": "Henry",
       "DialogueText": "Hally likes daydreaming but can’t pay attention for too long. So she boosts the Dream Meter of nearby friends!"
     },
     {
