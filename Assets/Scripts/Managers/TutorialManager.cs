@@ -9,11 +9,12 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] GameObject tutorialArrow;
     [SerializeField] GameObject surroundTiles;
     [SerializeField] List<GameObject> hudElements = new List<GameObject>();
+    bool pirateTurn;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pirateTurn = false;
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class TutorialManager : MonoBehaviour
             indicatorParticles.SetActive(true);
             if (GetComponent<GridPieceSelect>().GetGridPieceCoords(6, 3).gameObject.GetComponent<GridPiece>().unit == null)
             {
+                cannonHandler.transform.GetChild(0).gameObject.SetActive(false);
                 indicatorParticles.SetActive(false);
                 ResumeDialog();
             }
@@ -64,7 +66,7 @@ public class TutorialManager : MonoBehaviour
 
         if (DialoguePanelManager.stepIndex == 17)
         {
-            indicatorParticles.transform.position = new Vector3(55.0f, 1.5f, 28.75f);
+            indicatorParticles.transform.position = new Vector3(58.0f, 1.3f, 27.4f);
             indicatorParticles.SetActive(true);
         }
 
@@ -76,24 +78,34 @@ public class TutorialManager : MonoBehaviour
         if (DialoguePanelManager.stepIndex == 20)
         {
             PauseDialog();
-            surroundTiles.transform.position = new Vector3(52.75f, 24.63f, 13.3f);
+            surroundTiles.transform.position = new Vector3(55.6f, 24.63f, 11.9f);
             surroundTiles.SetActive(true);
             if(AdjacencyHandler.NumPlayerCharactersAround(CharacterManager.allEnemyCharacters[0], 1) == 1)
             {
                 surroundTiles.SetActive(false);
                 ResumeDialog();
             }
+
+            if (GameManager.currentEnergy <= 0)
+            {
+                GameManager.RefreshCurrentEnergy();
+            }
         }
 
         if (DialoguePanelManager.stepIndex == 21)
         {
             PauseDialog();
-            indicatorParticles.transform.position = new Vector3(55.0f, 1.5f, 28.75f);
+            indicatorParticles.transform.position = new Vector3(58.0f, 1.3f, 27.4f);
             indicatorParticles.SetActive(true);
             if(CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health < 6)
             {
                 indicatorParticles.SetActive(false);
                 ResumeDialog();
+            }
+
+            if (GameManager.currentEnergy <= 0)
+            {
+                GameManager.RefreshCurrentEnergy();
             }
         }
 
@@ -111,9 +123,64 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
+        if (DialoguePanelManager.stepIndex == 30)
+        {
+            pirateTurn = true;
+        }
+
+        if (DialoguePanelManager.stepIndex == 31)
+        {
+            tutorialArrow.SetActive(true);
+            PauseDialog();
+            if (pirateTurn)
+            {
+                GameManager.EndCurrentTurn();
+                pirateTurn = false;
+            }
+
+            if (GameManager.isPlayerTurn)
+            {
+                ResumeDialog();
+            }
+        }
+
+
+        //End of pirates turn
+
+        if (DialoguePanelManager.stepIndex == 32)
+        {
+            tutorialArrow.SetActive(false);
+            GameManager.RefreshCurrentEnergy();
+        }
+
+        if (DialoguePanelManager.stepIndex == 34)
+        {
+            PauseDialog();
+            surroundTiles.transform.position = new Vector3(55.6f, 24.63f, 11.9f);
+            surroundTiles.SetActive(true);
+            if (AdjacencyHandler.NumPlayerCharactersAround(CharacterManager.allEnemyCharacters[0], 1) == 3)
+            {
+                surroundTiles.SetActive(false);
+                ResumeDialog();
+            }
+        }
+        
+        if (DialoguePanelManager.stepIndex == 35)
+        {
+            PauseDialog();
+            if(CharacterManager.allEnemyCharacters.Count == 0)
+            {
+                ResumeDialog();
+            }
+        }
+
+        if (DialoguePanelManager.stepIndex == 37)
+        {
+            InteractablesManager.generators[0].SetActive(true);
+        }
+
         if (DialoguePanelManager.stepIndex == 39)
         {
-            GameManager.RefreshCurrentEnergy();
             surroundTiles.transform.position = new Vector3(54.17f, 24.63f, 9f);
             surroundTiles.SetActive(true);
             PauseDialog();
@@ -121,18 +188,95 @@ public class TutorialManager : MonoBehaviour
             {
                 ResumeDialog();
             }
+
+            if (GameManager.currentEnergy <= 0)
+            {
+                GameManager.RefreshCurrentEnergy();
+            }
         }
 
-        if (DialoguePanelManager.stepIndex == 5)
+        if (DialoguePanelManager.stepIndex == 40)
+        {
+            surroundTiles.SetActive(false);
+            CharacterManager.allEnemyCharacters[0].SetActive(true);
+            CharacterManager.allEnemyCharacters[1].SetActive(true);
+        }
+
+        //Add positions for tut arrow in next many dialogs
+        if (DialoguePanelManager.stepIndex == 48)
+        {
+            //tutorialArrow.transform.position = new Vector3(); //ed dream meter
+            tutorialArrow.SetActive(true);
+        }
+
+        //Need to add dialog instructions on how to use abilities
+        if (DialoguePanelManager.stepIndex == 49)
+        {
+            PauseDialog();
+            //tutorialArrow.transform.position = new Vector3(); //ed ability icon
+            if (CharacterManager.allAlliedCharacters[0].GetComponent<Stats>().meterUnitsFilled == 0)
+            {
+                ResumeDialog();
+            }
+            else
+            {
+                CharacterManager.allAlliedCharacters[0].GetComponent<Stats>().GainMeter(5);
+            }
+        }
+
+        if (DialoguePanelManager.stepIndex == 52)
+        {
+            PauseDialog();
+            //tutorialArrow.transform.position = new Vector3(); //jade ability icon
+            if (CharacterManager.allAlliedCharacters[2].GetComponent<Stats>().meterUnitsFilled == 0)
+            {
+                ResumeDialog();
+            }
+            else
+            {
+                CharacterManager.allAlliedCharacters[2].GetComponent<Stats>().GainMeter(5);
+            }
+        }
+
+        if (DialoguePanelManager.stepIndex == 54)
+        {
+            PauseDialog();
+            //tutorialArrow.transform.position = new Vector3(); //meda ability icon
+            if (CharacterManager.allAlliedCharacters[3].GetComponent<Stats>().meterUnitsFilled == 0)
+            {
+                ResumeDialog();
+            }
+            else
+            {
+                CharacterManager.allAlliedCharacters[3].GetComponent<Stats>().GainMeter(5);
+            }
+        }
+
+        if (DialoguePanelManager.stepIndex == 56)
+        {
+
+            PauseDialog();
+            //tutorialArrow.transform.position = new Vector3(); //hally ability icon
+            if (CharacterManager.allAlliedCharacters[1].GetComponent<Stats>().meterUnitsFilled == 0)
+            {
+                ResumeDialog();
+            }
+            else
+            {
+                CharacterManager.allAlliedCharacters[1].GetComponent<Stats>().GainMeter(5);
+            }
+        }
+
+        if (DialoguePanelManager.stepIndex == 52)
         {
 
         }
 
-        //if (DialoguePanelManager.stepIndex == -1)
-        //{
-        //    ShowCharacter(3);
-        //    InteractablesManager.generators[0].SetActive(true);
-        //}
+        if (DialoguePanelManager.stepIndex == 52)
+        {
+
+        }
+
     }
 
     private void ShowCharacter(int charNum)

@@ -214,7 +214,7 @@
       "Conversation": 35,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": "Everyone attack!"
+      "DialogueText": "Attack!"
     },
     {
       "Conversation": 36,
@@ -308,8 +308,8 @@
     },
     {
       "Conversation": 51,
-      "CharacterName": "Henry",
-      "CharacterImage": "Henry",
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
       "DialogueText": "That was amazing, Ed!"
     },
     {
