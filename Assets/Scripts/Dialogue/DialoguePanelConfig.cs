@@ -65,10 +65,10 @@ public class DialoguePanelConfig : MonoBehaviour
             }
             if (RaycastManager.leftClicked || Input.GetKeyDown(KeyCode.Space) && dialogueText.Length < count)
             {
-                count = 1;
+                count = 1; //for fun, remove
                 dialogue.text = dialogueText;
                 DialoguePanelManager.isPressed = true;
-                break;
+                break; //for fun, remove
             }
         }        
     }

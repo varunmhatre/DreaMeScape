@@ -4881,6 +4881,8 @@ GameObject:
   - component: {fileID: 217364645000196577}
   - component: {fileID: 2597344126568081098}
   - component: {fileID: 5402824053429918979}
+  - component: {fileID: 8022098147078011682}
+  - component: {fileID: 7205460404622644887}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Cannon
@@ -4961,6 +4963,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
+--- !u!114 &8022098147078011682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654685926998424055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b135b61b488c4479d7b0eefa84eabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseVisual: {fileID: 8654838433472773730}
+  onVisual: {fileID: 21300000, guid: 4257cd1213de41942bce9ef4545465c9, type: 3}
+  offVisual: {fileID: 21300000, guid: 065d3e8aad3999b4b902d8cbc6d571e7, type: 3}
+--- !u!114 &7205460404622644887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654685926998424055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5910165077760296253
 GameObject:
   m_ObjectHideFlags: 0
@@ -5018,7 +5047,6 @@ GameObject:
   - component: {fileID: 8654838433472773730}
   - component: {fileID: 598876310608553086}
   - component: {fileID: 1199857333264937341}
-  - component: {fileID: 8289005291955758316}
   m_Layer: 0
   m_Name: CharacterSelection 4
   m_TagString: Untagged
@@ -5114,18 +5142,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8289005291955758316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7436713600092160459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29b135b61b488c4479d7b0eefa84eabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseVisual: {fileID: 8654838433472773730}
-  onVisual: {fileID: 21300000, guid: 4257cd1213de41942bce9ef4545465c9, type: 3}
-  offVisual: {fileID: 21300000, guid: 065d3e8aad3999b4b902d8cbc6d571e7, type: 3}

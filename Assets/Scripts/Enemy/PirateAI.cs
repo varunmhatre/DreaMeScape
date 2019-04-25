@@ -128,9 +128,17 @@ public class PirateAI : MonoBehaviour
             {
                 if (!ally)
                     continue;
+
+                
                 foreach (var enemy in CharacterManager.allEnemyCharacters)
                 {
-                    if (AdjacencyHandler.CompareAdjacency(ally, enemy, 2))
+                    int areaToCheck = 2;
+
+                    if (enemy.GetComponent<PirateCaptain>())
+                    {
+                        areaToCheck = 5;
+                    }
+                    if (AdjacencyHandler.CompareAdjacency(ally, enemy, areaToCheck))
                     {
                         strategy = Strategy.protectCaptain;
                         break;
@@ -148,7 +156,7 @@ public class PirateAI : MonoBehaviour
             {
                 if (!item)
                     continue;
-                if (AdjacencyHandler.CompareAdjacency(pirateCaptain, item, 4))
+                if (AdjacencyHandler.CompareAdjacency(pirateCaptain, item, 5))
                 {
                     closeToPirateCaptain.Add(item);
                 }

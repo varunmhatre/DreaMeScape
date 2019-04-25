@@ -60,15 +60,12 @@ public class PlayerControls : MonoBehaviour
 
             if (startSliding && prevSelectedUnit != null)
             {
-               // Debug.Log("Sliding!");
                 SlideMovedCharacter(prevSelectedUnit.gameObject, prevSelectedUnit.position, toMoveLoc);
             }
             else if (startSliding && prevSelectedUnit == null)
             {
                 
             }
-
-            //Debug.Log(startSliding);
         }
     }
 
@@ -119,23 +116,25 @@ public class PlayerControls : MonoBehaviour
     private void GetPlayer()
     {
         lastSelectedUnitName = selectedUnitName;
+        Transform savedPrev = prevSelectedUnit;
         prevSelectedUnit = selectedUnit;
         RaycastHit hitCannon = RaycastManager.GetRaycastHitForTag("Cannon");
         RaycastHit hit = RaycastManager.GetRaycastHitForTag("Player");
         if (hitCannon.transform == null && hit.transform != null)
         {
-            //if currently animating, finish doing so
-            if (startSliding && selectedUnit)
-            {
-                startSliding = false;
-                prevSelectedUnit.transform.position = toMoveLoc;
-            }
-
             selectedUnit = hit.transform;
             playerLoc[0] = selectedUnit.GetComponent<UnitCoordinates>().x;
             playerLoc[1] = selectedUnit.GetComponent<UnitCoordinates>().y;
             selectedUnitName = hit.transform.name.Substring(1, hit.transform.name.IndexOf("_") - 1);
-            
+
+
+            //if currently animating, finish doing so
+            if (startSliding && selectedUnit && savedPrev)
+            {
+                startSliding = false;
+                savedPrev.transform.position = toMoveLoc;
+            }
+
             //HUDCharacterHighlight.HighlightPortrait();
         }
         else
