@@ -13,7 +13,9 @@ public class CannonRotationSystem : ComponentSystem
 
     private struct CannonBaseCol
     {
-        public CannonBaseColor cannonBase;
+        public CannonRadius cannonRadius;
+        public CannonScript cannonScript;
+        public CannonBaseColor cannonBaseColor;
     }
 
     protected override void OnUpdate()
@@ -27,13 +29,13 @@ public class CannonRotationSystem : ComponentSystem
 
         foreach (var item in GetEntities<CannonBaseCol>())
         {
-            if (item.cannonBase.transform.parent.GetComponent<CannonRadius>().CheckIfPlayerAround())
+            if (item.cannonRadius.CheckIfPlayerAround() && item.cannonScript.charge > 0)
             {
-                item.cannonBase.baseVisual.sprite = item.cannonBase.onVisual;
+                item.cannonBaseColor.baseVisual.sprite = item.cannonBaseColor.onVisual;
             }
             else
             {
-                item.cannonBase.baseVisual.sprite = item.cannonBase.offVisual;
+                item.cannonBaseColor.baseVisual.sprite = item.cannonBaseColor.offVisual;
             }
         }
     }
