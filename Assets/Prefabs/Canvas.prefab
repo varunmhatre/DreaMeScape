@@ -1361,7 +1361,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Paralyzing Potion
+  m_Text: Cleave
 --- !u!1 &1682303019574635328
 GameObject:
   m_ObjectHideFlags: 0
@@ -8531,7 +8531,6 @@ MonoBehaviour:
   - {fileID: 1170574605950745642}
   - {fileID: 2778305631219721751}
   - {fileID: 8343343870526504739}
-  - {fileID: 7015277434003367398}
   - {fileID: 1682303019574635328}
   max: 5
   min: 0
@@ -8614,7 +8613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Paralyzing Potion
+  m_Text: Fireball
 --- !u!1 &6469425007220034491
 GameObject:
   m_ObjectHideFlags: 0
@@ -12226,6 +12225,37 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 130
       objectReference: {fileID: 0}
+    - target: {fileID: 3470081173657462582, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470081173657462582, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470081173657462582, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470081173657462582, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470081173657462582, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ff77dfaaeb7aaef4ca64ef3a00334b50,
+        type: 3}
+    - target: {fileID: 3470081173657462582, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3924016134923180614, guid: d6abedede7e4c5041b59f8c0678886c8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12266,6 +12296,37 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 130
       objectReference: {fileID: 0}
+    - target: {fileID: 6583930878035558147, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583930878035558147, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583930878035558147, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583930878035558147, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583930878035558147, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ff77dfaaeb7aaef4ca64ef3a00334b50,
+        type: 3}
+    - target: {fileID: 6583930878035558147, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6412866593193683179, guid: d6abedede7e4c5041b59f8c0678886c8,
         type: 3}
       propertyPath: m_Name
@@ -12281,6 +12342,63 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5973431688105352611, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973431688105352611, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973431688105352611, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973431688105352611, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973431688105352611, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ff77dfaaeb7aaef4ca64ef3a00334b50,
+        type: 3}
+    - target: {fileID: 8225475846372418488, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225475846372418488, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225475846372418488, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225475846372418488, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225475846372418488, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225475846372418488, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ff77dfaaeb7aaef4ca64ef3a00334b50,
+        type: 3}
     - target: {fileID: 8177398131435069413, guid: d6abedede7e4c5041b59f8c0678886c8,
         type: 3}
       propertyPath: m_IsActive

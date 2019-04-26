@@ -63,7 +63,7 @@ public class PlaygroundController : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData eventData)
     { 
         transform.GetComponent<Image>().sprite = onSprite;
-        levelText.transform.GetComponent<Text>().text = "Pirateship";
+        levelText.transform.GetComponent<Text>().text = "Pirate Ship";
         Vector3 newPosition = transform.position;
         transform.position = newPosition;
         SetBackgroundToId(backgroundObj, backgroundMoveId);
