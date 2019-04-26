@@ -8,7 +8,7 @@
     }, 
     {
       "Conversation": 1,
-      "CharacterName": "Kent",
+      "CharacterName": "Kentbeard",
       "CharacterImage": "Kent",
       "DialogueText": "Try and stop me! With my new pirate crew, and Ed's generator, I'll be unstoppable!"
     }, 
@@ -28,58 +28,22 @@
       "Conversation": 4,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Excellent idea! If three of us surround one of them, it will be much weaker. Looks like there are some cannons to help us too."
-    },
-    {
-      "Conversation": 5,
-      "CharacterName": "Jade",
-      "CharacterImage": "Jade",
-      "DialogueText": "Cannons! Now we’re talking!"
-    },
-    {
-      "Conversation": 6,
-      "CharacterName": "Meda",
-      "CharacterImage": "Meda",
-      "DialogueText": "And if we surround Kent's generators, we'll get more energy each turn."
-    },
-    {
-      "Conversation": 7,
-      "CharacterName": "Hally",
-      "CharacterImage": "Hally",
-      "DialogueText": "They're Ed's generators! Oh, wait, Ed! Aren't you at least a little upset with Kent?"
-    },
-    {
-      "Conversation": 8,
-      "CharacterName": "Ed",
-      "CharacterImage": "Ed",
-      "DialogueText": "..."
-    },
-    {
-      "Conversation": 9,
-      "CharacterName": "Meda",
-      "CharacterImage": "Meda",
-      "DialogueText": "One final thing... use WASD/Arrow keys to move the camera, L to switch the view, and scroll to zoom."
-    },
-    {
-      "Conversation": 10,
-      "CharacterName": "Meda",
-      "CharacterImage": "Meda",
       "DialogueText": "Is everybody ready? Let's get to the stern of the ship! Let's stop Kent!"
     },
     {
-      "Conversation": 11,
+      "Conversation": 5,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
       "DialogueText": "Y-Yeah! Let's stop Kent!"
     },
     {
-      "Conversation": 12,
+      "Conversation": 6,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
       "DialogueText": "Great to hear you're starting to stand up for yourself, Ed! I’ll race you to the back of the ship!"
     },
     {
-      "Conversation": 13,
+      "Conversation": 7,
       "CharacterName": "Kent",
       "CharacterImage": "Kent",
       "DialogueText": "."
