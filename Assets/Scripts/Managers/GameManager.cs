@@ -8,11 +8,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Material normalMat;
     [SerializeField] public static int totalEnergy;
     [SerializeField] public GameObject gridManager;
+    [SerializeField] public GameObject dialogSceneController;
     public static SetupCharactersOnBoard characterSetup;
 
     public static int currentEnergy;
     public static bool isPlayerTurn;
     public static int roundCounter;
+    public static bool tutorialBlockClick;
+    public static bool tutorialBlockAbility;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,9 @@ public class GameManager : MonoBehaviour
         totalEnergy = 7;
         RefreshCurrentEnergy();
         roundCounter = 0;
+
+        tutorialBlockAbility = false;
+        tutorialBlockClick = false;
     }
 
     public static void EndCurrentTurn()
