@@ -9,6 +9,7 @@ public class PlayerAttackSystem : ComponentSystem
     {
         public Stats stats;
         public PlayerBase playerBase;
+        public PlayerAttackUI attackUI;
     }
 
     protected override void OnUpdate()
@@ -18,10 +19,12 @@ public class PlayerAttackSystem : ComponentSystem
             if (item.stats.hasAttacked)
             {
                 item.playerBase.baseSprite.sprite = item.playerBase.offVisual;
+                item.attackUI.baseVisual.sprite = item.attackUI.offVisual;
             }
             else
             {
                 item.playerBase.baseSprite.sprite = item.playerBase.onVisual;
+                item.attackUI.baseVisual.sprite = item.attackUI.offVisual;
             }
         }
     }
