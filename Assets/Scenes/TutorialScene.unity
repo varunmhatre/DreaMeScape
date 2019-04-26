@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6000,6 +6000,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4766426217763225475, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993329065314697065, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669047765125952349, guid: d6abedede7e4c5041b59f8c0678886c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3322697772209664098, guid: d6abedede7e4c5041b59f8c0678886c8,
         type: 3}
       propertyPath: m_RootOrder
@@ -6039,21 +6054,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 170
-      objectReference: {fileID: 0}
-    - target: {fileID: 5993329065314697065, guid: d6abedede7e4c5041b59f8c0678886c8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4766426217763225475, guid: d6abedede7e4c5041b59f8c0678886c8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669047765125952349, guid: d6abedede7e4c5041b59f8c0678886c8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2156528417476009200, guid: d6abedede7e4c5041b59f8c0678886c8,
         type: 3}
@@ -6961,10 +6961,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c5eccc0e0ce2a4a902e72f46b097cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorParticles: {fileID: 158835177}
+  tutorialGridManager: {fileID: 1932649773}
   cannonHandler: {fileID: 1640990659}
+  indicatorParticles: {fileID: 158835177}
   tutorialArrow: {fileID: 1463399368}
-  surroundTiles: {fileID: 2962577943736830597}
+  surroundTiles: {fileID: 7666490681012609141, guid: bd25a9d615b980645b1d14752302a463,
+    type: 3}
   hudElements:
   - {fileID: 929999185}
   - {fileID: 1082835590}
