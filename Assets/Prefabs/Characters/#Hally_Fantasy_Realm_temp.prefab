@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7453278310260461460}
   - component: {fileID: 7369214990481268929}
   - component: {fileID: 2428948392647194002}
+  - component: {fileID: 7619863014639101113}
   m_Layer: 8
   m_Name: '#Hally_Fantasy_Realm_temp'
   m_TagString: Player
@@ -169,6 +170,21 @@ MonoBehaviour:
   baseSprite: {fileID: 212768652967365014}
   onVisual: {fileID: 21300000, guid: 694f620f8c8f9c5448b5b99d9436e1bf, type: 3}
   offVisual: {fileID: 21300000, guid: 065d3e8aad3999b4b902d8cbc6d571e7, type: 3}
+--- !u!114 &7619863014639101113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099632027117354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce33e99c846e3684181549c105896944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseVisual: {fileID: 212099538412315114}
+  onVisual: {fileID: 21300000, guid: de0c91c12bf80ed4191b3af1ca1f2b19, type: 3}
+  offVisual: {fileID: 21300000, guid: 2ff55197969f55a458ccfa2f9ae95b4f, type: 3}
 --- !u!1 &1103372154033702
 GameObject:
   m_ObjectHideFlags: 0
