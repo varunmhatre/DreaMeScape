@@ -5,18 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] GameObject indicatorParticles;
+    [SerializeField] GameObject tutorialGridManager;
     [SerializeField] GameObject cannonHandler;
+
+    [SerializeField] GameObject indicatorParticles;
     [SerializeField] GameObject tutorialArrow;
     [SerializeField] GameObject surroundTiles;
+
     [SerializeField] List<GameObject> hudElements = new List<GameObject>();
+
     bool pirateTurn;
+    bool piratesAdded;
+    bool pirateTilesAdded;
     int enemyMaxHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         pirateTurn = false;
+        piratesAdded = false;
+        pirateTilesAdded = false;
         GameManager.tutorialBlockClick = true;
         GameManager.tutorialBlockAbility = true;
         GameManager.currentEnergy = 5;
@@ -73,6 +81,14 @@ public class TutorialManager : MonoBehaviour
         if (DialoguePanelManager.stepIndex == 13)
         {
             CharacterManager.allEnemyCharacters[0].SetActive(true);
+            if (!pirateTilesAdded)
+            {
+                Instantiate(surroundTiles, CharacterManager.allEnemyCharacters[0].transform);
+                CharacterManager.allEnemyCharacters[0].transform.GetChild(4).gameObject.SetActive(false);
+                CharacterManager.allEnemyCharacters[0].transform.GetChild(4).localPosition = new Vector3(-3.2f, 31.2f, -20.6f);
+                CharacterManager.allEnemyCharacters[0].transform.GetChild(4).localScale = new Vector3(1.33f, 1.33f, 1.33f);
+                pirateTilesAdded = true;
+            }
         }
 
         if (DialoguePanelManager.stepIndex == 17)
@@ -95,11 +111,10 @@ public class TutorialManager : MonoBehaviour
         {
             BlockSpecificPlayersClick(new int[] { 0, 1 });
             PauseDialog();
-            surroundTiles.transform.position = new Vector3(55.6f, 24.63f, 11.9f);
-            surroundTiles.SetActive(true);
+            CharacterManager.allEnemyCharacters[0].transform.GetChild(4).gameObject.SetActive(true);
             if(AdjacencyHandler.NumPlayerCharactersAround(CharacterManager.allEnemyCharacters[0], 1) == 1)
             {
-                surroundTiles.SetActive(false);
+                CharacterManager.allEnemyCharacters[0].transform.GetChild(4).gameObject.SetActive(false);
                 ResumeDialog();
             }
 
@@ -166,11 +181,10 @@ public class TutorialManager : MonoBehaviour
         if (DialoguePanelManager.stepIndex == 34)
         {
             PauseDialog();
-            //surroundTiles.transform.position = new Vector3(55.6f, 24.63f, 11.9f);
-            //surroundTiles.SetActive(true);
+            CharacterManager.allEnemyCharacters[0].transform.GetChild(4).gameObject.SetActive(true);
             if (AdjacencyHandler.NumPlayerCharactersAround(CharacterManager.allEnemyCharacters[0], 1) == 3)
             {
-                surroundTiles.SetActive(false);
+                CharacterManager.allEnemyCharacters[0].transform.GetChild(4).gameObject.SetActive(false);
                 ResumeDialog();
             }
         }
@@ -187,12 +201,14 @@ public class TutorialManager : MonoBehaviour
         if (DialoguePanelManager.stepIndex == 37)
         {
             InteractablesManager.generators[0].SetActive(true);
+            Instantiate(surroundTiles, InteractablesManager.generators[0].transform);
+            InteractablesManager.generators[0].transform.GetChild(4).localScale = new Vector3(1.33f, 1.33f, 1.33f);
         }
 
         if (DialoguePanelManager.stepIndex == 39)
         {
-            surroundTiles.transform.position = new Vector3(54.17f, 24.63f, 9f);
-            surroundTiles.SetActive(true);
+            InteractablesManager.generators[0].transform.GetChild(4).position = new Vector3(54.17f, 24.63f, 9f);
+            InteractablesManager.generators[0].transform.GetChild(4).gameObject.SetActive(true);
             PauseDialog();
             if(InteractablesManager.generators[0].GetComponent<Generator>().isOn)
             {
@@ -202,9 +218,14 @@ public class TutorialManager : MonoBehaviour
 
         if (DialoguePanelManager.stepIndex == 40)
         {
-            surroundTiles.SetActive(false);
+            InteractablesManager.generators[0].transform.GetChild(4).gameObject.SetActive(false);
             //CharacterManager.allEnemyCharacters[0].SetActive(true);
             //CharacterManager.allEnemyCharacters[1].SetActive(true);
+            if (!piratesAdded)
+            {
+                tutorialGridManager.GetComponent<TutorialBoardSetup>().AddMorePirates(2);
+                piratesAdded = true;
+            }
         }
 
         /*
