@@ -13,7 +13,8 @@ namespace JSONText
         private static Dictionary<int, string> resourceList = new Dictionary<int, string>
         {
         {1, "/Resources/Cutscene1.json"},
-        {2, "/Resources/Cutscene2.json"}
+        {2, "/Resources/Cutscene2.json"},
+        {3, "/Resources/Cutscene3.json"}
         };
         public static NarrativeEvent RunJSONFactoryForScene(int sceneNumber)
         {

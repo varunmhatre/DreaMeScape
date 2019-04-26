@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -66,14 +67,14 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pirateLock && DialoguePanelManager.playerControlsUnlocked)
+        if (!pirateLock && DialoguePanelManager.playerControlsUnlocked || SceneManager.GetActiveScene().name == "TutorialScene")
         {
             if (firstTime)
             {
                 transform.position = positions[0];
                 firstTime = false;
             }
-            if (TutorialCards.isTutorialRunning)
+            if (TutorialCards.isTutorialRunning || SceneManager.GetActiveScene().name == "TutorialScene")
             {
                 //check to see if you are moving the camera up, down, left, or right
                 MoveCamera(Input.GetAxis("SecondaryCommandHoriz"), Input.GetAxis("SecondaryCommandVert"));
@@ -82,7 +83,7 @@ public class CameraMovement : MonoBehaviour
                 SwapCameras(Input.GetKeyDown(KeyCode.L));
             }
         }
-        else if (firstTime == true)
+        else if (firstTime == true && SceneManager.GetActiveScene().name == "PirateshipScene")
         {
             PirateShipMoveSetup(positions, times);
         }

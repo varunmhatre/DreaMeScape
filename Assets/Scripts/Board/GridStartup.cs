@@ -31,7 +31,7 @@ public class GridStartup : MonoBehaviour {
 
         //LayerMasking every component
         int layerMask = LayerMask.GetMask("GridArea");
-        GameObject gameObject;
+        GameObject grid;
         for (int x = 0; x < maxX; x++)
         {
             for (int y = 0; y < maxY; y++)
@@ -41,18 +41,18 @@ public class GridStartup : MonoBehaviour {
                 RaycastHit hit;
                 if (Physics.Raycast(placementOrigin, directionVector, out hit, Mathf.Infinity, layerMask))
                 {
-                    gameObject = Instantiate(gridPrefab, hit.point, Quaternion.identity, transform);
+                    grid = Instantiate(gridPrefab, hit.point, Quaternion.identity, transform);
                 }
                 else
                 {
-                    gameObject = Instantiate(gridPrefab, placementOrigin, Quaternion.identity, transform);
-                    gameObject.GetComponent<MeshRenderer>().enabled = false;
-                    gameObject.GetComponent<BoxCollider>().enabled = false;
-                    gameObject.GetComponent<GridPiece>().isDead = true;
+                    grid = Instantiate(gridPrefab, placementOrigin, Quaternion.identity, transform);
+                    grid.GetComponent<MeshRenderer>().enabled = false;
+                    grid.GetComponent<BoxCollider>().enabled = false;
+                    grid.GetComponent<GridPiece>().isDead = true;
                 }
-                gameObject.name = "GridX" + x + "Y" + y;
-                gameObject.GetComponent<GridCoordinates>().x = x;
-                gameObject.GetComponent<GridCoordinates>().y = y;
+                grid.name = "GridX" + x + "Y" + y;
+                grid.GetComponent<GridCoordinates>().x = x;
+                grid.GetComponent<GridCoordinates>().y = y;
             }
         }
     }

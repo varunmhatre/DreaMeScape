@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -29,8 +30,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (DialoguePanelManager.playerControlsUnlocked && TutorialCards.isTutorialRunning)
+        if (DialoguePanelManager.playerControlsUnlocked && TutorialCards.isTutorialRunning || SceneManager.GetActiveScene().name == "TutorialScene")
         {
             if (RaycastManager.leftClicked && GameManager.isPlayerTurn && GameManager.HaveEnergy() && !CharacterAbility.inSelectionMode && !CannonStaticVariables.isCannonSelected)
             {
