@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
         totalEnergy = 7;
         RefreshCurrentEnergy();
         roundCounter = 0;
+
+        tutorialBlockAbility = false;
+        tutorialBlockClick = false;
     }
 
     public static void EndCurrentTurn()

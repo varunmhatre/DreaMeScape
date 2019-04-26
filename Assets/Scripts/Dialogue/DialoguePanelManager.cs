@@ -26,6 +26,8 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
     {
         playerControlsUnlocked = false;
         isCharacterPanelDisabled = false;
+
+        Debug.Log("here");
     }
     public void BootSequence()
     {        
@@ -64,29 +66,12 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         {
             if (!Input.GetKey(KeyCode.P) && SceneManager.GetActiveScene().name == "TutorialScene")
             {
-                dialoguePanel.SetActive(false);
-                playerControlsUnlocked = true;
-                isCharacterPanelDisabled = true;
-                countDialogueLength = currentEvent.dialogues.Count;
+                stepIndex = -1;
+                countDialogueLength = 0;
                 //Uncomment when tut ready
                 SceneManager.LoadScene("PirateshipScene");
             }
-            //Deprecated------------------------------------------------
-            //if (SceneManager.GetActiveScene().name == "FantasyWorldStartScene")
-            /*if (SceneManager.GetActiveScene().buildIndex == 1)
-            {
-                dialoguePanel.SetActive(false);
-                countDialogueLength = 0;
-                stepIndex = 0;
-                playerControlsUnlocked = true;
-                SceneManager.LoadScene("PirateshipScene");
-            }
-            //Deprecated------------------------------------------------
-            if (SceneManager.GetActiveScene().name == "PirateshipScene")
-            {
-                
-            }*/
-             
+
             if (SceneManager.GetActiveScene().name == "PirateshipScene")
             { 
                 dialoguePanel.SetActive(false);

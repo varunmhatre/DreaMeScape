@@ -24,7 +24,8 @@ public class SceneChangeOnTime : MonoBehaviour
 
         if (timer >= 25.0f)
         {
-            sceneTransition.ChangeScene("PirateshipScene");
+            sceneTransition.ChangeScene("TutorialScene");
+            //sceneTransition.ChangeScene("PirateshipScene");
         }
 
         CheckForSkip();
@@ -38,7 +39,8 @@ public class SceneChangeOnTime : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && setupSkip)
         {
-            sceneTransition.ChangeScene("PirateshipScene");
+            sceneTransition.ChangeScene("TutorialScene");
+            //sceneTransition.ChangeScene("PirateshipScene");
         }
 
         if (Input.GetMouseButtonDown(0))

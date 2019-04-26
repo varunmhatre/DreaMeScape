@@ -23,6 +23,7 @@ public class TutorialManager : MonoBehaviour
         GameManager.totalEnergy = 5;
         CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health += 6;
         enemyMaxHealth = CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health;
+
     }
 
     // Update is called once per frame
@@ -84,6 +85,7 @@ public class TutorialManager : MonoBehaviour
             {
                 ResumeDialog();
                 DialoguePanelManager.stepIndex++;
+                DialoguePanelManager.countDialogueLength++;
                 AllowSpecificPlayersClick(new int[] { 0, 1, 2 });
                 indicatorParticles.SetActive(false);
             }
@@ -205,6 +207,7 @@ public class TutorialManager : MonoBehaviour
             //CharacterManager.allEnemyCharacters[1].SetActive(true);
         }
 
+        /*
         //Add positions for tut arrow in next many dialogs
         if (DialoguePanelManager.stepIndex == 48)
         {
@@ -270,7 +273,7 @@ public class TutorialManager : MonoBehaviour
                 //CharacterManager.allAlliedCharacters[1].GetComponent<Stats>().GainMeter(5);
             }
         }
-
+        */
         if (DialoguePanelManager.stepIndex == 52)
         {
 
