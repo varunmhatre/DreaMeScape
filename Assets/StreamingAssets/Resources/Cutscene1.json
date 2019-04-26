@@ -4,7 +4,7 @@
       "Conversation": 0,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
-      "DialogueText": "... Whoa. We’re on the ship."
+      "DialogueText": "...Whoa. We’re on the ship."
     },
     {
       "Conversation": 1,
@@ -22,7 +22,7 @@
       "Conversation": 3,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
-      "DialogueText": "... Not bad! Let’s look around the ship."
+      "DialogueText": "...Not bad! Let’s look around the ship."
     },
     {
       "Conversation": 4,
@@ -34,13 +34,13 @@
       "Conversation": 5,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Use WASD to move the Camera and L to change it’s Angle."
+      "DialogueText": "Use WASD to move the Camera and L to change its angle."
     },
     {
       "Conversation": 6,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "OMG a canon! I want to go there!"
+      "DialogueText": "Oh my gosh, a cannon! I want to go there!"
     },
     {
       "Conversation": 7,
@@ -52,19 +52,19 @@
       "Conversation": 8,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Moving around uses energy"
+      "DialogueText": "Moving around uses energy."
     },
     {
       "Conversation": 9,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "Aww… Where did the cannon go?"
+      "DialogueText": "Aww... Where did the cannon go?"
     },
     {
       "Conversation": 10,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
-      "DialogueText": "You’re probably daydreaming again…"
+      "DialogueText": "You’re probably daydreaming again..."
     },
     {
       "Conversation": 11,
@@ -124,13 +124,13 @@
       "Conversation": 20,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Move Jade or another character next to the Pirate to attack it."
+      "DialogueText": "Move Jade next to the Pirate to attack it."
     },
     {
       "Conversation": 21,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Now select the character and then attack the pirate!"
+      "DialogueText": "Now click on the pirate's base to attack!"
     },
     {
       "Conversation": 22,
@@ -160,13 +160,13 @@
       "Conversation": 26,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "You need to be stronger."
+      "DialogueText": "What can I help you with?"
     },
     {
       "Conversation": 27,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "Meda! Don’t be mean!"
+      "DialogueText": "Meda!"
     },
     {
       "Conversation": 28,
@@ -196,7 +196,7 @@
       "Conversation": 32,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "... Huh? What’s happening?"
+      "DialogueText": "...Huh? What’s happening?"
     },
     {
       "Conversation": 33,
@@ -226,7 +226,7 @@
       "Conversation": 37,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "We don’t have enough Energy to move around. Let’s use Generators to get more."
+      "DialogueText": "We can use Generators to get more energy."
     },
     {
       "Conversation": 38,
@@ -244,37 +244,37 @@
       "Conversation": 40,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
-      "DialogueText": "We didn’t get more energy. And now there are more pirates."
+      "DialogueText": "We didn’t get more energy."
     },
     {
       "Conversation": 41,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "We’ll get it next turn."
+      "DialogueText": "Patience. We’ll get it next turn."
     },
     {
       "Conversation": 42,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": "Finally, more energy! Stupid Slow Generator."
+      "DialogueText": "Finally, more energy!"
     },
     {
       "Conversation": 43,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Just like you."
+      "DialogueText": "I see you're excited as always to move faster, Jade!"
     },
     {
       "Conversation": 44,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": "Hey! I’m not slow!"
+      "DialogueText": "Haha, thanks, Meda!"
     },
     {
       "Conversation": 45,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
-      "DialogueText": "Don’t fight each other… how do we fight the pirates?"
+      "DialogueText": "So... how can we fight pirates more effectively?"
     },
     {
       "Conversation": 46,
@@ -286,13 +286,13 @@
       "Conversation": 47,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Each person has a Dream Meter."
+      "DialogueText": "Each character has a Dream Meter."
     },
     {
       "Conversation": 48,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "You fill that person’s Dream Meter by moving them. When it’s Full you can use their ability."
+      "DialogueText": "You fill that character’s Dream Meter by moving them. When it’s full you can use their ability, which will cost energy."
     },
     {
       "Conversation": 49,
@@ -304,37 +304,37 @@
       "Conversation": 50,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Ed is timid and has trouble moving in front of others. So he wants to show the enemy how it feels to not move in his presence!"
+      "DialogueText": "Ed is quiet. He wants to show the enemy how it feels to not move in his presence!"
     },
     {
       "Conversation": 51,
       "CharacterName": "Hally",
       "CharacterImage": "Hally",
-      "DialogueText": "That was amazing, Ed!"
+      "DialogueText": "Ooo, stunning, Ed!"
     },
     {
       "Conversation": 52,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": "Be more brave, Ed. I’ll show you how it’s done!"
+      "DialogueText": "Haha, Hally! That pun was great!"
     },
     {
       "Conversation": 53,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Jade is reckless and likes to jump head first in fights. So she will rush to an enemy and hit them hard!"
+      "DialogueText": "Jade is reckless and likes to jump head-first in fights. She will dash to an enemy and hit them with more force!"
     },
     {
       "Conversation": 54,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Don’t rush ahead alone, Jade! I’ll have to scold you with the pirates."
+      "DialogueText": "Don’t rush ahead alone, Jade! I’ll have to scold you along with the pirates."
     },
     {
       "Conversation": 55,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Meda cares about her friends but she can be mean sometimes. So burns her enemy with a fireball of sharp words!"
+      "DialogueText": "Meda cares about her friends, but she can be mean sometimes. She burns her enemies with a fireball of sharp words!"
     },
     {
       "Conversation": 56,
@@ -346,7 +346,7 @@
       "Conversation": 57,
       "CharacterName": "Henry",
       "CharacterImage": "Henry",
-      "DialogueText": "Hally likes daydreaming but can’t pay attention for too long. So she boosts the Dream Meter of nearby friends!"
+      "DialogueText": "Hally daydreams but can’t pay attention for too long. She boosts the Dream Meter and health of nearby friends!"
     },
     {
       "Conversation": 58,
@@ -364,19 +364,19 @@
       "Conversation": 60,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Let’s defeat the pirates together!"
+      "DialogueText": "Alright, let's go find Kent!"
     },
     {
       "Conversation": 61,
       "CharacterName": "Jade",
       "CharacterImage": "Jade",
-      "DialogueText": "Alright! We kicked their butts!"
+      "DialogueText": "Haha, yeah! I'm really excited to use cannons!"
     },
     {
       "Conversation": 62,
       "CharacterName": "Ed",
       "CharacterImage": "Ed",
-      "DialogueText": "... That was fun... Working together."
+      "DialogueText": "...That was fun... Working together."
     },
     {
       "Conversation": 63,

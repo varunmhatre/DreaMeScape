@@ -64,7 +64,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
 
         if (Input.GetKey(KeyCode.P) || countDialogueLength >= currentEvent.dialogues.Count)
         {
-            if (!Input.GetKey(KeyCode.P) && SceneManager.GetActiveScene().name == "TutorialScene")
+            if (SceneManager.GetActiveScene().name == "TutorialScene")
             {
                 stepIndex = -1;
                 countDialogueLength = 0;
