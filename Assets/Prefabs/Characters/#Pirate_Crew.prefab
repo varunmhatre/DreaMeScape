@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1487cbcb48ebd1d4a9860594dab8e998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseTarget: {fileID: 2800000, guid: d79d0f5e39ea7bf43817962264ce1b1c, type: 3}
+  mouseTarget: {fileID: 2800000, guid: 6c79732c13f9f6b44a2eb3721f05b711, type: 3}
 --- !u!114 &8356997128984266929
 MonoBehaviour:
   m_ObjectHideFlags: 0

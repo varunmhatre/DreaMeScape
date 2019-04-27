@@ -48,7 +48,7 @@ public class EndturnController : MonoBehaviour, IPointerDownHandler
         if(isInteractable)
         { 
             GameManager.EndCurrentTurn(); 
-            isInteractable = false;
+            isInteractable = false;            
         }
 
       //  gridPieceSelect.highlightMoveSpaces

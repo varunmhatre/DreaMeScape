@@ -21,6 +21,8 @@ public class Stats : MonoBehaviour
 
     public bool isEncumbered;
     [SerializeField] public bool isEnemy;
+
+
     
     private void Start()
     {
@@ -128,5 +130,8 @@ public class Stats : MonoBehaviour
     {
         damage = unchargedDamage;
         charging = false;
+        //enable
+       
+            DisableFist.isEnable = true;
     }
 }

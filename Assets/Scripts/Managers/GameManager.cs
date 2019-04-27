@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static bool tutorialBlockClick;
     public static bool tutorialBlockAbility;
 
+  //  [SerializeField] public GameObject[] disableFist;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
         totalEnergy = 7;
         RefreshCurrentEnergy();
         roundCounter = 0;
-
+        
         tutorialBlockAbility = false;
         tutorialBlockClick = false;
     }
@@ -71,9 +72,20 @@ public class GameManager : MonoBehaviour
             if (CharacterManager.allAlliedCharacters[i])
             {
                  CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().hasAttacked = false;
+                //disable
+                DisableFist.isEnable = false;
+                
             }               
         }
     }
+
+    //public static void DisableAttackSymbol()
+    //{
+    //    for (int i = 0; i < disableFist.Length; i++)
+    //    {
+    //        disableFist[i].GetComponent<EdDisableFist>().is
+    //    }
+    //}
 
     public static void ReduceEnergy()
     {

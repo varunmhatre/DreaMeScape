@@ -117,6 +117,7 @@ public class PirateAI : MonoBehaviour
         cameraMain.ResetCamera();
         GameManager.RefreshEnemies();
         GameManager.BeginNewTurn();
+        GameManager.RefreshCharacters();
         endScriptRunning = false;
     }
 
