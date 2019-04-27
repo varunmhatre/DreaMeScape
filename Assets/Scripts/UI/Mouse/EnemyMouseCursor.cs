@@ -8,6 +8,8 @@ public class EnemyMouseCursor : MonoBehaviour
     //public Texture2D mouseTarget;
     Stats selectedUnit;
     CursorTexture customCursor;
+    bool isCursorOn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +18,22 @@ public class EnemyMouseCursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (RaycastManager.GetRaycastHitForTag("Enemy").transform == transform)
+        {
+            if (!isCursorOn)
+                OnEnter();
+            OnOver();
+        }
+
+        else if (isCursorOn)
+        {
+            OnExit();
+        }
     }
-    private void OnMouseEnter()
+
+    private void OnEnter()
     {
+        isCursorOn = true;
         if (AdjacencyHandler.NumPlayerCharactersAround(gameObject, 1) >= 1 &&
             !CannonStaticVariables.isCannonSelected && PlayerControls.selectedUnit != null &&
                 AdjacencyHandler.CompareAdjacency(gameObject, PlayerControls.selectedUnit.gameObject, 1))
@@ -34,7 +48,7 @@ public class EnemyMouseCursor : MonoBehaviour
         }
     }
     
-    private void OnMouseExit()
+    private void OnExit()
     {
         if (cursorChanged && customCursor)
         {
@@ -42,9 +56,10 @@ public class EnemyMouseCursor : MonoBehaviour
             //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             customCursor.DisableCrossBar();
         }
+        isCursorOn = false;
     }
 
-    private void OnMouseOver()
+    private void OnOver()
     {
         if (cursorChanged && selectedUnit && selectedUnit.hasAttacked && customCursor)
         {
