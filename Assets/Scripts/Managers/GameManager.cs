@@ -69,7 +69,9 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < CharacterManager.allAlliedCharacters.Count; i++)
         {
             if (CharacterManager.allAlliedCharacters[i])
-                CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().hasAttacked = false;
+            {
+                 CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().hasAttacked = false;
+            }               
         }
     }
 

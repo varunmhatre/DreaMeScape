@@ -90,7 +90,8 @@ public class PlayerControls : MonoBehaviour
             selectedUnit.GetComponent<UnitCoordinates>().SetUnitCoordinates(moveLoc.gameObject.GetComponent<GridCoordinates>().x, moveLoc.gameObject.GetComponent<GridCoordinates>().y);
             moveLoc.gameObject.GetComponent<GridPiece>().unit = selectedUnit.gameObject;
             GameManager.ReduceEnergy();
-           // EnergyUsedAnimation.enableAnim = true;
+            EnergyUsedAnimation.enableAnim = true; 
+            
             Stats characterStats = selectedUnit.gameObject.GetComponent<Stats>();
             if (characterStats != null)
             {
