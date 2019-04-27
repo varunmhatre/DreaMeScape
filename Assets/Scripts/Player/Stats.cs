@@ -21,6 +21,8 @@ public class Stats : MonoBehaviour
 
     public bool isEncumbered;
     [SerializeField] public bool isEnemy;
+
+
     
     private void Start()
     {

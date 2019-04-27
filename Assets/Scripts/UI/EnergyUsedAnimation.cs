@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class EnergyUsedAnimation : MonoBehaviour
 {
     public static bool enableAnim;
+    Animator animator;
     // Use this for initialization
     void Start()
     {
         enableAnim = false;
+        animator = transform.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -17,6 +19,7 @@ public class EnergyUsedAnimation : MonoBehaviour
     {
         if (enableAnim)
         {
+            animator.SetBool("activate", true);
             gameObject.GetComponent<Image>().enabled = true;
         }
         else
