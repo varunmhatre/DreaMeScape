@@ -24,7 +24,7 @@ public class PlayerAttackSystem : ComponentSystem
             else
             {
                 item.playerBase.baseSprite.sprite = item.playerBase.onVisual;
-                item.attackUI.baseVisual.sprite = item.attackUI.offVisual;
+                item.attackUI.baseVisual.sprite = item.attackUI.onVisual;
             }
         }
     }
