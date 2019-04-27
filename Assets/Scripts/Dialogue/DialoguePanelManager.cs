@@ -27,6 +27,7 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         playerControlsUnlocked = false;
         isCharacterPanelDisabled = false;
         isPaused = false;
+        isPressed = false;
 
         Debug.Log("here");
     }
@@ -67,8 +68,6 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         {
             if (SceneManager.GetActiveScene().name == "TutorialScene")
             {
-                stepIndex = -1;
-                countDialogueLength = 0;
                 //Uncomment when tut ready
                 SceneManager.LoadScene("PirateshipScene");
             }

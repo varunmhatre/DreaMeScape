@@ -24,6 +24,8 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (DialogueStateManager manager in managerList)
         {
+            DialoguePanelManager.stepIndex = -1;
+            DialoguePanelManager.countDialogueLength = 0;
             manager.BootSequence();
         }
         yield return null;
