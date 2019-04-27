@@ -15,7 +15,7 @@ public class HallyEffectAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CharacterManager.allAlliedCharacters[1].GetComponent<Stats>().meterUnitsFilled == maxValue)
+        if (CharacterManager.allAlliedCharacters[1] && CharacterManager.allAlliedCharacters[1].GetComponent<Stats>().meterUnitsFilled == maxValue)
         {
             gameObject.GetComponent<Image>().enabled = true;
         }

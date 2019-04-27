@@ -15,7 +15,7 @@ public class MedaEffectAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CharacterManager.allAlliedCharacters[3].GetComponent<Stats>().meterUnitsFilled == maxValue)
+        if (CharacterManager.allAlliedCharacters[3] && CharacterManager.allAlliedCharacters[3].GetComponent<Stats>().meterUnitsFilled == maxValue)
         {
             gameObject.GetComponent<Image>().enabled = true;
         }

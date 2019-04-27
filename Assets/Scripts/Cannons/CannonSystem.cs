@@ -13,7 +13,10 @@ public class CannonSystem : MonoBehaviour
                 AttackEnemy();
                 CannonStaticVariables.CannonUnSelected();
             }
-            SelectCannon();
+            else
+            {
+                SelectCannon();
+            }
         }
     }
 
