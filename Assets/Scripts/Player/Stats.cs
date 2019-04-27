@@ -130,8 +130,5 @@ public class Stats : MonoBehaviour
     {
         damage = unchargedDamage;
         charging = false;
-        //enable
-       
-            DisableFist.isEnable = true;
     }
 }

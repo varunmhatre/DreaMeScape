@@ -72,9 +72,6 @@ public class GameManager : MonoBehaviour
             if (CharacterManager.allAlliedCharacters[i])
             {
                  CharacterManager.allAlliedCharacters[i].GetComponent<Stats>().hasAttacked = false;
-                //disable
-                DisableFist.isEnable = false;
-                
             }               
         }
     }
