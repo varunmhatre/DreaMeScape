@@ -28,7 +28,6 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         isCharacterPanelDisabled = false;
         isPaused = false;
 
-        stepIndex = 0;
         Debug.Log("here");
     }
     public void BootSequence()
