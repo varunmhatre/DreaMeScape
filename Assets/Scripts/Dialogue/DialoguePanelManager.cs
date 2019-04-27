@@ -27,6 +27,8 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
         playerControlsUnlocked = false;
         isCharacterPanelDisabled = false;
         isPaused = false;
+
+        stepIndex = 0;
         Debug.Log("here");
     }
     public void BootSequence()
