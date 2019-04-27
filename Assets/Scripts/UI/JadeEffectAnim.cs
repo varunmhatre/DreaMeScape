@@ -30,7 +30,7 @@ public class JadeEffectAnim : MonoBehaviour
         //    }
         //}
 
-        if (CharacterManager.allAlliedCharacters[2].GetComponent<Stats>().meterUnitsFilled == maxValue)
+        if (CharacterManager.allAlliedCharacters[2] && CharacterManager.allAlliedCharacters[2].GetComponent<Stats>().meterUnitsFilled == maxValue)
         {
             gameObject.GetComponent<Image>().enabled = true;
         }

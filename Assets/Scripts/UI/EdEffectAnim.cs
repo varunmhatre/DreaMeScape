@@ -15,7 +15,7 @@ public class EdEffectAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CharacterManager.allAlliedCharacters[0].GetComponent<Stats>().meterUnitsFilled == maxValue)
+        if (CharacterManager.allAlliedCharacters[0] && CharacterManager.allAlliedCharacters[0].GetComponent<Stats>().meterUnitsFilled == maxValue)
         {
             gameObject.GetComponent<Image>().enabled = true;
         }
