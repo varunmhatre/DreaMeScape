@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 1767420438225980208}
   - component: {fileID: 7619952966234644806}
   - component: {fileID: 3924664785788021715}
+  - component: {fileID: 2226348504172041620}
+  - component: {fileID: 5383168204208106781}
   m_Layer: 8
   m_Name: '#Meda_Fantasy_Realm_temp'
   m_TagString: Player
@@ -153,6 +155,36 @@ MonoBehaviour:
   objToBubbleResist: {fileID: 4759528083563396098}
   bubblesUpOnAction: 1
   valueChanged: 0
+--- !u!114 &2226348504172041620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445851507171124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1edf3869c9409349aae6aa8297e200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSprite: {fileID: 212462912922129824}
+  onVisual: {fileID: 21300000, guid: 694f620f8c8f9c5448b5b99d9436e1bf, type: 3}
+  offVisual: {fileID: 21300000, guid: 065d3e8aad3999b4b902d8cbc6d571e7, type: 3}
+--- !u!114 &5383168204208106781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445851507171124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce33e99c846e3684181549c105896944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseVisual: {fileID: 3015255174074245552}
+  onVisual: {fileID: 21300000, guid: de0c91c12bf80ed4191b3af1ca1f2b19, type: 3}
+  offVisual: {fileID: 21300000, guid: 2ff55197969f55a458ccfa2f9ae95b4f, type: 3}
 --- !u!1 &1469560358481866
 GameObject:
   m_ObjectHideFlags: 0

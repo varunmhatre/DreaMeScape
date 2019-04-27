@@ -277,6 +277,8 @@ GameObject:
   - component: {fileID: 1651914349455986567}
   - component: {fileID: 744936645760045010}
   - component: {fileID: 8555278555726275855}
+  - component: {fileID: 4669829088555309388}
+  - component: {fileID: 193805783320353220}
   m_Layer: 8
   m_Name: '#Kent_Fantasy_Realm_temp1'
   m_TagString: Player
@@ -333,6 +335,7 @@ MonoBehaviour:
   presence: 0
   unchargedDamage: 2
   maxHealth: 8
+  dmgEff: {fileID: 0}
   statsVisible: 0
   hasAttacked: 0
   meterUnitsFilled: 0
@@ -413,6 +416,36 @@ MonoBehaviour:
   objToBubbleResist: {fileID: 2369389060219533340}
   bubblesUpOnAction: 1
   valueChanged: 0
+--- !u!114 &4669829088555309388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673096372370608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1edf3869c9409349aae6aa8297e200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSprite: {fileID: 212045629760936626}
+  onVisual: {fileID: 21300000, guid: 694f620f8c8f9c5448b5b99d9436e1bf, type: 3}
+  offVisual: {fileID: 21300000, guid: 065d3e8aad3999b4b902d8cbc6d571e7, type: 3}
+--- !u!114 &193805783320353220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673096372370608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce33e99c846e3684181549c105896944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseVisual: {fileID: 1461291976570590405}
+  onVisual: {fileID: 21300000, guid: de0c91c12bf80ed4191b3af1ca1f2b19, type: 3}
+  offVisual: {fileID: 21300000, guid: 2ff55197969f55a458ccfa2f9ae95b4f, type: 3}
 --- !u!1 &2369389060219533340
 GameObject:
   m_ObjectHideFlags: 0
