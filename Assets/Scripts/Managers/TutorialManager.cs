@@ -23,7 +23,6 @@ public class TutorialManager : MonoBehaviour
         GameManager.totalEnergy = 5;
         CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health += 6;
         enemyMaxHealth = CharacterManager.allEnemyCharacters[0].GetComponent<Stats>().health;
-        DialoguePanelManager.stepIndex = 0;
 
     }
 
