@@ -28,6 +28,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public static bool inSelectionMode;
     public static bool cleanSelectionMode;
     private bool justClickedButton;
+    bool allowSelection;
 
     public enum selectionType
     {
@@ -41,6 +42,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Start is called before the first frame update
     void Start()
     {
+        allowSelection = false;
         cleanSelectionMode = false;
         currButtonId = -1;
         amountMeterNeeded = 5;
@@ -297,7 +299,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("Got here!");
-        if (!GameManager.tutorialBlockAbility && (TutorialCards.isTutorialRunning && !CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit))
+        if (!GameManager.tutorialBlockAbility && (TutorialCards.isTutorialRunning && !CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit && !allowSelection))
         {
             transform.GetComponent<Image>().color = Color.blue;
             if (buttonId == 0)
@@ -340,6 +342,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 }
                 GetComponent<MedaAbilityHandler>().OnMouseHoveringStart();
             }
+            allowSelection = true;
         }
     }
     public void OnPointerExit(PointerEventData eventData)
@@ -367,6 +370,7 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
             {
                 GetComponent<MedaAbilityHandler>().OnMouseHoveringExit();
             }
+            allowSelection = false;
         }
 
         if (tooltipObj != null)
@@ -378,8 +382,9 @@ public class CharacterAbility : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (!GameManager.tutorialBlockAbility && isInteractable)
         {
-            if (!CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit)
+            if (!CannonStaticVariables.isCannonSelected && !PlayerControls.selectedUnit && allowSelection)
             {
+                allowSelection = false;
                 justClickedButton = true;
                 currButtonId = buttonId;
                 ActivateAbility();
