@@ -4,43 +4,43 @@
       "Conversation": 0,
       "CharacterName": "Meda",
       "CharacterImage": "Meda",
-      "DialogueText": "Kent, how dare you! Ed didn't do anything wrong! Why are you bugging him?"
-    }, 
+      "DialogueText": "Kent, how dare you! Stop bugging Ed!"
+    },
     {
       "Conversation": 1,
       "CharacterName": "Kentbeard",
       "CharacterImage": "Kent",
-      "DialogueText": "Try and stop me! With my new pirate crew, and Ed's generator, I'll be unstoppable!"
-    }, 
+      "DialogueText": "Try and stop me! Arr! If you’re strong enough."
+    },
     {
       "Conversation": 2,
-      "CharacterName": "Hally",
-      "CharacterImage": "Hally",
-      "DialogueText": "Ooooo, I love pirates!"
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "Kent, you took my ship..."
     },
     {
       "Conversation": 3,
-      "CharacterName": "Jade",
-      "CharacterImage": "Jade",
-      "DialogueText": "Lemme at ‘em! Let's attack them! Let's surround them!"
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "Come and get it, Ed! I’ve been waiting for a worthy opponent like you!"
     },
     {
       "Conversation": 4,
-      "CharacterName": "Meda",
-      "CharacterImage": "Meda",
-      "DialogueText": "Is everybody ready? Let's get to the stern of the ship! Let's stop Kent!"
+      "CharacterName": "Jade",
+      "CharacterImage": "Jade",
+      "DialogueText": "You’re going down, Kent! Right here, right now!"
     },
     {
       "Conversation": 5,
-      "CharacterName": "Ed",
-      "CharacterImage": "Ed",
-      "DialogueText": "Y-Yeah! Let's stop Kent!"
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "Is everybody ready? Let's get Ed’s ship back!"
     },
     {
       "Conversation": 6,
-      "CharacterName": "Jade",
-      "CharacterImage": "Jade",
-      "DialogueText": "Great to hear you're starting to stand up for yourself, Ed! I’ll race you to the back of the ship!"
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "I can do this."
     },
     {
       "Conversation": 7,

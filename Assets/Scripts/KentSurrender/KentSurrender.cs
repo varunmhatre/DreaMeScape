@@ -8,6 +8,7 @@ public class KentSurrender : MonoBehaviour
     private Vector3 currDirection;
     private float currSpeed;
     private float timer;
+    private bool resumeTimer;
 
     [SerializeField] private SceneTransition sceneTransition;
 
@@ -27,7 +28,8 @@ public class KentSurrender : MonoBehaviour
         AdjustPosition(currDirection, currSpeed);
         AdjustMovementValues();
         LookForNewScene();
-        timer += Time.deltaTime;
+        if(resumeTimer)
+            timer += Time.deltaTime;
     }
 
     public void AdjustPosition(Vector3 direction, float speed)
@@ -37,7 +39,20 @@ public class KentSurrender : MonoBehaviour
 
     public void AdjustMovementValues()
     {
-        if (timer <= 2.0f || (timer > 3.25f && timer <= 9.0f))
+        if (DialoguePanelManager.stepIndex == 11 && !resumeTimer)
+        {
+            timer = 5.7f;
+        }
+        if (DialoguePanelManager.stepIndex >= 9)
+        {
+            PauseDialog();
+        }
+
+        if (timer > 0.0f && timer <= 1.5f)
+        {
+            transform.Rotate(0.0f, -Time.deltaTime * 100.0f, 0.0f);
+        }
+        else if (timer <= 2.0f || (timer > 3.25f && timer <= 9.0f))
         {
             currSpeed = 0.0f;
         }
@@ -45,6 +60,7 @@ public class KentSurrender : MonoBehaviour
         {
             currSpeed = 2.0f;
         }
+
         if (timer > 2.0f && timer <= 2.55f)
         {
             currDirection += new Vector3(0.0f, -2.5f, 2.5f) * Time.deltaTime;
@@ -60,6 +76,10 @@ public class KentSurrender : MonoBehaviour
         else if (timer > 4.0f && timer <= 5.5f)
         {
             transform.Rotate(0.0f, Time.deltaTime*100.0f, 0.0f);
+        }
+        else if (timer > 5.5f && timer <= 5.6f)
+        {
+            ResumeDialog();
         }
         else if (timer > 7.0 && timer <= 8.5f)
         {
@@ -82,6 +102,20 @@ public class KentSurrender : MonoBehaviour
 
 
         currDirection.Normalize();
+    }
+
+    private void PauseDialog()
+    {
+        resumeTimer = true;
+        DialoguePanelManager.isPaused = true;
+        DialoguePanelManager.playerControlsUnlocked = true;
+    }
+
+    private void ResumeDialog()
+    {
+        resumeTimer = false;
+        DialoguePanelManager.playerControlsUnlocked = false;
+        DialoguePanelManager.isPaused = false;
     }
 
     public void LookForNewScene()
