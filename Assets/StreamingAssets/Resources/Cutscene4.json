@@ -1,0 +1,82 @@
+{
+  "dialogues": [
+    {
+      "Conversation": 0,
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "You got me, Ed! Not bad!"
+    },
+    {
+      "Conversation": 1,
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "Why did you take my ship, Kent?"
+    },
+    {
+      "Conversation": 2,
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "I just wanted to play with you guys. I didn’t mean to hurt you."
+    },
+    {
+      "Conversation": 3,
+      "CharacterName": "Meda",
+      "CharacterImage": "Meda",
+      "DialogueText": "Don’t be so forceful."
+    },
+    {
+      "Conversation": 4,
+      "CharacterName": "Hally",
+      "CharacterImage": "Hally",
+      "DialogueText": "You can play with us anytime you want. Just ask!"
+    },
+    {
+      "Conversation": 5,
+      "CharacterName": "Jade",
+      "CharacterImage": "Jade",
+      "DialogueText": "Yeah! I’ll take you on anytime."
+    },
+    {
+      "Conversation": 6,
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "You’re right..."
+    },
+    {
+      "Conversation": 7,
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "I’m sorry."
+    },
+    {
+      "Conversation": 8,
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "I forgive you. But since we defeated you, it’s only fair you Walk the Plank, Mr. Pirate Captain."
+    },
+    {
+      "Conversation": 9,
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "Haha! I agree!"
+    },
+    {
+      "Conversation": 10,
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "Thanks for letting me play."
+    },
+    {
+      "Conversation": 11,
+      "CharacterName": "Ed",
+      "CharacterImage": "Ed",
+      "DialogueText": "Anytime! And thanks for showing me how to be brave."
+    },
+    {
+      "Conversation": 12,
+      "CharacterName": "Kent",
+      "CharacterImage": "Kent",
+      "DialogueText": "Woohoo!"
+    }
+  ]
+}

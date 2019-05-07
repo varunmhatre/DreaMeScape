@@ -47,8 +47,12 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             currentEvent = JSONAssembly.RunJSONFactoryForScene(3);
         }
         if (SceneManager.GetActiveScene().name == "PirateshipScene")
-        { 
+        {
             currentEvent = JSONAssembly.RunJSONFactoryForScene(2);
+        }
+        if (SceneManager.GetActiveScene().name == "KentbeardSurrender")
+        {
+            currentEvent = JSONAssembly.RunJSONFactoryForScene(4);
         }
         InitiziliasePanels();
     }
@@ -73,11 +77,16 @@ public class DialoguePanelManager : MonoBehaviour, DialogueStateManager
             }
 
             if (SceneManager.GetActiveScene().name == "PirateshipScene")
-            { 
+            {
                 dialoguePanel.SetActive(false);
                 playerControlsUnlocked = true;
                 isCharacterPanelDisabled = true;
-                countDialogueLength =  currentEvent.dialogues.Count;
+                countDialogueLength = currentEvent.dialogues.Count;
+            }
+
+            if (SceneManager.GetActiveScene().name == "KentbeardSurrender")
+            {
+                SceneManager.LoadScene("WinScene");
             }
         }       
         else if (countDialogueLength < currentEvent.dialogues.Count && !isPaused)

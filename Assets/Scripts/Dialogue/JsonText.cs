@@ -14,7 +14,8 @@ namespace JSONText
         {
         {1, "/Resources/Cutscene1.json"},
         {2, "/Resources/Cutscene2.json"},
-        {3, "/Resources/Cutscene3.json"}
+        {3, "/Resources/Cutscene3.json"},
+        {4, "/Resources/Cutscene4.json"}
         };
         public static NarrativeEvent RunJSONFactoryForScene(int sceneNumber)
         {
